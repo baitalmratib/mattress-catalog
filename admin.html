@@ -64,6 +64,10 @@ margin:4px;
 cursor:pointer;
 }
 
+button:hover{
+opacity:.9;
+}
+
 .danger{
 background:#b00020;
 }
@@ -77,7 +81,7 @@ background:#666;
 }
 
 .hidden{
-display:none;
+display:none!important;
 }
 
 .checkbox{
@@ -95,6 +99,25 @@ margin:0;
 .msg{
 margin-top:10px;
 font-weight:bold;
+line-height:1.7;
+}
+
+.success{
+color:#159447;
+}
+
+.error{
+color:#b00020;
+}
+
+.link-button{
+background:none;
+color:#0756a8;
+border:0;
+padding:5px;
+margin:5px 0;
+text-decoration:underline;
+cursor:pointer;
 }
 
 .item{
@@ -129,6 +152,17 @@ border-bottom:2px solid #e6edf5;
 padding-bottom:10px;
 }
 
+.password-box{
+max-width:500px;
+margin:40px auto;
+}
+
+.small-note{
+font-size:13px;
+color:#666;
+line-height:1.7;
+}
+
 </style>
 
 </head>
@@ -142,7 +176,9 @@ padding-bottom:10px;
 </h1>
 
 
-<!-- تسجيل الدخول -->
+<!-- =====================================================
+     تسجيل الدخول
+===================================================== -->
 
 <div id="login" class="box">
 
@@ -151,15 +187,25 @@ padding-bottom:10px;
 <input
 id="email"
 type="email"
+autocomplete="email"
 placeholder="البريد الإلكتروني">
 
 <input
 id="password"
 type="password"
+autocomplete="current-password"
 placeholder="كلمة المرور">
 
 <button id="loginBtn">
 دخول
+</button>
+
+<br>
+
+<button
+id="forgotPasswordBtn"
+class="link-button">
+نسيت كلمة المرور؟
 </button>
 
 <div
@@ -170,7 +216,97 @@ class="msg">
 </div>
 
 
-<!-- لوحة التحكم -->
+<!-- =====================================================
+     استعادة كلمة المرور
+===================================================== -->
+
+<div
+id="forgotBox"
+class="box hidden">
+
+<h2 class="section-title">
+استعادة كلمة المرور
+</h2>
+
+<p>
+اكتب البريد الإلكتروني المستخدم في لوحة التحكم.
+</p>
+
+<input
+id="resetEmail"
+type="email"
+autocomplete="email"
+placeholder="البريد الإلكتروني">
+
+<button
+id="sendResetBtn"
+class="green">
+إرسال رابط إعادة التعيين
+</button>
+
+<button
+id="backToLoginBtn"
+class="gray">
+العودة لتسجيل الدخول
+</button>
+
+<div
+id="resetMsg"
+class="msg">
+</div>
+
+<p class="small-note">
+سيتم إرسال رابط إلى بريدك الإلكتروني. افتح الرابط لإدخال كلمة مرور جديدة.
+</p>
+
+</div>
+
+
+<!-- =====================================================
+     تغيير كلمة المرور بعد فتح رابط الاستعادة
+===================================================== -->
+
+<div
+id="updatePasswordBox"
+class="box password-box hidden">
+
+<h2 class="section-title">
+تعيين كلمة مرور جديدة
+</h2>
+
+<p>
+أدخل كلمة المرور الجديدة للوحة التحكم.
+</p>
+
+<input
+id="newPassword"
+type="password"
+autocomplete="new-password"
+placeholder="كلمة المرور الجديدة">
+
+<input
+id="confirmPassword"
+type="password"
+autocomplete="new-password"
+placeholder="تأكيد كلمة المرور الجديدة">
+
+<button
+id="updatePasswordBtn"
+class="green">
+حفظ كلمة المرور الجديدة
+</button>
+
+<div
+id="updatePasswordMsg"
+class="msg">
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     لوحة التحكم
+===================================================== -->
 
 <div id="app" class="hidden">
 
@@ -179,9 +315,9 @@ class="msg">
 </button>
 
 
-<!-- =========================
+<!-- =====================================================
      المنتجات
-========================= -->
+===================================================== -->
 
 <div class="box">
 
@@ -254,7 +390,9 @@ class="msg">
 </div>
 
 
-<!-- قائمة المنتجات -->
+<!-- =====================================================
+     قائمة المنتجات
+===================================================== -->
 
 <div class="box">
 
@@ -269,9 +407,9 @@ class="msg">
 </div>
 
 
-<!-- =========================
+<!-- =====================================================
      الإعلانات
-========================= -->
+===================================================== -->
 
 <div class="box">
 
@@ -340,7 +478,9 @@ class="msg">
 </div>
 
 
-<!-- قائمة الإعلانات -->
+<!-- =====================================================
+     قائمة الإعلانات
+===================================================== -->
 
 <div class="box">
 
@@ -359,6 +499,10 @@ class="msg">
 </div>
 
 
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script src="config.js"></script>
@@ -366,9 +510,9 @@ class="msg">
 
 <script>
 
-/* =========================
+/* =====================================================
    الاتصال بـ Supabase
-========================= */
+===================================================== */
 
 const db =
 supabase.createClient(
@@ -388,44 +532,125 @@ const $ =
 id => document.getElementById(id);
 
 
-/* =========================
-   تسجيل الدخول
-========================= */
+/* =====================================================
+   إظهار / إخفاء الأقسام
+===================================================== */
+
+function showLogin(){
+
+$('login').classList.remove('hidden');
+
+$('forgotBox').classList.add('hidden');
+
+$('updatePasswordBox').classList.add('hidden');
+
+$('app').classList.add('hidden');
+
+}
+
+
+function showForgot(){
+
+$('login').classList.add('hidden');
+
+$('forgotBox').classList.remove('hidden');
+
+$('updatePasswordBox').classList.add('hidden');
+
+$('app').classList.add('hidden');
+
+$('resetEmail').value =
+$('email').value.trim();
+
+$('resetMsg').textContent = '';
+
+}
+
+
+function showUpdatePassword(){
+
+$('login').classList.add('hidden');
+
+$('forgotBox').classList.add('hidden');
+
+$('updatePasswordBox').classList.remove('hidden');
+
+$('app').classList.add('hidden');
+
+}
+
+
+function showApp(){
+
+$('login').classList.add('hidden');
+
+$('forgotBox').classList.add('hidden');
+
+$('updatePasswordBox').classList.add('hidden');
+
+$('app').classList.remove('hidden');
+
+}
+
+
+/* =====================================================
+   تشغيل الصفحة
+===================================================== */
 
 async function init(){
 
-const r =
+const result =
 await db.auth.getSession();
 
-show(!!r.data.session);
 
-if(r.data.session){
+const session =
+result.data.session;
+
+
+if(session){
+
+showApp();
 
 await loadProducts();
 
 await loadAds();
 
-}
+return;
 
 }
 
 
-function show(on){
+/*
+   إذا وصل المستخدم من رابط استعادة كلمة المرور
+*/
 
-$('login')
-.classList.toggle(
-'hidden',
-on
-);
+const hash =
+window.location.hash;
 
-$('app')
-.classList.toggle(
-'hidden',
-!on
-);
+
+if(
+hash &&
+(
+hash.includes('type=recovery') ||
+hash.includes('access_token=')
+)
+){
+
+showUpdatePassword();
+
+return;
 
 }
 
+
+showLogin();
+
+}
+
+
+/* =====================================================
+   تسجيل الدخول
+===================================================== */
 
 $('loginBtn').onclick =
 async()=>{
@@ -436,8 +661,39 @@ $('email').value.trim();
 const password =
 $('password').value;
 
+
+if(!email){
+
+$('loginMsg').textContent =
+'اكتب البريد الإلكتروني أولاً';
+
+$('loginMsg').className =
+'msg error';
+
+return;
+
+}
+
+
+if(!password){
+
+$('loginMsg').textContent =
+'اكتب كلمة المرور أولاً';
+
+$('loginMsg').className =
+'msg error';
+
+return;
+
+}
+
+
 $('loginMsg').textContent =
 'جاري تسجيل الدخول...';
+
+$('loginMsg').className =
+'msg';
+
 
 try{
 
@@ -454,8 +710,11 @@ password:password
 if(result.error){
 
 $('loginMsg').textContent =
-'خطأ: ' +
+'خطأ في تسجيل الدخول: ' +
 result.error.message;
+
+$('loginMsg').className =
+'msg error';
 
 console.error(
 result.error
@@ -467,9 +726,14 @@ return;
 
 
 $('loginMsg').textContent =
-'تم تسجيل الدخول';
+'تم تسجيل الدخول بنجاح';
 
-show(true);
+$('loginMsg').className =
+'msg success';
+
+
+showApp();
+
 
 await loadProducts();
 
@@ -478,30 +742,295 @@ await loadAds();
 
 }catch(e){
 
+console.error(e);
+
 $('loginMsg').textContent =
-'خطأ: ' +
+'حدث خطأ: ' +
 e.message;
 
-console.error(e);
+$('loginMsg').className =
+'msg error';
 
 }
 
 };
 
 
+/* =====================================================
+   نسيت كلمة المرور
+===================================================== */
+
+$('forgotPasswordBtn').onclick =
+()=>{
+
+showForgot();
+
+};
+
+
+/* =====================================================
+   العودة لتسجيل الدخول
+===================================================== */
+
+$('backToLoginBtn').onclick =
+()=>{
+
+showLogin();
+
+};
+
+
+/* =====================================================
+   إرسال رابط إعادة تعيين كلمة المرور
+===================================================== */
+
+$('sendResetBtn').onclick =
+async()=>{
+
+const email =
+$('resetEmail').value.trim();
+
+
+if(!email){
+
+$('resetMsg').textContent =
+'اكتب البريد الإلكتروني أولاً';
+
+$('resetMsg').className =
+'msg error';
+
+return;
+
+}
+
+
+$('resetMsg').textContent =
+'جاري إرسال رابط إعادة التعيين...';
+
+$('resetMsg').className =
+'msg';
+
+
+try{
+
+/*
+   بعد الضغط على الرابط الموجود في البريد،
+   سيعود المستخدم إلى نفس صفحة admin.html
+*/
+
+const redirectUrl =
+window.location.origin +
+window.location.pathname;
+
+
+const result =
+await db.auth.resetPasswordForEmail(
+email,
+{
+redirectTo:redirectUrl
+}
+);
+
+
+if(result.error){
+
+$('resetMsg').textContent =
+'حدث خطأ: ' +
+result.error.message;
+
+$('resetMsg').className =
+'msg error';
+
+console.error(
+result.error
+);
+
+return;
+
+}
+
+
+$('resetMsg').textContent =
+'تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني. افتح البريد واضغط على الرابط.';
+
+$('resetMsg').className =
+'msg success';
+
+
+}catch(e){
+
+console.error(e);
+
+$('resetMsg').textContent =
+'حدث خطأ: ' +
+e.message;
+
+$('resetMsg').className =
+'msg error';
+
+}
+
+};
+
+
+/* =====================================================
+   تغيير كلمة المرور
+===================================================== */
+
+$('updatePasswordBtn').onclick =
+async()=>{
+
+const newPassword =
+$('newPassword').value;
+
+const confirmPassword =
+$('confirmPassword').value;
+
+
+if(!newPassword){
+
+$('updatePasswordMsg').textContent =
+'اكتب كلمة المرور الجديدة';
+
+$('updatePasswordMsg').className =
+'msg error';
+
+return;
+
+}
+
+
+if(newPassword.length < 6){
+
+$('updatePasswordMsg').textContent =
+'كلمة المرور يجب أن تكون 6 أحرف أو أكثر';
+
+$('updatePasswordMsg').className =
+'msg error';
+
+return;
+
+}
+
+
+if(newPassword !== confirmPassword){
+
+$('updatePasswordMsg').textContent =
+'كلمتا المرور غير متطابقتين';
+
+$('updatePasswordMsg').className =
+'msg error';
+
+return;
+
+}
+
+
+$('updatePasswordMsg').textContent =
+'جاري تغيير كلمة المرور...';
+
+$('updatePasswordMsg').className =
+'msg';
+
+
+try{
+
+const result =
+await db.auth.updateUser({
+
+password:newPassword
+
+});
+
+
+if(result.error){
+
+$('updatePasswordMsg').textContent =
+'حدث خطأ: ' +
+result.error.message;
+
+$('updatePasswordMsg').className =
+'msg error';
+
+console.error(
+result.error
+);
+
+return;
+
+}
+
+
+$('updatePasswordMsg').textContent =
+'تم تغيير كلمة المرور بنجاح. يمكنك الآن الدخول بالكلمة الجديدة.';
+
+$('updatePasswordMsg').className =
+'msg success';
+
+
+$('newPassword').value = '';
+
+$('confirmPassword').value = '';
+
+
+/*
+   تسجيل الخروج من جلسة الاستعادة
+   ثم العودة لتسجيل الدخول
+*/
+
+setTimeout(
+async()=>{
+
+await db.auth.signOut();
+
+window.location.hash = '';
+
+showLogin();
+
+},
+1800
+);
+
+
+}catch(e){
+
+console.error(e);
+
+$('updatePasswordMsg').textContent =
+'حدث خطأ: ' +
+e.message;
+
+$('updatePasswordMsg').className =
+'msg error';
+
+}
+
+};
+
+
+/* =====================================================
+   تسجيل الخروج
+===================================================== */
+
 $('logout').onclick =
 async()=>{
 
 await db.auth.signOut();
 
-show(false);
+showLogin();
+
+$('email').value = '';
+
+$('password').value = '';
+
+$('loginMsg').textContent = '';
 
 };
 
 
-/* =========================
+/* =====================================================
    رفع الصور
-========================= */
+===================================================== */
 
 async function uploadImage(file){
 
@@ -561,15 +1090,18 @@ return url.data.publicUrl;
 }
 
 
-/* =========================
+/* =====================================================
    حفظ المنتج
-========================= */
+===================================================== */
 
 $('saveProduct').onclick =
 async()=>{
 
 $('productMsg').textContent =
 'جاري حفظ المنتج...';
+
+$('productMsg').className =
+'msg';
 
 
 try{
@@ -610,6 +1142,9 @@ if(!payload.name){
 
 $('productMsg').textContent =
 'اكتب اسم المنتج أولاً';
+
+$('productMsg').className =
+'msg error';
 
 return;
 
@@ -658,6 +1193,9 @@ $('productMsg').textContent =
 'خطأ: ' +
 result.error.message;
 
+$('productMsg').className =
+'msg error';
+
 console.error(
 result.error
 );
@@ -669,6 +1207,9 @@ return;
 
 $('productMsg').textContent =
 'تم تعديل المنتج بنجاح';
+
+$('productMsg').className =
+'msg success';
 
 
 resetProduct();
@@ -701,6 +1242,9 @@ $('productMsg').textContent =
 'خطأ: ' +
 result.error.message;
 
+$('productMsg').className =
+'msg error';
+
 console.error(
 result.error
 );
@@ -716,6 +1260,9 @@ result.data.length === 0){
 $('productMsg').textContent =
 'لم يتم إنشاء المنتج';
 
+$('productMsg').className =
+'msg error';
+
 return;
 
 }
@@ -723,6 +1270,9 @@ return;
 
 $('productMsg').textContent =
 'تم حفظ المنتج بنجاح';
+
+$('productMsg').className =
+'msg success';
 
 
 resetProduct();
@@ -738,14 +1288,17 @@ $('productMsg').textContent =
 'خطأ: ' +
 e.message;
 
+$('productMsg').className =
+'msg error';
+
 }
 
 };
 
 
-/* =========================
+/* =====================================================
    تحميل المنتجات
-========================= */
+===================================================== */
 
 async function loadProducts(){
 
@@ -883,9 +1436,9 @@ onclick="deleteProduct(${p.id})">
 }
 
 
-/* =========================
+/* =====================================================
    تعديل المنتج
-========================= */
+===================================================== */
 
 window.editProduct =
 id=>{
@@ -946,9 +1499,9 @@ behavior:'smooth'
 };
 
 
-/* =========================
+/* =====================================================
    حذف المنتج
-========================= */
+===================================================== */
 
 window.deleteProduct =
 async id=>{
@@ -987,9 +1540,9 @@ await loadProducts();
 };
 
 
-/* =========================
+/* =====================================================
    إعادة نموذج المنتج
-========================= */
+===================================================== */
 
 function resetProduct(){
 
@@ -1031,15 +1584,18 @@ $('cancelProduct').onclick =
 resetProduct;
 
 
-/* =========================
+/* =====================================================
    حفظ الإعلان
-========================= */
+===================================================== */
 
 $('saveAd').onclick =
 async()=>{
 
 $('adMsg').textContent =
 'جاري حفظ الإعلان...';
+
+$('adMsg').className =
+'msg';
 
 
 try{
@@ -1075,6 +1631,9 @@ if(!payload.title){
 
 $('adMsg').textContent =
 'اكتب عنوان الإعلان أولاً';
+
+$('adMsg').className =
+'msg error';
 
 return;
 
@@ -1139,6 +1698,9 @@ $('adMsg').textContent =
 'خطأ: ' +
 result.error.message;
 
+$('adMsg').className =
+'msg error';
+
 console.error(
 result.error
 );
@@ -1154,6 +1716,9 @@ result.data.length === 0){
 $('adMsg').textContent =
 'لم يتم حفظ الإعلان';
 
+$('adMsg').className =
+'msg error';
+
 return;
 
 }
@@ -1161,6 +1726,9 @@ return;
 
 $('adMsg').textContent =
 'تم حفظ الإعلان بنجاح';
+
+$('adMsg').className =
+'msg success';
 
 
 resetAd();
@@ -1176,14 +1744,17 @@ $('adMsg').textContent =
 'خطأ: ' +
 e.message;
 
+$('adMsg').className =
+'msg error';
+
 }
 
 };
 
 
-/* =========================
+/* =====================================================
    تحميل الإعلانات
-========================= */
+===================================================== */
 
 async function loadAds(){
 
@@ -1311,9 +1882,9 @@ onclick="deleteAd(${ad.id})">
 }
 
 
-/* =========================
+/* =====================================================
    تعديل الإعلان
-========================= */
+===================================================== */
 
 window.editAd =
 id=>{
@@ -1366,9 +1937,9 @@ $('cancelAd')
 };
 
 
-/* =========================
+/* =====================================================
    حذف الإعلان
-========================= */
+===================================================== */
 
 window.deleteAd =
 async id=>{
@@ -1407,9 +1978,9 @@ await loadAds();
 };
 
 
-/* =========================
+/* =====================================================
    إعادة نموذج الإعلان
-========================= */
+===================================================== */
 
 function resetAd(){
 
@@ -1449,9 +2020,9 @@ $('cancelAd').onclick =
 resetAd;
 
 
-/* =========================
+/* =====================================================
    حماية النصوص
-========================= */
+===================================================== */
 
 function esc(v){
 
@@ -1474,22 +2045,55 @@ m=>({
 }
 
 
-/* =========================
-   متابعة تسجيل الدخول
-========================= */
+/* =====================================================
+   متابعة حالة تسجيل الدخول
+===================================================== */
 
 db.auth.onAuthStateChange(
-(_event,session)=>{
+async(_event,session)=>{
 
-show(
-!!session
-);
+if(
+_event === 'PASSWORD_RECOVERY'
+){
+
+showUpdatePassword();
+
+return;
+
+}
+
+
+if(session){
+
+showApp();
+
+}else{
+
+/*
+   لا نغير صفحة الاستعادة إذا كان المستخدم
+   داخل عملية استعادة كلمة المرور
+*/
+
+if(
+!$('updatePasswordBox')
+.classList.contains('hidden')
+){
+
+return;
+
+}
+
+showLogin();
+
+}
 
 }
 );
 
 
-/* تشغيل الصفحة */
+/* =====================================================
+   تشغيل الصفحة
+===================================================== */
 
 init();
 
