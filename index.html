@@ -1,37 +1,28 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
 <title>شركة بيت المراتب للمفروشات</title>
-
 <style>
-
 *{
 box-sizing:border-box
 }
-
 html{
 scroll-behavior:smooth
 }
-
 body{
 margin:0;
 font-family:Arial,Tahoma,sans-serif;
 background:#f7f8fa;
 color:#10233f;
 }
-
 /* HEADER */
-
 header{
 background:#06254d;
 color:#fff;
 height:74px;
 }
-
 .header{
 width:100%;
 max-width:1600px;
@@ -43,13 +34,11 @@ align-items:center;
 justify-content:space-between;
 gap:25px;
 }
-
 .logo{
 font-size:24px;
 font-weight:bold;
 white-space:nowrap;
 }
-
 .logo small{
 display:block;
 font-size:11px;
@@ -57,14 +46,12 @@ font-weight:normal;
 text-align:center;
 margin-top:2px;
 }
-
 .nav{
 display:flex;
 align-items:center;
 gap:35px;
 height:100%;
 }
-
 .nav a{
 color:white;
 text-decoration:none;
@@ -72,12 +59,10 @@ font-size:15px;
 padding:27px 0 22px;
 border-bottom:2px solid transparent;
 }
-
 .nav a.active,
 .nav a:hover{
 border-bottom-color:white;
 }
-
 .contact{
 display:flex;
 align-items:center;
@@ -85,25 +70,18 @@ gap:20px;
 font-size:14px;
 white-space:nowrap;
 }
-
 .contact a{
 color:white;
 text-decoration:none;
 }
-
-
 /* MAIN */
-
 main{
 width:100%;
 max-width:1600px;
 margin:auto;
 padding:20px 30px 30px;
 }
-
-
 /* HERO */
-
 .hero{
 min-height:190px;
 background:linear-gradient(135deg,#ffffff,#edf4fb);
@@ -116,31 +94,25 @@ justify-content:center;
 box-shadow:0 2px 12px #0000000b;
 border:1px solid #e5e7eb;
 }
-
 .hero-content{
 width:100%;
 padding:35px 60px;
 text-align:center;
 }
-
 .hero-content h1{
 margin:0 0 12px;
 font-size:34px;
 color:#06254d;
 }
-
 .hero-content p{
 margin:0;
 font-size:17px;
 line-height:1.8;
 color:#344054;
 }
-
-
 /* =====================================================
-   ANNOUNCEMENT
+   ANNOUNCEMENT - صورة كبيرة
 ===================================================== */
-
 .announcement{
 background:#fff;
 border:1px solid #e3e7ec;
@@ -150,102 +122,89 @@ margin-bottom:22px;
 box-shadow:0 2px 12px #0000000b;
 display:none;
 }
-
 .announcement-inner{
-display:grid;
-grid-template-columns:260px minmax(0,1fr);
-min-height:180px;
+display:flex;
+flex-direction:column;
+width:100%;
 }
-
+/* صورة الإعلان */
 .announcement-image{
 width:100%;
-height:100%;
-min-height:180px;
-object-fit:cover;
+height:auto;
+max-height:650px;
+object-fit:contain;
+object-position:center;
 display:block;
 background:#eef1f4;
 }
-
+/* في حالة عدم وجود صورة */
 .announcement-no-image{
 width:100%;
-height:100%;
-min-height:180px;
+height:300px;
 background:linear-gradient(135deg,#06254d,#0b4d91);
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:55px;
+font-size:70px;
 color:#fff;
 }
-
+/* محتوى الإعلان */
 .announcement-content{
-padding:25px 30px;
+padding:28px 35px 30px;
 display:flex;
 flex-direction:column;
 justify-content:center;
+align-items:center;
+text-align:center;
 }
-
 .announcement-label{
-font-size:12px;
+font-size:13px;
 font-weight:bold;
 color:#159447;
 margin-bottom:8px;
 }
-
 .announcement-content h2{
 margin:0 0 10px;
-font-size:24px;
+font-size:27px;
 color:#06254d;
 }
-
 .announcement-content p{
 margin:0 0 18px;
-font-size:15px;
+font-size:16px;
 line-height:1.8;
 color:#475467;
+max-width:900px;
 }
-
 .announcement-button{
 display:inline-block;
 width:max-content;
 background:#06254d;
 color:#fff;
 text-decoration:none;
-padding:10px 22px;
+padding:11px 28px;
 border-radius:8px;
 font-weight:bold;
 font-size:14px;
 }
-
 .announcement-button:hover{
 opacity:.9;
 }
-
-
 /* MOBILE CATEGORY */
-
 .mobile-category-toggle{
 display:none;
 }
-
-
 /* CATALOG */
-
 .catalog-layout{
 display:grid;
 grid-template-columns:240px minmax(0,1fr);
 gap:25px;
 direction:ltr;
 }
-
 .sidebar,
 .products-area{
 direction:rtl;
 }
-
-
 /* SIDEBAR */
-
 .sidebar{
 background:#fff;
 border:1px solid #e5e7eb;
@@ -255,18 +214,15 @@ height:max-content;
 position:sticky;
 top:15px;
 }
-
 .sidebar h2{
 font-size:19px;
 margin:0 0 18px;
 }
-
 .category-list{
 display:flex;
 flex-direction:column;
 gap:5px;
 }
-
 .category-btn{
 border:0;
 background:white;
@@ -282,16 +238,13 @@ align-items:center;
 justify-content:space-between;
 transition:.2s;
 }
-
 .category-btn:hover{
 background:#f1f5fa;
 }
-
 .category-btn.active{
 background:#06254d;
 color:white;
 }
-
 .help-box{
 margin-top:30px;
 background:#eaf2fc;
@@ -299,18 +252,15 @@ border-radius:10px;
 padding:20px 12px;
 text-align:center;
 }
-
 .help-box h3{
 margin:0 0 7px;
 font-size:15px;
 }
-
 .help-box p{
 margin:0 0 15px;
 font-size:13px;
 line-height:1.6;
 }
-
 .help-btn{
 display:block;
 background:#06254d;
@@ -321,10 +271,7 @@ border-radius:7px;
 font-weight:bold;
 font-size:14px;
 }
-
-
 /* TOOLBAR */
-
 .toolbar{
 display:grid;
 grid-template-columns:120px minmax(200px,1fr) 145px;
@@ -332,7 +279,6 @@ gap:12px;
 margin-bottom:18px;
 align-items:center;
 }
-
 .sort{
 height:44px;
 background:#fff;
@@ -342,7 +288,6 @@ padding:0 12px;
 font-family:inherit;
 font-size:14px;
 }
-
 .search-box{
 height:44px;
 background:#fff;
@@ -352,7 +297,6 @@ display:flex;
 align-items:center;
 overflow:hidden;
 }
-
 .search-box input{
 border:0;
 outline:0;
@@ -362,7 +306,6 @@ padding:0 15px;
 font-family:inherit;
 font-size:14px;
 }
-
 .search-btn{
 height:100%;
 width:55px;
@@ -372,7 +315,6 @@ font-size:20px;
 cursor:pointer;
 color:#06254d;
 }
-
 .all-products{
 height:44px;
 background:#06254d;
@@ -384,22 +326,17 @@ font-weight:bold;
 cursor:pointer;
 font-size:14px;
 }
-
-
 /* PRODUCTS */
-
 .status{
 font-size:13px;
 color:#667085;
 margin-bottom:12px;
 }
-
 .grid{
 display:grid;
 grid-template-columns:repeat(5,minmax(0,1fr));
 gap:18px;
 }
-
 .card{
 background:#fff;
 border:1px solid #e4e7eb;
@@ -409,25 +346,21 @@ position:relative;
 transition:.2s;
 cursor:pointer;
 }
-
 .card:hover{
 transform:translateY(-3px);
 box-shadow:0 8px 22px #00000012;
 }
-
 .image-wrap{
 height:160px;
 position:relative;
 background:#eef1f4;
 }
-
 .product-image{
 width:100%;
 height:100%;
 object-fit:cover;
 display:block;
 }
-
 .no-image{
 width:100%;
 height:100%;
@@ -437,7 +370,6 @@ justify-content:center;
 color:#98a2b3;
 font-size:14px;
 }
-
 .badge{
 position:absolute;
 top:8px;
@@ -448,33 +380,27 @@ font-size:11px;
 font-weight:bold;
 color:white;
 }
-
 .available{
 background:#159447;
 }
-
 .unavailable{
 background:#a32121;
 }
-
 .card-body{
 padding:11px 12px 14px;
 text-align:center;
 }
-
 .code{
 font-size:12px;
 color:#667085;
 margin-bottom:4px;
 }
-
 .card h3{
 margin:0 0 6px;
 font-size:16px;
 color:#111827;
 line-height:1.4;
 }
-
 .description{
 font-size:12px;
 color:#667085;
@@ -483,20 +409,15 @@ height:38px;
 overflow:hidden;
 margin-bottom:7px;
 }
-
 .price{
 font-size:18px;
 font-weight:bold;
 color:#06254d;
 }
-
 .price span{
 font-size:13px;
 }
-
-
 /* SERVICES */
-
 .services{
 margin-top:28px;
 background:#f0f2f5;
@@ -506,35 +427,27 @@ display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:20px;
 }
-
 .service{
 text-align:center;
 border-left:1px solid #d3d7dc;
 }
-
 .service:last-child{
 border-left:0;
 }
-
 .service-icon{
 font-size:27px;
 margin-bottom:7px;
 }
-
 .service h3{
 margin:0 0 4px;
 font-size:15px;
 }
-
 .service p{
 margin:0;
 font-size:12px;
 color:#667085;
 }
-
-
 /* FOOTER */
-
 footer{
 background:#06254d;
 color:#fff;
@@ -542,14 +455,10 @@ text-align:center;
 padding:17px;
 font-size:14px;
 }
-
 footer p{
 margin:0;
 }
-
-
 /* PRODUCT MODAL */
-
 .product-modal{
 position:fixed;
 inset:0;
@@ -560,11 +469,9 @@ justify-content:center;
 padding:20px;
 z-index:9999;
 }
-
 .product-modal.show{
 display:flex;
 }
-
 .modal-box{
 background:white;
 width:min(850px,100%);
@@ -574,7 +481,6 @@ border-radius:18px;
 position:relative;
 padding:20px;
 }
-
 .modal-close{
 position:absolute;
 top:10px;
@@ -588,7 +494,6 @@ color:white;
 font-size:22px;
 cursor:pointer;
 }
-
 .modal-image{
 width:100%;
 max-height:430px;
@@ -596,35 +501,28 @@ object-fit:contain;
 background:#f3f5f7;
 border-radius:12px;
 }
-
 .modal-title{
 font-size:25px;
 margin:15px 0 8px;
 color:#06254d;
 }
-
 .modal-code,
 .modal-category{
 color:#667085;
 margin:5px 0;
 }
-
 .modal-description{
 line-height:1.8;
 color:#475467;
 margin:15px 0;
 }
-
 .modal-price{
 font-size:25px;
 font-weight:bold;
 color:#06254d;
 margin:15px 0;
 }
-
-
 /* EMPTY */
-
 .empty{
 background:#fff;
 padding:40px;
@@ -633,63 +531,49 @@ border-radius:12px;
 color:#667085;
 grid-column:1/-1;
 }
-
-
 /* LARGE */
-
 @media(min-width:1500px){
-
 .grid{
 grid-template-columns:repeat(6,minmax(0,1fr));
 gap:20px;
 }
-
 .image-wrap{
 height:170px;
 }
-
+.announcement-image{
+max-height:750px;
 }
-
-
+}
 /* TABLET */
-
 @media(max-width:1200px){
-
 .header{
 padding:0 20px;
 }
-
 main{
 padding-left:20px;
 padding-right:20px;
 }
-
 .grid{
 grid-template-columns:repeat(4,minmax(0,1fr));
 }
-
+.announcement-image{
+max-height:550px;
 }
-
-
+}
 /* MOBILE */
-
 @media(max-width:800px){
-
 header{
 height:auto;
 }
-
 .header{
 height:auto;
 padding:14px 15px;
 flex-wrap:wrap;
 justify-content:center;
 }
-
 .logo{
 font-size:20px;
 }
-
 .nav{
 order:3;
 width:100%;
@@ -697,72 +581,60 @@ justify-content:center;
 height:38px;
 gap:20px;
 }
-
 .nav a{
 padding:7px 0;
 font-size:13px;
 }
-
 .contact{
 display:none;
 }
-
 main{
 padding:10px;
 }
-
-
 /* HERO */
-
 .hero{
 min-height:150px;
 margin-bottom:15px;
 }
-
 .hero-content{
 padding:25px 15px;
 }
-
 .hero-content h1{
 font-size:25px;
 }
-
 .hero-content p{
 font-size:14px;
 }
-
-
-/* ANNOUNCEMENT */
-
+/* ANNOUNCEMENT MOBILE */
 .announcement{
 margin-bottom:15px;
+border-radius:12px;
 }
-
-.announcement-inner{
-grid-template-columns:1fr;
+.announcement-image{
+width:100%;
+height:auto;
+max-height:none;
+object-fit:contain;
+background:#eef1f4;
 }
-
-.announcement-image,
 .announcement-no-image{
-height:180px;
-min-height:180px;
+height:220px;
+min-height:220px;
 }
-
 .announcement-content{
-padding:20px;
+padding:18px 15px 22px;
 }
-
 .announcement-content h2{
 font-size:20px;
 }
-
 .announcement-content p{
 font-size:13px;
+line-height:1.7;
 }
-
-
+.announcement-button{
+padding:10px 22px;
+}
 /* CATEGORY */
-
 .mobile-category-toggle{
 display:flex;
 align-items:center;
@@ -780,19 +652,14 @@ padding:0 15px;
 cursor:pointer;
 margin-bottom:10px;
 }
-
 .mobile-category-toggle .hamburger{
 font-size:24px;
 line-height:1;
 }
-
-
 /* SIDEBAR */
-
 .catalog-layout{
 display:block;
 }
-
 .sidebar{
 display:block;
 position:fixed;
@@ -807,18 +674,13 @@ padding:25px 15px;
 transition:right .25s ease;
 box-shadow:-5px 0 25px #0003;
 }
-
 .sidebar.mobile-open{
 right:0;
 }
-
 .products-area{
 width:100%;
 }
-
-
 /* OVERLAY */
-
 .category-overlay{
 display:none;
 position:fixed;
@@ -826,760 +688,477 @@ inset:0;
 background:#0007;
 z-index:9997;
 }
-
 .category-overlay.show{
 display:block;
 }
-
-
 /* PRODUCTS */
-
 .grid{
 grid-template-columns:repeat(2,minmax(0,1fr));
 gap:9px;
 }
-
 .image-wrap{
 height:135px;
 }
-
 .card{
 border-radius:10px;
 }
-
 .card-body{
 padding:8px;
 }
-
 .card h3{
 font-size:14px;
 }
-
 .description{
 font-size:11px;
 height:35px;
 }
-
 .price{
 font-size:16px;
 }
-
 .price span{
 font-size:11px;
 }
-
-
 /* SEARCH */
-
 .toolbar{
 grid-template-columns:1fr;
 gap:8px;
 }
-
 .sort,
 .search-box,
 .all-products{
 width:100%;
 }
-
 .services{
 grid-template-columns:repeat(2,1fr);
 padding:14px 5px;
 gap:10px;
 }
-
 .service{
 border-left:0;
 }
-
 .service h3{
 font-size:13px;
 }
-
 .service p{
 font-size:10px;
 }
-
 }
-
-
 /* SMALL PHONE */
-
 @media(max-width:480px){
-
 .hero{
 min-height:145px;
 }
-
 .hero-content h1{
 font-size:22px;
 }
-
 .hero-content p{
 font-size:13px;
 }
-
 .grid{
 grid-template-columns:1fr 1fr;
 gap:8px;
 }
-
 .image-wrap{
 height:125px;
 }
-
 .card h3{
 font-size:13px;
 }
-
 .description{
 font-size:10px;
 }
-
 .price{
 font-size:15px;
 }
-
 .services{
 grid-template-columns:1fr 1fr;
 }
-
 }
-
-
 /* VERY SMALL */
-
 @media(max-width:360px){
-
 .grid{
 grid-template-columns:1fr;
 }
-
 .image-wrap{
 height:190px;
 }
-
+.announcement-image{
+width:100%;
+height:auto;
 }
-
+.image-wrap{
+height:190px;
+}
+}
 </style>
-
 </head>
-
 <body>
-
-
 <header>
-
 <div class="header">
-
 <div class="logo">
-
 شركة بيت المراتب للمفروشات
-
 <small>راحة تدوم</small>
-
 </div>
-
-
 <nav class="nav">
-
 <a href="#" class="active">
 الرئيسية
 </a>
-
 <a href="#products">
 المنتجات
 </a>
-
 <a href="#">
 من نحن
 </a>
-
 <a href="#contact">
 تواصل معنا
 </a>
-
 </nav>
-
-
 <div class="contact">
-
 <a href="tel:920012345">
 ☎ 9200 12345
 </a>
-
 <a
 href="https://wa.me/966546510165"
 target="_blank">
-
 ◉ تواصل واتساب
-
 </a>
-
 </div>
-
 </div>
-
 </header>
-
-
 <main>
-
-
 <!-- HERO -->
-
 <section class="hero">
-
 <div class="hero-content">
-
 <h1>
 كتالوج منتجاتنا
 </h1>
-
 <p>
-
 تصفح مجموعة متنوعة من المراتب والبطاطين والسجاد
-
 <br>
-
 بأفضل الأسعار وبجودة عالية
-
 </p>
-
 </div>
-
 </section>
-
-
 <!-- =====================================================
      ANNOUNCEMENT
 ===================================================== -->
-
 <section
 class="announcement"
 id="announcement">
-
 <div class="announcement-inner">
-
-
 <div id="announcementImageBox">
-
 </div>
-
-
 <div class="announcement-content">
-
 <div class="announcement-label">
-
 📢 إعلان
-
 </div>
-
-
 <h2 id="announcementTitle">
 </h2>
-
-
 <p id="announcementDescription">
 </p>
-
-
 <div id="announcementButtonBox">
 </div>
-
-
 </div>
-
 </div>
-
 </section>
-
-
 <!-- MOBILE CATEGORY -->
-
 <button
 id="mobileCategoryToggle"
 class="mobile-category-toggle">
-
 <span>
 التصنيفات
 </span>
-
 <span class="hamburger">
 ☰
 </span>
-
 </button>
-
-
 <div
 class="category-overlay"
 id="categoryOverlay">
 </div>
-
-
 <!-- CATALOG -->
-
 <div
 class="catalog-layout"
 id="products">
-
-
 <aside
 class="sidebar"
 id="sidebar">
-
 <h2>
 التصنيفات
 </h2>
-
-
 <div
 class="category-list"
 id="categoryList">
-
 <button
 class="category-btn active"
 data-category="">
-
 كل المنتجات
-
 <span>
 ⌂
 </span>
-
 </button>
-
 </div>
-
-
 <div class="help-box">
-
 <h3>
 تحتاج مساعدة؟
 </h3>
-
 <p>
 فريقنا جاهز لخدمتك
 </p>
-
 <a
 class="help-btn"
 href="https://wa.me/966546510165"
 target="_blank">
-
 تواصل معنا
-
 </a>
-
 </div>
-
 </aside>
-
-
 <section class="products-area">
-
-
 <div class="toolbar">
-
-
 <select
 id="sort"
 class="sort">
-
 <option value="newest">
 الأحدث
 </option>
-
 <option value="name">
 الاسم
 </option>
-
 <option value="price-low">
 السعر الأقل
 </option>
-
 <option value="price-high">
 السعر الأعلى
 </option>
-
 </select>
-
-
 <div class="search-box">
-
 <input
 id="search"
 type="search"
 placeholder="ابحث عن منتج بالاسم أو الكود ...">
-
 <button
 id="searchBtn"
 class="search-btn">
-
 ⌕
-
 </button>
-
 </div>
-
-
 <button
 id="allProducts"
 class="all-products">
-
 كل المنتجات　▦
-
 </button>
-
 </div>
-
-
 <div
 id="status"
 class="status">
-
 جاري تحميل المنتجات...
-
 </div>
-
-
 <div
 id="errorBox"
 class="empty"
 style="display:none">
-
 </div>
-
-
 <div
 id="grid"
 class="grid">
-
 </div>
-
-
 </section>
-
 </div>
-
-
 <!-- SERVICES -->
-
 <section class="services">
-
-
 <div class="service">
-
 <div class="service-icon">
 🏷
 </div>
-
 <h3>
 أسعار تنافسية
 </h3>
-
 <p>
 أفضل الأسعار في السوق
 </p>
-
 </div>
-
-
 <div class="service">
-
 <div class="service-icon">
 🏅
 </div>
-
 <h3>
 جودة عالية
 </h3>
-
 <p>
 منتجات مختارة بعناية
 </p>
-
 </div>
-
-
 <div class="service">
-
 <div class="service-icon">
 🚚
 </div>
-
 <h3>
 شحن سريع
 </h3>
-
 <p>
 إلى جميع مناطق المملكة
 </p>
-
 </div>
-
-
 <div class="service">
-
 <div class="service-icon">
 ♧
 </div>
-
 <h3>
 خدمة عملاء مميزة
 </h3>
-
 <p>
 نحن هنا لخدمتك
 </p>
-
 </div>
-
-
 </section>
-
-
 </main>
-
-
 <footer id="contact">
-
 <p>
-
 جميع الحقوق محفوظة ©️ 2026 بيت المراتب
-
 </p>
-
 </footer>
-
-
 <!-- PRODUCT MODAL -->
-
 <div
 class="product-modal"
 id="productModal">
-
-
 <div class="modal-box">
-
-
 <button
 class="modal-close"
 id="modalClose">
-
 ×
-
 </button>
-
-
 <div
 id="modalContent">
 </div>
-
-
 </div>
-
 </div>
-
-
 <!-- SUPABASE -->
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-
 <script>
-
 /* =====================================================
    SUPABASE
 ===================================================== */
-
 const SUPABASE_URL =
 "https://wmiszhoahvfsbmedjrbm.supabase.co";
-
 const SUPABASE_PUBLISHABLE_KEY =
 "sb_publishable_fFclLm6Z2fdUTYxD_AAC5w_icPdd_n5";
-
 const db =
 supabase.createClient(
 SUPABASE_URL,
 SUPABASE_PUBLISHABLE_KEY
 );
-
-
 /* =====================================================
    VARIABLES
 ===================================================== */
-
 let products = [];
-
 let ads = [];
-
 let selectedCategory = "";
-
 let currentSearch = "";
-
-
 const grid =
 document.getElementById("grid");
-
 const status =
 document.getElementById("status");
-
 const search =
 document.getElementById("search");
-
 const searchBtn =
 document.getElementById("searchBtn");
-
 const sort =
 document.getElementById("sort");
-
 const categoryList =
 document.getElementById("categoryList");
-
 const errorBox =
 document.getElementById("errorBox");
-
 const sidebar =
 document.getElementById("sidebar");
-
 const mobileCategoryToggle =
 document.getElementById(
 "mobileCategoryToggle"
 );
-
 const categoryOverlay =
 document.getElementById(
 "categoryOverlay"
 );
-
 const productModal =
 document.getElementById(
 "productModal"
 );
-
 const modalContent =
 document.getElementById(
 "modalContent"
 );
-
 const modalClose =
 document.getElementById(
 "modalClose"
 );
-
-
 /* =====================================================
    حماية النصوص
 ===================================================== */
-
 function esc(value){
-
 return String(
 value ?? ""
 )
 .replace(
 /[&<>"']/g,
 function(m){
-
 return {
-
 "&":"&amp;",
 "<":"&lt;",
 ">":"&gt;",
 '"':"&quot;",
 "'":"&#039;"
-
 }[m];
-
 }
 );
-
 }
-
-
 /* =====================================================
    تحميل المنتجات
 ===================================================== */
-
 async function loadProducts(){
-
 status.textContent =
 "جاري تحميل المنتجات...";
-
-
 try{
-
 const result =
 await db
 .from("products")
 .select("*");
-
-
 console.log(
 "PRODUCT RESULT:",
 result
 );
-
-
 if(result.error){
-
 status.textContent =
 "تعذر تحميل المنتجات";
-
 errorBox.style.display =
 "block";
-
 errorBox.innerHTML =
 "خطأ Supabase:<br>" +
 esc(
 result.error.message
 );
-
 return;
-
 }
-
-
 products =
 result.data || [];
-
-
 buildCategories();
-
 renderProducts();
-
-
 }catch(error){
-
 console.error(error);
-
 status.textContent =
 "حدث خطأ أثناء تحميل المنتجات";
-
 errorBox.style.display =
 "block";
-
 errorBox.innerHTML =
 "خطأ JavaScript:<br>" +
 esc(
 error.message
 );
-
 }
-
 }
-
-
 /* =====================================================
    تحميل الإعلانات
 ===================================================== */
-
 async function loadAds(){
-
 try{
-
 const result =
 await db
 .from("ads")
@@ -1600,91 +1179,60 @@ ascending:true
 ascending:false
 }
 );
-
-
 console.log(
 "ADS RESULT:",
 result
 );
-
-
 if(result.error){
-
 console.error(
 "خطأ تحميل الإعلانات:",
 result.error
 );
-
 document
 .getElementById(
 "announcement"
 )
 .style.display =
 "none";
-
 return;
-
 }
-
-
 ads =
 result.data || [];
-
-
 if(!ads.length){
-
 document
 .getElementById(
 "announcement"
 )
 .style.display =
 "none";
-
 return;
-
 }
-
-
 /*
    عرض أول إعلان فعال
 */
-
 const ad =
 ads[0];
-
-
 /* العنوان */
-
 document
 .getElementById(
 "announcementTitle"
 )
 .textContent =
 ad.title || "";
-
-
 /* الوصف */
-
 document
 .getElementById(
 "announcementDescription"
 )
 .textContent =
 ad.description || "";
-
-
 /* الصورة */
-
 const imageBox =
 document.getElementById(
 "announcementImageBox"
 );
-
-
 if(ad.image_url){
-
 imageBox.innerHTML = `
-
 <img
 class="announcement-image"
 src="${esc(ad.image_url)}"
@@ -1692,39 +1240,24 @@ alt="${esc(
 ad.title ||
 "إعلان"
 )}">
-
 `;
-
 }else{
-
 imageBox.innerHTML = `
-
 <div class="announcement-no-image">
-
 📢
-
 </div>
-
 `;
-
 }
-
-
 /* الزر */
-
 const buttonBox =
 document.getElementById(
 "announcementButtonBox"
 );
-
-
 if(
 ad.button_url &&
 ad.button_url.trim()
 ){
-
 buttonBox.innerHTML = `
-
 <a
 class="announcement-button"
 href="${esc(
@@ -1732,60 +1265,38 @@ ad.button_url
 )}"
 target="_blank"
 rel="noopener noreferrer">
-
 ${esc(
 ad.button_text ||
 "اعرف المزيد"
 )}
-
 </a>
-
 `;
-
 }else{
-
 buttonBox.innerHTML = "";
-
 }
-
-
 /* إظهار الإعلان */
-
 document
 .getElementById(
 "announcement"
 )
 .style.display =
 "block";
-
-
 }catch(error){
-
 console.error(
 "خطأ JavaScript في الإعلانات:",
 error
 );
-
 }
-
 }
-
-
 /* =====================================================
    التصنيفات
 ===================================================== */
-
 function buildCategories(){
-
 categoryList.innerHTML = "";
-
-
 const all =
 document.createElement(
 "button"
 );
-
-
 all.className =
 "category-btn " +
 (
@@ -1795,21 +1306,13 @@ selectedCategory === ""
 :
 ""
 );
-
-
 all.dataset.category =
 "";
-
-
 all.innerHTML =
 "كل المنتجات <span>⌂</span>";
-
-
 categoryList.appendChild(
 all
 );
-
-
 const categories =
 [
 ...new Set(
@@ -1821,17 +1324,12 @@ p.category
 .filter(Boolean)
 )
 ];
-
-
 categories.forEach(
 function(cat){
-
 const button =
 document.createElement(
 "button"
 );
-
-
 button.className =
 "category-btn " +
 (
@@ -1841,91 +1339,55 @@ selectedCategory === cat
 :
 ""
 );
-
-
 button.dataset.category =
 cat;
-
-
 button.innerHTML =
 `
-
 ${esc(cat)}
-
 <span>
 ▣
 </span>
-
 `;
-
-
 categoryList.appendChild(
 button
 );
-
 });
-
 }
-
-
 /* =====================================================
    عرض المنتجات
 ===================================================== */
-
 function renderProducts(){
-
 let result =
 [...products];
-
-
 /* التصنيف */
-
 if(selectedCategory){
-
 result =
 result.filter(
 p =>
 p.category ===
 selectedCategory
 );
-
 }
-
-
 /* البحث */
-
 if(currentSearch){
-
 const q =
 currentSearch.toLowerCase();
-
-
 result =
 result.filter(
 function(p){
-
 return [
-
 p.name,
 p.code,
 p.description,
 p.category
-
 ]
-
 .join(" ")
 .toLowerCase()
 .includes(q);
-
 });
-
 }
-
-
 /* الترتيب */
-
 if(sort.value === "name"){
-
 result.sort(
 (a,b) =>
 String(
@@ -1938,12 +1400,8 @@ b.name || ""
 "ar"
 )
 );
-
 }
-
-
 if(sort.value === "price-low"){
-
 result.sort(
 (a,b) =>
 Number(
@@ -1954,12 +1412,8 @@ Number(
 b.price || 0
 )
 );
-
 }
-
-
 if(sort.value === "price-high"){
-
 result.sort(
 (a,b) =>
 Number(
@@ -1970,12 +1424,8 @@ Number(
 a.price || 0
 )
 );
-
 }
-
-
 if(sort.value === "newest"){
-
 result.sort(
 (a,b) =>
 Number(
@@ -1986,53 +1436,31 @@ Number(
 a.id || 0
 )
 );
-
 }
-
-
 status.textContent =
 "عدد المنتجات: " +
 result.length;
-
-
 if(!result.length){
-
 grid.innerHTML = `
-
 <div class="empty">
-
 لا توجد منتجات مطابقة للبحث
-
 </div>
-
 `;
-
 return;
-
 }
-
-
 grid.innerHTML =
 result
 .map(
 function(p){
-
 return `
-
 <article
 class="card"
 data-id="${esc(p.id)}">
-
-
 <div class="image-wrap">
-
-
 ${
 p.image_url
 ?
-
 `
-
 <img
 class="product-image"
 src="${esc(
@@ -2042,24 +1470,14 @@ alt="${esc(
 p.name
 )}"
 loading="lazy">
-
 `
-
 :
-
 `
-
 <div class="no-image">
-
 لا توجد صورة
-
 </div>
-
 `
-
 }
-
-
 <span
 class="badge ${
 p.available
@@ -2068,7 +1486,6 @@ p.available
 :
 "unavailable"
 }">
-
 ${
 p.available
 ?
@@ -2076,309 +1493,186 @@ p.available
 :
 "غير متوفر"
 }
-
 </span>
-
-
 </div>
-
-
 <div class="card-body">
-
-
 <div class="code">
-
 ${esc(
 p.code ||
 ""
 )}
-
 </div>
-
-
 <h3>
-
 ${esc(
 p.name ||
 ""
 )}
-
 </h3>
-
-
 <div class="description">
-
 ${esc(
 p.description ||
 ""
 )}
-
 </div>
-
-
 ${
 p.price !== null &&
 p.price !== undefined &&
 p.price !== ""
 ?
-
 `
-
 <div class="price">
-
 ${Number(
 p.price
 )
 .toLocaleString(
 "ar-SA"
 )}
-
 <span>
-
 ريال
-
 </span>
-
 </div>
-
 `
-
 :
-
 ""
-
 }
-
-
 </div>
-
 </article>
-
 `;
-
 })
 .join("");
-
 }
-
-
 /* =====================================================
    البحث
 ===================================================== */
-
 function doSearch(){
-
 currentSearch =
 search.value.trim();
-
 renderProducts();
-
 }
-
-
 searchBtn.onclick =
 doSearch;
-
-
 search.addEventListener(
 "keydown",
 function(e){
-
 if(e.key === "Enter"){
-
 doSearch();
-
 }
-
 });
-
-
 search.addEventListener(
 "input",
 function(){
-
 currentSearch =
 search.value.trim();
-
 renderProducts();
-
 });
-
-
 /* =====================================================
    الترتيب
 ===================================================== */
-
 sort.onchange =
 renderProducts;
-
-
 /* =====================================================
    التصنيفات
 ===================================================== */
-
 categoryList.addEventListener(
 "click",
 function(e){
-
 const button =
 e.target.closest(
 ".category-btn"
 );
-
-
 if(!button)
 return;
-
-
 selectedCategory =
 button.dataset.category ||
 "";
-
-
 buildCategories();
-
 renderProducts();
-
 closeMobileCategories();
-
 });
-
-
 /* =====================================================
    كل المنتجات
 ===================================================== */
-
 document
 .getElementById(
 "allProducts"
 )
 .onclick =
 function(){
-
 selectedCategory =
 "";
-
 currentSearch =
 "";
-
 search.value =
 "";
-
 buildCategories();
-
 renderProducts();
-
 };
-
-
 /* =====================================================
    القائمة الجانبية
 ===================================================== */
-
 function openMobileCategories(){
-
 sidebar.classList.add(
 "mobile-open"
 );
-
 categoryOverlay.classList.add(
 "show"
 );
-
 }
-
-
 function closeMobileCategories(){
-
 sidebar.classList.remove(
 "mobile-open"
 );
-
 categoryOverlay.classList.remove(
 "show"
 );
-
 }
-
-
 mobileCategoryToggle.onclick =
 function(){
-
 if(
 sidebar.classList.contains(
 "mobile-open"
 )
 ){
-
 closeMobileCategories();
-
 }else{
-
 openMobileCategories();
-
 }
-
 };
-
-
 categoryOverlay.onclick =
 closeMobileCategories;
-
-
 /* =====================================================
    فتح صفحة المنتج
 ===================================================== */
-
 grid.addEventListener(
 "click",
 function(e){
-
 const card =
 e.target.closest(
 ".card"
 );
-
-
 if(!card)
 return;
-
-
 const id =
 card.dataset.id;
-
-
 const product =
 products.find(
 p =>
 String(p.id) ===
 String(id)
 );
-
-
 if(!product)
 return;
-
-
 openProduct(product);
-
 });
-
-
 /* =====================================================
    تفاصيل المنتج
 ===================================================== */
-
 function openProduct(p){
-
 modalContent.innerHTML = `
-
 ${
 p.image_url
 ?
-
 `
-
 <img
 class="modal-image"
 src="${esc(
@@ -2387,137 +1681,82 @@ p.image_url
 alt="${esc(
 p.name
 )}">
-
 `
-
 :
-
 `
-
 <div
 class="no-image"
 style="height:300px">
-
 لا توجد صورة
-
 </div>
-
 `
-
 }
-
-
 <h2 class="modal-title">
-
 ${esc(
 p.name ||
 ""
 )}
-
 </h2>
-
-
 ${
 p.code
 ?
-
 `
-
 <div class="modal-code">
-
 كود المنتج:
 ${esc(
 p.code
 )}
-
 </div>
-
 `
-
 :
-
 ""
-
 }
-
-
 ${
 p.category
 ?
-
 `
-
 <div class="modal-category">
-
 التصنيف:
 ${esc(
 p.category
 )}
-
 </div>
-
 `
-
 :
-
 ""
-
 }
-
-
 ${
 p.description
 ?
-
 `
-
 <div class="modal-description">
-
 ${esc(
 p.description
 )}
-
 </div>
-
 `
-
 :
-
 ""
-
 }
-
-
 ${
 p.price !== null &&
 p.price !== undefined &&
 p.price !== ""
 ?
-
 `
-
 <div class="modal-price">
-
 ${Number(
 p.price
 )
 .toLocaleString(
 "ar-SA"
 )}
-
 ريال
-
 </div>
-
 `
-
 :
-
 ""
-
 }
-
-
 <span
 class="badge ${
 p.available
@@ -2530,7 +1769,6 @@ style="
 position:static;
 display:inline-block;
 ">
-
 ${
 p.available
 ?
@@ -2538,78 +1776,46 @@ p.available
 :
 "غير متوفر"
 }
-
 </span>
-
 `;
-
 productModal.classList.add(
 "show"
 );
-
 document.body.style.overflow =
 "hidden";
-
 }
-
-
 /* =====================================================
    إغلاق صفحة المنتج
 ===================================================== */
-
 function closeProduct(){
-
 productModal.classList.remove(
 "show"
 );
-
 document.body.style.overflow =
 "";
-
 }
-
-
 modalClose.onclick =
 closeProduct;
-
-
 productModal.addEventListener(
 "click",
 function(e){
-
 if(e.target === productModal){
-
 closeProduct();
-
 }
-
 });
-
-
 document.addEventListener(
 "keydown",
 function(e){
-
 if(e.key === "Escape"){
-
 closeProduct();
-
 closeMobileCategories();
-
 }
-
 });
-
-
 /* =====================================================
    التشغيل
 ===================================================== */
-
 loadProducts();
-
 loadAds();
-
 </script>
-
 </body>
 </html>
