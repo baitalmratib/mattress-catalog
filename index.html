@@ -109,39 +109,437 @@ padding:20px 30px 30px;
 
 
 /* =====================================================
-   HERO
+   PREMIUM HERO
 ===================================================== */
 
 .hero{
-min-height:190px;
-background:linear-gradient(135deg,#ffffff,#edf4fb);
-border-radius:15px;
+position:relative;
+min-height:350px;
+background:
+radial-gradient(circle at 15% 25%,#2b6cae55 0,transparent 28%),
+radial-gradient(circle at 85% 70%,#0b6aa855 0,transparent 30%),
+linear-gradient(135deg,#031a35,#062f5e 55%,#0a477d);
+border-radius:18px;
 overflow:hidden;
 margin-bottom:22px;
+border:1px solid #164a78;
+box-shadow:
+0 10px 30px #00000020,
+inset 0 1px 0 #ffffff18;
 display:flex;
 align-items:center;
 justify-content:center;
-box-shadow:0 2px 12px #0000000b;
-border:1px solid #e5e7eb;
 }
+
+
+/* الإضاءة */
+
+.hero::before{
+content:"";
+position:absolute;
+width:520px;
+height:520px;
+border-radius:50%;
+background:#ffffff0b;
+top:-280px;
+left:-100px;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+width:450px;
+height:450px;
+border-radius:50%;
+background:#ffffff08;
+bottom:-280px;
+right:-100px;
+}
+
+
+/* المحتوى */
 
 .hero-content{
+position:relative;
+z-index:20;
 width:100%;
-padding:35px 60px;
 text-align:center;
+padding:50px 20px 90px;
 }
 
+
+/* اسم الشركة */
+
 .hero-content h1{
-margin:0 0 12px;
-font-size:34px;
-color:#06254d;
+margin:0;
+color:#fff;
+font-size:40px;
+font-weight:900;
+letter-spacing:.2px;
+text-shadow:0 3px 15px #00000055;
 }
+
+
+/* الخط الذهبي */
+
+.hero-content h1::after{
+content:"";
+display:block;
+width:100px;
+height:3px;
+margin:14px auto 12px;
+background:linear-gradient(
+90deg,
+transparent,
+#d9b76c,
+transparent
+);
+border-radius:20px;
+}
+
+
+/* الوصف */
 
 .hero-content p{
 margin:0;
+color:#edf5fc;
 font-size:17px;
-line-height:1.8;
-color:#344054;
+line-height:1.9;
+text-shadow:0 2px 7px #00000040;
+}
+
+
+/* =====================================================
+   HERO - RUG
+===================================================== */
+
+.hero-rug{
+position:absolute;
+bottom:15px;
+left:50%;
+transform:translateX(-50%);
+width:420px;
+height:78px;
+background:
+repeating-linear-gradient(
+90deg,
+#7d9bb5 0 8px,
+#6687a5 8px 16px
+);
+border-radius:50%;
+opacity:.85;
+box-shadow:
+0 18px 30px #00000055;
+z-index:2;
+}
+
+.hero-rug::before{
+content:"";
+position:absolute;
+inset:12px 30px;
+border:2px solid #d2b36c66;
+border-radius:50%;
+}
+
+.hero-rug::after{
+content:"";
+position:absolute;
+inset:22px 65px;
+border:1px solid #d2b36c55;
+border-radius:50%;
+}
+
+
+/* =====================================================
+   HERO - BED
+===================================================== */
+
+.hero-bed{
+position:absolute;
+z-index:8;
+left:50%;
+bottom:48px;
+transform:translateX(-50%);
+width:280px;
+height:125px;
+}
+
+
+/* ظهر السرير */
+
+.hero-headboard{
+position:absolute;
+top:0;
+left:30px;
+width:220px;
+height:75px;
+border-radius:16px 16px 5px 5px;
+background:
+linear-gradient(
+180deg,
+#244f75,
+#163b5e
+);
+box-shadow:
+0 7px 15px #00000045,
+inset 0 1px #ffffff15;
+}
+
+
+/* إطار السرير */
+
+.hero-frame{
+position:absolute;
+left:15px;
+right:15px;
+bottom:18px;
+height:65px;
+border-radius:8px 8px 15px 15px;
+background:
+linear-gradient(
+180deg,
+#173f62,
+#0c2d4d
+);
+box-shadow:
+0 8px 15px #00000050;
+}
+
+
+/* المرتبة */
+
+.hero-mattress{
+position:absolute;
+left:32px;
+right:32px;
+bottom:48px;
+height:48px;
+border-radius:9px;
+background:
+linear-gradient(
+180deg,
+#ffffff,
+#dce8f1
+);
+box-shadow:
+0 6px 10px #00000030,
+inset 0 -5px 0 #c8d8e5;
+}
+
+
+/* المفارش */
+
+.hero-sheet{
+position:absolute;
+left:45px;
+right:40px;
+bottom:37px;
+height:43px;
+border-radius:5px 5px 12px 12px;
+background:
+linear-gradient(
+135deg,
+#f5f8fb,
+#c7d8e6
+);
+z-index:3;
+}
+
+
+/* المخدة الأولى */
+
+.hero-pillow.one{
+position:absolute;
+z-index:5;
+width:70px;
+height:27px;
+border-radius:14px;
+background:linear-gradient(
+180deg,
+#ffffff,
+#dbe6ee
+);
+top:43px;
+left:63px;
+transform:rotate(-3deg);
+box-shadow:0 3px 6px #00000025;
+}
+
+
+/* المخدة الثانية */
+
+.hero-pillow.two{
+position:absolute;
+z-index:5;
+width:65px;
+height:25px;
+border-radius:14px;
+background:linear-gradient(
+180deg,
+#ffffff,
+#d5e2ec
+);
+top:45px;
+right:63px;
+transform:rotate(3deg);
+box-shadow:0 3px 6px #00000025;
+}
+
+
+/* أرجل السرير */
+
+.hero-leg{
+position:absolute;
+bottom:0;
+width:12px;
+height:25px;
+background:#0a243d;
+border-radius:0 0 4px 4px;
+z-index:1;
+}
+
+.hero-leg.left{
+left:30px;
+}
+
+.hero-leg.right{
+right:30px;
+}
+
+
+/* =====================================================
+   HERO - BLANKETS
+===================================================== */
+
+.hero-blanket{
+position:absolute;
+z-index:6;
+width:100px;
+height:50px;
+border-radius:7px;
+background:
+repeating-linear-gradient(
+135deg,
+#d8e4ec 0 8px,
+#b6cad9 8px 16px
+);
+box-shadow:
+0 7px 12px #00000035;
+}
+
+
+/* بطانية يمين */
+
+.hero-blanket.right{
+right:12%;
+bottom:92px;
+transform:rotate(8deg);
+}
+
+
+/* بطانية يسار */
+
+.hero-blanket.left{
+left:12%;
+bottom:82px;
+transform:rotate(-10deg);
+}
+
+
+/* =====================================================
+   HERO - CARPET ROLLS
+===================================================== */
+
+.hero-carpet{
+position:absolute;
+z-index:5;
+width:105px;
+height:35px;
+border-radius:8px;
+background:
+repeating-linear-gradient(
+90deg,
+#c0a46b 0 7px,
+#8d7345 7px 14px
+);
+box-shadow:
+0 7px 12px #00000035;
+}
+
+.hero-carpet.left{
+left:5%;
+bottom:38px;
+transform:rotate(-7deg);
+}
+
+.hero-carpet.right{
+right:5%;
+bottom:38px;
+transform:rotate(7deg);
+}
+
+
+/* نهايات السجاد */
+
+.hero-carpet::after{
+content:"";
+position:absolute;
+width:27px;
+height:27px;
+border-radius:50%;
+top:4px;
+right:7px;
+background:#6f5835;
+box-shadow:
+inset 0 0 0 5px #b99b60;
+}
+
+
+/* =====================================================
+   HERO - DECORATIVE CARDS
+===================================================== */
+
+.hero-item{
+position:absolute;
+z-index:10;
+width:115px;
+padding:10px 8px;
+border-radius:13px;
+background:#ffffff12;
+border:1px solid #ffffff18;
+backdrop-filter:blur(6px);
+-webkit-backdrop-filter:blur(6px);
+text-align:center;
+color:#fff;
+box-shadow:0 8px 20px #00000020;
+}
+
+.hero-item-icon{
+font-size:28px;
+display:block;
+margin-bottom:3px;
+}
+
+.hero-item-text{
+font-size:11px;
+font-weight:bold;
+color:#eaf3fa;
+}
+
+
+/* يمين */
+
+.hero-item.right{
+right:4%;
+top:35px;
+}
+
+
+/* يسار */
+
+.hero-item.left{
+left:4%;
+top:35px;
 }
 
 
@@ -170,9 +568,6 @@ width:100%;
 height:100%;
 }
 
-
-/* الصورة كخلفية كاملة */
-
 #announcementImageBox{
 position:absolute;
 inset:0;
@@ -187,9 +582,6 @@ display:block;
 object-fit:cover;
 object-position:center;
 }
-
-
-/* طبقة التدرج فوق الصورة */
 
 .announcement-inner::after{
 content:"";
@@ -207,9 +599,6 @@ z-index:1;
 pointer-events:none;
 }
 
-
-/* المحتوى فوق الصورة */
-
 .announcement-content{
 position:absolute;
 z-index:2;
@@ -226,9 +615,6 @@ text-align:right;
 color:#fff;
 }
 
-
-/* كلمة إعلان */
-
 .announcement-label{
 display:inline-flex;
 align-items:center;
@@ -243,9 +629,6 @@ margin-bottom:12px;
 box-shadow:0 4px 12px #00000025;
 }
 
-
-/* العنوان */
-
 .announcement-content h2{
 margin:0 0 10px;
 font-size:34px;
@@ -256,9 +639,6 @@ text-shadow:0 2px 8px #00000040;
 max-width:600px;
 }
 
-
-/* الوصف */
-
 .announcement-content p{
 margin:0 0 20px;
 font-size:16px;
@@ -267,9 +647,6 @@ color:#f2f5f8;
 max-width:600px;
 text-shadow:0 1px 5px #00000035;
 }
-
-
-/* الزر */
 
 .announcement-button{
 display:inline-flex;
@@ -291,9 +668,6 @@ transition:.2s;
 transform:translateY(-2px);
 box-shadow:0 8px 22px #00000035;
 }
-
-
-/* بدون صورة */
 
 .announcement-no-image{
 width:100%;
@@ -763,6 +1137,10 @@ height:170px;
 height:340px;
 }
 
+.hero{
+min-height:370px;
+}
+
 }
 
 
@@ -796,6 +1174,30 @@ padding:35px 40px;
 
 .announcement-content h2{
 font-size:29px;
+}
+
+.hero{
+min-height:330px;
+}
+
+.hero-item{
+transform:scale(.9);
+}
+
+.hero-item.right{
+right:2%;
+}
+
+.hero-item.left{
+left:2%;
+}
+
+.hero-blanket.right{
+right:7%;
+}
+
+.hero-blanket.left{
+left:7%;
 }
 
 }
@@ -844,23 +1246,92 @@ padding:10px;
 }
 
 
-/* HERO */
+/* =====================================================
+   HERO MOBILE
+===================================================== */
 
 .hero{
-min-height:150px;
+min-height:310px;
 margin-bottom:15px;
+border-radius:14px;
 }
 
 .hero-content{
-padding:25px 15px;
+padding:35px 15px 90px;
 }
 
 .hero-content h1{
 font-size:25px;
+line-height:1.5;
 }
 
 .hero-content p{
-font-size:14px;
+font-size:13px;
+line-height:1.8;
+}
+
+.hero-rug{
+width:260px;
+height:55px;
+bottom:13px;
+}
+
+.hero-bed{
+transform:translateX(-50%) scale(.72);
+bottom:27px;
+}
+
+.hero-blanket{
+width:75px;
+height:38px;
+}
+
+.hero-blanket.right{
+right:3%;
+bottom:73px;
+}
+
+.hero-blanket.left{
+left:3%;
+bottom:68px;
+}
+
+.hero-carpet{
+width:72px;
+height:28px;
+}
+
+.hero-carpet.left{
+left:2%;
+bottom:30px;
+}
+
+.hero-carpet.right{
+right:2%;
+bottom:30px;
+}
+
+.hero-item{
+width:88px;
+padding:7px 5px;
+}
+
+.hero-item-icon{
+font-size:21px;
+}
+
+.hero-item-text{
+font-size:9px;
+}
+
+.hero-item.right{
+right:3%;
+top:18px;
+}
+
+.hero-item.left{
+left:3%;
+top:18px;
 }
 
 
@@ -1065,7 +1536,7 @@ font-size:10px;
 @media(max-width:480px){
 
 .hero{
-min-height:145px;
+min-height:290px;
 }
 
 .hero-content h1{
@@ -1073,7 +1544,29 @@ font-size:22px;
 }
 
 .hero-content p{
-font-size:13px;
+font-size:12px;
+}
+
+.hero-item{
+width:78px;
+}
+
+.hero-item-icon{
+font-size:19px;
+}
+
+.hero-item-text{
+font-size:8px;
+}
+
+.hero-bed{
+transform:translateX(-50%) scale(.62);
+bottom:26px;
+}
+
+.hero-rug{
+width:235px;
+height:50px;
 }
 
 
@@ -1138,6 +1631,32 @@ grid-template-columns:1fr 1fr;
 ===================================================== */
 
 @media(max-width:360px){
+
+.hero{
+min-height:280px;
+}
+
+.hero-content{
+padding-top:32px;
+}
+
+.hero-content h1{
+font-size:20px;
+}
+
+.hero-item{
+display:none;
+}
+
+.hero-bed{
+transform:translateX(-50%) scale(.56);
+bottom:25px;
+}
+
+.hero-rug{
+width:210px;
+height:45px;
+}
 
 .grid{
 grid-template-columns:1fr;
@@ -1242,28 +1761,104 @@ target="_blank">
 
 
 <!-- =====================================================
-     HERO
+     PREMIUM HERO
 ===================================================== -->
 
 <section class="hero">
 
+
+<!-- بطاقة المفروشات -->
+
+<div class="hero-item left">
+
+<span class="hero-item-icon">
+🧺
+</span>
+
+<span class="hero-item-text">
+مفارش وبطاطين
+</span>
+
+</div>
+
+
+<!-- بطاقة المراتب -->
+
+<div class="hero-item right">
+
+<span class="hero-item-icon">
+🛏️
+</span>
+
+<span class="hero-item-text">
+مراتب وسراير
+</span>
+
+</div>
+
+
+<!-- السجادة -->
+
+<div class="hero-rug"></div>
+
+
+<!-- السرير -->
+
+<div class="hero-bed">
+
+<div class="hero-headboard"></div>
+
+<div class="hero-frame"></div>
+
+<div class="hero-mattress"></div>
+
+<div class="hero-sheet"></div>
+
+<div class="hero-pillow one"></div>
+
+<div class="hero-pillow two"></div>
+
+<div class="hero-leg left"></div>
+
+<div class="hero-leg right"></div>
+
+</div>
+
+
+<!-- البطانيات -->
+
+<div class="hero-blanket left"></div>
+
+<div class="hero-blanket right"></div>
+
+
+<!-- لفائف السجاد -->
+
+<div class="hero-carpet left"></div>
+
+<div class="hero-carpet right"></div>
+
+
+<!-- النص -->
+
 <div class="hero-content">
 
 <h1>
-كتالوج منتجاتنا
+شركة بيت المراتب للمفروشات
 </h1>
 
 <p>
 
-تصفح مجموعة متنوعة من المراتب والبطاطين والسجاد
+راحة تدوم
 
 <br>
 
-بأفضل الأسعار وبجودة عالية
+مراتب • سراير • مفارش • بطاطين • سجاد
 
 </p>
 
 </div>
+
 
 </section>
 
