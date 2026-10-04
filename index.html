@@ -1,217 +1,240 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
 <title>شركة بيت المراتب للمفروشات</title>
-
 <style>
-*{box-sizing:border-box}
-
-html{scroll-behavior:smooth}
-
+/* =====================================================
+   ROOT
+===================================================== */
+:root{
+--blue:#07549b;
+--blue-dark:#063b70;
+--blue-deep:#052f5c;
+--blue-light:#eaf4ff;
+--blue-soft:#f4f9ff;
+--blue-border:#dbeaf7;
+--green:#159447;
+--red:#b52b2b;
+--text:#172b3f;
+--text-light:#5f6f7f;
+--muted:#8a98a6;
+--white:#ffffff;
+--bg:#f6f8fb;
+--shadow:0 10px 30px rgba(4,55,105,.08);
+--shadow-hover:0 18px 45px rgba(4,55,105,.14);
+}
+*{
+box-sizing:border-box;
+}
+html{
+scroll-behavior:smooth;
+}
 body{
 margin:0;
-font-family:Tahoma,Arial,sans-serif;
-background:#f8f7f4;
-color:#172536;
+font-family:Arial,Tahoma,sans-serif;
+background:var(--bg);
+color:var(--text);
 font-size:16px;
 }
-
-button,input,select{font-family:inherit}
-a{text-decoration:none;color:inherit}
-
-:root{
---navy:#071f35;
---navy2:#0d304d;
---gold:#b9975b;
---gold-light:#d8bf8b;
---cream:#f5f1e8;
---white:#fff;
---gray:#707985;
---border:#e4e5e6;
---green:#159447;
+button,
+input,
+select{
+font-family:inherit;
 }
-
-/* ================= TOP BAR ================= */
-
+a{
+text-decoration:none;
+color:inherit;
+}
+/* =====================================================
+   TOP BAR
+===================================================== */
 .topbar{
 height:38px;
-background:var(--navy);
+background:var(--blue-dark);
 color:#fff;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:13px;
+font-size:12px;
 }
-
 .topbar b{
-color:var(--gold-light);
-margin:0 5px;
+color:#fff;
+font-weight:800;
+margin:0 4px;
 }
-
-/* ================= HEADER ================= */
-
+/* =====================================================
+   HEADER
+===================================================== */
 header{
-background:#fff;
 position:sticky;
 top:0;
 z-index:5000;
-box-shadow:0 3px 20px rgba(0,0,0,.07);
-border-bottom:1px solid #eee;
+background:rgba(255,255,255,.97);
+border-bottom:1px solid var(--blue-border);
+box-shadow:
+0 4px 22px rgba(0,55,110,.08);
+backdrop-filter:blur(10px);
 }
-
 .header{
 width:min(1700px,94%);
 height:92px;
 margin:auto;
 display:grid;
-grid-template-columns:280px 1fr 390px;
+grid-template-columns:300px 1fr 410px;
 align-items:center;
-gap:35px;
+gap:30px;
 }
-
-/* LOGO */
-
+/* =====================================================
+   LOGO
+===================================================== */
 .logo{
 display:flex;
 align-items:center;
-gap:14px;
+gap:13px;
 }
-
 .logo-icon{
-width:55px;
-height:55px;
-background:var(--navy);
-color:var(--gold-light);
+width:56px;
+height:56px;
+border-radius:10px;
+background:
+linear-gradient(
+145deg,
+var(--blue),
+var(--blue-dark)
+);
+color:#fff;
 display:flex;
 align-items:center;
 justify-content:center;
 font-size:27px;
-border-radius:9px;
-box-shadow:0 7px 20px rgba(7,31,53,.16);
+box-shadow:
+0 7px 18px rgba(7,84,155,.25);
 }
-
 .logo-title{
 font-size:20px;
 font-weight:900;
-color:var(--navy);
+color:var(--blue-dark);
 white-space:nowrap;
 }
-
 .logo-title small{
 display:block;
-font-size:11px;
+font-size:10px;
 font-weight:400;
-color:#8a929a;
+color:#718091;
 margin-top:5px;
 }
-
-/* NAV */
-
+/* =====================================================
+   NAV
+===================================================== */
 .nav{
-display:flex;
-justify-content:center;
 height:100%;
-gap:5px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:4px;
 }
-
 .nav a{
-position:relative;
+height:100%;
 display:flex;
 align-items:center;
 padding:0 18px;
-font-size:15px;
+font-size:14px;
 font-weight:700;
-color:#43505d;
+color:#536272;
+position:relative;
+transition:.2s;
 }
-
 .nav a:after{
 content:"";
 position:absolute;
+height:3px;
 bottom:0;
 right:18px;
 left:18px;
-height:3px;
-background:var(--gold);
+background:var(--blue);
 transform:scaleX(0);
-transition:.25s;
+transition:.2s;
 }
-
 .nav a:hover,
 .nav a.active{
-color:var(--navy);
+color:var(--blue);
 }
-
 .nav a:hover:after,
 .nav a.active:after{
 transform:scaleX(1);
 }
-
-/* ACTIONS */
-
+/* =====================================================
+   HEADER ACTIONS
+===================================================== */
 .actions{
 display:flex;
 align-items:center;
 justify-content:flex-end;
 gap:10px;
 }
-
 .header-search{
-height:48px;
-width:270px;
-border:1px solid #dfe2e5;
-background:#fafafa;
+height:46px;
+width:275px;
 display:flex;
 align-items:center;
-padding:0 14px;
+background:#f8fbfe;
+border:1px solid var(--blue-border);
+border-radius:7px;
+overflow:hidden;
 }
-
 .header-search input{
 width:100%;
 height:100%;
 border:0;
 outline:0;
 background:transparent;
-font-size:13px;
+padding:0 14px;
+font-size:12px;
+color:var(--text);
 }
-
 .header-search button{
+width:48px;
+height:100%;
 border:0;
-background:none;
-font-size:22px;
-color:var(--navy);
+background:transparent;
+color:var(--blue);
+font-size:21px;
 cursor:pointer;
 }
-
 .whatsapp{
-height:48px;
-padding:0 20px;
-background:var(--green);
-color:#fff;
+height:46px;
+padding:0 18px;
+border-radius:7px;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:13px;
+background:var(--green);
+color:#fff;
+font-size:12px;
 font-weight:bold;
-border-radius:5px;
 }
-
-/* ================= HERO ================= */
-
+/* =====================================================
+   HERO
+===================================================== */
 .hero{
 width:min(1700px,94%);
-height:560px;
-margin:25px auto 70px;
+height:550px;
+margin:25px auto 75px;
 position:relative;
 overflow:hidden;
-background:var(--navy);
-box-shadow:0 15px 45px rgba(0,0,0,.12);
+border-radius:10px;
+background:
+linear-gradient(
+135deg,
+var(--blue-dark),
+var(--blue)
+);
+box-shadow:
+0 18px 50px rgba(0,55,110,.15);
 }
-
-.hero img{
+.hero-image{
 position:absolute;
 inset:0;
 width:100%;
@@ -219,29 +242,282 @@ height:100%;
 object-fit:cover;
 display:none;
 }
-
-.hero.has-image img{
+.hero.has-image .hero-image{
 display:block;
 }
-
-.hero:after{
-content:"";
+.hero-overlay{
 position:absolute;
 inset:0;
 background:
 linear-gradient(
 90deg,
-rgba(3,19,33,.96) 0%,
-rgba(3,19,33,.82) 30%,
-rgba(3,19,33,.38) 58%,
-rgba(3,19,33,.05) 100%
+rgba(3,43,82,.95) 0%,
+rgba(5,63,116,.78) 32%,
+rgba(5,73,130,.34) 62%,
+rgba(5,73,130,.04) 100%
 );
 }
-
 .hero-content{
 position:absolute;
 z-index:2;
-right:8%;
+right:7%;
+top:0;
+height:100%;
+width:49%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:flex-start;
+color:#fff;
+}
+.hero-small{
+font-size:14px;
+font-weight:bold;
+color:#dceeff;
+margin-bottom:17px;
+}
+.hero h1{
+font-size:53px;
+line-height:1.25;
+margin:0 0 20px;
+font-weight:900;
+}
+.hero h1 span{
+display:block;
+color:#fff;
+}
+.hero p{
+font-size:18px;
+line-height:2;
+max-width:650px;
+color:#edf6ff;
+margin:0 0 30px;
+}
+.hero-buttons{
+display:flex;
+gap:10px;
+}
+.hero-btn{
+height:52px;
+padding:0 29px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:13px;
+font-weight:bold;
+border-radius:5px;
+transition:.2s;
+}
+.hero-btn:hover{
+transform:translateY(-2px);
+}
+.hero-primary{
+background:#fff;
+color:var(--blue-dark);
+box-shadow:
+0 8px 22px rgba(0,0,0,.15);
+}
+.hero-secondary{
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.55);
+color:#fff;
+}
+/* =====================================================
+   FEATURES
+===================================================== */
+.features{
+width:min(1350px,88%);
+margin:-35px auto 80px;
+position:relative;
+z-index:5;
+background:#fff;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+border:1px solid var(--blue-border);
+box-shadow:var(--shadow);
+border-radius:9px;
+overflow:hidden;
+}
+.feature{
+min-height:110px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:15px;
+border-left:1px solid var(--blue-border);
+}
+.feature:last-child{
+border-left:0;
+}
+.feature-icon{
+width:48px;
+height:48px;
+border-radius:50%;
+background:var(--blue-light);
+color:var(--blue);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:21px;
+font-weight:bold;
+}
+.feature strong{
+display:block;
+font-size:14px;
+margin-bottom:6px;
+color:var(--blue-dark);
+}
+.feature span{
+font-size:11px;
+color:var(--muted);
+}
+/* =====================================================
+   SECTION
+===================================================== */
+.section{
+width:min(1600px,92%);
+margin:0 auto 85px;
+}
+.section-head{
+display:flex;
+align-items:flex-end;
+justify-content:space-between;
+margin-bottom:28px;
+}
+.section-title{
+font-size:31px;
+margin:0;
+font-weight:900;
+color:var(--blue-dark);
+}
+.section-title:before{
+content:"";
+display:inline-block;
+width:5px;
+height:28px;
+background:var(--blue);
+border-radius:4px;
+margin-left:10px;
+vertical-align:-4px;
+}
+.section-title small{
+display:block;
+font-size:13px;
+font-weight:400;
+color:#7c8a98;
+margin-top:9px;
+margin-right:17px;
+}
+.section-link{
+font-size:12px;
+font-weight:bold;
+color:var(--blue);
+}
+/* =====================================================
+   CATEGORIES
+===================================================== */
+.categories{
+display:grid;
+grid-template-columns:
+repeat(5,1fr);
+gap:18px;
+}
+.category{
+height:310px;
+position:relative;
+overflow:hidden;
+background:#e8eef4;
+border-radius:8px;
+cursor:pointer;
+box-shadow:
+0 4px 16px rgba(0,50,100,.06);
+transition:.25s;
+}
+.category:hover{
+transform:translateY(-4px);
+box-shadow:
+0 15px 35px rgba(0,55,110,.14);
+}
+.category img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:.45s;
+}
+.category:hover img{
+transform:scale(1.07);
+}
+.category:after{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+to top,
+rgba(3,40,75,.86),
+rgba(3,40,75,.05) 68%
+);
+}
+.category-content{
+position:absolute;
+z-index:2;
+right:22px;
+bottom:22px;
+color:#fff;
+}
+.category-content h3{
+font-size:20px;
+margin:0 0 7px;
+}
+.category-content span{
+font-size:11px;
+color:#e4f1ff;
+}
+/* =====================================================
+   ADVERTISEMENT
+===================================================== */
+.ad-section{
+display:none;
+}
+.ad{
+width:min(1600px,92%);
+height:370px;
+margin:0 auto 85px;
+position:relative;
+overflow:hidden;
+border-radius:8px;
+background:
+linear-gradient(
+135deg,
+var(--blue-dark),
+var(--blue)
+);
+box-shadow:
+0 15px 40px rgba(0,55,110,.12);
+}
+.ad img{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+.ad-overlay{
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+90deg,
+rgba(3,38,72,.95),
+rgba(3,62,110,.66) 45%,
+rgba(3,62,110,.05)
+);
+}
+.ad-content{
+position:absolute;
+z-index:2;
+right:7%;
 top:0;
 height:100%;
 width:47%;
@@ -251,344 +527,100 @@ justify-content:center;
 align-items:flex-start;
 color:#fff;
 }
-
-.hero-small{
-font-size:15px;
-font-weight:bold;
-color:var(--gold-light);
-margin-bottom:18px;
-letter-spacing:.5px;
-}
-
-.hero h1{
-font-size:54px;
-line-height:1.25;
-margin:0 0 20px;
-font-weight:900;
-}
-
-.hero h1 span{
-display:block;
-color:var(--gold-light);
-}
-
-.hero p{
-font-size:19px;
-line-height:2;
-max-width:650px;
-color:#e1e7ec;
-margin:0 0 30px;
-}
-
-.hero-buttons{
-display:flex;
-gap:12px;
-}
-
-.hero-btn{
-height:53px;
-padding:0 30px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:14px;
-font-weight:bold;
-border-radius:4px;
-transition:.2s;
-}
-
-.hero-btn:hover{
-transform:translateY(-2px);
-}
-
-.hero-primary{
-background:#fff;
-color:var(--navy);
-}
-
-.hero-secondary{
-border:1px solid rgba(255,255,255,.5);
-color:#fff;
-}
-
-/* ================= FEATURES ================= */
-
-.features{
-width:min(1350px,88%);
-margin:-30px auto 75px;
-position:relative;
-z-index:5;
-background:#fff;
-box-shadow:0 12px 40px rgba(0,0,0,.08);
-display:grid;
-grid-template-columns:repeat(4,1fr);
-border:1px solid #ececec;
-}
-
-.feature{
-min-height:110px;
-display:flex;
-align-items:center;
-justify-content:center;
-gap:16px;
-border-left:1px solid #eee;
-}
-
-.feature:last-child{
-border-left:0;
-}
-
-.feature-icon{
-width:48px;
-height:48px;
-border-radius:50%;
-background:#f5efe3;
-color:#a9844c;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:21px;
-}
-
-.feature strong{
-display:block;
-font-size:15px;
-margin-bottom:6px;
-color:var(--navy);
-}
-
-.feature span{
-font-size:12px;
-color:#8a9299;
-}
-
-/* ================= SECTIONS ================= */
-
-.section{
-width:min(1600px,92%);
-margin:0 auto 85px;
-}
-
-.section-head{
-display:flex;
-align-items:end;
-justify-content:space-between;
-margin-bottom:30px;
-}
-
-.section-title{
-font-size:32px;
-margin:0;
-font-weight:900;
-color:var(--navy);
-}
-
-.section-title small{
-display:block;
-font-size:13px;
-font-weight:400;
-color:#8b9299;
-margin-top:9px;
-}
-
-.section-link{
-font-size:13px;
-font-weight:bold;
-color:var(--gold);
-}
-
-/* ================= CATEGORIES ================= */
-
-.categories{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:18px;
-}
-
-.category{
-height:310px;
-position:relative;
-overflow:hidden;
-background:#ddd;
-cursor:pointer;
-}
-
-.category img{
-width:100%;
-height:100%;
-object-fit:cover;
-transition:.45s;
-}
-
-.category:hover img{
-transform:scale(1.07);
-}
-
-.category:after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(
-to top,
-rgba(4,21,35,.9),
-rgba(4,21,35,.03) 65%
-);
-}
-
-.category-content{
-position:absolute;
-z-index:2;
-right:25px;
-bottom:24px;
-color:#fff;
-}
-
-.category-content h3{
-font-size:21px;
-margin:0 0 7px;
-}
-
-.category-content span{
-font-size:12px;
-color:#d9e0e5;
-}
-
-/* ================= AD ================= */
-
-.ad-section{
-display:none;
-}
-
-.ad{
-width:min(1600px,92%);
-height:380px;
-margin:0 auto 85px;
-position:relative;
-overflow:hidden;
-background:var(--navy);
-}
-
-.ad img{
-position:absolute;
-inset:0;
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.ad:after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(
-90deg,
-rgba(3,19,33,.95),
-rgba(3,19,33,.65) 40%,
-rgba(3,19,33,.05)
-);
-}
-
-.ad-content{
-position:absolute;
-z-index:2;
-right:7%;
-top:0;
-height:100%;
-width:45%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:flex-start;
-color:#fff;
-}
-
 .ad-label{
-background:var(--green);
+background:#fff;
+color:var(--blue);
 padding:7px 14px;
-font-size:11px;
+font-size:10px;
 font-weight:bold;
-margin-bottom:15px;
+margin-bottom:14px;
+border-radius:4px;
 }
-
 .ad h2{
-font-size:38px;
-margin:0 0 13px;
+font-size:37px;
+margin:0 0 12px;
 }
-
 .ad p{
-font-size:16px;
+font-size:14px;
 line-height:1.9;
-color:#d9e1e7;
+color:#eaf5ff;
 margin:0 0 22px;
 }
-
 .ad-button{
 background:#fff;
-color:var(--navy);
+color:var(--blue-dark);
 padding:13px 25px;
-font-size:13px;
+font-size:12px;
 font-weight:bold;
+border-radius:4px;
 }
-
-/* ================= PRODUCTS ================= */
-
+/* =====================================================
+   PRODUCTS
+===================================================== */
 .product-layout{
 display:grid;
-grid-template-columns:250px 1fr;
+grid-template-columns:245px 1fr;
 gap:30px;
 direction:ltr;
 }
-
 .sidebar,
 .product-area{
 direction:rtl;
 }
-
 .sidebar{
 background:#fff;
-border:1px solid var(--border);
+border:1px solid var(--blue-border);
 height:max-content;
+border-radius:8px;
+overflow:hidden;
+box-shadow:
+0 4px 15px rgba(0,50,100,.04);
 }
-
 .sidebar-title{
-font-size:18px;
+font-size:17px;
 font-weight:900;
 padding:20px;
-border-bottom:1px solid var(--border);
-color:var(--navy);
+color:#fff;
+background:
+linear-gradient(
+135deg,
+var(--blue-dark),
+var(--blue)
+);
 }
-
 .category-list{
 padding:10px;
 }
-
 .category-btn{
 width:100%;
-height:46px;
+height:47px;
 border:0;
 background:#fff;
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:0 14px;
-font-size:13px;
-color:#66717d;
+padding:0 13px;
+font-size:12px;
+color:#657483;
 cursor:pointer;
 text-align:right;
 margin-bottom:3px;
-border-radius:4px;
+border-radius:5px;
+transition:.18s;
 }
-
 .category-btn:hover{
-background:#f5f6f7;
-color:var(--navy);
+background:var(--blue-light);
+color:var(--blue);
 }
-
 .category-btn.active{
-background:var(--navy);
+background:var(--blue);
 color:#fff;
+box-shadow:
+0 5px 14px rgba(7,84,155,.2);
 }
-
+/* =====================================================
+   TOOLBAR
+===================================================== */
 .product-toolbar{
 display:flex;
 align-items:center;
@@ -596,78 +628,83 @@ justify-content:space-between;
 gap:15px;
 margin-bottom:20px;
 }
-
 .count{
 font-size:13px;
-color:#7a838c;
+color:#71808e;
 }
-
 .controls{
 display:flex;
-gap:10px;
+gap:9px;
 }
-
 .search{
 height:48px;
-width:350px;
+width:370px;
 background:#fff;
-border:1px solid var(--border);
+border:1px solid var(--blue-border);
 display:flex;
+border-radius:6px;
+overflow:hidden;
 }
-
 .search input{
 border:0;
 outline:0;
 width:100%;
 padding:0 15px;
-font-size:13px;
+font-size:12px;
+color:var(--text);
 }
-
+.search input:focus{
+box-shadow:
+inset 0 0 0 2px rgba(7,84,155,.08);
+}
 .search button{
 width:50px;
 border:0;
 background:#fff;
 font-size:21px;
-color:var(--navy);
+color:var(--blue);
+cursor:pointer;
 }
-
 .sort{
 height:48px;
-border:1px solid var(--border);
+border:1px solid var(--blue-border);
 background:#fff;
-padding:0 15px;
-font-size:13px;
-color:#58636e;
+padding:0 14px;
+font-size:12px;
+color:#536272;
+border-radius:6px;
+outline:0;
 }
-
-/* ================= PRODUCT CARD ================= */
-
+/* =====================================================
+   PRODUCTS GRID
+===================================================== */
 .grid{
 display:grid;
-grid-template-columns:repeat(4,1fr);
+grid-template-columns:
+repeat(4,1fr);
 gap:18px;
 }
-
 .card{
 background:#fff;
-border:1px solid #e3e5e7;
+border:1px solid var(--blue-border);
+border-radius:7px;
 cursor:pointer;
 transition:.25s;
 position:relative;
+overflow:hidden;
 }
-
 .card:hover{
 transform:translateY(-5px);
-box-shadow:0 16px 38px rgba(5,27,45,.11);
+box-shadow:
+var(--shadow-hover);
+border-color:#c6def2;
 }
-
 .card-image{
 height:330px;
-background:#f0f1f2;
+background:#f0f5f9;
 position:relative;
 overflow:hidden;
 }
-
 .card-image img{
 width:100%;
 height:100%;
@@ -675,87 +712,85 @@ object-fit:cover;
 display:block;
 transition:.35s;
 }
-
 .card:hover .card-image img{
 transform:scale(1.035);
 }
-
 .status{
 position:absolute;
-top:14px;
-right:14px;
+top:13px;
+right:13px;
 padding:7px 11px;
 font-size:10px;
 font-weight:bold;
 color:#fff;
 z-index:2;
+border-radius:4px;
+box-shadow:
+0 3px 8px rgba(0,0,0,.1);
 }
-
 .available{
 background:var(--green);
 }
-
 .unavailable{
-background:#a52b2b;
+background:var(--red);
 }
-
 .card-body{
-padding:17px 17px 20px;
+padding:17px 17px 19px;
 }
-
 .code{
 font-size:10px;
-color:#9aa1a8;
+color:#8d9aa7;
 margin-bottom:7px;
 }
-
 .card h3{
 font-size:17px;
 line-height:1.5;
 margin:0 0 8px;
-color:#263646;
+color:#20374d;
 }
-
 .description{
-height:40px;
+height:41px;
 overflow:hidden;
 font-size:11px;
 line-height:1.8;
-color:#858d95;
+color:#74818e;
 margin-bottom:14px;
 }
-
 .card-bottom{
 display:flex;
 align-items:center;
 justify-content:space-between;
 }
-
 .price{
 font-size:21px;
 font-weight:900;
-color:var(--navy);
+color:var(--blue-dark);
 }
-
 .price span{
-font-size:11px;
+font-size:10px;
 font-weight:400;
+color:#6e7d8a;
 }
-
 .view{
-font-size:11px;
+font-size:10px;
 font-weight:bold;
-color:var(--gold);
+color:var(--blue);
 }
-
-/* ================= ABOUT ================= */
-
+/* =====================================================
+   ABOUT
+===================================================== */
 .about{
-background:var(--cream);
-padding:75px 0;
+background:
+linear-gradient(
+135deg,
+#edf6ff,
+#f8fbff
+);
+padding:80px 0;
 margin-bottom:85px;
+border-top:1px solid var(--blue-border);
+border-bottom:1px solid var(--blue-border);
 }
-
 .about-inner{
 width:min(1500px,92%);
 margin:auto;
@@ -764,93 +799,97 @@ grid-template-columns:1fr 1fr;
 gap:70px;
 align-items:center;
 }
-
 .about-image{
 height:400px;
-background:#dce1e4;
+background:#dfeaf4;
 overflow:hidden;
+border-radius:8px;
+box-shadow:
+0 15px 35px rgba(0,55,110,.1);
 }
-
 .about-image img{
 width:100%;
 height:100%;
 object-fit:cover;
 }
-
 .about-text h2{
-font-size:35px;
-margin:0 0 18px;
-color:var(--navy);
+font-size:34px;
+margin:0 0 17px;
+color:var(--blue-dark);
 }
-
 .about-text p{
 font-size:15px;
 line-height:2.1;
-color:#68737e;
+color:#647486;
 margin:0 0 25px;
 }
-
 .points{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:12px;
+gap:11px;
 }
-
 .point{
 background:#fff;
 padding:15px;
-font-size:13px;
-border:1px solid #e9e3d8;
+font-size:12px;
+border:1px solid var(--blue-border);
+border-radius:5px;
+color:#40576b;
 }
-
-/* ================= CTA ================= */
-
+/* =====================================================
+   CTA
+===================================================== */
 .cta{
 width:min(1500px,92%);
-min-height:200px;
+min-height:190px;
 margin:0 auto 85px;
-background:var(--navy);
+background:
+linear-gradient(
+135deg,
+var(--blue-dark),
+var(--blue)
+);
 padding:45px 55px;
 display:flex;
 align-items:center;
 justify-content:space-between;
 position:relative;
 overflow:hidden;
+border-radius:8px;
+box-shadow:
+0 15px 35px rgba(0,55,110,.12);
 }
-
 .cta h2{
 margin:0 0 9px;
-font-size:28px;
+font-size:27px;
 color:#fff;
 }
-
 .cta p{
 margin:0;
-font-size:14px;
-color:#c2cfd9;
+font-size:13px;
+color:#d9ebfb;
 }
-
 .cta-button{
 height:50px;
 padding:0 28px;
 display:flex;
 align-items:center;
-background:var(--green);
-color:#fff;
-font-size:13px;
+background:#fff;
+color:var(--blue-dark);
+font-size:12px;
 font-weight:bold;
+border-radius:5px;
 position:relative;
 z-index:2;
 }
-
-/* ================= FOOTER ================= */
-
+/* =====================================================
+   FOOTER
+===================================================== */
 footer{
-background:#061a2b;
+background:#052d55;
 color:#fff;
 padding-top:60px;
 }
-
 .footer{
 width:min(1500px,92%);
 margin:auto;
@@ -858,96 +897,189 @@ display:grid;
 grid-template-columns:1.5fr 1fr 1fr 1fr;
 gap:50px;
 }
-
 .footer h2,
 .footer h3{
 margin:0 0 18px;
 }
-
 .footer h2{
 font-size:20px;
 }
-
 .footer h3{
-font-size:15px;
+font-size:14px;
 }
-
 .footer p,
 .footer a{
-font-size:12px;
+font-size:11px;
 line-height:2;
-color:#9eafbd;
+color:#c0d3e4;
 }
-
 .footer a{
 display:block;
 margin-bottom:6px;
 }
-
 .footer a:hover{
 color:#fff;
 }
-
 .footer-bottom{
 margin-top:45px;
-border-top:1px solid rgba(255,255,255,.08);
+border-top:1px solid rgba(255,255,255,.12);
 padding:20px;
 text-align:center;
-font-size:11px;
-color:#778d9e;
+font-size:10px;
+color:#9bb2c7;
 }
-
-/* ================= MOBILE ================= */
-
+/* =====================================================
+   MOBILE CATEGORY
+===================================================== */
 .mobile-category{
 display:none;
 }
-
+/* =====================================================
+   MODAL
+===================================================== */
+.product-modal{
+position:fixed;
+inset:0;
+background:rgba(2,25,45,.72);
+z-index:9999;
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+.product-modal.show{
+display:flex;
+}
+.modal-box{
+width:min(900px,100%);
+max-height:92vh;
+overflow:auto;
+background:#fff;
+position:relative;
+padding:22px;
+border-radius:8px;
+box-shadow:
+0 25px 70px rgba(0,0,0,.3);
+}
+.modal-close{
+position:absolute;
+left:14px;
+top:14px;
+width:40px;
+height:40px;
+border:0;
+background:var(--blue-dark);
+color:#fff;
+font-size:22px;
+cursor:pointer;
+z-index:3;
+border-radius:5px;
+}
+.modal-image{
+width:100%;
+height:450px;
+object-fit:contain;
+background:#f2f6fa;
+border-radius:5px;
+}
+.modal-title{
+font-size:28px;
+color:var(--blue-dark);
+margin:18px 0 9px;
+}
+.modal-line{
+font-size:12px;
+color:#71808d;
+margin:7px 0;
+}
+.modal-description{
+font-size:14px;
+line-height:2;
+color:#627181;
+margin:18px 0;
+}
+.modal-price{
+font-size:29px;
+font-weight:900;
+color:var(--blue);
+margin:18px 0;
+}
+.modal-whatsapp{
+height:46px;
+padding:0 25px;
+background:var(--green);
+color:#fff;
+display:inline-flex;
+align-items:center;
+font-size:12px;
+font-weight:bold;
+border-radius:5px;
+}
+/* =====================================================
+   EMPTY
+===================================================== */
+.empty{
+grid-column:1/-1;
+background:#fff;
+border:1px solid var(--blue-border);
+padding:55px;
+text-align:center;
+color:#778694;
+font-size:13px;
+border-radius:7px;
+}
+/* =====================================================
+   TABLET
+===================================================== */
 @media(max-width:1250px){
-
 .header{
-grid-template-columns:220px 1fr 300px;
+grid-template-columns:230px 1fr 300px;
 gap:15px;
 }
-
 .nav a{
 padding:0 10px;
-font-size:13px;
+font-size:12px;
 }
-
 .header-search{
-width:200px;
+width:190px;
 }
-
 .grid{
 grid-template-columns:repeat(3,1fr);
 }
-
 }
-
+/* =====================================================
+   MOBILE
+===================================================== */
 @media(max-width:850px){
-
 body{
 font-size:14px;
 }
-
 .topbar{
+height:34px;
 font-size:9px;
 }
-
 .header{
 height:auto;
-padding:12px 0;
+padding:11px 0;
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
 }
-
 .logo{
 width:100%;
 justify-content:center;
 }
-
+.logo-icon{
+width:43px;
+height:43px;
+font-size:20px;
+}
+.logo-title{
+font-size:15px;
+}
+.logo-title small{
+font-size:8px;
+}
 .nav{
 order:3;
 width:100%;
@@ -955,946 +1087,892 @@ height:40px;
 overflow-x:auto;
 justify-content:center;
 }
-
 .nav a{
 height:38px;
-font-size:11px;
+font-size:10px;
 white-space:nowrap;
-padding:0 10px;
+padding:0 9px;
 }
-
 .actions{
 display:none;
 }
-
 .hero{
 width:100%;
 height:420px;
 margin:0 auto 50px;
+border-radius:0;
 }
-
 .hero-content{
 right:7%;
 width:82%;
 }
-
 .hero h1{
 font-size:34px;
 }
-
 .hero p{
 font-size:13px;
 }
-
 .features{
 width:94%;
 grid-template-columns:1fr 1fr;
 margin-top:-20px;
 }
-
 .feature{
 min-height:75px;
 }
-
 .feature strong{
 font-size:11px;
 }
-
 .feature span{
 font-size:9px;
 }
-
 .categories{
 grid-template-columns:1fr 1fr;
 }
-
 .category{
 height:190px;
 }
-
 .product-layout{
 display:block;
 }
-
 .sidebar{
 display:none;
 }
-
 .mobile-category{
 display:flex;
 width:100%;
 height:45px;
-background:var(--navy);
+background:var(--blue);
 color:#fff;
 border:0;
 align-items:center;
 justify-content:space-between;
 padding:0 15px;
 margin-bottom:12px;
+font-size:11px;
+border-radius:5px;
 }
-
 .product-toolbar{
 display:block;
 }
-
 .controls{
 display:grid;
 grid-template-columns:1fr;
 margin-top:10px;
 }
-
 .search{
 width:100%;
 }
-
 .sort{
 width:100%;
 }
-
 .grid{
 grid-template-columns:1fr 1fr;
 gap:9px;
 }
-
 .card-image{
 height:190px;
 }
-
 .card-body{
 padding:10px;
 }
-
 .card h3{
 font-size:13px;
 }
-
 .description{
 font-size:9px;
 height:30px;
 }
-
 .price{
 font-size:16px;
 }
-
 .about-inner{
 grid-template-columns:1fr;
 gap:25px;
 }
-
 .about-image{
 height:280px;
 }
-
 .cta{
 display:block;
 padding:30px 22px;
 }
-
 .cta h2{
 font-size:21px;
 }
-
 .cta-button{
 margin-top:18px;
 justify-content:center;
 }
-
 .footer{
 grid-template-columns:1fr 1fr;
 gap:25px;
 }
-
 .footer-brand{
 grid-column:1/-1;
 }
-
 }
-
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
 @media(max-width:450px){
-
 .hero h1{
 font-size:28px;
 }
-
 .hero p{
 font-size:11px;
 }
-
 .categories{
 grid-template-columns:1fr 1fr;
 gap:7px;
 }
-
 .category{
 height:155px;
 }
-
 .category-content h3{
 font-size:13px;
 }
-
 .grid{
 grid-template-columns:1fr 1fr;
 }
-
 .card-image{
 height:145px;
 }
-
 .card h3{
 font-size:11px;
 }
-
 .price{
 font-size:14px;
 }
-
 .footer{
 grid-template-columns:1fr 1fr;
 }
-
 }
-
+/* =====================================================
+   VERY SMALL
+===================================================== */
+@media(max-width:350px){
+.grid{
+grid-template-columns:1fr;
+}
+.card-image{
+height:210px;
+}
+.categories{
+grid-template-columns:1fr;
+}
+.category{
+height:190px;
+}
+}
 </style>
 </head>
-
 <body>
-
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
 <div class="topbar">
-مرحباً بكم في <b>شركة بيت المراتب للمفروشات</b> — راحتك تبدأ من هنا
+مرحباً بكم في
+<b>شركة بيت المراتب للمفروشات</b>
+— راحتك تبدأ من هنا
 </div>
-
+<!-- =====================================================
+     HEADER
+===================================================== -->
 <header>
-
 <div class="header">
-
 <div class="logo">
-
-<div class="logo-icon">⌂</div>
-
+<div class="logo-icon">
+⌂
+</div>
 <div class="logo-title">
-
 شركة بيت المراتب للمفروشات
-
-<small>راحة تدوم • جودة تستحقها</small>
-
+<small>
+راحة تدوم • جودة تستحقها
+</small>
 </div>
-
 </div>
-
 <nav class="nav">
-
-<a href="#" class="active">الرئيسية</a>
-<a href="#categories">الأقسام</a>
-<a href="#products">المنتجات</a>
-<a href="#about">من نحن</a>
-<a href="#contact">تواصل معنا</a>
-
+<a
+href="#"
+class="active">
+الرئيسية
+</a>
+<a href="#categories">
+الأقسام
+</a>
+<a href="#products">
+المنتجات
+</a>
+<a href="#about">
+من نحن
+</a>
+<a href="#contact">
+تواصل معنا
+</a>
 </nav>
-
 <div class="actions">
-
 <div class="header-search">
-
 <input
 id="headerSearch"
+type="search"
 placeholder="ابحث عن منتج...">
-
-<button onclick="focusSearch()">⌕</button>
-
+<button
+onclick="focusSearch()">
+⌕
+</button>
 </div>
-
 <a
 class="whatsapp"
 href="https://wa.me/966546510165"
-target="_blank">
-
+target="_blank"
+rel="noopener">
 واتساب
-
 </a>
-
 </div>
-
 </div>
-
 </header>
-
-
-<section class="hero" id="hero">
-
-<img id="heroImage">
-
+<!-- =====================================================
+     HERO
+===================================================== -->
+<section
+class="hero"
+id="hero">
+<img
+id="heroImage"
+class="hero-image"
+alt="بيت المراتب للمفروشات">
+<div class="hero-overlay"></div>
 <div class="hero-content">
-
 <div class="hero-small">
-بيت المراتب للمفروشات
+شركة بيت المراتب للمفروشات
 </div>
-
 <h1>
 راحة أفضل
-<span>لمنزلك وعائلتك</span>
+<span>
+لمنزلك وعائلتك
+</span>
 </h1>
-
 <p>
-اكتشف مجموعتنا المختارة من المراتب والمفروشات
+اكتشف مجموعتنا من المراتب والمفروشات
 والمنتجات المنزلية بجودة عالية وأسعار منافسة.
 </p>
-
 <div class="hero-buttons">
-
 <a
 href="#products"
 class="hero-btn hero-primary">
-
 تصفح المنتجات
-
 </a>
-
 <a
 href="https://wa.me/966546510165"
 target="_blank"
 class="hero-btn hero-secondary">
-
 تواصل معنا
-
 </a>
-
 </div>
-
 </div>
-
 </section>
-
-
+<!-- =====================================================
+     FEATURES
+===================================================== -->
 <section class="features">
-
 <div class="feature">
-
-<div class="feature-icon">✓</div>
-
+<div class="feature-icon">
+✓
+</div>
 <div>
-<strong>جودة عالية</strong>
-<span>منتجات مختارة بعناية</span>
+<strong>
+جودة عالية
+</strong>
+<span>
+منتجات مختارة بعناية
+</span>
 </div>
-
 </div>
-
 <div class="feature">
-
-<div class="feature-icon">◆</div>
-
+<div class="feature-icon">
+◆
+</div>
 <div>
-<strong>أسعار منافسة</strong>
-<span>أفضل قيمة مقابل السعر</span>
+<strong>
+أسعار منافسة
+</strong>
+<span>
+أفضل قيمة مقابل السعر
+</span>
 </div>
-
 </div>
-
 <div class="feature">
-
-<div class="feature-icon">🚚</div>
-
+<div class="feature-icon">
+🚚
+</div>
 <div>
-<strong>خدمة توصيل</strong>
-<span>خدمة مريحة وسريعة</span>
+<strong>
+خدمة التوصيل
+</strong>
+<span>
+خدمة مريحة وسريعة
+</span>
 </div>
-
 </div>
-
 <div class="feature">
-
-<div class="feature-icon">☎</div>
-
+<div class="feature-icon">
+☎
+</div>
 <div>
-<strong>خدمة العملاء</strong>
-<span>دائماً لخدمتك</span>
+<strong>
+خدمة العملاء
+</strong>
+<span>
+دائماً لخدمتك
+</span>
 </div>
-
 </div>
-
 </section>
-
-
-<section class="section" id="categories">
-
+<!-- =====================================================
+     CATEGORIES
+===================================================== -->
+<section
+class="section"
+id="categories">
 <div class="section-head">
-
 <div>
-
 <h2 class="section-title">
-
 تسوق حسب القسم
-
-<small>اختر القسم واستكشف منتجاتنا</small>
-
+<small>
+اختر القسم واستكشف منتجاتنا
+</small>
 </h2>
-
 </div>
-
-<a href="#products" class="section-link">
+<a
+href="#products"
+class="section-link">
 عرض جميع المنتجات ←
 </a>
-
 </div>
-
 <div
 class="categories"
 id="categoriesGrid">
 </div>
-
 </section>
-
-
+<!-- =====================================================
+     ADVERTISEMENT
+===================================================== -->
 <section
 class="ad-section"
 id="adSection">
-
 <div class="ad">
-
 <div id="adImageBox"></div>
-
+<div class="ad-overlay"></div>
 <div class="ad-content">
-
 <div class="ad-label">
 عرض مميز
 </div>
-
 <h2 id="adTitle"></h2>
-
 <p id="adDescription"></p>
-
 <div id="adButtonBox"></div>
-
 </div>
-
 </div>
-
 </section>
-
-
-<section class="section" id="products">
-
+<!-- =====================================================
+     PRODUCTS
+===================================================== -->
+<section
+class="section"
+id="products">
 <div class="section-head">
-
 <div>
-
 <h2 class="section-title">
-
 منتجاتنا
-
-<small>تصفح مجموعتنا واختر ما يناسبك</small>
-
+<small>
+تصفح مجموعتنا واختر ما يناسبك
+</small>
 </h2>
-
 </div>
-
-<div class="count" id="count">
+<div
+class="count"
+id="count">
 جاري تحميل المنتجات...
 </div>
-
 </div>
-
-
 <button
 class="mobile-category"
 id="mobileCategory">
-
-<span>التصنيفات</span>
-<span>☰</span>
-
+<span>
+التصنيفات
+</span>
+<span>
+☰
+</span>
 </button>
-
-
-<div class="product-layout">
-
-<aside class="sidebar" id="sidebar">
-
+<div
+class="product-layout">
+<aside
+class="sidebar"
+id="sidebar">
 <div class="sidebar-title">
 التصنيفات
 </div>
-
 <div
 class="category-list"
 id="categoryList">
 </div>
-
 </aside>
-
-
 <div class="product-area">
-
 <div class="product-toolbar">
-
-<div class="count" id="desktopCount"></div>
-
+<div
+class="count"
+id="desktopCount">
+</div>
 <div class="controls">
-
 <div class="search">
-
 <input
 id="search"
 type="search"
 placeholder="ابحث باسم المنتج أو الكود...">
-
-<button id="searchBtn">⌕</button>
-
+<button
+id="searchBtn">
+⌕
+</button>
 </div>
-
-<select id="sort" class="sort">
-
-<option value="newest">الأحدث</option>
-<option value="name">الاسم</option>
-<option value="price-low">السعر الأقل</option>
-<option value="price-high">السعر الأعلى</option>
-
+<select
+id="sort"
+class="sort">
+<option value="newest">
+الأحدث
+</option>
+<option value="name">
+الاسم
+</option>
+<option value="price-low">
+السعر الأقل
+</option>
+<option value="price-high">
+السعر الأعلى
+</option>
 </select>
-
 </div>
-
 </div>
-
-
 <div
 class="grid"
 id="grid">
 </div>
-
 </div>
-
 </div>
-
 </section>
-
-
-<section class="about" id="about">
-
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+<section
+class="about"
+id="about">
 <div class="about-inner">
-
-<div class="about-image" id="aboutImage"></div>
-
+<div
+class="about-image"
+id="aboutImage">
+</div>
 <div class="about-text">
-
 <h2>
 بيت المراتب للمفروشات
 </h2>
-
 <p>
-نقدم لعملائنا مجموعة متنوعة من منتجات المراتب
-والمفروشات، مع الحرص على الجودة والتنوع والسعر
-المناسب، لنمنحك تجربة شراء سهلة وواضحة.
+نسعى في بيت المراتب للمفروشات إلى توفير
+تشكيلة متنوعة من المنتجات التي تجمع بين
+الجودة والراحة والسعر المناسب، مع تقديم
+تجربة شراء سهلة وواضحة لعملائنا.
 </p>
-
 <div class="points">
-
-<div class="point">✓ تشكيلة متنوعة</div>
-<div class="point">✓ جودة مختارة</div>
-<div class="point">✓ أسعار منافسة</div>
-<div class="point">✓ خدمة عملاء مميزة</div>
-
+<div class="point">
+✓ تشكيلة متنوعة
 </div>
-
+<div class="point">
+✓ جودة مختارة
 </div>
-
+<div class="point">
+✓ أسعار منافسة
 </div>
-
+<div class="point">
+✓ خدمة عملاء مميزة
+</div>
+</div>
+</div>
+</div>
 </section>
-
-
+<!-- =====================================================
+     CTA
+===================================================== -->
 <section class="cta">
-
 <div>
-
 <h2>
 هل تحتاج إلى مساعدة؟
 </h2>
-
 <p>
-تواصل معنا مباشرة عبر واتساب للاستفسار عن المنتجات والأسعار.
+تواصل معنا مباشرة عبر واتساب للاستفسار
+عن المنتجات والأسعار.
 </p>
-
 </div>
-
 <a
 class="cta-button"
 href="https://wa.me/966546510165"
-target="_blank">
-
+target="_blank"
+rel="noopener">
 تواصل معنا عبر واتساب
-
 </a>
-
 </section>
-
-
-<footer id="contact">
-
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+<footer
+id="contact">
 <div class="footer">
-
 <div class="footer-brand">
-
-<h2>بيت المراتب للمفروشات</h2>
-
+<h2>
+بيت المراتب للمفروشات
+</h2>
 <p>
 راحة تدوم وجودة تستحقها.
 اكتشف منتجاتنا وتواصل معنا لمعرفة المزيد.
 </p>
-
 </div>
-
 <div>
-
-<h3>الموقع</h3>
-
-<a href="#">الرئيسية</a>
-<a href="#categories">الأقسام</a>
-<a href="#products">المنتجات</a>
-<a href="#about">من نحن</a>
-
+<h3>
+الموقع
+</h3>
+<a href="#">
+الرئيسية
+</a>
+<a href="#categories">
+الأقسام
+</a>
+<a href="#products">
+المنتجات
+</a>
+<a href="#about">
+من نحن
+</a>
 </div>
-
 <div>
-
-<h3>خدمة العملاء</h3>
-
+<h3>
+خدمة العملاء
+</h3>
 <a
 href="https://wa.me/966546510165"
 target="_blank">
 واتساب
 </a>
-
 <a href="tel:920012345">
 9200 12345
 </a>
-
 </div>
-
 <div>
-
-<h3>روابط سريعة</h3>
-
-<a href="#products">أحدث المنتجات</a>
-<a href="#categories">التصنيفات</a>
-<a href="#contact">تواصل معنا</a>
-
+<h3>
+روابط سريعة
+</h3>
+<a href="#products">
+أحدث المنتجات
+</a>
+<a href="#categories">
+التصنيفات
+</a>
+<a href="#contact">
+تواصل معنا
+</a>
 </div>
-
 </div>
-
 <div class="footer-bottom">
-جميع الحقوق محفوظة © 2026 شركة بيت المراتب للمفروشات
+جميع الحقوق محفوظة © 2026
+شركة بيت المراتب للمفروشات
 </div>
-
 </footer>
-
-
+<!-- =====================================================
+     MODAL
+===================================================== -->
 <div
 class="product-modal"
-id="productModal"
-style="
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.72);
-z-index:9999;
-display:none;
-align-items:center;
-justify-content:center;
-padding:20px;
-">
-
-<div
-style="
-width:min(900px,100%);
-max-height:92vh;
-overflow:auto;
-background:#fff;
-position:relative;
-padding:22px;
-">
-
+id="productModal">
+<div class="modal-box">
 <button
-id="modalClose"
-style="
-position:absolute;
-left:14px;
-top:14px;
-width:40px;
-height:40px;
-border:0;
-background:#071f35;
-color:#fff;
-font-size:22px;
-cursor:pointer;
-z-index:3;
-">
+class="modal-close"
+id="modalClose">
 ×
 </button>
-
-<div id="modalContent"></div>
-
+<div
+id="modalContent">
 </div>
-
 </div>
-
-
+</div>
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 <script>
-
+/* =====================================================
+   SUPABASE
+===================================================== */
 const SUPABASE_URL=
 "https://wmiszhoahvfsbmedjrbm.supabase.co";
-
 const SUPABASE_PUBLISHABLE_KEY=
 "sb_publishable_fFclLm6Z2fdUTYxD_AAC5w_icPdd_n5";
-
 const db=
 supabase.createClient(
 SUPABASE_URL,
 SUPABASE_PUBLISHABLE_KEY
 );
-
+/* =====================================================
+   VARIABLES
+===================================================== */
 let products=[];
 let selectedCategory="";
 let currentSearch="";
-
+/* =====================================================
+   ELEMENTS
+===================================================== */
 const grid=
 document.getElementById("grid");
-
 const search=
 document.getElementById("search");
-
 const searchBtn=
 document.getElementById("searchBtn");
-
 const sort=
 document.getElementById("sort");
-
 const categoryList=
 document.getElementById("categoryList");
-
 const count=
 document.getElementById("count");
-
 const desktopCount=
 document.getElementById("desktopCount");
-
 const sidebar=
 document.getElementById("sidebar");
-
-const modal=
+const productModal=
 document.getElementById("productModal");
-
 const modalContent=
 document.getElementById("modalContent");
-
-function esc(v){
-
-return String(v??"")
-.replace(/[&<>"']/g,m=>({
+/* =====================================================
+   ESCAPE
+===================================================== */
+function esc(value){
+return String(value??"")
+.replace(
+/[&<>"']/g,
+function(m){
+return {
 "&":"&amp;",
 "<":"&lt;",
 ">":"&gt;",
 '"':"&quot;",
 "'":"&#039;"
-}[m]));
-
+}[m];
 }
-
-
-/* PRODUCTS */
-
+);
+}
+/* =====================================================
+   LOAD PRODUCTS
+===================================================== */
 async function loadProducts(){
-
 try{
-
+count.textContent=
+"جاري تحميل المنتجات...";
 const result=
 await db
 .from("products")
 .select("*");
-
 if(result.error){
-
 grid.innerHTML=
-`<div class="empty">
-حدث خطأ في تحميل المنتجات
-</div>`;
-
+`
+<div class="empty">
+تعذر تحميل المنتجات
+<br><br>
+${esc(result.error.message)}
+</div>
+`;
 return;
-
 }
-
 products=
 result.data||[];
-
 buildCategories();
 buildCategoryCards();
 renderProducts();
-
 setDefaultHero();
 setAboutImage();
-
-}catch(e){
-
-console.error(e);
-
+}catch(error){
+console.error(error);
+grid.innerHTML=
+`
+<div class="empty">
+حدث خطأ أثناء تحميل المنتجات
+</div>
+`;
 }
-
 }
-
-
-/* CATEGORIES */
-
+/* =====================================================
+   CATEGORIES SIDEBAR
+===================================================== */
 function buildCategories(){
-
 categoryList.innerHTML="";
-
 const all=
 document.createElement("button");
-
 all.className=
-"category-btn active";
-
-all.dataset.category="";
-
-all.innerHTML=
-"<span>كل المنتجات</span><span>›</span>";
-
-categoryList.appendChild(all);
-
-const categories=[
-...new Set(
-products
-.map(p=>p.category)
-.filter(Boolean)
-)
-];
-
-categories.forEach(cat=>{
-
-const btn=
-document.createElement("button");
-
-btn.className=
 "category-btn "+
-(selectedCategory===cat?"active":"");
-
-btn.dataset.category=cat;
-
-btn.innerHTML=
+(selectedCategory===""?"active":"");
+all.dataset.category="";
+all.innerHTML=
 `
-<span>${esc(cat)}</span>
 <span>
-${products.filter(p=>p.category===cat).length}
+كل المنتجات
+</span>
+<span>
+›
 </span>
 `;
-
-categoryList.appendChild(btn);
-
-});
-
-}
-
-
-/* CATEGORY CARDS */
-
-function buildCategoryCards(){
-
-const box=
-document.getElementById("categoriesGrid");
-
-box.innerHTML="";
-
-const categories=[
+categoryList.appendChild(all);
+const categories=
+[
 ...new Set(
 products
 .map(p=>p.category)
 .filter(Boolean)
 )
 ];
-
-categories.forEach(cat=>{
-
-const p=
-products.find(
-x=>x.category===cat&&x.image_url
+categories.forEach(
+function(category){
+const btn=
+document.createElement("button");
+btn.className=
+"category-btn "+
+(selectedCategory===category?"active":"");
+btn.dataset.category=
+category;
+const total=
+products.filter(
+p=>p.category===category
+).length;
+btn.innerHTML=
+`
+<span>
+${esc(category)}
+</span>
+<span>
+${total}
+</span>
+`;
+categoryList.appendChild(btn);
+});
+}
+/* =====================================================
+   CATEGORY CARDS
+===================================================== */
+function buildCategoryCards(){
+const box=
+document.getElementById(
+"categoriesGrid"
 );
-
+box.innerHTML="";
+const categories=
+[
+...new Set(
+products
+.map(p=>p.category)
+.filter(Boolean)
+)
+];
+categories.slice(0,10)
+.forEach(
+function(category){
+const product=
+products.find(
+p=>
+p.category===category &&
+p.image_url
+);
 const card=
 document.createElement("div");
-
-card.className="category";
-
+card.className=
+"category";
+if(product){
 card.innerHTML=
 `
-${
-p
-?
-`<img src="${esc(p.image_url)}" alt="${esc(cat)}">`
-:
-`<div style="
+<img
+src="${esc(product.image_url)}"
+alt="${esc(category)}"
+loading="lazy">
+<div class="category-content">
+<h3>
+${esc(category)}
+</h3>
+<span>
+${products.filter(
+p=>p.category===category
+).length}
+منتج
+</span>
+</div>
+`;
+}else{
+card.innerHTML=
+`
+<div
+style="
 height:100%;
-background:#09243d;
+background:linear-gradient(
+135deg,
+#063b70,
+#07549b
+);
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:60px;
-color:#d8bf8b;">⌂</div>`
-}
-
+color:#fff;
+font-size:65px;
+">
+⌂
+</div>
 <div class="category-content">
-
-<h3>${esc(cat)}</h3>
-
+<h3>
+${esc(category)}
+</h3>
 <span>
-${products.filter(x=>x.category===cat).length}
+${products.filter(
+p=>p.category===category
+).length}
 منتج
 </span>
-
 </div>
 `;
-
-card.onclick=()=>{
-
-selectedCategory=cat;
-
+}
+card.onclick=
+function(){
+selectedCategory=
+category;
 buildCategories();
 renderProducts();
-
 document
 .getElementById("products")
 .scrollIntoView({
 behavior:"smooth"
 });
-
 };
-
 box.appendChild(card);
-
 });
-
 }
-
-
-/* RENDER */
-
+/* =====================================================
+   RENDER PRODUCTS
+===================================================== */
 function renderProducts(){
-
-let result=[...products];
-
+let result=
+[...products];
 if(selectedCategory){
-
-result=result.filter(
+result=
+result.filter(
 p=>p.category===selectedCategory
 );
-
 }
-
 if(currentSearch){
-
-const q=currentSearch.toLowerCase();
-
-result=result.filter(p=>
-[
+const q=
+currentSearch.toLowerCase();
+result=
+result.filter(
+function(p){
+return [
 p.name,
 p.code,
 p.description,
@@ -1902,459 +1980,422 @@ p.category
 ]
 .join(" ")
 .toLowerCase()
-.includes(q)
-);
-
+.includes(q);
+});
 }
-
 if(sort.value==="name"){
-
-result.sort((a,b)=>
+result.sort(
+(a,b)=>
 String(a.name||"")
 .localeCompare(
 String(b.name||""),
 "ar"
 )
 );
-
 }
-
 if(sort.value==="price-low"){
-
-result.sort((a,b)=>
+result.sort(
+(a,b)=>
 Number(a.price||0)-
 Number(b.price||0)
 );
-
 }
-
 if(sort.value==="price-high"){
-
-result.sort((a,b)=>
+result.sort(
+(a,b)=>
 Number(b.price||0)-
 Number(a.price||0)
 );
-
 }
-
 if(sort.value==="newest"){
-
-result.sort((a,b)=>
+result.sort(
+(a,b)=>
 Number(b.id||0)-
 Number(a.id||0)
 );
-
 }
-
 count.textContent=
-"عدد المنتجات: "+result.length;
-
+"عدد المنتجات: "+
+result.length;
 desktopCount.textContent=
-result.length+" منتج";
-
+result.length+
+" منتج";
 if(!result.length){
-
 grid.innerHTML=
 `
 <div class="empty">
 لا توجد منتجات مطابقة للبحث
 </div>
 `;
-
 return;
-
 }
-
 grid.innerHTML=
-result.map(p=>`
-
+result.map(
+function(p){
+return `
 <article
 class="card"
 data-id="${esc(p.id)}">
-
 <div class="card-image">
-
 ${
 p.image_url
 ?
-`<img
+`
+<img
 src="${esc(p.image_url)}"
 alt="${esc(p.name||"")}"
-loading="lazy">`
+loading="lazy">
+`
 :
-`<div style="
+`
+<div
+style="
 height:100%;
 display:flex;
 align-items:center;
 justify-content:center;
-color:#999;">
+color:#8b98a5;
+font-size:12px;
+">
 لا توجد صورة
-</div>`
-}
-
-<span
-class="status ${
-p.available
-?"available"
-:"unavailable"
-}">
-
-${p.available?"متوفر":"غير متوفر"}
-
-</span>
-
 </div>
-
+`
+}
+<span
+class="
+status
+${p.available
+?"available"
+:"unavailable"}">
+${p.available
+?"متوفر"
+:"غير متوفر"}
+</span>
+</div>
 <div class="card-body">
-
 <div class="code">
 ${esc(p.code||"")}
 </div>
-
 <h3>
 ${esc(p.name||"")}
 </h3>
-
 <div class="description">
 ${esc(p.description||"")}
 </div>
-
 <div class="card-bottom">
-
 <div class="price">
-
 ${
-p.price!==null&&
-p.price!==undefined&&
+p.price!==null &&
+p.price!==undefined &&
 p.price!==""
 ?
 Number(p.price)
-.toLocaleString("ar-SA")+
+.toLocaleString("ar-SA")
++
 ' <span>ريال</span>'
-:
-""
+:""
 }
-
 </div>
-
 <div class="view">
 عرض التفاصيل ←
 </div>
-
 </div>
-
 </div>
-
 </article>
-
-`).join("");
-
+`;
 }
-
-
-/* SEARCH */
-
+).join("");
+}
+/* =====================================================
+   SEARCH
+===================================================== */
 function doSearch(){
-
 currentSearch=
 search.value.trim();
-
 renderProducts();
-
 }
-
-search.oninput=doSearch;
-
-searchBtn.onclick=doSearch;
-
-sort.onchange=renderProducts;
-
-
-/* CATEGORY CLICK */
-
-categoryList.onclick=e=>{
-
-const btn=
-e.target.closest(".category-btn");
-
-if(!btn)return;
-
-selectedCategory=
-btn.dataset.category||"";
-
-buildCategories();
-renderProducts();
-
-};
-
-
-/* HEADER SEARCH */
-
+search.addEventListener(
+"input",
+doSearch
+);
+searchBtn.onclick=
+doSearch;
+sort.onchange=
+renderProducts;
+/* =====================================================
+   HEADER SEARCH
+===================================================== */
 document
 .getElementById("headerSearch")
 .addEventListener(
 "keydown",
-e=>{
-
+function(e){
 if(e.key==="Enter"){
-
-search.value=e.target.value;
-
+search.value=
+e.target.value;
 doSearch();
-
 document
 .getElementById("products")
 .scrollIntoView({
 behavior:"smooth"
 });
-
 }
-
 });
-
-
 function focusSearch(){
-
 document
 .getElementById("products")
 .scrollIntoView({
 behavior:"smooth"
 });
-
 setTimeout(
-()=>search.focus(),
+function(){
+search.focus();
+},
 500
 );
-
 }
-
-
-/* PRODUCT MODAL */
-
-grid.onclick=e=>{
-
-const card=
-e.target.closest(".card");
-
-if(!card)return;
-
-const product=
-products.find(
-p=>String(p.id)===
-String(card.dataset.id)
+/* =====================================================
+   CATEGORY CLICK
+===================================================== */
+categoryList.addEventListener(
+"click",
+function(e){
+const btn=
+e.target.closest(
+".category-btn"
 );
-
-if(!product)return;
-
-modalContent.innerHTML=
-`
-
-${
-product.image_url
-?
-`<img
-src="${esc(product.image_url)}"
-style="
-width:100%;
-height:450px;
-object-fit:contain;
-background:#f4f5f6;">`
-:
-""
+if(!btn)return;
+selectedCategory=
+btn.dataset.category||"";
+buildCategories();
+renderProducts();
 }
-
-<h2 style="
-font-size:28px;
-color:#071f35;
-margin:18px 0 8px;">
-
-${esc(product.name||"")}
-
-</h2>
-
-<div style="
-font-size:12px;
-color:#777;
-margin:7px 0;">
-
-كود المنتج:
-${esc(product.code||"")}
-
-</div>
-
-<div style="
-font-size:12px;
-color:#777;
-margin:7px 0;">
-
-التصنيف:
-${esc(product.category||"")}
-
-</div>
-
-<div style="
-font-size:14px;
-line-height:2;
-color:#66717d;
-margin:18px 0;">
-
-${esc(product.description||"")}
-
-</div>
-
-${
-product.price!==null&&
-product.price!==undefined&&
-product.price!==""
-
-?
-`<div style="
-font-size:28px;
-font-weight:bold;
-color:#071f35;
-margin:15px 0;">
-
-${Number(product.price)
-.toLocaleString("ar-SA")}
- ريال
-
-</div>`
-:""
-}
-
-<a
-href="https://wa.me/966546510165?text=${encodeURIComponent(
-"السلام عليكم، أريد الاستفسار عن المنتج: "+
-(product.name||"")+
-" - كود "+
-(product.code||"")
-)}"
-target="_blank"
-style="
-display:inline-flex;
-align-items:center;
-justify-content:center;
-height:46px;
-padding:0 25px;
-background:#159447;
-color:#fff;
-font-weight:bold;
-font-size:13px;">
-
-الاستفسار عن المنتج عبر واتساب
-
-</a>
-
-`;
-
-modal.style.display="flex";
-
-document.body.style.overflow="hidden";
-
-};
-
-
-/* CLOSE */
-
-document
-.getElementById("modalClose")
-.onclick=closeModal;
-
-modal.onclick=e=>{
-
-if(e.target===modal)
-closeModal();
-
-};
-
-function closeModal(){
-
-modal.style.display="none";
-
-document.body.style.overflow="";
-
-}
-
-
-/* MOBILE SIDEBAR */
-
+);
+/* =====================================================
+   MOBILE CATEGORY
+===================================================== */
 document
 .getElementById("mobileCategory")
-.onclick=()=>{
-
+.onclick=
+function(){
 if(
 sidebar.style.display==="block"
 ){
-
-sidebar.style.display="none";
-
+sidebar.style.display=
+"none";
 }else{
-
-sidebar.style.display="block";
-
+sidebar.style.display=
+"block";
 }
-
 };
-
-
-/* DEFAULT HERO */
-
+/* =====================================================
+   PRODUCT MODAL
+===================================================== */
+grid.addEventListener(
+"click",
+function(e){
+const card=
+e.target.closest(
+".card"
+);
+if(!card)return;
+const product=
+products.find(
+p=>
+String(p.id)===
+String(card.dataset.id)
+);
+if(!product)return;
+openProduct(product);
+}
+);
+/* =====================================================
+   OPEN PRODUCT
+===================================================== */
+function openProduct(p){
+const message=
+encodeURIComponent(
+"السلام عليكم، أريد الاستفسار عن المنتج: "+
+(p.name||"")+
+" - كود "+
+(p.code||"")
+);
+modalContent.innerHTML=
+`
+${
+p.image_url
+?
+`
+<img
+class="modal-image"
+src="${esc(p.image_url)}"
+alt="${esc(p.name||"")}">
+`
+:
+`
+<div
+class="modal-image"
+style="
+display:flex;
+align-items:center;
+justify-content:center;
+color:#8a98a6;
+">
+لا توجد صورة
+</div>
+`
+}
+<h2 class="modal-title">
+${esc(p.name||"")}
+</h2>
+${
+p.code
+?
+`
+<div class="modal-line">
+كود المنتج:
+${esc(p.code)}
+</div>
+`
+:""
+}
+${
+p.category
+?
+`
+<div class="modal-line">
+التصنيف:
+${esc(p.category)}
+</div>
+`
+:""
+}
+${
+p.description
+?
+`
+<div class="modal-description">
+${esc(p.description)}
+</div>
+`
+:""
+}
+${
+p.price!==null &&
+p.price!==undefined &&
+p.price!==""
+?
+`
+<div class="modal-price">
+${Number(p.price)
+.toLocaleString("ar-SA")}
+<span style="
+font-size:12px;
+font-weight:400;
+">
+ريال
+</span>
+</div>
+`
+:""
+}
+<a
+class="modal-whatsapp"
+href="
+https://wa.me/966546510165?text=${message}
+"
+target="_blank"
+rel="noopener">
+الاستفسار عن المنتج عبر واتساب
+</a>
+`;
+productModal.classList.add(
+"show"
+);
+document.body.style.overflow=
+"hidden";
+}
+/* =====================================================
+   CLOSE MODAL
+===================================================== */
+function closeModal(){
+productModal.classList.remove(
+"show"
+);
+document.body.style.overflow=
+"";
+}
+document
+.getElementById("modalClose")
+.onclick=
+closeModal;
+productModal.addEventListener(
+"click",
+function(e){
+if(e.target===productModal){
+closeModal();
+}
+}
+);
+document.addEventListener(
+"keydown",
+function(e){
+if(e.key==="Escape"){
+closeModal();
+}
+}
+);
+/* =====================================================
+   DEFAULT HERO
+===================================================== */
 function setDefaultHero(){
-
 const hero=
 document.getElementById("hero");
-
 if(
-hero.classList.contains("has-image")
+hero.classList.contains(
+"has-image"
+)
 )return;
-
 const product=
-products.find(p=>p.image_url);
-
+products.find(
+p=>p.image_url
+);
 if(product){
-
-hero.classList.add("has-image");
-
+hero.classList.add(
+"has-image"
+);
 document
 .getElementById("heroImage")
 .src=
 product.image_url;
-
 }
-
 }
-
-
-/* ABOUT IMAGE */
-
+/* =====================================================
+   ABOUT IMAGE
+===================================================== */
 function setAboutImage(){
-
 const box=
-document.getElementById("aboutImage");
-
+document.getElementById(
+"aboutImage"
+);
 const product=
-products.find(p=>p.image_url);
-
+products.find(
+p=>p.image_url
+);
 if(product){
-
 box.innerHTML=
 `
 <img
 src="${esc(product.image_url)}"
 alt="بيت المراتب للمفروشات">
 `;
-
 }
-
 }
-
-
-/* ADS */
-
+/* =====================================================
+   ADS
+===================================================== */
 async function loadAds(){
-
 try{
-
 const result=
 await db
 .from("ads")
@@ -2362,74 +2403,76 @@ await db
 .eq("active",true)
 .order(
 "sort_order",
-{ascending:true}
+{
+ascending:true
+}
 )
 .order(
 "id",
-{ascending:false}
+{
+ascending:false
+}
 );
-
-if(result.error)
+if(result.error){
+console.error(
+result.error
+);
 return;
-
+}
 const ads=
 result.data||[];
-
 if(!ads.length)
 return;
-
-const ad=ads[0];
-
+const ad=
+ads[0];
+/* HERO */
+if(ad.image_url){
 const hero=
-document.getElementById("hero");
-
-if(ad.image_url){
-
-hero.classList.add("has-image");
-
-document
-.getElementById("heroImage")
-.src=
+document.getElementById(
+"hero"
+);
+const heroImage=
+document.getElementById(
+"heroImage"
+);
+hero.classList.add(
+"has-image"
+);
+heroImage.src=
 ad.image_url;
-
+heroImage.alt=
+ad.title||
+"بيت المراتب للمفروشات";
 }
-
-if(ad.title){
-
-document
-.getElementById("adTitle")
-.textContent=
-ad.title;
-
-}
-
-if(ad.description){
-
-document
-.getElementById("adDescription")
-.textContent=
-ad.description;
-
-}
-
+/* AD */
+const section=
+document.getElementById(
+"adSection"
+);
+const imageBox=
+document.getElementById(
+"adImageBox"
+);
 if(ad.image_url){
-
-document
-.getElementById("adImageBox")
-.innerHTML=
+imageBox.innerHTML=
 `
 <img
 src="${esc(ad.image_url)}"
-alt="${esc(ad.title||"عرض")}">
+alt="${esc(ad.title||"إعلان")}">
 `;
-
 }
-
+document
+.getElementById("adTitle")
+.textContent=
+ad.title||"";
+document
+.getElementById("adDescription")
+.textContent=
+ad.description||"";
 if(
 ad.button_url &&
 ad.button_url.trim()
 ){
-
 document
 .getElementById("adButtonBox")
 .innerHTML=
@@ -2437,38 +2480,29 @@ document
 <a
 class="ad-button"
 href="${esc(ad.button_url)}"
-target="_blank">
-
+target="_blank"
+rel="noopener">
 ${esc(
 ad.button_text||
 "اعرف المزيد"
 )}
-
 </a>
 `;
-
 }
-
-document
-.getElementById("adSection")
-.style.display="block";
-
-}catch(e){
-
-console.error(e);
-
+section.style.display=
+"block";
+}catch(error){
+console.error(
+"Ads error:",
+error
+);
 }
-
 }
-
-
-/* START */
-
+/* =====================================================
+   START
+===================================================== */
 loadProducts();
-
 loadAds();
-
 </script>
-
 </body>
 </html>
