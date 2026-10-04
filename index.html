@@ -18,6 +18,7 @@
 --blue-glass:rgba(34,199,235,.10);
 --green:#159447;
 --red:#b52b2b;
+--gold:#d49a18;
 --text:#183746;
 --text-light:#607985;
 --muted:#8a9ca5;
@@ -67,15 +68,14 @@ max-width:100%;
 ===================================================== */
 
 .topbar{
-height:38px;
-background:
-linear-gradient(90deg,#0798bd,#22c7eb,#0798bd);
+min-height:38px;
+background:linear-gradient(90deg,#0798bd,#22c7eb,#0798bd);
 color:#fff;
 display:flex;
 align-items:center;
 justify-content:center;
 font-size:12px;
-padding:0 15px;
+padding:8px 15px;
 text-align:center;
 }
 
@@ -93,7 +93,7 @@ header{
 position:sticky;
 top:0;
 z-index:5000;
-background:rgba(255,255,255,.82);
+background:rgba(255,255,255,.84);
 border-bottom:1px solid rgba(34,199,235,.14);
 box-shadow:0 6px 25px rgba(5,125,160,.08);
 backdrop-filter:blur(18px);
@@ -105,10 +105,7 @@ width:min(1380px,calc(100% - 40px));
 height:88px;
 margin:auto;
 display:grid;
-
-/* تم إعطاء اسم الشركة مساحة أكبر */
 grid-template-columns:330px minmax(0,1fr) 330px;
-
 align-items:center;
 gap:14px;
 }
@@ -156,22 +153,16 @@ margin-top:5px;
 }
 
 /* =====================================================
-   GLASS NAV
+   NAV
 ===================================================== */
 
 .nav{
 height:50px;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
-/* المسافات أصبحت صغيرة */
 gap:2px;
-
-/* padding صغير */
 padding:3px;
-
 border-radius:16px;
 
 background:
@@ -190,15 +181,10 @@ inset 0 1px 0 rgba(255,255,255,.95);
 backdrop-filter:blur(17px);
 -webkit-backdrop-filter:blur(17px);
 
-/* أهم تعديل:
-   الصندوق يأخذ مساحة المحتوى فقط */
 width:max-content;
 max-width:100%;
-
-/* لا يتمدد داخل عمود الهيدر */
 justify-self:center;
 
-/* في حالة الشاشة الصغيرة جدًا */
 overflow-x:auto;
 overflow-y:hidden;
 scrollbar-width:none;
@@ -210,24 +196,17 @@ display:none;
 
 .nav a{
 height:42px;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
 padding:0 11px;
-
 font-size:12px;
 font-weight:700;
-
 color:#536c76;
-
 position:relative;
 transition:.25s;
-
 white-space:nowrap;
 flex:0 0 auto;
-
 border-radius:13px;
 }
 
@@ -239,14 +218,12 @@ transform:translateY(-1px);
 
 .nav a.active{
 color:#078db5;
-
 background:
 linear-gradient(
 135deg,
 rgba(34,199,235,.18),
 rgba(34,199,235,.07)
 );
-
 box-shadow:
 inset 0 0 0 1px rgba(34,199,235,.12),
 0 5px 15px rgba(34,199,235,.08);
@@ -402,6 +379,7 @@ margin:0 0 26px;
 .hero-buttons{
 display:flex;
 gap:10px;
+flex-wrap:wrap;
 }
 
 .hero-btn{
@@ -434,7 +412,7 @@ backdrop-filter:blur(10px);
 }
 
 /* =====================================================
-   GENERAL SECTION
+   GENERAL
 ===================================================== */
 
 .section{
@@ -554,7 +532,7 @@ color:#e5faff;
 }
 
 /* =====================================================
-   ADVERTISEMENT
+   ADS
 ===================================================== */
 
 .ad-section{
@@ -638,7 +616,58 @@ border-radius:10px;
 }
 
 /* =====================================================
-   PRODUCTS LAYOUT
+   SPECIAL PRODUCTS
+===================================================== */
+
+.special-grid{
+display:grid;
+grid-template-columns:repeat(4,minmax(0,1fr));
+gap:18px;
+}
+
+.special-card{
+background:#fff;
+border:1px solid var(--cyan-border);
+border-radius:17px;
+overflow:hidden;
+cursor:pointer;
+transition:.25s;
+}
+
+.special-card:hover{
+transform:translateY(-5px);
+box-shadow:var(--shadow-hover);
+}
+
+.special-image{
+height:230px;
+background:#eefbfe;
+}
+
+.special-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.special-body{
+padding:13px;
+}
+
+.special-body h3{
+font-size:14px;
+margin:0 0 7px;
+color:#203f4d;
+}
+
+.special-price{
+font-size:18px;
+font-weight:900;
+color:#0783a7;
+}
+
+/* =====================================================
+   PRODUCTS
 ===================================================== */
 
 .product-layout{
@@ -652,10 +681,6 @@ direction:ltr;
 .product-area{
 direction:rtl;
 }
-
-/* =====================================================
-   SIDEBAR
-===================================================== */
 
 .sidebar{
 background:rgba(255,255,255,.92);
@@ -748,10 +773,6 @@ font-size:11px;
 color:var(--text);
 }
 
-.search input:focus{
-box-shadow:inset 0 0 0 2px rgba(34,199,235,.08);
-}
-
 .search button{
 width:48px;
 border:0;
@@ -774,7 +795,7 @@ outline:0;
 }
 
 /* =====================================================
-   PRODUCTS GRID
+   PRODUCT GRID
 ===================================================== */
 
 .grid{
@@ -891,6 +912,256 @@ font-size:9px;
 font-weight:bold;
 color:var(--cyan-dark);
 white-space:nowrap;
+}
+
+/* =====================================================
+   LOCATION
+===================================================== */
+
+.info-section{
+width:min(1200px,calc(100% - 40px));
+margin:0 auto 75px;
+}
+
+.info-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.info-card{
+background:#fff;
+border:1px solid var(--cyan-border);
+border-radius:18px;
+padding:25px;
+box-shadow:0 7px 22px rgba(7,145,180,.06);
+}
+
+.info-icon{
+width:50px;
+height:50px;
+border-radius:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:23px;
+background:var(--cyan-light);
+color:var(--cyan-dark);
+margin-bottom:14px;
+}
+
+.info-card h3{
+font-size:18px;
+margin:0 0 10px;
+color:#0783a7;
+}
+
+.info-card p{
+font-size:12px;
+line-height:2;
+color:#6d818a;
+margin:5px 0;
+}
+
+.info-buttons{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+margin-top:16px;
+}
+
+.info-button{
+height:42px;
+padding:0 17px;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+border-radius:10px;
+font-size:10px;
+font-weight:bold;
+background:var(--cyan);
+color:#fff;
+}
+
+.info-button.green{
+background:var(--green);
+}
+
+.info-button.light{
+background:var(--cyan-light);
+color:var(--cyan-dark);
+}
+
+.map-box{
+min-height:310px;
+border-radius:16px;
+overflow:hidden;
+background:
+linear-gradient(
+135deg,
+#e8faff,
+#d6f5fb
+);
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:25px;
+}
+
+.map-placeholder{
+max-width:420px;
+}
+
+.map-placeholder strong{
+display:block;
+font-size:20px;
+color:#0783a7;
+margin-bottom:10px;
+}
+
+.map-placeholder p{
+font-size:12px;
+line-height:1.9;
+color:#71858e;
+}
+
+/* =====================================================
+   BRANCHES
+===================================================== */
+
+.branches{
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:16px;
+}
+
+.branch{
+background:#fff;
+border:1px solid var(--cyan-border);
+border-radius:16px;
+padding:20px;
+transition:.25s;
+}
+
+.branch:hover{
+transform:translateY(-4px);
+box-shadow:var(--shadow-hover);
+}
+
+.branch-number{
+width:36px;
+height:36px;
+border-radius:10px;
+background:var(--cyan-light);
+color:var(--cyan-dark);
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:900;
+margin-bottom:12px;
+}
+
+.branch h3{
+font-size:16px;
+margin:0 0 8px;
+color:#0783a7;
+}
+
+.branch p{
+font-size:11px;
+line-height:1.9;
+color:#71848d;
+margin:4px 0;
+}
+
+.branch a{
+display:inline-flex;
+margin-top:10px;
+font-size:10px;
+font-weight:bold;
+color:var(--cyan-dark);
+}
+
+/* =====================================================
+   DELIVERY
+===================================================== */
+
+.delivery-box{
+background:
+linear-gradient(
+135deg,
+#e9fbff,
+#f8fdff
+);
+border:1px solid var(--cyan-border);
+border-radius:20px;
+padding:30px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.delivery-item{
+text-align:center;
+padding:18px;
+background:#fff;
+border-radius:14px;
+border:1px solid rgba(34,199,235,.12);
+}
+
+.delivery-item .icon{
+font-size:27px;
+margin-bottom:10px;
+}
+
+.delivery-item h3{
+font-size:14px;
+margin:0 0 7px;
+color:#0783a7;
+}
+
+.delivery-item p{
+font-size:10px;
+line-height:1.8;
+color:#71848d;
+margin:0;
+}
+
+/* =====================================================
+   REVIEWS
+===================================================== */
+
+.reviews{
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:18px;
+}
+
+.review{
+background:#fff;
+border:1px solid var(--cyan-border);
+border-radius:16px;
+padding:22px;
+}
+
+.stars{
+color:var(--gold);
+font-size:15px;
+letter-spacing:2px;
+margin-bottom:10px;
+}
+
+.review p{
+font-size:11px;
+line-height:2;
+color:#687d86;
+margin:0 0 15px;
+}
+
+.review strong{
+font-size:11px;
+color:#0783a7;
 }
 
 /* =====================================================
@@ -1254,15 +1525,6 @@ width:min(1380px,calc(100% - 80px));
 height:500px;
 }
 
-.grid{
-grid-template-columns:repeat(4,minmax(0,1fr));
-gap:20px;
-}
-
-.card-image{
-height:280px;
-}
-
 }
 
 /* =====================================================
@@ -1301,8 +1563,16 @@ font-size:43px;
 grid-template-columns:repeat(3,minmax(0,1fr));
 }
 
+.special-grid{
+grid-template-columns:repeat(3,minmax(0,1fr));
+}
+
 .product-layout{
 grid-template-columns:215px minmax(0,1fr);
+}
+
+.branches{
+grid-template-columns:repeat(2,1fr);
 }
 
 }
@@ -1346,6 +1616,18 @@ grid-template-columns:100px minmax(0,1fr) 125px;
 height:230px;
 }
 
+.info-grid{
+grid-template-columns:1fr;
+}
+
+.reviews{
+grid-template-columns:1fr 1fr;
+}
+
+.delivery-box{
+grid-template-columns:1fr 1fr;
+}
+
 }
 
 /* =====================================================
@@ -1359,7 +1641,7 @@ font-size:14px;
 }
 
 .topbar{
-height:34px;
+min-height:34px;
 font-size:9px;
 }
 
@@ -1389,31 +1671,16 @@ font-size:13px;
 white-space:nowrap;
 }
 
-/* =====================================================
-   MOBILE NAV
-===================================================== */
-
 .nav{
 order:3;
-
-/* ليس 100% حتى لا يبدو الصندوق ضخمًا */
 width:max-content;
 max-width:100%;
-
 height:44px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
 gap:2px;
 padding:3px;
-
 margin:8px auto 0;
-
 overflow-x:auto;
 overflow-y:hidden;
-
 scrollbar-width:none;
 -webkit-overflow-scrolling:touch;
 }
@@ -1424,18 +1691,8 @@ display:none;
 
 .nav a{
 height:36px;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-
 font-size:9px;
-
-white-space:nowrap;
 padding:0 9px;
-
-flex:0 0 auto;
-
 border-radius:10px;
 }
 
@@ -1461,41 +1718,9 @@ font-size:32px;
 font-size:12px;
 }
 
-.hero-buttons{
-flex-wrap:wrap;
-}
-
 .hero-btn{
 height:46px;
 padding:0 22px;
-}
-
-/* FEATURES */
-
-.features{
-width:calc(100% - 24px);
-grid-template-columns:1fr 1fr;
-margin:0 auto 55px;
-}
-
-.feature{
-min-height:78px;
-padding:10px;
-gap:9px;
-}
-
-.feature strong{
-font-size:10px;
-}
-
-.feature span{
-font-size:8px;
-}
-
-.feature-icon{
-width:36px;
-height:36px;
-font-size:16px;
 }
 
 /* SECTIONS */
@@ -1530,6 +1755,17 @@ gap:8px;
 
 .category{
 height:185px;
+}
+
+/* SPECIAL */
+
+.special-grid{
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.special-image{
+height:160px;
 }
 
 /* PRODUCTS */
@@ -1576,14 +1812,6 @@ flex-direction:column;
 gap:8px;
 }
 
-.search{
-width:100%;
-}
-
-.sort{
-width:100%;
-}
-
 .grid{
 grid-template-columns:1fr 1fr;
 gap:10px;
@@ -1608,6 +1836,40 @@ height:31px;
 
 .price{
 font-size:16px;
+}
+
+/* INFO */
+
+.info-section{
+width:calc(100% - 24px);
+margin-bottom:55px;
+}
+
+.info-grid{
+grid-template-columns:1fr;
+}
+
+.map-box{
+min-height:240px;
+}
+
+/* BRANCHES */
+
+.branches{
+grid-template-columns:1fr;
+}
+
+/* DELIVERY */
+
+.delivery-box{
+grid-template-columns:1fr;
+padding:15px;
+}
+
+/* REVIEWS */
+
+.reviews{
+grid-template-columns:1fr;
 }
 
 /* ABOUT */
@@ -1635,10 +1897,6 @@ font-size:25px;
 font-size:12px;
 }
 
-.point{
-font-size:10px;
-}
-
 /* CTA */
 
 .cta{
@@ -1659,6 +1917,34 @@ font-size:11px;
 .cta-button{
 margin-top:18px;
 justify-content:center;
+}
+
+/* FEATURES */
+
+.features{
+width:calc(100% - 24px);
+grid-template-columns:1fr 1fr;
+margin:0 auto 55px;
+}
+
+.feature{
+min-height:78px;
+padding:10px;
+gap:9px;
+}
+
+.feature strong{
+font-size:10px;
+}
+
+.feature span{
+font-size:8px;
+}
+
+.feature-icon{
+width:36px;
+height:36px;
+font-size:16px;
 }
 
 /* FOOTER */
@@ -1746,6 +2032,10 @@ font-size:14px;
 font-size:8px;
 }
 
+.special-image{
+height:135px;
+}
+
 .modal-image{
 height:300px;
 }
@@ -1792,10 +2082,14 @@ grid-template-columns:1fr;
 height:190px;
 }
 
+.special-grid{
+grid-template-columns:1fr;
+}
+
 }
 
 /* =====================================================
-   MOBILE SIDEBAR OPEN
+   MOBILE SIDEBAR
 ===================================================== */
 
 @media(max-width:850px){
@@ -1811,11 +2105,19 @@ display:block;
 
 <body>
 
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
 <div class="topbar">
 مرحباً بكم في
 <b>شركة بيت المراتب للمفروشات جملة وقطاعي</b>
 — راحتك تبدأ من هنا
 </div>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
@@ -1852,6 +2154,14 @@ display:block;
 المنتجات
 </a>
 
+<a href="#offers">
+العروض
+</a>
+
+<a href="#location">
+الموقع
+</a>
+
 <a href="#about">
 من نحن
 </a>
@@ -1879,7 +2189,8 @@ placeholder="ابحث عن منتج...">
 
 <a
 class="whatsapp"
-href="https://wa.me/966546510165"
+id="headerWhatsapp"
+href="#"
 target="_blank"
 rel="noopener">
 واتساب
@@ -1891,6 +2202,10 @@ rel="noopener">
 
 </header>
 
+<!-- =====================================================
+     HERO
+===================================================== -->
+
 <section class="hero" id="hero">
 
 <img
@@ -1898,8 +2213,7 @@ id="heroImage"
 class="hero-image"
 alt="شركة بيت المراتب للمفروشات جملة وقطاعي">
 
-<div class="hero-overlay">
-</div>
+<div class="hero-overlay"></div>
 
 <div class="hero-content">
 
@@ -1928,7 +2242,8 @@ class="hero-btn hero-primary">
 </a>
 
 <a
-href="https://wa.me/966546510165"
+id="heroWhatsapp"
+href="#"
 target="_blank"
 class="hero-btn hero-secondary">
 تواصل معنا
@@ -1939,6 +2254,10 @@ class="hero-btn hero-secondary">
 </div>
 
 </section>
+
+<!-- =====================================================
+     CATEGORIES
+===================================================== -->
 
 <section class="section" id="categories">
 
@@ -1973,17 +2292,19 @@ id="categoriesGrid">
 
 </section>
 
+<!-- =====================================================
+     OFFERS / ADS
+===================================================== -->
+
 <section
 class="ad-section"
-id="adSection">
+id="offers">
 
 <div class="ad">
 
-<div id="adImageBox">
-</div>
+<div id="adImageBox"></div>
 
-<div class="ad-overlay">
-</div>
+<div class="ad-overlay"></div>
 
 <div class="ad-content">
 
@@ -1991,20 +2312,58 @@ id="adSection">
 عرض مميز
 </div>
 
-<h2 id="adTitle">
-</h2>
+<h2 id="adTitle"></h2>
 
-<p id="adDescription">
-</p>
+<p id="adDescription"></p>
 
-<div id="adButtonBox">
-</div>
+<div id="adButtonBox"></div>
 
 </div>
 
 </div>
 
 </section>
+
+<!-- =====================================================
+     SPECIAL PRODUCTS
+===================================================== -->
+
+<section class="section" id="specialProducts">
+
+<div class="section-head">
+
+<div>
+
+<h2 class="section-title">
+
+مختاراتنا
+
+<small>
+منتجات مميزة ننصحك بها
+</small>
+
+</h2>
+
+</div>
+
+<a
+href="#products"
+class="section-link">
+مشاهدة جميع المنتجات ←
+</a>
+
+</div>
+
+<div
+class="special-grid"
+id="specialGrid">
+</div>
+
+</section>
+
+<!-- =====================================================
+     PRODUCTS
+===================================================== -->
 
 <section class="section" id="products">
 
@@ -2122,6 +2481,229 @@ id="grid">
 
 </section>
 
+<!-- =====================================================
+     LOCATION
+===================================================== -->
+
+<section class="info-section" id="location">
+
+<div class="section-head">
+
+<div>
+
+<h2 class="section-title">
+
+موقعنا وتواصل معنا
+
+<small>
+نحن سعداء بخدمتكم والإجابة عن استفساراتكم
+</small>
+
+</h2>
+
+</div>
+
+</div>
+
+<div class="info-grid">
+
+<div class="info-card">
+
+<div class="info-icon">
+📍
+</div>
+
+<h3>
+موقع الشركة
+</h3>
+
+<p id="companyAddress">
+العنوان يتم تعديله من إعدادات الموقع.
+</p>
+
+<p id="companyCity">
+المدينة: الرياض
+</p>
+
+<div class="info-buttons">
+
+<a
+id="mapsButton"
+class="info-button"
+href="#"
+target="_blank"
+rel="noopener">
+فتح الموقع في Google Maps
+</a>
+
+<a
+id="locationWhatsapp"
+class="info-button green"
+href="#"
+target="_blank"
+rel="noopener">
+تواصل عبر واتساب
+</a>
+
+</div>
+
+</div>
+
+<div class="map-box">
+
+<div class="map-placeholder">
+
+<strong>
+📍 موقع شركة بيت المراتب
+</strong>
+
+<p id="mapText">
+ضع رابط Google Maps والعنوان في قسم
+COMPANY SETTINGS داخل الكود.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     WORKING HOURS / CONTACT
+===================================================== -->
+
+<section class="info-section">
+
+<div class="info-grid">
+
+<div class="info-card">
+
+<div class="info-icon">
+🕐
+</div>
+
+<h3>
+أوقات العمل
+</h3>
+
+<div id="workingHours"></div>
+
+</div>
+
+<div class="info-card">
+
+<div class="info-icon">
+📞
+</div>
+
+<h3>
+بيانات التواصل
+</h3>
+
+<p>
+رقم الهاتف:
+<strong id="phoneText"></strong>
+</p>
+
+<p>
+واتساب:
+<strong id="whatsappText"></strong>
+</p>
+
+<div class="info-buttons">
+
+<a
+id="phoneButton"
+class="info-button light"
+href="#">
+اتصال مباشر
+</a>
+
+<a
+id="whatsappButton"
+class="info-button green"
+href="#"
+target="_blank"
+rel="noopener">
+واتساب
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     BRANCHES
+===================================================== -->
+
+<section class="info-section" id="branchesSection">
+
+<div class="section-head">
+
+<div>
+
+<h2 class="section-title">
+
+فروعنا
+
+<small>
+يمكنك تعديل الفروع وإضافة فروع جديدة من إعدادات الموقع
+</small>
+
+</h2>
+
+</div>
+
+</div>
+
+<div
+class="branches"
+id="branches">
+</div>
+
+</section>
+
+<!-- =====================================================
+     DELIVERY
+===================================================== -->
+
+<section class="info-section" id="delivery">
+
+<div class="section-head">
+
+<div>
+
+<h2 class="section-title">
+
+خدمة التوصيل
+
+<small>
+معلومات مهمة لعملائنا
+</small>
+
+</h2>
+
+</div>
+
+</div>
+
+<div
+class="delivery-box"
+id="deliveryBox">
+</div>
+
+</section>
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
 <section class="about" id="about">
 
 <div class="about-inner">
@@ -2137,31 +2719,14 @@ id="aboutImage">
 شركة بيت المراتب للمفروشات جملة وقطاعي
 </h2>
 
-<p>
-نسعى في شركة بيت المراتب للمفروشات جملة وقطاعي إلى توفير
-تشكيلة متنوعة من المنتجات التي تجمع بين
-الجودة والراحة والسعر المناسب، مع تقديم
-تجربة شراء سهلة وواضحة لعملائنا.
+<p id="aboutDescription">
+نسعى في شركة بيت المراتب للمفروشات جملة وقطاعي
+إلى توفير تشكيلة متنوعة من المنتجات التي تجمع بين
+الجودة والراحة والسعر المناسب، مع تقديم تجربة شراء
+سهلة وواضحة لعملائنا.
 </p>
 
-<div class="points">
-
-<div class="point">
-✓ تشكيلة متنوعة
-</div>
-
-<div class="point">
-✓ جودة مختارة
-</div>
-
-<div class="point">
-✓ أسعار منافسة
-</div>
-
-<div class="point">
-✓ خدمة عملاء مميزة
-</div>
-
+<div class="points" id="aboutPoints">
 </div>
 
 </div>
@@ -2169,6 +2734,41 @@ id="aboutImage">
 </div>
 
 </section>
+
+<!-- =====================================================
+     REVIEWS
+===================================================== -->
+
+<section class="info-section" id="reviews">
+
+<div class="section-head">
+
+<div>
+
+<h2 class="section-title">
+
+آراء عملائنا
+
+<small>
+يمكنك تعديل هذه الآراء أو إضافة آراء جديدة
+</small>
+
+</h2>
+
+</div>
+
+</div>
+
+<div
+class="reviews"
+id="reviewsGrid">
+</div>
+
+</section>
+
+<!-- =====================================================
+     CTA
+===================================================== -->
 
 <section class="cta">
 
@@ -2186,14 +2786,19 @@ id="aboutImage">
 </div>
 
 <a
+id="ctaWhatsapp"
 class="cta-button"
-href="https://wa.me/966546510165"
+href="#"
 target="_blank"
 rel="noopener">
 تواصل معنا عبر واتساب
 </a>
 
 </section>
+
+<!-- =====================================================
+     FEATURES
+===================================================== -->
 
 <section class="features">
 
@@ -2279,6 +2884,10 @@ rel="noopener">
 
 </section>
 
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer id="contact">
 
 <div class="footer">
@@ -2293,6 +2902,8 @@ rel="noopener">
 راحة تدوم وجودة تستحقها.
 اكتشف منتجاتنا وتواصل معنا لمعرفة المزيد.
 </p>
+
+<p id="footerAddress"></p>
 
 </div>
 
@@ -2314,6 +2925,14 @@ rel="noopener">
 المنتجات
 </a>
 
+<a href="#offers">
+العروض
+</a>
+
+<a href="#location">
+الموقع
+</a>
+
 <a href="#about">
 من نحن
 </a>
@@ -2327,13 +2946,20 @@ rel="noopener">
 </h3>
 
 <a
-href="https://wa.me/966546510165"
+id="footerWhatsapp"
+href="#"
 target="_blank">
 واتساب
 </a>
 
-<a href="tel:920012345">
-9200 12345
+<a
+id="footerPhone"
+href="#">
+الهاتف
+</a>
+
+<a href="#delivery">
+التوصيل
 </a>
 
 </div>
@@ -2344,12 +2970,16 @@ target="_blank">
 روابط سريعة
 </h3>
 
-<a href="#products">
-أحدث المنتجات
+<a href="#specialProducts">
+مختاراتنا
 </a>
 
-<a href="#categories">
-التصنيفات
+<a href="#branchesSection">
+الفروع
+</a>
+
+<a href="#reviews">
+آراء العملاء
 </a>
 
 <a href="#contact">
@@ -2369,6 +2999,10 @@ target="_blank">
 </div>
 
 </footer>
+
+<!-- =====================================================
+     PRODUCT MODAL
+===================================================== -->
 
 <div
 class="product-modal"
@@ -2398,17 +3032,172 @@ id="modalContent">
    SUPABASE
 ===================================================== */
 
-const SUPABASE_URL=
+const SUPABASE_URL =
 "https://wmiszhoahvfsbmedjrbm.supabase.co";
 
-const SUPABASE_PUBLISHABLE_KEY=
+const SUPABASE_PUBLISHABLE_KEY =
 "sb_publishable_fFclLm6Z2fdUTYxD_AAC5w_icPdd_n5";
 
-const db=
+const db =
 supabase.createClient(
 SUPABASE_URL,
 SUPABASE_PUBLISHABLE_KEY
 );
+
+/* =====================================================
+   COMPANY SETTINGS
+   عدّل البيانات هنا فقط
+===================================================== */
+
+const COMPANY = {
+
+name:
+"شركة بيت المراتب للمفروشات جملة وقطاعي",
+
+city:
+"الرياض",
+
+address:
+"اكتب عنوان الشركة هنا",
+
+phone:
+"920012345",
+
+whatsapp:
+"966546510165",
+
+googleMaps:
+"ضع رابط Google Maps هنا",
+
+workingHours:[
+{
+day:"السبت - الخميس",
+time:"9:00 صباحاً - 10:00 مساءً"
+},
+{
+day:"الجمعة",
+time:"حسب مواعيد الفرع"
+}
+],
+
+about:
+"نسعى في شركة بيت المراتب للمفروشات جملة وقطاعي إلى توفير تشكيلة متنوعة من المنتجات التي تجمع بين الجودة والراحة والسعر المناسب، مع تقديم تجربة شراء سهلة وواضحة لعملائنا.",
+
+aboutPoints:[
+"✓ تشكيلة متنوعة",
+"✓ جودة مختارة",
+"✓ أسعار منافسة",
+"✓ خدمة عملاء مميزة",
+"✓ خدمة توصيل",
+"✓ دعم وخدمة عملاء"
+],
+
+/*
+  أضف الفروع هنا.
+  لفتح Google Maps لكل فرع ضع رابط الخريطة.
+*/
+
+branches:[
+
+{
+name:"الفرع الرئيسي",
+address:"اكتب عنوان الفرع الرئيسي هنا",
+phone:"920012345",
+maps:"ضع رابط Google Maps هنا"
+},
+
+{
+name:"فرع 2",
+address:"اكتب عنوان الفرع الثاني هنا",
+phone:"920012345",
+maps:"ضع رابط Google Maps هنا"
+},
+
+{
+name:"فرع 3",
+address:"اكتب عنوان الفرع الثالث هنا",
+phone:"920012345",
+maps:"ضع رابط Google Maps هنا"
+}
+
+],
+
+/*
+  معلومات التوصيل
+*/
+
+delivery:[
+{
+icon:"🚚",
+title:"توصيل المنتجات",
+text:"تتوفر خدمة التوصيل حسب نطاق التغطية والفرع."
+},
+
+{
+icon:"📦",
+title:"تجهيز الطلب",
+text:"يتم تجهيز الطلب حسب توفر المنتجات وتفاصيل الطلب."
+},
+
+{
+icon:"📞",
+title:"التنسيق مع العميل",
+text:"يتم التواصل مع العميل لتأكيد تفاصيل التوصيل."
+}
+],
+
+/*
+  آراء العملاء
+  يمكنك تغييرها أو حذفها أو إضافة المزيد.
+*/
+
+reviews:[
+
+{
+name:"عميلنا العزيز",
+text:"تجربة ممتازة وتعامل راقٍ، والمنتجات بجودة جيدة.",
+stars:5
+},
+
+{
+name:"عميلنا العزيز",
+text:"تشكيلة متنوعة وأسعار مناسبة وخدمة جيدة.",
+stars:5
+},
+
+{
+name:"عميلنا العزيز",
+text:"تعامل ممتاز وسرعة في الرد على الاستفسارات.",
+stars:5
+}
+
+]
+
+};
+
+/* =====================================================
+   SPECIAL PRODUCTS SETTINGS
+===================================================== */
+
+/*
+  يمكنك وضع أكواد المنتجات التي تريد ظهورها
+  في قسم "مختاراتنا".
+
+  مثال:
+
+  specialProductCodes:[
+    "0011",
+    "0020",
+    "0030"
+  ]
+
+  وإذا تركتها فارغة سيختار الموقع منتجات
+  تلقائياً من المنتجات الموجودة.
+*/
+
+const SPECIAL_PRODUCT_CODES = [
+
+];
 
 /* =====================================================
    VARIABLES
@@ -2422,34 +3211,34 @@ let currentSearch="";
    ELEMENTS
 ===================================================== */
 
-const grid=
+const grid =
 document.getElementById("grid");
 
-const search=
+const search =
 document.getElementById("search");
 
-const searchBtn=
+const searchBtn =
 document.getElementById("searchBtn");
 
-const sort=
+const sort =
 document.getElementById("sort");
 
-const categoryList=
+const categoryList =
 document.getElementById("categoryList");
 
-const count=
+const count =
 document.getElementById("count");
 
-const desktopCount=
+const desktopCount =
 document.getElementById("desktopCount");
 
-const sidebar=
+const sidebar =
 document.getElementById("sidebar");
 
-const productModal=
+const productModal =
 document.getElementById("productModal");
 
-const modalContent=
+const modalContent =
 document.getElementById("modalContent");
 
 /* =====================================================
@@ -2475,6 +3264,392 @@ return {
 
 }
 );
+
+}
+
+/* =====================================================
+   WHATSAPP URL
+===================================================== */
+
+function whatsappUrl(message=""){
+
+if(message){
+
+return "https://wa.me/"+
+COMPANY.whatsapp+
+"?text="+
+encodeURIComponent(message);
+
+}
+
+return "https://wa.me/"+
+COMPANY.whatsapp;
+
+}
+
+/* =====================================================
+   APPLY COMPANY SETTINGS
+===================================================== */
+
+function applyCompanySettings(){
+
+/* WhatsApp */
+
+const whatsappLinks=[
+"headerWhatsapp",
+"heroWhatsapp",
+"locationWhatsapp",
+"whatsappButton",
+"ctaWhatsapp",
+"footerWhatsapp"
+];
+
+whatsappLinks.forEach(
+function(id){
+
+const element=
+document.getElementById(id);
+
+if(element){
+
+element.href=
+whatsappUrl();
+
+}
+
+});
+
+/* Phone */
+
+const phoneText=
+document.getElementById("phoneText");
+
+if(phoneText){
+
+phoneText.textContent=
+COMPANY.phone;
+
+}
+
+const phoneButton=
+document.getElementById("phoneButton");
+
+if(phoneButton){
+
+phoneButton.href=
+"tel:"+COMPANY.phone;
+
+}
+
+const footerPhone=
+document.getElementById("footerPhone");
+
+if(footerPhone){
+
+footerPhone.href=
+"tel:"+COMPANY.phone;
+
+footerPhone.textContent=
+COMPANY.phone;
+
+}
+
+const whatsappText=
+document.getElementById("whatsappText");
+
+if(whatsappText){
+
+whatsappText.textContent=
+"+"+COMPANY.whatsapp;
+
+}
+
+/* Address */
+
+document.getElementById(
+"companyAddress"
+).textContent=
+COMPANY.address;
+
+document.getElementById(
+"companyCity"
+).textContent=
+"المدينة: "+
+COMPANY.city;
+
+document.getElementById(
+"footerAddress"
+).textContent=
+COMPANY.address;
+
+/* Google Maps */
+
+const mapsButton=
+document.getElementById(
+"mapsButton"
+);
+
+if(
+COMPANY.googleMaps &&
+COMPANY.googleMaps!=="#" &&
+!COMPANY.googleMaps.includes("ضع رابط")
+){
+
+mapsButton.href=
+COMPANY.googleMaps;
+
+}else{
+
+mapsButton.href="#";
+
+mapsButton.onclick=
+function(e){
+
+e.preventDefault();
+
+alert(
+"أضف رابط Google Maps في COMPANY SETTINGS داخل الكود."
+);
+
+};
+
+}
+
+/* Working hours */
+
+const hoursBox=
+document.getElementById(
+"workingHours"
+);
+
+hoursBox.innerHTML=
+COMPANY.workingHours
+.map(
+function(item){
+
+return `
+<p>
+<strong>
+${esc(item.day)}
+</strong>
+:
+${esc(item.time)}
+</p>
+`;
+
+}
+)
+.join("");
+
+/* About */
+
+document.getElementById(
+"aboutDescription"
+).textContent=
+COMPANY.about;
+
+document.getElementById(
+"aboutPoints"
+).innerHTML=
+COMPANY.aboutPoints
+.map(
+function(item){
+
+return `
+<div class="point">
+${esc(item)}
+</div>
+`;
+
+}
+)
+.join("");
+
+}
+
+/* =====================================================
+   BRANCHES
+===================================================== */
+
+function renderBranches(){
+
+const box=
+document.getElementById(
+"branches"
+);
+
+if(!COMPANY.branches.length){
+
+box.innerHTML=
+`
+<div class="empty">
+لا توجد فروع مضافة حالياً.
+</div>
+`;
+
+return;
+
+}
+
+box.innerHTML=
+COMPANY.branches
+.map(
+function(branch,index){
+
+const validMap=
+branch.maps &&
+branch.maps!=="#" &&
+!branch.maps.includes("ضع رابط");
+
+return `
+
+<div class="branch">
+
+<div class="branch-number">
+${index+1}
+</div>
+
+<h3>
+${esc(branch.name)}
+</h3>
+
+<p>
+📍 ${esc(branch.address)}
+</p>
+
+<p>
+☎ ${esc(branch.phone)}
+</p>
+
+<div>
+
+${
+validMap
+?
+`
+<a
+href="${esc(branch.maps)}"
+target="_blank"
+rel="noopener">
+فتح الموقع في Google Maps ←
+</a>
+`
+:
+`
+<a
+href="#location"
+onclick="
+alert('أضف رابط Google Maps لهذا الفرع في COMPANY SETTINGS.');
+">
+إضافة موقع الفرع ←
+</a>
+`
+}
+
+</div>
+
+</div>
+
+`;
+
+}
+)
+.join("");
+
+}
+
+/* =====================================================
+   DELIVERY
+===================================================== */
+
+function renderDelivery(){
+
+const box=
+document.getElementById(
+"deliveryBox"
+);
+
+box.innerHTML=
+COMPANY.delivery
+.map(
+function(item){
+
+return `
+
+<div class="delivery-item">
+
+<div class="icon">
+${esc(item.icon)}
+</div>
+
+<h3>
+${esc(item.title)}
+</h3>
+
+<p>
+${esc(item.text)}
+</p>
+
+</div>
+
+`;
+
+}
+)
+.join("");
+
+}
+
+/* =====================================================
+   REVIEWS
+===================================================== */
+
+function renderReviews(){
+
+const box=
+document.getElementById(
+"reviewsGrid"
+);
+
+box.innerHTML=
+COMPANY.reviews
+.map(
+function(review){
+
+const stars=
+"★".repeat(
+Math.min(
+5,
+Math.max(
+1,
+Number(review.stars)||5
+)
+)
+);
+
+return `
+
+<div class="review">
+
+<div class="stars">
+${stars}
+</div>
+
+<p>
+"${esc(review.text)}"
+</p>
+
+<strong>
+${esc(review.name)}
+</strong>
+
+</div>
+
+`;
+
+}
+)
+.join("");
 
 }
 
@@ -2521,6 +3696,8 @@ buildCategories();
 buildCategoryCards();
 
 renderProducts();
+
+renderSpecialProducts();
 
 setDefaultHero();
 
@@ -2739,6 +3916,177 @@ behavior:"smooth"
 };
 
 box.appendChild(card);
+
+}
+);
+
+}
+
+/* =====================================================
+   SPECIAL PRODUCTS
+===================================================== */
+
+function renderSpecialProducts(){
+
+const box=
+document.getElementById(
+"specialGrid"
+);
+
+if(!products.length){
+
+box.innerHTML="";
+
+return;
+
+}
+
+let special=[];
+
+/*
+  إذا تم وضع أكواد محددة
+*/
+
+if(SPECIAL_PRODUCT_CODES.length){
+
+special=
+SPECIAL_PRODUCT_CODES
+.map(
+code=>
+products.find(
+p=>
+String(p.code)===
+String(code)
+)
+)
+.filter(Boolean);
+
+}
+
+/*
+  إذا لم يتم تحديد أكواد
+  نعرض أول 4 منتجات متاحة.
+*/
+
+if(!special.length){
+
+special=
+products
+.filter(
+p=>p.available && p.image_url
+)
+.slice(0,4);
+
+}
+
+/*
+  إذا لم توجد 4 منتجات متاحة
+  نكمل من المنتجات العادية.
+*/
+
+if(special.length<4){
+
+const extra=
+products
+.filter(
+p=>!special.includes(p)
+)
+.slice(
+0,
+4-special.length
+);
+
+special=[
+...special,
+...extra
+];
+
+}
+
+box.innerHTML=
+special
+.slice(0,4)
+.map(
+function(p){
+
+return `
+
+<article
+class="special-card"
+data-special-id="${esc(p.id)}">
+
+<div class="special-image">
+
+${
+p.image_url
+?
+`
+<img
+src="${esc(p.image_url)}"
+alt="${esc(p.name||"")}"
+loading="lazy">
+`
+:
+""
+}
+
+</div>
+
+<div class="special-body">
+
+<h3>
+${esc(p.name||"")}
+</h3>
+
+<div class="special-price">
+
+${
+p.price!==null &&
+p.price!==undefined &&
+p.price!==""
+?
+Number(p.price)
+.toLocaleString("ar-SA")+
+' ريال'
+:
+""
+}
+
+</div>
+
+</div>
+
+</article>
+
+`;
+
+}
+)
+.join("");
+
+box.querySelectorAll(
+".special-card"
+)
+.forEach(
+function(card){
+
+card.onclick=
+function(){
+
+const product=
+products.find(
+p=>
+String(p.id)===
+String(card.dataset.specialId)
+);
+
+if(product){
+
+openProduct(product);
+
+}
+
+};
 
 }
 );
@@ -3112,12 +4460,10 @@ openProduct(product);
 function openProduct(p){
 
 const message=
-encodeURIComponent(
 "السلام عليكم، أريد الاستفسار عن المنتج: "+
 (p.name||"")+
 " - كود "+
-(p.code||"")
-);
+(p.code||"");
 
 modalContent.innerHTML=
 `
@@ -3213,9 +4559,7 @@ font-weight:400;">
 
 <a
 class="modal-whatsapp"
-href="
-https://wa.me/966546510165?text=${message}
-"
+href="${whatsappUrl(message)}"
 target="_blank"
 rel="noopener">
 
@@ -3420,7 +4764,7 @@ ad.title||
 
 const section=
 document.getElementById(
-"adSection"
+"offers"
 );
 
 const imageBox=
@@ -3491,6 +4835,14 @@ error
 /* =====================================================
    START
 ===================================================== */
+
+applyCompanySettings();
+
+renderBranches();
+
+renderDelivery();
+
+renderReviews();
 
 loadProducts();
 
