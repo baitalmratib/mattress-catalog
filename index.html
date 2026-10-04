@@ -169,9 +169,6 @@ transition:.25s;
 white-space:nowrap;
 border-radius:14px;
 }
-.nav a:after{
-display:none;
-}
 .nav a:hover{
 color:var(--cyan-dark);
 background:rgba(34,199,235,.10);
@@ -1131,7 +1128,7 @@ font-size:9px;
 .header{
 width:calc(100% - 24px);
 height:auto;
-padding:10px 0;
+padding:10px 0 8px;
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
@@ -1139,30 +1136,34 @@ justify-content:center;
 .logo{
 width:100%;
 justify-content:center;
+gap:9px;
 }
 .logo-icon{
-width:43px;
-height:43px;
-font-size:20px;
+width:41px;
+height:41px;
+font-size:19px;
 }
 .logo-title{
-font-size:15px;
+font-size:13px;
+white-space:nowrap;
 }
 .logo-title small{
 font-size:8px;
+margin-top:4px;
 }
 /* =====================================================
-   MOBILE NAV — CENTERED
+   MOBILE NAV — SMALL + CENTERED
 ===================================================== */
 .nav{
 order:3;
 width:100%;
-height:52px;
+height:46px;
 display:flex;
 align-items:center;
 justify-content:center;
-gap:3px;
-padding:5px;
+gap:2px;
+padding:3px;
+margin-top:8px;
 overflow-x:auto;
 overflow-y:hidden;
 scrollbar-width:none;
@@ -1172,15 +1173,16 @@ scrollbar-width:none;
 display:none;
 }
 .nav a{
-height:41px;
+height:38px;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-font-size:10px;
+font-size:9px;
 white-space:nowrap;
-padding:0 12px;
+padding:0 9px;
 flex:0 0 auto;
+border-radius:11px;
 }
 /* HERO */
 .hero{
@@ -1369,13 +1371,15 @@ grid-column:1/-1;
    SMALL MOBILE
 ===================================================== */
 @media(max-width:450px){
-/* إبقاء القائمة في المنتصف حتى في الشاشات الصغيرة */
 .nav{
 justify-content:center;
 }
 .nav a{
-padding:0 10px;
-font-size:9.5px;
+padding:0 8px;
+font-size:9px;
+}
+.logo-title{
+font-size:12px;
 }
 .hero h1{
 font-size:28px;
@@ -1430,8 +1434,11 @@ font-size:23px;
 justify-content:center;
 }
 .nav a{
-padding:0 8px;
-font-size:9px;
+padding:0 7px;
+font-size:8.5px;
+}
+.logo-title{
+font-size:11px;
 }
 .grid{
 grid-template-columns:1fr;
@@ -1454,36 +1461,12 @@ height:190px;
 display:block;
 }
 }
-/* =====================================================
-   MOBILE NAV CENTER FIX
-   يمنع محاذاة القائمة للجنب
-===================================================== */
-@media(max-width:850px){
-.header{
-overflow:visible;
-}
-.nav{
-margin-left:auto;
-margin-right:auto;
-}
-.nav a:first-child{
-margin-right:auto;
-}
-.nav a:last-child{
-margin-left:auto;
-}
-/* عندما تكون القائمة أعرض من الشاشة،
-   يبقى أول وآخر عنصر ضمن المنتصف قدر الإمكان */
-.nav{
-scroll-padding-inline:50%;
-}
-}
 </style>
 </head>
 <body>
 <div class="topbar">
 مرحباً بكم في
-<b>شركة بيت المراتب للمفروشات</b>
+<b>شركة بيت المراتب للمفروشات جملة وقطاعي</b>
 — راحتك تبدأ من هنا
 </div>
 <header>
@@ -1493,7 +1476,7 @@ scroll-padding-inline:50%;
 ⌂
 </div>
 <div class="logo-title">
-شركة بيت المراتب للمفروشات
+شركة بيت المراتب للمفروشات جملة وقطاعي
 <small>
 راحة تدوم • جودة تستحقها
 </small>
@@ -1540,12 +1523,13 @@ rel="noopener">
 <img
 id="heroImage"
 class="hero-image"
-alt="بيت المراتب للمفروشات">
+alt="بيت المراتب للمفروشات جملة وقطاعي">
 <div class="hero-overlay">
 </div>
 <div class="hero-content">
 <div class="hero-small">
-شركة بيت المراتب للمفروشات جملة وقطاعي</div>
+شركة بيت المراتب للمفروشات جملة وقطاعي
+</div>
 <h1>
 راحة أفضل
 <span>
@@ -1799,7 +1783,7 @@ rel="noopener">
 <div class="footer">
 <div class="footer-brand">
 <h2>
-بيت المراتب للمفروشات
+بيت المراتب للمفروشات جملة وقطاعي
 </h2>
 <p>
 راحة تدوم وجودة تستحقها.
@@ -2091,8 +2075,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 color:#fff;
-font-size:65px;
-">
+font-size:65px;">
 ⌂
 </div>
 <div class="category-content">
@@ -2566,7 +2549,7 @@ box.innerHTML=
 `
 <img
 src="${esc(product.image_url)}"
-alt="بيت المراتب للمفروشات">
+alt="بيت المراتب للمفروشات جملة وقطاعي">
 `;
 }
 }
@@ -2621,7 +2604,7 @@ heroImage.src=
 ad.image_url;
 heroImage.alt=
 ad.title||
-"بيت المراتب للمفروشات";
+"بيت المراتب للمفروشات جملة وقطاعي";
 }
 /* AD */
 const section=
