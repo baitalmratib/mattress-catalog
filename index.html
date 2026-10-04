@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>شركة بيت المراتب للمفروشات جملة وقطاعي</title>
 <style>
-/* =====================================================
-   ROOT
-===================================================== */
 :root{
 --cyan:#22c7eb;
 --cyan-dark:#0798bd;
@@ -24,14 +21,9 @@
 --white:#ffffff;
 --bg:#f6fcfe;
 --container:1380px;
---shadow:
-0 10px 30px rgba(7,145,180,.09);
---shadow-hover:
-0 18px 45px rgba(7,145,180,.16);
+--shadow:0 10px 30px rgba(7,145,180,.09);
+--shadow-hover:0 18px 45px rgba(7,145,180,.16);
 }
-/* =====================================================
-   RESET
-===================================================== */
 *{
 box-sizing:border-box;
 }
@@ -40,21 +32,10 @@ scroll-behavior:smooth;
 }
 body{
 margin:0;
-font-family:
-Arial,
-Tahoma,
-sans-serif;
+font-family:Arial,Tahoma,sans-serif;
 background:
-radial-gradient(
-circle at 10% 10%,
-rgba(34,199,235,.055),
-transparent 28%
-),
-radial-gradient(
-circle at 90% 20%,
-rgba(34,199,235,.045),
-transparent 28%
-),
+radial-gradient(circle at 10% 10%,rgba(34,199,235,.055),transparent 28%),
+radial-gradient(circle at 90% 20%,rgba(34,199,235,.045),transparent 28%),
 var(--bg);
 color:var(--text);
 font-size:16px;
@@ -77,12 +58,7 @@ max-width:100%;
 .topbar{
 height:38px;
 background:
-linear-gradient(
-90deg,
-#0798bd,
-#22c7eb,
-#0798bd
-);
+linear-gradient(90deg,#0798bd,#22c7eb,#0798bd);
 color:#fff;
 display:flex;
 align-items:center;
@@ -103,32 +79,18 @@ header{
 position:sticky;
 top:0;
 z-index:5000;
-background:
-rgba(255,255,255,.82);
-border-bottom:
-1px solid
-rgba(34,199,235,.14);
-box-shadow:
-0 6px 25px
-rgba(5,125,160,.08);
-backdrop-filter:
-blur(18px);
--webkit-backdrop-filter:
-blur(18px);
+background:rgba(255,255,255,.82);
+border-bottom:1px solid rgba(34,199,235,.14);
+box-shadow:0 6px 25px rgba(5,125,160,.08);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
 }
 .header{
-width:
-min(
-1380px,
-calc(100% - 40px)
-);
+width:min(1380px,calc(100% - 40px));
 height:88px;
 margin:auto;
 display:grid;
-grid-template-columns:
-270px
-minmax(420px,1fr)
-360px;
+grid-template-columns:270px minmax(420px,1fr) 360px;
 align-items:center;
 gap:22px;
 }
@@ -146,22 +108,15 @@ width:52px;
 height:52px;
 flex-shrink:0;
 border-radius:16px;
-background:
-linear-gradient(
-145deg,
-#28cdef,
-#0799c2
-);
+background:linear-gradient(145deg,#28cdef,#0799c2);
 color:#fff;
 display:flex;
 align-items:center;
 justify-content:center;
 font-size:25px;
 box-shadow:
-0 8px 22px
-rgba(34,199,235,.24),
-inset 0 1px 0
-rgba(255,255,255,.45);
+0 8px 22px rgba(34,199,235,.24),
+inset 0 1px 0 rgba(255,255,255,.45);
 }
 .logo-title{
 font-size:18px;
@@ -193,23 +148,18 @@ linear-gradient(
 rgba(255,255,255,.75),
 rgba(225,249,255,.48)
 );
-border:
-1px solid
-rgba(255,255,255,.90);
+border:1px solid rgba(255,255,255,.90);
 box-shadow:
-0 10px 30px
-rgba(7,145,180,.10),
-inset 0 1px 0
-rgba(255,255,255,.95);
-backdrop-filter:
-blur(17px);
--webkit-backdrop-filter:
-blur(17px);
+0 10px 30px rgba(7,145,180,.10),
+inset 0 1px 0 rgba(255,255,255,.95);
+backdrop-filter:blur(17px);
+-webkit-backdrop-filter:blur(17px);
 }
 .nav a{
 height:44px;
 display:flex;
 align-items:center;
+justify-content:center;
 padding:0 15px;
 font-size:13px;
 font-weight:700;
@@ -224,10 +174,8 @@ display:none;
 }
 .nav a:hover{
 color:var(--cyan-dark);
-background:
-rgba(34,199,235,.10);
-transform:
-translateY(-1px);
+background:rgba(34,199,235,.10);
+transform:translateY(-1px);
 }
 .nav a.active{
 color:#078db5;
@@ -238,10 +186,8 @@ rgba(34,199,235,.18),
 rgba(34,199,235,.07)
 );
 box-shadow:
-inset 0 0 0 1px
-rgba(34,199,235,.12),
-0 5px 15px
-rgba(34,199,235,.08);
+inset 0 0 0 1px rgba(34,199,235,.12),
+0 5px 15px rgba(34,199,235,.08);
 }
 /* =====================================================
    HEADER ACTIONS
@@ -257,16 +203,11 @@ height:44px;
 width:230px;
 display:flex;
 align-items:center;
-background:
-rgba(255,255,255,.75);
-border:
-1px solid
-var(--cyan-border);
+background:rgba(255,255,255,.75);
+border:1px solid var(--cyan-border);
 border-radius:13px;
 overflow:hidden;
-box-shadow:
-0 5px 18px
-rgba(7,145,180,.05);
+box-shadow:0 5px 18px rgba(7,145,180,.05);
 }
 .header-search input{
 width:100%;
@@ -299,41 +240,25 @@ color:#fff;
 font-size:11px;
 font-weight:bold;
 white-space:nowrap;
-box-shadow:
-0 7px 18px
-rgba(21,159,87,.15);
+box-shadow:0 7px 18px rgba(21,159,87,.15);
 transition:.2s;
 }
 .whatsapp:hover{
-transform:
-translateY(-2px);
+transform:translateY(-2px);
 }
 /* =====================================================
    HERO
 ===================================================== */
 .hero{
-width:
-min(
-1380px,
-calc(100% - 40px)
-);
+width:min(1380px,calc(100% - 40px));
 height:470px;
 margin:25px auto 70px;
 position:relative;
 overflow:hidden;
 border-radius:25px;
-background:
-linear-gradient(
-135deg,
-#0798bd,
-#22c7eb
-);
-box-shadow:
-0 20px 55px
-rgba(7,145,180,.15);
-border:
-1px solid
-rgba(34,199,235,.16);
+background:linear-gradient(135deg,#0798bd,#22c7eb);
+box-shadow:0 20px 55px rgba(7,145,180,.15);
+border:1px solid rgba(34,199,235,.16);
 }
 .hero-image{
 position:absolute;
@@ -410,35 +335,24 @@ border-radius:12px;
 transition:.2s;
 }
 .hero-btn:hover{
-transform:
-translateY(-2px);
+transform:translateY(-2px);
 }
 .hero-primary{
 background:#fff;
 color:#0783a7;
-box-shadow:
-0 8px 22px
-rgba(0,0,0,.15);
+box-shadow:0 8px 22px rgba(0,0,0,.15);
 }
 .hero-secondary{
-background:
-rgba(255,255,255,.12);
-border:
-1px solid
-rgba(255,255,255,.60);
+background:rgba(255,255,255,.12);
+border:1px solid rgba(255,255,255,.60);
 color:#fff;
-backdrop-filter:
-blur(10px);
+backdrop-filter:blur(10px);
 }
 /* =====================================================
    GENERAL SECTION
 ===================================================== */
 .section{
-width:
-min(
-1380px,
-calc(100% - 40px)
-);
+width:min(1380px,calc(100% - 40px));
 margin:0 auto 75px;
 }
 .section-head{
@@ -459,8 +373,7 @@ content:"";
 display:inline-block;
 width:5px;
 height:25px;
-background:
-var(--cyan);
+background:var(--cyan);
 border-radius:4px;
 margin-left:9px;
 vertical-align:-4px;
@@ -484,8 +397,7 @@ white-space:nowrap;
 ===================================================== */
 .categories{
 display:grid;
-grid-template-columns:
-repeat(5,minmax(0,1fr));
+grid-template-columns:repeat(5,minmax(0,1fr));
 gap:16px;
 }
 .category{
@@ -495,20 +407,13 @@ overflow:hidden;
 background:#e8f9fd;
 border-radius:18px;
 cursor:pointer;
-box-shadow:
-0 5px 18px
-rgba(7,145,180,.07);
+box-shadow:0 5px 18px rgba(7,145,180,.07);
 transition:.25s;
-border:
-1px solid
-rgba(34,199,235,.10);
+border:1px solid rgba(34,199,235,.10);
 }
 .category:hover{
-transform:
-translateY(-5px);
-box-shadow:
-0 17px 35px
-rgba(7,145,180,.14);
+transform:translateY(-5px);
+box-shadow:0 17px 35px rgba(7,145,180,.14);
 }
 .category img{
 width:100%;
@@ -518,8 +423,7 @@ display:block;
 transition:.45s;
 }
 .category:hover img{
-transform:
-scale(1.06);
+transform:scale(1.06);
 }
 .category:after{
 content:"";
@@ -554,25 +458,14 @@ color:#e5faff;
 display:none;
 }
 .ad{
-width:
-min(
-1380px,
-calc(100% - 40px)
-);
+width:min(1380px,calc(100% - 40px));
 height:320px;
 margin:0 auto 75px;
 position:relative;
 overflow:hidden;
 border-radius:22px;
-background:
-linear-gradient(
-135deg,
-#0784a8,
-#22c7eb
-);
-box-shadow:
-0 17px 42px
-rgba(7,145,180,.12);
+background:linear-gradient(135deg,#0784a8,#22c7eb);
+box-shadow:0 17px 42px rgba(7,145,180,.12);
 }
 .ad img{
 position:absolute;
@@ -637,9 +530,7 @@ border-radius:10px;
 ===================================================== */
 .product-layout{
 display:grid;
-grid-template-columns:
-225px
-minmax(0,1fr);
+grid-template-columns:225px minmax(0,1fr);
 gap:25px;
 direction:ltr;
 }
@@ -651,29 +542,19 @@ direction:rtl;
    SIDEBAR
 ===================================================== */
 .sidebar{
-background:
-rgba(255,255,255,.92);
-border:
-1px solid
-var(--cyan-border);
+background:rgba(255,255,255,.92);
+border:1px solid var(--cyan-border);
 height:max-content;
 border-radius:16px;
 overflow:hidden;
-box-shadow:
-0 5px 18px
-rgba(7,145,180,.06);
+box-shadow:0 5px 18px rgba(7,145,180,.06);
 }
 .sidebar-title{
 font-size:16px;
 font-weight:900;
 padding:17px;
 color:#fff;
-background:
-linear-gradient(
-135deg,
-#0798bd,
-#22c7eb
-);
+background:linear-gradient(135deg,#0798bd,#22c7eb);
 }
 .category-list{
 padding:9px;
@@ -700,26 +581,16 @@ background:var(--cyan-light);
 color:var(--cyan-dark);
 }
 .category-btn.active{
-background:
-linear-gradient(
-135deg,
-#22c7eb,
-#0798bd
-);
+background:linear-gradient(135deg,#22c7eb,#0798bd);
 color:#fff;
-box-shadow:
-0 5px 14px
-rgba(34,199,235,.20);
+box-shadow:0 5px 14px rgba(34,199,235,.20);
 }
 /* =====================================================
    TOOLBAR
 ===================================================== */
 .product-toolbar{
 display:grid;
-grid-template-columns:
-120px
-minmax(300px,1fr)
-145px;
+grid-template-columns:120px minmax(300px,1fr) 145px;
 align-items:center;
 gap:12px;
 margin-bottom:18px;
@@ -735,15 +606,11 @@ display:contents;
 height:46px;
 width:100%;
 background:#fff;
-border:
-1px solid
-var(--cyan-border);
+border:1px solid var(--cyan-border);
 display:flex;
 border-radius:13px;
 overflow:hidden;
-box-shadow:
-0 4px 15px
-rgba(7,145,180,.035);
+box-shadow:0 4px 15px rgba(7,145,180,.035);
 }
 .search input{
 border:0;
@@ -754,9 +621,7 @@ font-size:11px;
 color:var(--text);
 }
 .search input:focus{
-box-shadow:
-inset 0 0 0 2px
-rgba(34,199,235,.08);
+box-shadow:inset 0 0 0 2px rgba(34,199,235,.08);
 }
 .search button{
 width:48px;
@@ -769,9 +634,7 @@ cursor:pointer;
 .sort{
 height:46px;
 width:100%;
-border:
-1px solid
-var(--cyan-border);
+border:1px solid var(--cyan-border);
 background:#fff;
 padding:0 12px;
 font-size:11px;
@@ -784,15 +647,12 @@ outline:0;
 ===================================================== */
 .grid{
 display:grid;
-grid-template-columns:
-repeat(4,minmax(0,1fr));
+grid-template-columns:repeat(4,minmax(0,1fr));
 gap:20px;
 }
 .card{
 background:#fff;
-border:
-1px solid
-var(--cyan-border);
+border:1px solid var(--cyan-border);
 border-radius:17px;
 cursor:pointer;
 transition:.25s;
@@ -800,10 +660,8 @@ position:relative;
 overflow:hidden;
 }
 .card:hover{
-transform:
-translateY(-5px);
-box-shadow:
-var(--shadow-hover);
+transform:translateY(-5px);
+box-shadow:var(--shadow-hover);
 border-color:#9fe4f2;
 }
 .card-image{
@@ -820,8 +678,7 @@ display:block;
 transition:.35s;
 }
 .card:hover .card-image img{
-transform:
-scale(1.035);
+transform:scale(1.035);
 }
 .status{
 position:absolute;
@@ -833,9 +690,7 @@ font-weight:bold;
 color:#fff;
 z-index:2;
 border-radius:8px;
-box-shadow:
-0 3px 8px
-rgba(0,0,0,.10);
+box-shadow:0 3px 8px rgba(0,0,0,.10);
 }
 .available{
 background:var(--green);
@@ -893,31 +748,17 @@ white-space:nowrap;
    ABOUT
 ===================================================== */
 .about{
-background:
-linear-gradient(
-135deg,
-#eafbff,
-#f8fdff
-);
+background:linear-gradient(135deg,#eafbff,#f8fdff);
 padding:65px 0;
 margin-bottom:75px;
-border-top:
-1px solid
-var(--cyan-border);
-border-bottom:
-1px solid
-var(--cyan-border);
+border-top:1px solid var(--cyan-border);
+border-bottom:1px solid var(--cyan-border);
 }
 .about-inner{
-width:
-min(
-1200px,
-calc(100% - 40px)
-);
+width:min(1200px,calc(100% - 40px));
 margin:auto;
 display:grid;
-grid-template-columns:
-1fr 1fr;
+grid-template-columns:1fr 1fr;
 gap:55px;
 align-items:center;
 }
@@ -926,9 +767,7 @@ height:360px;
 background:#dff8fd;
 overflow:hidden;
 border-radius:20px;
-box-shadow:
-0 15px 35px
-rgba(7,145,180,.10);
+box-shadow:0 15px 35px rgba(7,145,180,.10);
 }
 .about-image img{
 width:100%;
@@ -948,17 +787,14 @@ margin:0 0 22px;
 }
 .points{
 display:grid;
-grid-template-columns:
-1fr 1fr;
+grid-template-columns:1fr 1fr;
 gap:10px;
 }
 .point{
 background:#fff;
 padding:13px;
 font-size:11px;
-border:
-1px solid
-var(--cyan-border);
+border:1px solid var(--cyan-border);
 border-radius:10px;
 color:#405b67;
 }
@@ -966,19 +802,10 @@ color:#405b67;
    CTA
 ===================================================== */
 .cta{
-width:
-min(
-1200px,
-calc(100% - 40px)
-);
+width:min(1200px,calc(100% - 40px));
 min-height:170px;
 margin:0 auto 55px;
-background:
-linear-gradient(
-135deg,
-#0785a8,
-#22c7eb
-);
+background:linear-gradient(135deg,#0785a8,#22c7eb);
 padding:40px 48px;
 display:flex;
 align-items:center;
@@ -986,9 +813,7 @@ justify-content:space-between;
 position:relative;
 overflow:hidden;
 border-radius:22px;
-box-shadow:
-0 17px 40px
-rgba(7,145,180,.14);
+box-shadow:0 17px 40px rgba(7,145,180,.14);
 }
 .cta h2{
 margin:0 0 8px;
@@ -1014,16 +839,11 @@ position:relative;
 z-index:2;
 }
 /* =====================================================
-   FEATURES — MOVED TO BOTTOM
+   FEATURES
 ===================================================== */
 .features{
-width:
-min(
-1100px,
-calc(100% - 60px)
-);
-margin:
-0 auto 70px;
+width:min(1100px,calc(100% - 60px));
+margin:0 auto 70px;
 position:relative;
 z-index:5;
 background:
@@ -1033,22 +853,15 @@ rgba(255,255,255,.82),
 rgba(231,250,255,.72)
 );
 display:grid;
-grid-template-columns:
-repeat(4,1fr);
-border:
-1px solid
-rgba(34,199,235,.22);
+grid-template-columns:repeat(4,1fr);
+border:1px solid rgba(34,199,235,.22);
 box-shadow:
-0 15px 40px
-rgba(7,145,180,.10),
-inset 0 1px 0
-rgba(255,255,255,.90);
+0 15px 40px rgba(7,145,180,.10),
+inset 0 1px 0 rgba(255,255,255,.90);
 border-radius:22px;
 overflow:hidden;
-backdrop-filter:
-blur(16px);
--webkit-backdrop-filter:
-blur(16px);
+backdrop-filter:blur(16px);
+-webkit-backdrop-filter:blur(16px);
 }
 .feature{
 min-height:105px;
@@ -1056,9 +869,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 gap:13px;
-border-left:
-1px solid
-var(--cyan-border);
+border-left:1px solid var(--cyan-border);
 padding:15px;
 }
 .feature:last-child{
@@ -1069,12 +880,7 @@ width:44px;
 height:44px;
 flex-shrink:0;
 border-radius:14px;
-background:
-linear-gradient(
-135deg,
-#e6faff,
-#c9f3fb
-);
+background:linear-gradient(135deg,#e6faff,#c9f3fb);
 color:#078db5;
 display:flex;
 align-items:center;
@@ -1096,21 +902,15 @@ color:var(--muted);
    FOOTER
 ===================================================== */
 footer{
-background:
-#06496a;
+background:#06496a;
 color:#fff;
 padding-top:55px;
 }
 .footer{
-width:
-min(
-1200px,
-calc(100% - 40px)
-);
+width:min(1200px,calc(100% - 40px));
 margin:auto;
 display:grid;
-grid-template-columns:
-1.5fr 1fr 1fr 1fr;
+grid-template-columns:1.5fr 1fr 1fr 1fr;
 gap:40px;
 }
 .footer h2,
@@ -1138,9 +938,7 @@ color:#fff;
 }
 .footer-bottom{
 margin-top:40px;
-border-top:
-1px solid
-rgba(255,255,255,.12);
+border-top:1px solid rgba(255,255,255,.12);
 padding:19px;
 text-align:center;
 font-size:9px;
@@ -1158,33 +956,27 @@ display:none;
 .product-modal{
 position:fixed;
 inset:0;
-background:
-rgba(2,42,57,.72);
+background:rgba(2,42,57,.72);
 z-index:9999;
 display:none;
 align-items:center;
 justify-content:center;
 padding:20px;
-backdrop-filter:
-blur(6px);
--webkit-backdrop-filter:
-blur(6px);
+backdrop-filter:blur(6px);
+-webkit-backdrop-filter:blur(6px);
 }
 .product-modal.show{
 display:flex;
 }
 .modal-box{
-width:
-min(900px,100%);
+width:min(900px,100%);
 max-height:92vh;
 overflow:auto;
 background:#fff;
 position:relative;
 padding:22px;
 border-radius:18px;
-box-shadow:
-0 25px 70px
-rgba(0,80,110,.30);
+box-shadow:0 25px 70px rgba(0,80,110,.30);
 }
 .modal-close{
 position:absolute;
@@ -1193,12 +985,7 @@ top:14px;
 width:40px;
 height:40px;
 border:0;
-background:
-linear-gradient(
-135deg,
-#22c7eb,
-#0783a7
-);
+background:linear-gradient(135deg,#22c7eb,#0783a7);
 color:#fff;
 font-size:22px;
 cursor:pointer;
@@ -1251,9 +1038,7 @@ border-radius:10px;
 .empty{
 grid-column:1/-1;
 background:#fff;
-border:
-1px solid
-var(--cyan-border);
+border:1px solid var(--cyan-border);
 padding:55px;
 text-align:center;
 color:#778b94;
@@ -1265,18 +1050,13 @@ border-radius:14px;
 ===================================================== */
 @media(min-width:1500px){
 .header{
-width:
-min(
-1380px,
-calc(100% - 80px)
-);
+width:min(1380px,calc(100% - 80px));
 }
 .hero{
 height:500px;
 }
 .grid{
-grid-template-columns:
-repeat(4,minmax(0,1fr));
+grid-template-columns:repeat(4,minmax(0,1fr));
 gap:20px;
 }
 .card-image{
@@ -1288,10 +1068,7 @@ height:280px;
 ===================================================== */
 @media(max-width:1250px){
 .header{
-grid-template-columns:
-230px
-1fr
-290px;
+grid-template-columns:230px 1fr 290px;
 gap:15px;
 }
 .nav a{
@@ -1305,13 +1082,10 @@ width:175px;
 font-size:43px;
 }
 .grid{
-grid-template-columns:
-repeat(3,minmax(0,1fr));
+grid-template-columns:repeat(3,minmax(0,1fr));
 }
 .product-layout{
-grid-template-columns:
-215px
-minmax(0,1fr);
+grid-template-columns:215px minmax(0,1fr);
 }
 }
 /* =====================================================
@@ -1319,37 +1093,25 @@ minmax(0,1fr);
 ===================================================== */
 @media(max-width:1000px){
 .header{
-grid-template-columns:
-210px
-1fr;
+grid-template-columns:210px 1fr;
 }
 .actions{
 display:none;
 }
 .nav{
-justify-content:flex-end;
+justify-content:center;
 }
 .features{
-width:
-min(
-850px,
-calc(100% - 40px)
-);
+width:min(850px,calc(100% - 40px));
 }
 .categories{
-grid-template-columns:
-repeat(3,minmax(0,1fr));
+grid-template-columns:repeat(3,minmax(0,1fr));
 }
 .product-layout{
-grid-template-columns:
-200px
-minmax(0,1fr);
+grid-template-columns:200px minmax(0,1fr);
 }
 .product-toolbar{
-grid-template-columns:
-100px
-minmax(0,1fr)
-125px;
+grid-template-columns:100px minmax(0,1fr) 125px;
 }
 .card-image{
 height:230px;
@@ -1367,8 +1129,7 @@ height:34px;
 font-size:9px;
 }
 .header{
-width:
-calc(100% - 24px);
+width:calc(100% - 24px);
 height:auto;
 padding:10px 0;
 display:flex;
@@ -1390,19 +1151,36 @@ font-size:15px;
 .logo-title small{
 font-size:8px;
 }
+/* =====================================================
+   MOBILE NAV — CENTERED
+===================================================== */
 .nav{
 order:3;
 width:100%;
-height:51px;
-overflow-x:auto;
-justify-content:flex-start;
+height:52px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:3px;
 padding:5px;
+overflow-x:auto;
+overflow-y:hidden;
+scrollbar-width:none;
+-webkit-overflow-scrolling:touch;
+}
+.nav::-webkit-scrollbar{
+display:none;
 }
 .nav a{
 height:41px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
 font-size:10px;
 white-space:nowrap;
-padding:0 10px;
+padding:0 12px;
+flex:0 0 auto;
 }
 /* HERO */
 .hero{
@@ -1430,12 +1208,9 @@ padding:0 22px;
 }
 /* FEATURES */
 .features{
-width:
-calc(100% - 24px);
-grid-template-columns:
-1fr 1fr;
-margin:
-0 auto 55px;
+width:calc(100% - 24px);
+grid-template-columns:1fr 1fr;
+margin:0 auto 55px;
 }
 .feature{
 min-height:78px;
@@ -1455,8 +1230,7 @@ font-size:16px;
 }
 /* SECTIONS */
 .section{
-width:
-calc(100% - 24px);
+width:calc(100% - 24px);
 margin-bottom:55px;
 }
 .section-head{
@@ -1473,8 +1247,7 @@ font-size:9px;
 }
 /* CATEGORIES */
 .categories{
-grid-template-columns:
-1fr 1fr;
+grid-template-columns:1fr 1fr;
 gap:8px;
 }
 .category{
@@ -1492,12 +1265,7 @@ margin-bottom:12px;
 display:flex;
 width:100%;
 height:45px;
-background:
-linear-gradient(
-135deg,
-#22c7eb,
-#078fb5
-);
+background:linear-gradient(135deg,#22c7eb,#078fb5);
 color:#fff;
 border:0;
 align-items:center;
@@ -1529,8 +1297,7 @@ width:100%;
 width:100%;
 }
 .grid{
-grid-template-columns:
-1fr 1fr;
+grid-template-columns:1fr 1fr;
 gap:10px;
 }
 .card-image{
@@ -1555,8 +1322,7 @@ padding:50px 0;
 margin-bottom:55px;
 }
 .about-inner{
-width:
-calc(100% - 24px);
+width:calc(100% - 24px);
 grid-template-columns:1fr;
 gap:25px;
 }
@@ -1574,8 +1340,7 @@ font-size:10px;
 }
 /* CTA */
 .cta{
-width:
-calc(100% - 24px);
+width:calc(100% - 24px);
 display:block;
 padding:28px 22px;
 margin-bottom:45px;
@@ -1592,10 +1357,8 @@ justify-content:center;
 }
 /* FOOTER */
 .footer{
-width:
-calc(100% - 24px);
-grid-template-columns:
-1fr 1fr;
+width:calc(100% - 24px);
+grid-template-columns:1fr 1fr;
 gap:25px;
 }
 .footer-brand{
@@ -1606,6 +1369,14 @@ grid-column:1/-1;
    SMALL MOBILE
 ===================================================== */
 @media(max-width:450px){
+/* إبقاء القائمة في المنتصف حتى في الشاشات الصغيرة */
+.nav{
+justify-content:center;
+}
+.nav a{
+padding:0 10px;
+font-size:9.5px;
+}
 .hero h1{
 font-size:28px;
 }
@@ -1613,8 +1384,7 @@ font-size:28px;
 font-size:11px;
 }
 .categories{
-grid-template-columns:
-1fr 1fr;
+grid-template-columns:1fr 1fr;
 gap:7px;
 }
 .category{
@@ -1631,8 +1401,7 @@ font-size:13px;
 font-size:9px;
 }
 .grid{
-grid-template-columns:
-1fr 1fr;
+grid-template-columns:1fr 1fr;
 }
 .card-image{
 height:150px;
@@ -1657,6 +1426,13 @@ font-size:23px;
    VERY SMALL
 ===================================================== */
 @media(max-width:350px){
+.nav{
+justify-content:center;
+}
+.nav a{
+padding:0 8px;
+font-size:9px;
+}
 .grid{
 grid-template-columns:1fr;
 }
@@ -1678,22 +1454,38 @@ height:190px;
 display:block;
 }
 }
+/* =====================================================
+   MOBILE NAV CENTER FIX
+   يمنع محاذاة القائمة للجنب
+===================================================== */
+@media(max-width:850px){
+.header{
+overflow:visible;
+}
+.nav{
+margin-left:auto;
+margin-right:auto;
+}
+.nav a:first-child{
+margin-right:auto;
+}
+.nav a:last-child{
+margin-left:auto;
+}
+/* عندما تكون القائمة أعرض من الشاشة،
+   يبقى أول وآخر عنصر ضمن المنتصف قدر الإمكان */
+.nav{
+scroll-padding-inline:50%;
+}
+}
 </style>
 </head>
 <body>
-<!-- =====================================================
-     TOP BAR
-===================================================== -->
 <div class="topbar">
 مرحباً بكم في
-<b>
-شركة بيت المراتب للمفروشات
-</b>
+<b>شركة بيت المراتب للمفروشات</b>
 — راحتك تبدأ من هنا
 </div>
-<!-- =====================================================
-     HEADER
-===================================================== -->
 <header>
 <div class="header">
 <div class="logo">
@@ -1708,9 +1500,7 @@ display:block;
 </div>
 </div>
 <nav class="nav">
-<a
-href="#"
-class="active">
+<a href="#" class="active">
 الرئيسية
 </a>
 <a href="#categories">
@@ -1732,8 +1522,7 @@ class="active">
 id="headerSearch"
 type="search"
 placeholder="ابحث عن منتج...">
-<button
-onclick="focusSearch()">
+<button onclick="focusSearch()">
 ⌕
 </button>
 </div>
@@ -1747,12 +1536,7 @@ rel="noopener">
 </div>
 </div>
 </header>
-<!-- =====================================================
-     HERO
-===================================================== -->
-<section
-class="hero"
-id="hero">
+<section class="hero" id="hero">
 <img
 id="heroImage"
 class="hero-image"
@@ -1761,8 +1545,7 @@ alt="بيت المراتب للمفروشات">
 </div>
 <div class="hero-content">
 <div class="hero-small">
-شركة بيت المراتب للمفروشات
-</div>
+شركة بيت المراتب للمفروشات جملة وقطاعي</div>
 <h1>
 راحة أفضل
 <span>
@@ -1788,12 +1571,7 @@ class="hero-btn hero-secondary">
 </div>
 </div>
 </section>
-<!-- =====================================================
-     CATEGORIES
-===================================================== -->
-<section
-class="section"
-id="categories">
+<section class="section" id="categories">
 <div class="section-head">
 <div>
 <h2 class="section-title">
@@ -1814,9 +1592,6 @@ class="categories"
 id="categoriesGrid">
 </div>
 </section>
-<!-- =====================================================
-     ADVERTISEMENT
-===================================================== -->
 <section
 class="ad-section"
 id="adSection">
@@ -1838,12 +1613,7 @@ id="adSection">
 </div>
 </div>
 </section>
-<!-- =====================================================
-     PRODUCTS
-===================================================== -->
-<section
-class="section"
-id="products">
+<section class="section" id="products">
 <div class="section-head">
 <div>
 <h2 class="section-title">
@@ -1853,9 +1623,7 @@ id="products">
 </small>
 </h2>
 </div>
-<div
-class="count"
-id="count">
+<div class="count" id="count">
 جاري تحميل المنتجات...
 </div>
 </div>
@@ -1869,8 +1637,7 @@ id="mobileCategory">
 ☰
 </span>
 </button>
-<div
-class="product-layout">
+<div class="product-layout">
 <aside
 class="sidebar"
 id="sidebar">
@@ -1894,8 +1661,7 @@ id="desktopCount">
 id="search"
 type="search"
 placeholder="ابحث باسم المنتج أو الكود...">
-<button
-id="searchBtn">
+<button id="searchBtn">
 ⌕
 </button>
 </div>
@@ -1924,12 +1690,7 @@ id="grid">
 </div>
 </div>
 </section>
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-<section
-class="about"
-id="about">
+<section class="about" id="about">
 <div class="about-inner">
 <div
 class="about-image"
@@ -1962,9 +1723,6 @@ id="aboutImage">
 </div>
 </div>
 </section>
-<!-- =====================================================
-     CTA
-===================================================== -->
 <section class="cta">
 <div>
 <h2>
@@ -1983,9 +1741,6 @@ rel="noopener">
 تواصل معنا عبر واتساب
 </a>
 </section>
-<!-- =====================================================
-     FEATURES — BOTTOM
-===================================================== -->
 <section class="features">
 <div class="feature">
 <div class="feature-icon">
@@ -2040,11 +1795,7 @@ rel="noopener">
 </div>
 </div>
 </section>
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-<footer
-id="contact">
+<footer id="contact">
 <div class="footer">
 <div class="footer-brand">
 <h2>
@@ -2102,12 +1853,9 @@ target="_blank">
 </div>
 <div class="footer-bottom">
 جميع الحقوق محفوظة © 2026
-شركة بيت المراتب للمفروشات
+شركة بيت المراتب للمفروشات جملة وقطاعي
 </div>
 </footer>
-<!-- =====================================================
-     MODAL
-===================================================== -->
 <div
 class="product-modal"
 id="productModal">
@@ -2122,9 +1870,6 @@ id="modalContent">
 </div>
 </div>
 </div>
-<!-- =====================================================
-     SUPABASE
-===================================================== -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 /* =====================================================
@@ -2481,8 +2226,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 color:#8b98a5;
-font-size:12px;
-">
+font-size:12px;">
 لا توجد صورة
 </div>
 `
@@ -2671,8 +2415,7 @@ style="
 display:flex;
 align-items:center;
 justify-content:center;
-color:#8a98a6;
-">
+color:#8a98a6;">
 لا توجد صورة
 </div>
 `
@@ -2727,8 +2470,7 @@ ${Number(p.price)
 <span
 style="
 font-size:12px;
-font-weight:400;
-">
+font-weight:400;">
 ريال
 </span>
 </div>
