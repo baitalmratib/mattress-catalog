@@ -1,117 +1,193 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-
 <head>
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
 <title>شركة بيت المراتب للمفروشات</title>
-
 <style>
-
 *{
 box-sizing:border-box;
 }
-
 html{
 scroll-behavior:smooth;
 }
-
 body{
 margin:0;
 font-family:Arial,Tahoma,sans-serif;
 background:#f7f8fa;
 color:#10233f;
 }
-
-
-/* =====================================================
-   HEADER
-===================================================== */
-
+/* =========================
+   HEADER الجديد
+========================= */
 header{
-background:#06254d;
+background:
+linear-gradient(135deg,#031b3b 0%,#062f63 48%,#08457f 100%);
 color:#fff;
-height:74px;
+height:82px;
+position:relative;
+z-index:100;
+box-shadow:0 4px 18px rgba(0,0,0,.18);
+overflow:hidden;
 }
-
+/* لمسات ديكورية مرتبطة بالمفروشات */
+header::before{
+content:"";
+position:absolute;
+width:420px;
+height:420px;
+border:1px solid rgba(255,255,255,.06);
+border-radius:50%;
+top:-330px;
+left:8%;
+}
+header::after{
+content:"";
+position:absolute;
+width:260px;
+height:260px;
+border:1px solid rgba(255,255,255,.05);
+border-radius:50%;
+bottom:-230px;
+right:12%;
+}
 .header{
 width:100%;
 max-width:1600px;
-height:74px;
+height:82px;
 margin:auto;
 padding:0 30px;
 display:flex;
 align-items:center;
 justify-content:space-between;
 gap:25px;
+position:relative;
+z-index:2;
 }
-
+/* الشعار */
+.logo-area{
+display:flex;
+align-items:center;
+gap:12px;
+min-width:280px;
+}
+.logo-icon{
+width:47px;
+height:47px;
+border-radius:13px;
+background:linear-gradient(145deg,#ffffff,#dcecff);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:25px;
+box-shadow:0 5px 15px rgba(0,0,0,.18);
+flex-shrink:0;
+}
 .logo{
-font-size:24px;
-font-weight:bold;
+font-size:21px;
+font-weight:800;
 white-space:nowrap;
+letter-spacing:.1px;
 }
-
 .logo small{
 display:block;
-font-size:11px;
+font-size:10px;
 font-weight:normal;
-text-align:center;
-margin-top:2px;
+color:#cbdcf1;
+margin-top:4px;
 }
-
+/* القائمة */
 .nav{
 display:flex;
 align-items:center;
-gap:35px;
+justify-content:center;
+gap:8px;
 height:100%;
 }
-
 .nav a{
-color:white;
+color:#eaf3ff;
 text-decoration:none;
-font-size:15px;
-padding:27px 0 22px;
-border-bottom:2px solid transparent;
+font-size:14px;
+font-weight:600;
+padding:12px 17px;
+border-radius:9px;
+position:relative;
+transition:.25s;
+white-space:nowrap;
 }
-
-.nav a.active,
-.nav a:hover{
-border-bottom-color:white;
+.nav a::after{
+content:"";
+position:absolute;
+bottom:5px;
+right:17px;
+left:17px;
+height:2px;
+background:#fff;
+transform:scaleX(0);
+transition:.25s;
+border-radius:5px;
 }
-
+.nav a:hover,
+.nav a.active{
+background:rgba(255,255,255,.10);
+color:#fff;
+}
+.nav a:hover::after,
+.nav a.active::after{
+transform:scaleX(1);
+}
+/* التواصل */
 .contact{
 display:flex;
 align-items:center;
-gap:20px;
-font-size:14px;
+gap:9px;
 white-space:nowrap;
 }
-
 .contact a{
 color:white;
 text-decoration:none;
+font-size:12px;
+font-weight:bold;
 }
-
-
-/* =====================================================
+.phone-btn{
+display:flex;
+align-items:center;
+gap:7px;
+padding:9px 12px;
+border:1px solid rgba(255,255,255,.16);
+border-radius:9px;
+background:rgba(255,255,255,.07);
+transition:.2s;
+}
+.phone-btn:hover{
+background:rgba(255,255,255,.14);
+}
+.whatsapp-btn{
+display:flex;
+align-items:center;
+gap:6px;
+padding:10px 13px;
+background:#159447;
+border-radius:9px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+transition:.2s;
+}
+.whatsapp-btn:hover{
+background:#117b3b;
+transform:translateY(-1px);
+}
+/* =========================
    MAIN
-===================================================== */
-
+========================= */
 main{
 width:100%;
 max-width:1600px;
 margin:auto;
 padding:20px 30px 30px;
 }
-
-
-/* =====================================================
+/* =========================
    HERO
-===================================================== */
-
+========================= */
 .hero{
 min-height:190px;
 background:linear-gradient(135deg,#ffffff,#edf4fb);
@@ -124,31 +200,25 @@ justify-content:center;
 box-shadow:0 2px 12px #0000000b;
 border:1px solid #e5e7eb;
 }
-
 .hero-content{
 width:100%;
 padding:35px 60px;
 text-align:center;
 }
-
 .hero-content h1{
 margin:0 0 12px;
 font-size:34px;
 color:#06254d;
 }
-
 .hero-content p{
 margin:0;
 font-size:17px;
 line-height:1.8;
 color:#344054;
 }
-
-
-/* =====================================================
-   PROFESSIONAL ANNOUNCEMENT BANNER
-===================================================== */
-
+/* =========================
+   ANNOUNCEMENT
+========================= */
 .announcement{
 position:relative;
 width:100%;
@@ -157,29 +227,21 @@ background:#06254d;
 border-radius:18px;
 overflow:hidden;
 margin-bottom:24px;
-box-shadow:
-0 8px 30px #00000018,
-0 2px 8px #0000000d;
+box-shadow:0 8px 30px #00000018,0 2px 8px #0000000d;
 border:1px solid #e0e5eb;
 display:none;
 }
-
 .announcement-inner{
 position:relative;
 width:100%;
 height:100%;
 }
-
-
-/* الصورة كخلفية كاملة */
-
 #announcementImageBox{
 position:absolute;
 inset:0;
 width:100%;
 height:100%;
 }
-
 .announcement-image{
 width:100%;
 height:100%;
@@ -187,10 +249,6 @@ display:block;
 object-fit:cover;
 object-position:center;
 }
-
-
-/* طبقة التدرج فوق الصورة */
-
 .announcement-inner::after{
 content:"";
 position:absolute;
@@ -206,10 +264,6 @@ rgba(3,18,40,.08) 100%
 z-index:1;
 pointer-events:none;
 }
-
-
-/* المحتوى فوق الصورة */
-
 .announcement-content{
 position:absolute;
 z-index:2;
@@ -225,10 +279,6 @@ justify-content:center;
 text-align:right;
 color:#fff;
 }
-
-
-/* كلمة إعلان */
-
 .announcement-label{
 display:inline-flex;
 align-items:center;
@@ -242,10 +292,6 @@ border-radius:30px;
 margin-bottom:12px;
 box-shadow:0 4px 12px #00000025;
 }
-
-
-/* العنوان */
-
 .announcement-content h2{
 margin:0 0 10px;
 font-size:34px;
@@ -255,10 +301,6 @@ color:#fff;
 text-shadow:0 2px 8px #00000040;
 max-width:600px;
 }
-
-
-/* الوصف */
-
 .announcement-content p{
 margin:0 0 20px;
 font-size:16px;
@@ -267,10 +309,6 @@ color:#f2f5f8;
 max-width:600px;
 text-shadow:0 1px 5px #00000035;
 }
-
-
-/* الزر */
-
 .announcement-button{
 display:inline-flex;
 align-items:center;
@@ -286,62 +324,36 @@ font-size:14px;
 box-shadow:0 5px 18px #00000025;
 transition:.2s;
 }
-
 .announcement-button:hover{
 transform:translateY(-2px);
 box-shadow:0 8px 22px #00000035;
 }
-
-
-/* بدون صورة */
-
 .announcement-no-image{
 width:100%;
 height:100%;
-background:
-linear-gradient(
-135deg,
-#06254d,
-#0b4d91
-);
+background:linear-gradient(135deg,#06254d,#0b4d91);
 display:flex;
 align-items:center;
 justify-content:center;
 font-size:65px;
 color:#fff;
 }
-
-
-/* =====================================================
-   MOBILE CATEGORY
-===================================================== */
-
+/* =========================
+   CATALOG
+========================= */
 .mobile-category-toggle{
 display:none;
 }
-
-
-/* =====================================================
-   CATALOG
-===================================================== */
-
 .catalog-layout{
 display:grid;
 grid-template-columns:240px minmax(0,1fr);
 gap:25px;
 direction:ltr;
 }
-
 .sidebar,
 .products-area{
 direction:rtl;
 }
-
-
-/* =====================================================
-   SIDEBAR
-===================================================== */
-
 .sidebar{
 background:#fff;
 border:1px solid #e5e7eb;
@@ -351,18 +363,15 @@ height:max-content;
 position:sticky;
 top:15px;
 }
-
 .sidebar h2{
 font-size:19px;
 margin:0 0 18px;
 }
-
 .category-list{
 display:flex;
 flex-direction:column;
 gap:5px;
 }
-
 .category-btn{
 border:0;
 background:white;
@@ -378,16 +387,13 @@ align-items:center;
 justify-content:space-between;
 transition:.2s;
 }
-
 .category-btn:hover{
 background:#f1f5fa;
 }
-
 .category-btn.active{
 background:#06254d;
 color:white;
 }
-
 .help-box{
 margin-top:30px;
 background:#eaf2fc;
@@ -395,18 +401,15 @@ border-radius:10px;
 padding:20px 12px;
 text-align:center;
 }
-
 .help-box h3{
 margin:0 0 7px;
 font-size:15px;
 }
-
 .help-box p{
 margin:0 0 15px;
 font-size:13px;
 line-height:1.6;
 }
-
 .help-btn{
 display:block;
 background:#06254d;
@@ -417,12 +420,9 @@ border-radius:7px;
 font-weight:bold;
 font-size:14px;
 }
-
-
-/* =====================================================
+/* =========================
    TOOLBAR
-===================================================== */
-
+========================= */
 .toolbar{
 display:grid;
 grid-template-columns:120px minmax(200px,1fr) 145px;
@@ -430,7 +430,6 @@ gap:12px;
 margin-bottom:18px;
 align-items:center;
 }
-
 .sort{
 height:44px;
 background:#fff;
@@ -440,7 +439,6 @@ padding:0 12px;
 font-family:inherit;
 font-size:14px;
 }
-
 .search-box{
 height:44px;
 background:#fff;
@@ -450,7 +448,6 @@ display:flex;
 align-items:center;
 overflow:hidden;
 }
-
 .search-box input{
 border:0;
 outline:0;
@@ -460,7 +457,6 @@ padding:0 15px;
 font-family:inherit;
 font-size:14px;
 }
-
 .search-btn{
 height:100%;
 width:55px;
@@ -470,7 +466,6 @@ font-size:20px;
 cursor:pointer;
 color:#06254d;
 }
-
 .all-products{
 height:44px;
 background:#06254d;
@@ -482,24 +477,19 @@ font-weight:bold;
 cursor:pointer;
 font-size:14px;
 }
-
-
-/* =====================================================
-   PRODUCTS
-===================================================== */
-
 .status{
 font-size:13px;
 color:#667085;
 margin-bottom:12px;
 }
-
+/* =========================
+   PRODUCTS
+========================= */
 .grid{
 display:grid;
 grid-template-columns:repeat(5,minmax(0,1fr));
 gap:18px;
 }
-
 .card{
 background:#fff;
 border:1px solid #e4e7eb;
@@ -509,25 +499,21 @@ position:relative;
 transition:.2s;
 cursor:pointer;
 }
-
 .card:hover{
 transform:translateY(-3px);
 box-shadow:0 8px 22px #00000012;
 }
-
 .image-wrap{
 height:160px;
 position:relative;
 background:#eef1f4;
 }
-
 .product-image{
 width:100%;
 height:100%;
 object-fit:cover;
 display:block;
 }
-
 .no-image{
 width:100%;
 height:100%;
@@ -537,7 +523,6 @@ justify-content:center;
 color:#98a2b3;
 font-size:14px;
 }
-
 .badge{
 position:absolute;
 top:8px;
@@ -548,33 +533,27 @@ font-size:11px;
 font-weight:bold;
 color:white;
 }
-
 .available{
 background:#159447;
 }
-
 .unavailable{
 background:#a32121;
 }
-
 .card-body{
 padding:11px 12px 14px;
 text-align:center;
 }
-
 .code{
 font-size:12px;
 color:#667085;
 margin-bottom:4px;
 }
-
 .card h3{
 margin:0 0 6px;
 font-size:16px;
 color:#111827;
 line-height:1.4;
 }
-
 .description{
 font-size:12px;
 color:#667085;
@@ -583,22 +562,17 @@ height:38px;
 overflow:hidden;
 margin-bottom:7px;
 }
-
 .price{
 font-size:18px;
 font-weight:bold;
 color:#06254d;
 }
-
 .price span{
 font-size:13px;
 }
-
-
-/* =====================================================
+/* =========================
    SERVICES
-===================================================== */
-
+========================= */
 .services{
 margin-top:28px;
 background:#f0f2f5;
@@ -608,37 +582,29 @@ display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:20px;
 }
-
 .service{
 text-align:center;
 border-left:1px solid #d3d7dc;
 }
-
 .service:last-child{
 border-left:0;
 }
-
 .service-icon{
 font-size:27px;
 margin-bottom:7px;
 }
-
 .service h3{
 margin:0 0 4px;
 font-size:15px;
 }
-
 .service p{
 margin:0;
 font-size:12px;
 color:#667085;
 }
-
-
-/* =====================================================
+/* =========================
    FOOTER
-===================================================== */
-
+========================= */
 footer{
 background:#06254d;
 color:#fff;
@@ -646,16 +612,12 @@ text-align:center;
 padding:17px;
 font-size:14px;
 }
-
 footer p{
 margin:0;
 }
-
-
-/* =====================================================
-   PRODUCT MODAL
-===================================================== */
-
+/* =========================
+   MODAL
+========================= */
 .product-modal{
 position:fixed;
 inset:0;
@@ -666,11 +628,9 @@ justify-content:center;
 padding:20px;
 z-index:9999;
 }
-
 .product-modal.show{
 display:flex;
 }
-
 .modal-box{
 background:white;
 width:min(850px,100%);
@@ -680,7 +640,6 @@ border-radius:18px;
 position:relative;
 padding:20px;
 }
-
 .modal-close{
 position:absolute;
 top:10px;
@@ -695,7 +654,6 @@ font-size:22px;
 cursor:pointer;
 z-index:2;
 }
-
 .modal-image{
 width:100%;
 max-height:430px;
@@ -703,37 +661,27 @@ object-fit:contain;
 background:#f3f5f7;
 border-radius:12px;
 }
-
 .modal-title{
 font-size:25px;
 margin:15px 0 8px;
 color:#06254d;
 }
-
 .modal-code,
 .modal-category{
 color:#667085;
 margin:5px 0;
 }
-
 .modal-description{
 line-height:1.8;
 color:#475467;
 margin:15px 0;
 }
-
 .modal-price{
 font-size:25px;
 font-weight:bold;
 color:#06254d;
 margin:15px 0;
 }
-
-
-/* =====================================================
-   EMPTY
-===================================================== */
-
 .empty{
 background:#fff;
 padding:40px;
@@ -742,138 +690,132 @@ border-radius:12px;
 color:#667085;
 grid-column:1/-1;
 }
-
-
-/* =====================================================
-   LARGE
-===================================================== */
-
+/* =========================
+   RESPONSIVE
+========================= */
 @media(min-width:1500px){
-
 .grid{
 grid-template-columns:repeat(6,minmax(0,1fr));
 gap:20px;
 }
-
 .image-wrap{
 height:170px;
 }
-
 .announcement{
 height:340px;
 }
-
 }
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
 @media(max-width:1200px){
-
 .header{
 padding:0 20px;
 }
-
+.logo-area{
+min-width:230px;
+}
+.logo{
+font-size:18px;
+}
+.nav{
+gap:2px;
+}
+.nav a{
+padding:11px 12px;
+}
+.contact{
+gap:5px;
+}
 main{
 padding-left:20px;
 padding-right:20px;
 }
-
 .grid{
 grid-template-columns:repeat(4,minmax(0,1fr));
 }
-
 .announcement{
 height:290px;
 }
-
 .announcement-content{
 width:62%;
 padding:35px 40px;
 }
-
 .announcement-content h2{
 font-size:29px;
 }
-
 }
-
-
-/* =====================================================
+/* =========================
    MOBILE
-===================================================== */
-
+========================= */
 @media(max-width:800px){
-
 header{
 height:auto;
+min-height:92px;
 }
-
 .header{
 height:auto;
-padding:14px 15px;
+min-height:92px;
+padding:12px 15px;
+display:flex;
 flex-wrap:wrap;
 justify-content:center;
+gap:8px;
 }
-
+.logo-area{
+width:100%;
+min-width:0;
+justify-content:center;
+}
+.logo-icon{
+width:40px;
+height:40px;
+font-size:21px;
+border-radius:11px;
+}
 .logo{
-font-size:20px;
+font-size:18px;
 }
-
+.logo small{
+font-size:9px;
+}
 .nav{
 order:3;
 width:100%;
+height:36px;
 justify-content:center;
-height:38px;
-gap:20px;
+gap:3px;
 }
-
 .nav a{
-padding:7px 0;
-font-size:13px;
+font-size:12px;
+padding:7px 9px;
 }
-
+.nav a::after{
+bottom:2px;
+right:9px;
+left:9px;
+}
 .contact{
 display:none;
 }
-
 main{
 padding:10px;
 }
-
-
-/* HERO */
-
 .hero{
 min-height:150px;
 margin-bottom:15px;
 }
-
 .hero-content{
 padding:25px 15px;
 }
-
 .hero-content h1{
 font-size:25px;
 }
-
 .hero-content p{
 font-size:14px;
 }
-
-
-/* =====================================================
-   ANNOUNCEMENT MOBILE
-===================================================== */
-
 .announcement{
 height:235px;
 margin-bottom:15px;
 border-radius:13px;
 }
-
 .announcement-inner::after{
 background:
 linear-gradient(
@@ -883,41 +825,32 @@ rgba(3,18,40,.72) 48%,
 rgba(3,18,40,.20) 100%
 );
 }
-
 .announcement-content{
 width:75%;
 padding:22px 20px;
 justify-content:center;
 }
-
 .announcement-label{
 font-size:10px;
 padding:5px 10px;
 margin-bottom:8px;
 }
-
 .announcement-content h2{
 font-size:21px;
 line-height:1.35;
 margin-bottom:7px;
 }
-
 .announcement-content p{
 font-size:12px;
 line-height:1.65;
 margin-bottom:13px;
 }
-
 .announcement-button{
 min-width:120px;
 padding:9px 18px;
 font-size:12px;
 border-radius:8px;
 }
-
-
-/* CATEGORY */
-
 .mobile-category-toggle{
 display:flex;
 align-items:center;
@@ -935,19 +868,13 @@ padding:0 15px;
 cursor:pointer;
 margin-bottom:10px;
 }
-
 .mobile-category-toggle .hamburger{
 font-size:24px;
 line-height:1;
 }
-
-
-/* SIDEBAR */
-
 .catalog-layout{
 display:block;
 }
-
 .sidebar{
 display:block;
 position:fixed;
@@ -962,18 +889,12 @@ padding:25px 15px;
 transition:right .25s ease;
 box-shadow:-5px 0 25px #0003;
 }
-
 .sidebar.mobile-open{
 right:0;
 }
-
 .products-area{
 width:100%;
 }
-
-
-/* OVERLAY */
-
 .category-overlay{
 display:none;
 position:fixed;
@@ -981,1861 +902,961 @@ inset:0;
 background:#0007;
 z-index:9997;
 }
-
 .category-overlay.show{
 display:block;
 }
-
-
-/* PRODUCTS */
-
 .grid{
 grid-template-columns:repeat(2,minmax(0,1fr));
 gap:9px;
 }
-
 .image-wrap{
 height:135px;
 }
-
 .card{
 border-radius:10px;
 }
-
 .card-body{
 padding:8px;
 }
-
 .card h3{
 font-size:14px;
 }
-
 .description{
 font-size:11px;
 height:35px;
 }
-
 .price{
 font-size:16px;
 }
-
 .price span{
 font-size:11px;
 }
-
-
-/* SEARCH */
-
 .toolbar{
 grid-template-columns:1fr;
 gap:8px;
 }
-
 .sort,
 .search-box,
 .all-products{
 width:100%;
 }
-
 .services{
 grid-template-columns:repeat(2,1fr);
 padding:14px 5px;
 gap:10px;
 }
-
 .service{
 border-left:0;
 }
-
 .service h3{
 font-size:13px;
 }
-
 .service p{
 font-size:10px;
 }
-
 }
-
-
-/* =====================================================
-   SMALL PHONE
-===================================================== */
-
+/* =========================
+   SMALL MOBILE
+========================= */
 @media(max-width:480px){
-
+.logo{
+font-size:16px;
+}
+.logo-icon{
+width:37px;
+height:37px;
+font-size:19px;
+}
+.nav{
+gap:1px;
+}
+.nav a{
+font-size:11px;
+padding:7px 7px;
+}
 .hero{
 min-height:145px;
 }
-
 .hero-content h1{
 font-size:22px;
 }
-
 .hero-content p{
 font-size:13px;
 }
-
-
-/* الإعلان */
-
 .announcement{
 height:210px;
 }
-
 .announcement-content{
 width:82%;
 padding:18px 16px;
 }
-
 .announcement-content h2{
 font-size:19px;
 }
-
 .announcement-content p{
 font-size:11px;
 margin-bottom:10px;
 }
-
 .announcement-button{
 padding:8px 16px;
 font-size:11px;
 }
-
-
-/* المنتجات */
-
 .grid{
 grid-template-columns:1fr 1fr;
 gap:8px;
 }
-
 .image-wrap{
 height:125px;
 }
-
 .card h3{
 font-size:13px;
 }
-
 .description{
 font-size:10px;
 }
-
 .price{
 font-size:15px;
 }
-
 .services{
 grid-template-columns:1fr 1fr;
 }
-
 }
-
-
-/* =====================================================
-   VERY SMALL
-===================================================== */
-
 @media(max-width:360px){
-
+.nav a{
+font-size:10px;
+padding:6px 5px;
+}
 .grid{
 grid-template-columns:1fr;
 }
-
 .image-wrap{
 height:190px;
 }
-
 .announcement{
 height:195px;
 }
-
 .announcement-content{
 width:90%;
 padding:15px;
 }
-
 .announcement-content h2{
 font-size:17px;
 }
-
 .announcement-content p{
 font-size:10px;
 }
-
 .announcement-button{
 padding:7px 14px;
 font-size:10px;
 }
-
 }
-
 </style>
-
 </head>
-
-
 <body>
-
-
-<!-- =====================================================
+<!-- =========================
      HEADER
-===================================================== -->
-
+========================= -->
 <header>
-
 <div class="header">
-
-<div class="logo">
-
-شركة بيت المراتب للمفروشات
-
-<small>راحة تدوم</small>
-
+<div class="logo-area">
+<div class="logo-icon">
+🛏️
 </div>
-
-
+<div class="logo">
+شركة بيت المراتب للمفروشات
+<small>راحة تدوم • جودة تستحقها</small>
+</div>
+</div>
 <nav class="nav">
-
 <a href="#" class="active">
 الرئيسية
 </a>
-
 <a href="#products">
 المنتجات
 </a>
-
 <a href="#">
 من نحن
 </a>
-
 <a href="#contact">
 تواصل معنا
 </a>
-
 </nav>
-
-
 <div class="contact">
-
-<a href="tel:920012345">
+<a class="phone-btn" href="tel:920012345">
 ☎ 9200 12345
 </a>
-
-<a
+<a class="whatsapp-btn"
 href="https://wa.me/966546510165"
 target="_blank">
-
-◉ تواصل واتساب
-
+◉ واتساب
 </a>
-
 </div>
-
 </div>
-
 </header>
-
-
 <main>
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
+<!-- HERO -->
 <section class="hero">
-
 <div class="hero-content">
-
 <h1>
 كتالوج منتجاتنا
 </h1>
-
 <p>
-
 تصفح مجموعة متنوعة من المراتب والبطاطين والسجاد
-
 <br>
-
 بأفضل الأسعار وبجودة عالية
-
 </p>
-
 </div>
-
 </section>
-
-
-<!-- =====================================================
-     PROFESSIONAL ANNOUNCEMENT
-===================================================== -->
-
-<section
-class="announcement"
-id="announcement">
-
+<!-- ANNOUNCEMENT -->
+<section class="announcement" id="announcement">
 <div class="announcement-inner">
-
-
-<div id="announcementImageBox">
-</div>
-
-
+<div id="announcementImageBox"></div>
 <div class="announcement-content">
-
 <div class="announcement-label">
 📢 إعلان
 </div>
-
-
-<h2 id="announcementTitle">
-</h2>
-
-
-<p id="announcementDescription">
-</p>
-
-
-<div id="announcementButtonBox">
+<h2 id="announcementTitle"></h2>
+<p id="announcementDescription"></p>
+<div id="announcementButtonBox"></div>
 </div>
-
-
 </div>
-
-</div>
-
 </section>
-
-
-<!-- =====================================================
-     MOBILE CATEGORY
-===================================================== -->
-
+<!-- MOBILE CATEGORY -->
 <button
 id="mobileCategoryToggle"
 class="mobile-category-toggle">
-
 <span>
 التصنيفات
 </span>
-
 <span class="hamburger">
 ☰
 </span>
-
 </button>
-
-
 <div
 class="category-overlay"
 id="categoryOverlay">
 </div>
-
-
-<!-- =====================================================
-     CATALOG
-===================================================== -->
-
+<!-- CATALOG -->
 <div
 class="catalog-layout"
 id="products">
-
-
 <aside
 class="sidebar"
 id="sidebar">
-
 <h2>
 التصنيفات
 </h2>
-
-
 <div
 class="category-list"
 id="categoryList">
-
 <button
 class="category-btn active"
 data-category="">
-
 كل المنتجات
-
-<span>
-⌂
-</span>
-
+<span>⌂</span>
 </button>
-
 </div>
-
-
 <div class="help-box">
-
 <h3>
 تحتاج مساعدة؟
 </h3>
-
 <p>
 فريقنا جاهز لخدمتك
 </p>
-
 <a
 class="help-btn"
 href="https://wa.me/966546510165"
 target="_blank">
-
 تواصل معنا
-
 </a>
-
 </div>
-
 </aside>
-
-
 <section class="products-area">
-
-
 <div class="toolbar">
-
-
 <select
 id="sort"
 class="sort">
-
 <option value="newest">
 الأحدث
 </option>
-
 <option value="name">
 الاسم
 </option>
-
 <option value="price-low">
 السعر الأقل
 </option>
-
 <option value="price-high">
 السعر الأعلى
 </option>
-
 </select>
-
-
 <div class="search-box">
-
 <input
 id="search"
 type="search"
 placeholder="ابحث عن منتج بالاسم أو الكود ...">
-
 <button
 id="searchBtn"
 class="search-btn">
-
 ⌕
-
 </button>
-
 </div>
-
-
 <button
 id="allProducts"
 class="all-products">
-
 كل المنتجات　▦
-
 </button>
-
 </div>
-
-
 <div
 id="status"
 class="status">
-
 جاري تحميل المنتجات...
-
 </div>
-
-
 <div
 id="errorBox"
 class="empty"
 style="display:none">
-
 </div>
-
-
 <div
 id="grid"
 class="grid">
-
 </div>
-
-
 </section>
-
 </div>
-
-
-<!-- =====================================================
-     SERVICES
-===================================================== -->
-
+<!-- SERVICES -->
 <section class="services">
-
-
 <div class="service">
-
 <div class="service-icon">
 🏷
 </div>
-
 <h3>
 أسعار تنافسية
 </h3>
-
 <p>
 أفضل الأسعار في السوق
 </p>
-
 </div>
-
-
 <div class="service">
-
 <div class="service-icon">
 🏅
 </div>
-
 <h3>
 جودة عالية
 </h3>
-
 <p>
 منتجات مختارة بعناية
 </p>
-
 </div>
-
-
 <div class="service">
-
 <div class="service-icon">
 🚚
 </div>
-
 <h3>
 شحن سريع
 </h3>
-
 <p>
 إلى جميع مناطق المملكة
 </p>
-
 </div>
-
-
 <div class="service">
-
 <div class="service-icon">
 ♧
 </div>
-
 <h3>
 خدمة عملاء مميزة
 </h3>
-
 <p>
 نحن هنا لخدمتك
 </p>
-
 </div>
-
-
 </section>
-
-
 </main>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
+<!-- FOOTER -->
 <footer id="contact">
-
 <p>
-
 جميع الحقوق محفوظة ©️ 2026 بيت المراتب
-
 </p>
-
 </footer>
-
-
-<!-- =====================================================
-     PRODUCT MODAL
-===================================================== -->
-
+<!-- PRODUCT MODAL -->
 <div
 class="product-modal"
 id="productModal">
-
-
 <div class="modal-box">
-
-
 <button
 class="modal-close"
 id="modalClose">
-
 ×
-
 </button>
-
-
-<div
-id="modalContent">
+<div id="modalContent"></div>
 </div>
-
-
 </div>
-
-</div>
-
-
-<!-- =====================================================
-     SUPABASE
-===================================================== -->
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-
 <script>
-
-/* =====================================================
-   SUPABASE
-===================================================== */
-
 const SUPABASE_URL =
 "https://wmiszhoahvfsbmedjrbm.supabase.co";
-
 const SUPABASE_PUBLISHABLE_KEY =
 "sb_publishable_fFclLm6Z2fdUTYxD_AAC5w_icPdd_n5";
-
 const db =
 supabase.createClient(
 SUPABASE_URL,
 SUPABASE_PUBLISHABLE_KEY
 );
-
-
-/* =====================================================
-   VARIABLES
-===================================================== */
-
-let products = [];
-
-let ads = [];
-
-let selectedCategory = "";
-
-let currentSearch = "";
-
-
+let products=[];
+let ads=[];
+let selectedCategory="";
+let currentSearch="";
 const grid =
 document.getElementById("grid");
-
 const status =
 document.getElementById("status");
-
 const search =
 document.getElementById("search");
-
 const searchBtn =
 document.getElementById("searchBtn");
-
 const sort =
 document.getElementById("sort");
-
 const categoryList =
 document.getElementById("categoryList");
-
 const errorBox =
 document.getElementById("errorBox");
-
 const sidebar =
 document.getElementById("sidebar");
-
 const mobileCategoryToggle =
-document.getElementById(
-"mobileCategoryToggle"
-);
-
+document.getElementById("mobileCategoryToggle");
 const categoryOverlay =
-document.getElementById(
-"categoryOverlay"
-);
-
+document.getElementById("categoryOverlay");
 const productModal =
-document.getElementById(
-"productModal"
-);
-
+document.getElementById("productModal");
 const modalContent =
-document.getElementById(
-"modalContent"
-);
-
+document.getElementById("modalContent");
 const modalClose =
-document.getElementById(
-"modalClose"
-);
-
-
-/* =====================================================
-   حماية النصوص
-===================================================== */
-
+document.getElementById("modalClose");
 function esc(value){
-
-return String(
-value ?? ""
-)
+return String(value??"")
 .replace(
 /[&<>"']/g,
 function(m){
-
 return {
-
 "&":"&amp;",
 "<":"&lt;",
 ">":"&gt;",
 '"':"&quot;",
 "'":"&#039;"
-
 }[m];
-
 }
 );
-
 }
-
-
-/* =====================================================
-   تحميل المنتجات
-===================================================== */
-
+/* PRODUCTS */
 async function loadProducts(){
-
 status.textContent =
 "جاري تحميل المنتجات...";
-
-
 try{
-
 const result =
 await db
 .from("products")
 .select("*");
-
-
 console.log(
 "PRODUCT RESULT:",
 result
 );
-
-
 if(result.error){
-
 status.textContent =
 "تعذر تحميل المنتجات";
-
 errorBox.style.display =
 "block";
-
 errorBox.innerHTML =
-"خطأ Supabase:<br>" +
-esc(
-result.error.message
-);
-
+"خطأ Supabase:<br>"
++
+esc(result.error.message);
 return;
-
 }
-
-
 products =
-result.data || [];
-
-
+result.data||[];
 buildCategories();
-
 renderProducts();
-
-
 }catch(error){
-
 console.error(error);
-
 status.textContent =
 "حدث خطأ أثناء تحميل المنتجات";
-
 errorBox.style.display =
 "block";
-
 errorBox.innerHTML =
-"خطأ JavaScript:<br>" +
-esc(
-error.message
-);
-
+"خطأ JavaScript:<br>"
++
+esc(error.message);
 }
-
 }
-
-
-/* =====================================================
-   تحميل الإعلانات
-===================================================== */
-
+/* ADS */
 async function loadAds(){
-
 try{
-
 const result =
 await db
 .from("ads")
 .select("*")
-.eq(
-"active",
-true
-)
+.eq("active",true)
 .order(
 "sort_order",
-{
-ascending:true
-}
+{ascending:true}
 )
 .order(
 "id",
-{
-ascending:false
-}
+{ascending:false}
 );
-
-
 console.log(
 "ADS RESULT:",
 result
 );
-
-
 if(result.error){
-
 console.error(
 "خطأ تحميل الإعلانات:",
 result.error
 );
-
 document
-.getElementById(
-"announcement"
-)
-.style.display =
-"none";
-
+.getElementById("announcement")
+.style.display="none";
 return;
-
 }
-
-
 ads =
-result.data || [];
-
-
+result.data||[];
 if(!ads.length){
-
 document
-.getElementById(
-"announcement"
-)
-.style.display =
-"none";
-
+.getElementById("announcement")
+.style.display="none";
 return;
-
 }
-
-
-/* أول إعلان فعال */
-
-const ad =
-ads[0];
-
-
-/* العنوان */
-
+const ad=ads[0];
 document
-.getElementById(
-"announcementTitle"
-)
+.getElementById("announcementTitle")
 .textContent =
-ad.title || "";
-
-
-/* الوصف */
-
+ad.title||"";
 document
-.getElementById(
-"announcementDescription"
-)
+.getElementById("announcementDescription")
 .textContent =
-ad.description || "";
-
-
-/* الصورة */
-
+ad.description||"";
 const imageBox =
 document.getElementById(
 "announcementImageBox"
 );
-
-
 if(ad.image_url){
-
-imageBox.innerHTML = `
-
-<img
+imageBox.innerHTML=
+`<img
 class="announcement-image"
 src="${esc(ad.image_url)}"
-alt="${esc(
-ad.title ||
-"إعلان"
-)}">
-
-`;
-
+alt="${esc(ad.title||"إعلان")}">`;
 }else{
-
-imageBox.innerHTML = `
-
-<div class="announcement-no-image">
-
+imageBox.innerHTML=
+`<div
+class="announcement-no-image">
 📢
-
-</div>
-
-`;
-
+</div>`;
 }
-
-
-/* الزر */
-
 const buttonBox =
 document.getElementById(
 "announcementButtonBox"
 );
-
-
 if(
 ad.button_url &&
 ad.button_url.trim()
 ){
-
-buttonBox.innerHTML = `
-
-<a
+buttonBox.innerHTML=
+`<a
 class="announcement-button"
-href="${esc(
-ad.button_url
-)}"
+href="${esc(ad.button_url)}"
 target="_blank"
 rel="noopener noreferrer">
-
-${esc(
-ad.button_text ||
-"اعرف المزيد"
-)}
-
-</a>
-
-`;
-
+${esc(ad.button_text||"اعرف المزيد")}
+</a>`;
 }else{
-
-buttonBox.innerHTML = "";
-
+buttonBox.innerHTML="";
 }
-
-
-/* إظهار الإعلان */
-
 document
-.getElementById(
-"announcement"
-)
-.style.display =
-"block";
-
-
+.getElementById("announcement")
+.style.display="block";
 }catch(error){
-
 console.error(
 "خطأ JavaScript في الإعلانات:",
 error
 );
-
 }
-
 }
-
-
-/* =====================================================
-   التصنيفات
-===================================================== */
-
+/* CATEGORIES */
 function buildCategories(){
-
-categoryList.innerHTML = "";
-
-
+categoryList.innerHTML="";
 const all =
-document.createElement(
-"button"
-);
-
-
+document.createElement("button");
 all.className =
-"category-btn " +
-(
-selectedCategory === ""
-?
-"active"
-:
-""
-);
-
-
-all.dataset.category =
-"";
-
-
+"category-btn "
++
+(selectedCategory===""
+?"active":"");
+all.dataset.category="";
 all.innerHTML =
 "كل المنتجات <span>⌂</span>";
-
-
-categoryList.appendChild(
-all
-);
-
-
+categoryList.appendChild(all);
 const categories =
 [
 ...new Set(
 products
-.map(
-p =>
-p.category
-)
+.map(p=>p.category)
 .filter(Boolean)
 )
 ];
-
-
 categories.forEach(
 function(cat){
-
 const button =
-document.createElement(
-"button"
-);
-
-
+document.createElement("button");
 button.className =
-"category-btn " +
-(
-selectedCategory === cat
-?
-"active"
-:
-""
-);
-
-
-button.dataset.category =
-cat;
-
-
+"category-btn "
++
+(selectedCategory===cat
+?"active":"");
+button.dataset.category=cat;
 button.innerHTML =
-`
-
-${esc(cat)}
-
-<span>
-▣
-</span>
-
-`;
-
-
+`${esc(cat)}<span>▣</span>`;
 categoryList.appendChild(
 button
 );
-
 });
-
 }
-
-
-/* =====================================================
-   عرض المنتجات
-===================================================== */
-
+/* RENDER */
 function renderProducts(){
-
 let result =
 [...products];
-
-
-/* التصنيف */
-
 if(selectedCategory){
-
 result =
 result.filter(
-p =>
-p.category ===
+p=>p.category===
 selectedCategory
 );
-
 }
-
-
-/* البحث */
-
 if(currentSearch){
-
 const q =
 currentSearch.toLowerCase();
-
-
 result =
 result.filter(
 function(p){
-
 return [
-
 p.name,
 p.code,
 p.description,
 p.category
-
 ]
-
 .join(" ")
 .toLowerCase()
 .includes(q);
-
 });
-
 }
-
-
-/* الترتيب */
-
-if(sort.value === "name"){
-
+if(sort.value==="name"){
 result.sort(
-(a,b) =>
-String(
-a.name || ""
-)
+(a,b)=>
+String(a.name||"")
 .localeCompare(
-String(
-b.name || ""
-),
+String(b.name||""),
 "ar"
 )
 );
-
 }
-
-
-if(sort.value === "price-low"){
-
+if(sort.value==="price-low"){
 result.sort(
-(a,b) =>
-Number(
-a.price || 0
-)
+(a,b)=>
+Number(a.price||0)
 -
-Number(
-b.price || 0
-)
+Number(b.price||0)
 );
-
 }
-
-
-if(sort.value === "price-high"){
-
+if(sort.value==="price-high"){
 result.sort(
-(a,b) =>
-Number(
-b.price || 0
-)
+(a,b)=>
+Number(b.price||0)
 -
-Number(
-a.price || 0
-)
+Number(a.price||0)
 );
-
 }
-
-
-if(sort.value === "newest"){
-
+if(sort.value==="newest"){
 result.sort(
-(a,b) =>
-Number(
-b.id || 0
-)
+(a,b)=>
+Number(b.id||0)
 -
-Number(
-a.id || 0
-)
+Number(a.id||0)
 );
-
 }
-
-
 status.textContent =
-"عدد المنتجات: " +
+"عدد المنتجات: "
++
 result.length;
-
-
 if(!result.length){
-
-grid.innerHTML = `
-
-<div class="empty">
-
+grid.innerHTML=
+`<div class="empty">
 لا توجد منتجات مطابقة للبحث
-
-</div>
-
-`;
-
+</div>`;
 return;
-
 }
-
-
 grid.innerHTML =
-result
-.map(
+result.map(
 function(p){
-
 return `
-
 <article
 class="card"
 data-id="${esc(p.id)}">
-
-
 <div class="image-wrap">
-
-
 ${
 p.image_url
 ?
-
-`
-
-<img
+`<img
 class="product-image"
-src="${esc(
-p.image_url
-)}"
-alt="${esc(
-p.name
-)}"
-loading="lazy">
-
-`
-
+src="${esc(p.image_url)}"
+alt="${esc(p.name)}"
+loading="lazy">`
 :
-
-`
-
-<div class="no-image">
-
+`<div class="no-image">
 لا توجد صورة
-
-</div>
-
-`
-
+</div>`
 }
-
-
 <span
-class="badge ${
-p.available
-?
-"available"
-:
-"unavailable"
-}">
-
-${
-p.available
-?
-"متوفر"
-:
-"غير متوفر"
-}
-
+class="badge
+${p.available
+?"available"
+:"unavailable"}">
+${p.available
+?"متوفر"
+:"غير متوفر"}
 </span>
-
-
 </div>
-
-
 <div class="card-body">
-
-
 <div class="code">
-
-${esc(
-p.code ||
-""
-)}
-
+${esc(p.code||"")}
 </div>
-
-
 <h3>
-
-${esc(
-p.name ||
-""
-)}
-
+${esc(p.name||"")}
 </h3>
-
-
 <div class="description">
-
-${esc(
-p.description ||
-""
-)}
-
+${esc(p.description||"")}
 </div>
-
-
 ${
-p.price !== null &&
-p.price !== undefined &&
-p.price !== ""
-?
-
-`
-
-<div class="price">
-
-${Number(
-p.price
-)
-.toLocaleString(
-"ar-SA"
-)}
-
+p.price!==null &&
+p.price!==undefined &&
+p.price!==""?
+`<div class="price">
+${Number(p.price)
+.toLocaleString("ar-SA")}
 <span>
-
 ريال
-
 </span>
-
-</div>
-
-`
-
-:
-
-""
-
+</div>`
+:""
 }
-
-
 </div>
-
 </article>
-
 `;
-
-})
-.join("");
-
 }
-
-
-/* =====================================================
-   البحث
-===================================================== */
-
+).join("");
+}
+/* SEARCH */
 function doSearch(){
-
 currentSearch =
 search.value.trim();
-
 renderProducts();
-
 }
-
-
 searchBtn.onclick =
 doSearch;
-
-
 search.addEventListener(
 "keydown",
 function(e){
-
-if(e.key === "Enter"){
-
+if(e.key==="Enter"){
 doSearch();
-
 }
-
-});
-
-
+}
+);
 search.addEventListener(
 "input",
 function(){
-
 currentSearch =
 search.value.trim();
-
 renderProducts();
-
-});
-
-
-/* =====================================================
-   الترتيب
-===================================================== */
-
+}
+);
 sort.onchange =
 renderProducts;
-
-
-/* =====================================================
-   التصنيفات
-===================================================== */
-
+/* CATEGORY */
 categoryList.addEventListener(
 "click",
 function(e){
-
 const button =
 e.target.closest(
 ".category-btn"
 );
-
-
-if(!button)
-return;
-
-
+if(!button)return;
 selectedCategory =
-button.dataset.category ||
-"";
-
-
+button.dataset.category||"";
 buildCategories();
-
 renderProducts();
-
 closeMobileCategories();
-
-});
-
-
-/* =====================================================
-   كل المنتجات
-===================================================== */
-
+}
+);
 document
-.getElementById(
-"allProducts"
-)
-.onclick =
-function(){
-
-selectedCategory =
-"";
-
-currentSearch =
-"";
-
-search.value =
-"";
-
+.getElementById("allProducts")
+.onclick=function(){
+selectedCategory="";
+currentSearch="";
+search.value="";
 buildCategories();
-
 renderProducts();
-
 };
-
-
-/* =====================================================
-   القائمة الجانبية
-===================================================== */
-
+/* MOBILE CATEGORY */
 function openMobileCategories(){
-
 sidebar.classList.add(
 "mobile-open"
 );
-
 categoryOverlay.classList.add(
 "show"
 );
-
 }
-
-
 function closeMobileCategories(){
-
 sidebar.classList.remove(
 "mobile-open"
 );
-
 categoryOverlay.classList.remove(
 "show"
 );
-
 }
-
-
 mobileCategoryToggle.onclick =
 function(){
-
 if(
 sidebar.classList.contains(
 "mobile-open"
 )
 ){
-
 closeMobileCategories();
-
 }else{
-
 openMobileCategories();
-
 }
-
 };
-
-
 categoryOverlay.onclick =
 closeMobileCategories;
-
-
-/* =====================================================
-   فتح المنتج
-===================================================== */
-
+/* PRODUCT MODAL */
 grid.addEventListener(
 "click",
 function(e){
-
 const card =
-e.target.closest(
-".card"
-);
-
-
-if(!card)
-return;
-
-
+e.target.closest(".card");
+if(!card)return;
 const id =
 card.dataset.id;
-
-
 const product =
 products.find(
-p =>
-String(p.id) ===
+p=>
+String(p.id)===
 String(id)
 );
-
-
-if(!product)
-return;
-
-
+if(!product)return;
 openProduct(product);
-
-});
-
-
-/* =====================================================
-   تفاصيل المنتج
-===================================================== */
-
+}
+);
 function openProduct(p){
-
-modalContent.innerHTML = `
-
+modalContent.innerHTML=
+`
 ${
 p.image_url
 ?
-
-`
-
-<img
+`<img
 class="modal-image"
-src="${esc(
-p.image_url
-)}"
-alt="${esc(
-p.name
-)}">
-
-`
-
+src="${esc(p.image_url)}"
+alt="${esc(p.name)}">`
 :
-
-`
-
-<div
+`<div
 class="no-image"
 style="height:300px">
-
 لا توجد صورة
-
-</div>
-
-`
-
+</div>`
 }
-
-
 <h2 class="modal-title">
-
-${esc(
-p.name ||
-""
-)}
-
+${esc(p.name||"")}
 </h2>
-
-
 ${
 p.code
 ?
-
-`
-
-<div class="modal-code">
-
+`<div class="modal-code">
 كود المنتج:
-${esc(
-p.code
-)}
-
-</div>
-
-`
-
-:
-
-""
-
+${esc(p.code)}
+</div>`
+:""
 }
-
-
 ${
 p.category
 ?
-
-`
-
-<div class="modal-category">
-
+`<div class="modal-category">
 التصنيف:
-${esc(
-p.category
-)}
-
-</div>
-
-`
-
-:
-
-""
-
+${esc(p.category)}
+</div>`
+:""
 }
-
-
 ${
 p.description
 ?
-
-`
-
-<div class="modal-description">
-
-${esc(
-p.description
-)}
-
-</div>
-
-`
-
-:
-
-""
-
+`<div class="modal-description">
+${esc(p.description)}
+</div>`
+:""
 }
-
-
 ${
-p.price !== null &&
-p.price !== undefined &&
-p.price !== ""
+p.price!==null &&
+p.price!==undefined &&
+p.price!==""
 ?
-
-`
-
-<div class="modal-price">
-
-${Number(
-p.price
-)
-.toLocaleString(
-"ar-SA"
-)}
-
+`<div class="modal-price">
+${Number(p.price)
+.toLocaleString("ar-SA")}
 ريال
-
-</div>
-
-`
-
-:
-
-""
-
+</div>`
+:""
 }
-
-
 <span
-class="badge ${
-p.available
-?
-"available"
-:
-"unavailable"
-}"
+class="badge
+${p.available
+?"available"
+:"unavailable"}"
 style="
 position:static;
 display:inline-block;
 ">
-
-${
-p.available
-?
-"متوفر"
-:
-"غير متوفر"
-}
-
+${p.available
+?"متوفر"
+:"غير متوفر"}
 </span>
-
 `;
-
 productModal.classList.add(
 "show"
 );
-
 document.body.style.overflow =
 "hidden";
-
 }
-
-
-/* =====================================================
-   إغلاق المنتج
-===================================================== */
-
 function closeProduct(){
-
 productModal.classList.remove(
 "show"
 );
-
-document.body.style.overflow =
-"";
-
+document.body.style.overflow="";
 }
-
-
 modalClose.onclick =
 closeProduct;
-
-
 productModal.addEventListener(
 "click",
 function(e){
-
-if(e.target === productModal){
-
+if(e.target===productModal){
 closeProduct();
-
 }
-
-});
-
-
+}
+);
 document.addEventListener(
 "keydown",
 function(e){
-
-if(e.key === "Escape"){
-
+if(e.key==="Escape"){
 closeProduct();
-
 closeMobileCategories();
-
 }
-
-});
-
-
-/* =====================================================
-   التشغيل
-===================================================== */
-
+}
+);
+/* START */
 loadProducts();
-
 loadAds();
-
 </script>
-
 </body>
 </html>
