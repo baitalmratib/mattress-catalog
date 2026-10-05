@@ -1147,6 +1147,67 @@ object-fit:contain;
 background:#f2fbfd;
 border-radius:12px;
 }
+/* =====================================================
+PRODUCT IMAGE GALLERY
+===================================================== */
+.product-gallery{
+width:100%;
+}
+.gallery-main{
+width:100%;
+height:450px;
+background:#f2fbfd;
+border-radius:12px;
+overflow:hidden;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:12px;
+}
+.gallery-main img{
+width:100%;
+height:100%;
+object-fit:contain;
+display:block;
+}
+.gallery-thumbs{
+display:flex;
+gap:9px;
+overflow-x:auto;
+padding:2px 2px 8px;
+scrollbar-width:thin;
+}
+.gallery-thumb{
+width:78px;
+height:68px;
+flex:0 0 78px;
+border:2px solid transparent;
+border-radius:10px;
+overflow:hidden;
+background:#f2fbfd;
+padding:0;
+cursor:pointer;
+transition:.2s;
+}
+.gallery-thumb:hover{
+border-color:#22c7eb;
+transform:translateY(-2px);
+}
+.gallery-thumb.active{
+border-color:#078db5;
+box-shadow:0 4px 12px rgba(7,145,180,.16);
+}
+.gallery-thumb img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+}
+.gallery-count{
+font-size:10px;
+color:#71848d;
+margin-top:5px;
+}
 .modal-title{
 font-size:28px;
 color:#0783a7;
@@ -1570,8 +1631,13 @@ font-size:14px;
 .view{
 font-size:8px;
 }
-.modal-image{
+.gallery-main{
 height:300px;
+}
+.gallery-thumb{
+width:65px;
+height:58px;
+flex-basis:65px;
 }
 .modal-title{
 font-size:23px;
@@ -1930,10 +1996,6 @@ rel="noopener">
 </div>
 </div>
 </section>
-<!-- =====================================================
-BRANCHES - FROM SUPABASE
-لا يعتمد على maps_url نهائياً
-===================================================== -->
 <section
 class="info-section"
 id="branchesSection">
@@ -2174,8 +2236,10 @@ aboutPoints:[
 VARIABLES
 ===================================================== */
 let products=[];
+let productImages=[];
 let selectedCategory="";
 let currentSearch="";
+window.currentProductGallery=[];
 /* =====================================================
 ELEMENTS
 ===================================================== */
@@ -2244,66 +2308,64 @@ const whatsappLinks=[
 ];
 whatsappLinks.forEach(
 function(id){
-const element=
+const element =
 document.getElementById(id);
 if(element){
-element.href=
+element.href =
 whatsappUrl();
 }
 });
-const phoneText=
+const phoneText =
 document.getElementById("phoneText");
 if(phoneText){
-phoneText.textContent=
+phoneText.textContent =
 COMPANY.phone;
 }
-const phoneButton=
+const phoneButton =
 document.getElementById("phoneButton");
 if(phoneButton){
-phoneButton.href=
+phoneButton.href =
 "tel:"+COMPANY.phone;
 }
-const footerPhone=
+const footerPhone =
 document.getElementById("footerPhone");
 if(footerPhone){
-footerPhone.href=
+footerPhone.href =
 "tel:"+COMPANY.phone;
-footerPhone.textContent=
+footerPhone.textContent =
 COMPANY.phone;
 }
-const whatsappText=
+const whatsappText =
 document.getElementById("whatsappText");
 if(whatsappText){
-whatsappText.textContent=
+whatsappText.textContent =
 "+"+COMPANY.whatsapp;
 }
 document.getElementById(
 "companyAddress"
-).textContent=
+).textContent =
 COMPANY.address;
 document.getElementById(
 "companyCity"
-).textContent=
+).textContent =
 "المدينة: "+
 COMPANY.city;
 document.getElementById(
 "footerAddress"
-).textContent=
+).textContent =
 COMPANY.address;
-const mapsButton=
-document.getElementById(
-"mapsButton"
-);
+const mapsButton =
+document.getElementById("mapsButton");
 if(
 COMPANY.googleMaps &&
 COMPANY.googleMaps!=="#" &&
 !COMPANY.googleMaps.includes("ضع رابط")
 ){
-mapsButton.href=
+mapsButton.href =
 COMPANY.googleMaps;
 }else{
 mapsButton.href="#";
-mapsButton.onclick=
+mapsButton.onclick =
 function(e){
 e.preventDefault();
 alert(
@@ -2311,11 +2373,9 @@ alert(
 );
 };
 }
-const hoursBox=
-document.getElementById(
-"workingHours"
-);
-hoursBox.innerHTML=
+const hoursBox =
+document.getElementById("workingHours");
+hoursBox.innerHTML =
 COMPANY.workingHours
 .map(
 function(item){
@@ -2333,11 +2393,11 @@ ${esc(item.time)}
 .join("");
 document.getElementById(
 "aboutDescription"
-).textContent=
+).textContent =
 COMPANY.about;
 document.getElementById(
 "aboutPoints"
-).innerHTML=
+).innerHTML =
 COMPANY.aboutPoints
 .map(
 function(item){
@@ -2351,19 +2411,7 @@ ${esc(item)}
 .join("");
 }
 /* =====================================================
-LOAD BRANCHES FROM SUPABASE
-الإصدار النهائي
-مهم:
-هذا الجزء يستخدم فقط:
-name
-address
-phone
-ولا يستخدم نهائياً:
-maps_url
-maps_ur1
-id
-created_at
-ويتم إنشاء رابط Google Maps تلقائياً.
+LOAD BRANCHES
 ===================================================== */
 async function loadBranches(){
 const box =
@@ -2375,13 +2423,6 @@ box.innerHTML = `
 </div>
 `;
 try{
-/*
-=====================================================
-نطلب فقط الأعمدة الأساسية.
-إذا كان جدول branches يحتوي هذه الأعمدة
-سيعمل الكود بدون الحاجة لأي أعمدة إضافية.
-=====================================================
-*/
 const result =
 await db
 .from("branches")
@@ -2414,29 +2455,16 @@ box.innerHTML = `
 `;
 return;
 }
-/*
-=====================================================
-عرض الفروع
-=====================================================
-*/
 box.innerHTML =
 branches
 .map(
 function(branch,index){
-/*
-=====================================================
-Google Maps
-يتم تكوين الرابط تلقائياً
-=====================================================
-*/
 const mapQuery = [
 branch.name,
 branch.address,
 COMPANY.city
 ]
-.filter(
-Boolean
-)
+.filter(Boolean)
 .join(" ");
 const mapUrl =
 mapQuery
@@ -2445,21 +2473,13 @@ mapQuery
 encodeURIComponent(mapQuery)
 :
 "";
-/*
-=====================================================
-HTML الفرع
-=====================================================
-*/
 return `
 <div class="branch">
 <div class="branch-number">
 ${index+1}
 </div>
 <h3>
-${esc(
-branch.name ||
-"فرع"
-)}
+${esc(branch.name || "فرع")}
 </h3>
 ${
 branch.address
@@ -2513,47 +2533,80 @@ box.innerHTML = `
 <div class="empty">
 حدث خطأ أثناء تحميل الفروع.
 <br><br>
-${esc(
-error.message ||
-""
-)}
+${esc(error.message || "")}
 </div>
 `;
 }
 }
 /* =====================================================
-LOAD PRODUCTS
+LOAD PRODUCTS + PRODUCT IMAGES
 ===================================================== */
 async function loadProducts(){
 try{
 count.textContent =
 "جاري تحميل المنتجات...";
-const result =
+/* =====================================================
+PRODUCTS
+===================================================== */
+const productsResult =
 await db
 .from("products")
 .select("*");
-if(result.error){
+if(productsResult.error){
 grid.innerHTML = `
 <div class="empty">
 تعذر تحميل المنتجات
 <br><br>
-${esc(result.error.message)}
+${esc(productsResult.error.message)}
 </div>
 `;
 return;
 }
 products =
-result.data || [];
+productsResult.data || [];
+/* =====================================================
+PRODUCT IMAGES
+===================================================== */
+const imagesResult =
+await db
+.from("product_images")
+.select(
+"id,product_id,image_url,sort_order"
+)
+.order(
+"sort_order",
+{
+ascending:true
+}
+);
+if(imagesResult.error){
+console.error(
+"Product images error:",
+imagesResult.error
+);
+productImages=[];
+}else{
+productImages =
+imagesResult.data || [];
+}
+/* =====================================================
+CONTINUE
+===================================================== */
 buildCategories();
 buildCategoryCards();
 renderProducts();
 setDefaultHero();
 setAboutImage();
 }catch(error){
-console.error(error);
+console.error(
+"Products error:",
+error
+);
 grid.innerHTML = `
 <div class="empty">
 حدث خطأ أثناء تحميل المنتجات
+<br><br>
+${esc(error.message || "")}
 </div>
 `;
 }
@@ -2972,7 +3025,7 @@ openProduct(product);
 }
 );
 /* =====================================================
-OPEN PRODUCT
+OPEN PRODUCT WITH GALLERY
 ===================================================== */
 function openProduct(p){
 const message =
@@ -2980,29 +3033,118 @@ const message =
 (p.name||"")+
 " - كود "+
 (p.code||"");
-modalContent.innerHTML = `
+/* =====================================================
+GET ADDITIONAL IMAGES
+===================================================== */
+const additionalImages =
+productImages
+.filter(
+function(image){
+return String(image.product_id) ===
+String(p.id) &&
+image.image_url;
+}
+)
+.sort(
+function(a,b){
+return Number(a.sort_order||0) -
+Number(b.sort_order||0);
+}
+);
+/* =====================================================
+CREATE IMAGE LIST
+MAIN IMAGE FIRST
+===================================================== */
+const allImages=[];
+if(p.image_url){
+allImages.push({
+url:p.image_url,
+type:"main"
+});
+}
+additionalImages.forEach(
+function(image){
+if(
+image.image_url &&
+image.image_url !== p.image_url
+){
+allImages.push({
+url:image.image_url,
+type:"additional"
+});
+}
+}
+);
+/* =====================================================
+GALLERY HTML
+===================================================== */
+let galleryHTML="";
+if(allImages.length){
+galleryHTML = `
+<div class="product-gallery">
+<div class="gallery-main">
+<img
+id="galleryMainImage"
+src="${esc(allImages[0].url)}"
+alt="${esc(p.name||"")}">
+</div>
 ${
-p.image_url
+allImages.length > 1
 ?
 `
+<div class="gallery-thumbs">
+${
+allImages
+.map(
+function(image,index){
+return `
+<button
+type="button"
+class="
+gallery-thumb
+${index===0?"active":""}
+"
+data-gallery-index="${index}"
+onclick="changeGalleryImage(${index})">
 <img
-class="modal-image"
-src="${esc(p.image_url)}"
+src="${esc(image.url)}"
 alt="${esc(p.name||"")}">
+</button>
+`;
+}
+)
+.join("")
+}
+</div>
+<div class="gallery-count">
+${allImages.length}
+صور للمنتج
+</div>
 `
 :
-`
+""
+}
+</div>
+`;
+}else{
+galleryHTML = `
 <div
-class="modal-image"
+class="gallery-main"
 style="
 display:flex;
 align-items:center;
 justify-content:center;
-color:#8a98a6;">
+color:#8a98a6;
+">
 لا توجد صورة
 </div>
-`
+`;
 }
+/* =====================================================
+MODAL
+===================================================== */
+modalContent.innerHTML = `
+${galleryHTML}
 <h2 class="modal-title">
 ${esc(p.name||"")}
 </h2>
@@ -3069,11 +3211,48 @@ rel="noopener">
 الاستفسار عن المنتج عبر واتساب
 </a>
 `;
+/* =====================================================
+STORE GALLERY
+===================================================== */
+window.currentProductGallery =
+allImages;
+/* =====================================================
+SHOW MODAL
+===================================================== */
 productModal.classList.add(
 "show"
 );
 document.body.style.overflow =
 "hidden";
+}
+/* =====================================================
+CHANGE GALLERY IMAGE
+===================================================== */
+function changeGalleryImage(index){
+const gallery =
+window.currentProductGallery || [];
+if(!gallery[index]){
+return;
+}
+const mainImage =
+document.getElementById(
+"galleryMainImage"
+);
+if(!mainImage){
+return;
+}
+mainImage.src =
+gallery[index].url;
+document
+.querySelectorAll(".gallery-thumb")
+.forEach(
+function(button,i){
+button.classList.toggle(
+"active",
+i===index
+);
+}
+);
 }
 /* =====================================================
 CLOSE MODAL
@@ -3187,13 +3366,9 @@ ads[0];
 /* HERO */
 if(ad.image_url){
 const hero =
-document.getElementById(
-"hero"
-);
+document.getElementById("hero");
 const heroImage =
-document.getElementById(
-"heroImage"
-);
+document.getElementById("heroImage");
 hero.classList.add(
 "has-image"
 );
@@ -3205,13 +3380,9 @@ ad.title||
 }
 /* AD */
 const section =
-document.getElementById(
-"offers"
-);
+document.getElementById("offers");
 const imageBox =
-document.getElementById(
-"adImageBox"
-);
+document.getElementById("adImageBox");
 if(ad.image_url){
 imageBox.innerHTML = `
 <img
