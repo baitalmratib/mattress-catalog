@@ -6,6 +6,7 @@
 <title>شركة بيت المراتب للمفروشات جملة وقطاعي</title>
 
 <style>
+
 :root{
 --cyan:#22c7eb;
 --cyan-dark:#0798bd;
@@ -1359,12 +1360,13 @@ width:46px;
 height:46px;
 
 border-radius:50%;
-border:1px solid rgba(255,255,255,.58);
+
+border:1px solid rgba(255,255,255,.65);
 
 background:
 linear-gradient(
 135deg,
-rgba(255,255,255,.42),
+rgba(255,255,255,.48),
 rgba(255,255,255,.16)
 );
 
@@ -1379,14 +1381,15 @@ font-weight:bold;
 line-height:1;
 
 cursor:pointer;
-z-index:5;
+
+z-index:10;
 
 box-shadow:
 0 8px 25px rgba(0,80,110,.16),
-inset 0 1px 0 rgba(255,255,255,.80);
+inset 0 1px 0 rgba(255,255,255,.85);
 
-backdrop-filter:blur(14px);
--webkit-backdrop-filter:blur(14px);
+backdrop-filter:blur(13px);
+-webkit-backdrop-filter:blur(13px);
 
 transition:
 transform .2s ease,
@@ -1398,8 +1401,8 @@ box-shadow .2s ease;
 background:
 linear-gradient(
 135deg,
-rgba(255,255,255,.68),
-rgba(255,255,255,.27)
+rgba(255,255,255,.72),
+rgba(255,255,255,.25)
 );
 
 box-shadow:
@@ -1407,12 +1410,14 @@ box-shadow:
 inset 0 1px 0 rgba(255,255,255,.95);
 
 transform:
-translateY(-50%) scale(1.08);
+translateY(-50%)
+scale(1.08);
 }
 
 .gallery-arrow:active{
 transform:
-translateY(-50%) scale(.93);
+translateY(-50%)
+scale(.94);
 }
 
 .gallery-next{
@@ -2089,6 +2094,7 @@ display:block;
 }
 
 }
+
 </style>
 </head>
 
@@ -2101,6 +2107,7 @@ display:block;
 </div>
 
 <header>
+
 <div class="header">
 
 <div class="logo">
@@ -2111,11 +2118,9 @@ display:block;
 
 <div class="logo-title">
 شركة بيت المراتب للمفروشات جملة وقطاعي
-
 <small>
 راحة تدوم • جودة تستحقها
 </small>
-
 </div>
 
 </div>
@@ -2179,6 +2184,7 @@ rel="noopener">
 </div>
 
 </div>
+
 </header>
 
 <section class="hero" id="hero">
@@ -2227,6 +2233,7 @@ class="hero-btn hero-secondary">
 </div>
 
 </div>
+
 </section>
 
 <section class="section" id="categories">
@@ -2903,6 +2910,7 @@ let selectedCategory="";
 let currentSearch="";
 
 window.currentProductGallery=[];
+window.currentProductGalleryIndex=0;
 
 /* =====================================================
 ELEMENTS
@@ -2991,14 +2999,12 @@ APPLY COMPANY SETTINGS
 function applyCompanySettings(){
 
 const whatsappLinks=[
-
 "headerWhatsapp",
 "heroWhatsapp",
 "locationWhatsapp",
 "whatsappButton",
 "ctaWhatsapp",
 "footerWhatsapp"
-
 ];
 
 whatsappLinks.forEach(
@@ -3219,11 +3225,9 @@ branches
 function(branch,index){
 
 const mapQuery = [
-
 branch.name,
 branch.address,
 COMPANY.city
-
 ]
 .filter(Boolean)
 .join(" ");
@@ -3237,7 +3241,6 @@ encodeURIComponent(mapQuery)
 "";
 
 return `
-
 <div class="branch">
 
 <div class="branch-number">
@@ -3294,7 +3297,6 @@ rel="noopener noreferrer">
 }
 
 </div>
-
 `;
 
 }
@@ -3441,7 +3443,6 @@ all.className =
 all.dataset.category="";
 
 all.innerHTML = `
-
 <span>
 كل المنتجات
 </span>
@@ -3449,7 +3450,6 @@ all.innerHTML = `
 <span>
 ›
 </span>
-
 `;
 
 categoryList.appendChild(all);
@@ -3484,7 +3484,6 @@ p=>p.category===category
 ).length;
 
 btn.innerHTML = `
-
 <span>
 ${esc(category)}
 </span>
@@ -3492,7 +3491,6 @@ ${esc(category)}
 <span>
 ${total}
 </span>
-
 `;
 
 categoryList.appendChild(btn);
@@ -4045,8 +4043,11 @@ const allImages=[];
 if(p.image_url){
 
 allImages.push({
+
 url:p.image_url,
+
 type:"main"
+
 });
 
 }
@@ -4060,8 +4061,11 @@ image.image_url !== p.image_url
 ){
 
 allImages.push({
+
 url:image.image_url,
+
 type:"additional"
+
 });
 
 }
@@ -4098,7 +4102,9 @@ type="button"
 class="gallery-arrow gallery-next"
 onclick="nextGalleryImage()"
 aria-label="الصورة التالية">
+
 ›
+
 </button>
 
 <button
@@ -4106,7 +4112,9 @@ type="button"
 class="gallery-arrow gallery-prev"
 onclick="prevGalleryImage()"
 aria-label="الصورة السابقة">
+
 ‹
+
 </button>
 
 `
@@ -4164,6 +4172,7 @@ ${allImages.length}
 `
 :
 ""
+
 }
 
 </div>
@@ -4180,8 +4189,7 @@ style="
 display:flex;
 align-items:center;
 justify-content:center;
-color:#8a98a6;
-">
+color:#8a98a6;">
 
 لا توجد صورة
 
@@ -4200,17 +4208,23 @@ modalContent.innerHTML = `
 ${galleryHTML}
 
 <h2 class="modal-title">
+
 ${esc(p.name||"")}
+
 </h2>
 
 ${
 p.code
 ?
 `
+
 <div class="modal-line">
+
 كود المنتج:
 ${esc(p.code)}
+
 </div>
+
 `
 :
 ""
@@ -4220,10 +4234,14 @@ ${
 p.category
 ?
 `
+
 <div class="modal-line">
+
 التصنيف:
 ${esc(p.category)}
+
 </div>
+
 `
 :
 ""
@@ -4233,9 +4251,13 @@ ${
 p.description
 ?
 `
+
 <div class="modal-description">
+
 ${esc(p.description)}
+
 </div>
+
 `
 :
 ""
@@ -4247,6 +4269,7 @@ p.price!==undefined &&
 p.price!==""
 ?
 `
+
 <div class="modal-price">
 
 ${Number(p.price)
@@ -4262,6 +4285,7 @@ font-weight:400;">
 </span>
 
 </div>
+
 `
 :
 ""
@@ -4286,6 +4310,9 @@ STORE GALLERY
 window.currentProductGallery =
 allImages;
 
+window.currentProductGalleryIndex =
+0;
+
 /* =====================================================
 SHOW MODAL
 ===================================================== */
@@ -4309,7 +4336,9 @@ const gallery =
 window.currentProductGallery || [];
 
 if(!gallery[index]){
+
 return;
+
 }
 
 const mainImage =
@@ -4318,8 +4347,13 @@ document.getElementById(
 );
 
 if(!mainImage){
+
 return;
+
 }
+
+window.currentProductGalleryIndex =
+index;
 
 mainImage.src =
 gallery[index].url;
@@ -4348,35 +4382,14 @@ function nextGalleryImage(){
 const gallery =
 window.currentProductGallery || [];
 
-if(!gallery.length){
+if(gallery.length < 2){
+
 return;
-}
 
-const mainImage =
-document.getElementById(
-"galleryMainImage"
-);
-
-if(!mainImage){
-return;
-}
-
-let currentIndex =
-gallery.findIndex(
-function(image){
-
-return image.url ===
-mainImage.src;
-
-}
-);
-
-if(currentIndex < 0){
-currentIndex=0;
 }
 
 let nextIndex =
-currentIndex+1;
+window.currentProductGalleryIndex + 1;
 
 if(nextIndex >= gallery.length){
 
@@ -4399,40 +4412,19 @@ function prevGalleryImage(){
 const gallery =
 window.currentProductGallery || [];
 
-if(!gallery.length){
+if(gallery.length < 2){
+
 return;
-}
 
-const mainImage =
-document.getElementById(
-"galleryMainImage"
-);
-
-if(!mainImage){
-return;
-}
-
-let currentIndex =
-gallery.findIndex(
-function(image){
-
-return image.url ===
-mainImage.src;
-
-}
-);
-
-if(currentIndex < 0){
-currentIndex=0;
 }
 
 let previousIndex =
-currentIndex-1;
+window.currentProductGalleryIndex - 1;
 
 if(previousIndex < 0){
 
 previousIndex =
-gallery.length-1;
+gallery.length - 1;
 
 }
 
@@ -4482,26 +4474,6 @@ function(e){
 if(e.key==="Escape"){
 
 closeModal();
-
-}
-
-/* Keyboard navigation */
-
-if(
-productModal.classList.contains("show") &&
-e.key==="ArrowRight"
-){
-
-nextGalleryImage();
-
-}
-
-if(
-productModal.classList.contains("show") &&
-e.key==="ArrowLeft"
-){
-
-prevGalleryImage();
 
 }
 
