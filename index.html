@@ -328,6 +328,26 @@ display:none;
 display:block;
 }
 
+/* VIDEO HERO */
+
+.hero-video{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+display:none;
+background:#000;
+}
+
+.hero.has-video .hero-video{
+display:block;
+}
+
+.hero.has-video .hero-image{
+display:none;
+}
+
 .hero-overlay{
 position:absolute;
 inset:0;
@@ -559,12 +579,18 @@ background:linear-gradient(135deg,#0784a8,#22c7eb);
 box-shadow:0 17px 42px rgba(7,145,180,.12);
 }
 
-.ad img{
+.ad img,
+.ad video{
 position:absolute;
 inset:0;
 width:100%;
 height:100%;
 object-fit:cover;
+display:block;
+}
+
+.ad video{
+background:#000;
 }
 
 .ad-overlay{
@@ -2255,6 +2281,16 @@ rel="noopener">
 id="heroImage"
 class="hero-image"
 alt="شركة بيت المراتب للمفروشات جملة وقطاعي">
+
+<video
+id="heroVideo"
+class="hero-video"
+muted
+autoplay
+loop
+playsinline
+preload="metadata">
+</video>
 
 <div class="hero-overlay"></div>
 
@@ -4862,12 +4898,26 @@ function setDefaultHero(){
 const hero =
 document.getElementById("hero");
 
+const heroImage =
+document.getElementById("heroImage");
+
+const heroVideo =
+document.getElementById("heroVideo");
+
+
+/*
+إذا كان هناك إعلان صورة أو فيديو
+لا تستبدله بصورة المنتج
+*/
 
 if(
-hero.classList.contains(
-"has-image"
-)
-)return;
+hero.classList.contains("has-image") ||
+hero.classList.contains("has-video")
+){
+
+return;
+
+}
 
 
 const product =
@@ -4882,10 +4932,25 @@ hero.classList.add(
 "has-image"
 );
 
-document
-.getElementById("heroImage")
-.src =
+heroImage.src =
 product.image_url;
+
+heroImage.style.display =
+"block";
+
+
+if(heroVideo){
+
+heroVideo.pause();
+
+heroVideo.removeAttribute("src");
+
+heroVideo.load();
+
+heroVideo.style.display =
+"none";
+
+}
 
 }
 
@@ -4960,6 +5025,7 @@ ascending:false
 if(result.error){
 
 console.error(
+"Ads error:",
 result.error
 );
 
@@ -4969,20 +5035,33 @@ return;
 
 
 const ads =
-result.data||[];
+result.data || [];
 
 
-if(!ads.length)
+if(!ads.length){
+
 return;
+
+}
 
 
 const ad =
 ads[0];
 
 
-/* HERO */
+/* =====================================================
+DETECT MEDIA TYPE
+===================================================== */
 
-if(ad.image_url){
+const isVideo =
+String(
+ad.media_type || ""
+).toLowerCase() === "video";
+
+
+/* =====================================================
+HERO
+===================================================== */
 
 const hero =
 document.getElementById("hero");
@@ -4990,21 +5069,103 @@ document.getElementById("hero");
 const heroImage =
 document.getElementById("heroImage");
 
+const heroVideo =
+document.getElementById("heroVideo");
+
+
+if(ad.image_url){
+
+if(isVideo){
+
+/* VIDEO */
+
+hero.classList.remove(
+"has-image"
+);
+
+hero.classList.add(
+"has-video"
+);
+
+
+heroVideo.src =
+ad.image_url;
+
+heroVideo.style.display =
+"block";
+
+heroImage.style.display =
+"none";
+
+
+heroVideo.muted = true;
+heroVideo.autoplay = true;
+heroVideo.loop = true;
+heroVideo.playsInline = true;
+
+
+const playPromise =
+heroVideo.play();
+
+
+if(playPromise){
+
+playPromise.catch(
+function(error){
+
+console.log(
+"Hero video autoplay blocked:",
+error
+);
+
+});
+
+}
+
+
+}else{
+
+/* IMAGE */
+
+hero.classList.remove(
+"has-video"
+);
+
 hero.classList.add(
 "has-image"
 );
+
+
+heroVideo.pause();
+
+heroVideo.removeAttribute(
+"src"
+);
+
+heroVideo.load();
+
+heroVideo.style.display =
+"none";
+
 
 heroImage.src =
 ad.image_url;
 
 heroImage.alt =
-ad.title||
+ad.title ||
 "شركة بيت المراتب للمفروشات جملة وقطاعي";
+
+heroImage.style.display =
+"block";
+
+}
 
 }
 
 
-/* AD */
+/* =====================================================
+AD SECTION
+===================================================== */
 
 const section =
 document.getElementById("offers");
@@ -5015,27 +5176,73 @@ document.getElementById("adImageBox");
 
 if(ad.image_url){
 
+if(isVideo){
+
+imageBox.innerHTML = `
+
+<video
+
+src="${esc(ad.image_url)}"
+
+muted
+
+autoplay
+
+loop
+
+playsinline
+
+preload="metadata"
+
+controls>
+
+</video>
+
+`;
+
+}else{
+
 imageBox.innerHTML = `
 
 <img
+
 src="${esc(ad.image_url)}"
-alt="${esc(ad.title||"إعلان")}">
+
+alt="${esc(
+ad.title || "إعلان"
+)}">
 
 `;
 
 }
 
+}
+
+
+/* =====================================================
+AD TEXT
+===================================================== */
 
 document
 .getElementById("adTitle")
 .textContent =
-ad.title||"";
+ad.title || "";
 
 
 document
 .getElementById("adDescription")
 .textContent =
-ad.description||"";
+ad.description || "";
+
+
+/* =====================================================
+AD BUTTON
+===================================================== */
+
+const buttonBox =
+document.getElementById(
+"adButtonBox"
+);
 
 
 if(
@@ -5043,18 +5250,20 @@ ad.button_url &&
 ad.button_url.trim()
 ){
 
-document
-.getElementById("adButtonBox")
-.innerHTML = `
+buttonBox.innerHTML = `
 
 <a
+
 class="ad-button"
+
 href="${esc(ad.button_url)}"
+
 target="_blank"
+
 rel="noopener">
 
 ${esc(
-ad.button_text||
+ad.button_text ||
 "اعرف المزيد"
 )}
 
@@ -5062,8 +5271,16 @@ ad.button_text||
 
 `;
 
+}else{
+
+buttonBox.innerHTML = "";
+
 }
 
+
+/* =====================================================
+SHOW AD SECTION
+===================================================== */
 
 section.style.display =
 "block";
