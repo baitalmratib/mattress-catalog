@@ -1,11 +1,21 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>لوحة تحكم شركة بيت المراتب للمفروشات</title>
+
+<meta
+name="viewport"
+content="width=device-width,initial-scale=1"
+>
+
+<title>
+لوحة تحكم شركة بيت المراتب للمفروشات
+</title>
 
 <style>
+
 *{
 box-sizing:border-box;
 }
@@ -46,8 +56,7 @@ box-shadow:0 2px 12px #0001;
 
 input,
 textarea,
-button,
-select{
+button{
 font:inherit;
 padding:11px;
 border:1px solid #ddd;
@@ -56,8 +65,7 @@ box-sizing:border-box;
 }
 
 input,
-textarea,
-select{
+textarea{
 width:100%;
 margin:5px 0 10px;
 }
@@ -169,13 +177,13 @@ vertical-align:middle;
 }
 
 .item-video{
-width:90px;
-height:60px;
+width:70px;
+height:55px;
 object-fit:cover;
 border-radius:7px;
 margin-left:10px;
 vertical-align:middle;
-background:#111;
+background:#000;
 }
 
 .item-actions{
@@ -299,6 +307,17 @@ border-radius:10px;
 margin-top:10px;
 }
 
+.media-note{
+font-size:13px;
+color:#666;
+line-height:1.7;
+background:#f5f9ff;
+border:1px solid #dcecff;
+border-radius:8px;
+padding:10px;
+margin-top:5px;
+}
+
 .divider{
 height:1px;
 background:#e7edf3;
@@ -333,108 +352,6 @@ display:none;
 
 .upload-status.show{
 display:block;
-}
-
-/* =====================================================
-   الإعلان - اختيار النوع
-===================================================== */
-
-.ad-type-box{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:10px;
-margin:10px 0 15px;
-}
-
-.ad-type-option{
-position:relative;
-}
-
-.ad-type-option input{
-position:absolute;
-opacity:0;
-pointer-events:none;
-}
-
-.ad-type-label{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:8px;
-padding:14px;
-border:2px solid #e1e7ef;
-border-radius:10px;
-background:#fff;
-color:#555;
-font-weight:bold;
-cursor:pointer;
-transition:.2s;
-}
-
-.ad-type-label:hover{
-border-color:#8fc5ef;
-background:#f7fbff;
-}
-
-.ad-type-option input:checked + .ad-type-label{
-border-color:#0756a8;
-background:#eef6ff;
-color:#0756a8;
-box-shadow:0 4px 12px rgba(7,86,168,.10);
-}
-
-.media-preview{
-margin-top:10px;
-display:none;
-}
-
-.media-preview.show{
-display:block;
-}
-
-.media-preview img,
-.media-preview video{
-width:100%;
-max-height:300px;
-object-fit:contain;
-border-radius:10px;
-background:#111;
-border:1px solid #e1e7ef;
-}
-
-.ad-media-badge{
-display:inline-block;
-font-size:11px;
-padding:5px 9px;
-border-radius:7px;
-background:#eaf3ff;
-color:#0756a8;
-font-weight:bold;
-margin-top:8px;
-}
-
-.ad-current-media{
-margin-top:10px;
-padding:10px;
-background:#f8fbff;
-border:1px solid #e3edf8;
-border-radius:10px;
-}
-
-.ad-current-media img,
-.ad-current-media video{
-width:100%;
-max-height:250px;
-object-fit:contain;
-border-radius:8px;
-background:#111;
-}
-
-.ad-file-note{
-font-size:12px;
-color:#666;
-line-height:1.7;
-margin-top:5px;
 }
 
 @media(max-width:700px){
@@ -473,13 +390,12 @@ width:100%;
 margin:3px 0;
 }
 
-.ad-type-box{
-grid-template-columns:1fr;
 }
 
-}
 </style>
+
 </head>
+
 
 <body>
 
@@ -489,8 +405,9 @@ grid-template-columns:1fr;
 لوحة تحكم شركة بيت المراتب للمفروشات
 </h1>
 
+
 <!-- =====================================================
-     تسجيل الدخول
+تسجيل الدخول
 ===================================================== -->
 
 <div id="login" class="box">
@@ -499,7 +416,7 @@ grid-template-columns:1fr;
 تسجيل الدخول
 </h2>
 
-<label class="form-label" for="email">
+<label class="form-label">
 البريد الإلكتروني
 </label>
 
@@ -510,7 +427,7 @@ placeholder="أدخل البريد الإلكتروني"
 autocomplete="username"
 >
 
-<label class="form-label" for="password">
+<label class="form-label">
 كلمة المرور
 </label>
 
@@ -544,7 +461,7 @@ class="link-button">
 
 
 <!-- =====================================================
-     استعادة كلمة المرور
+استعادة كلمة المرور
 ===================================================== -->
 
 <div id="forgotBox" class="box hidden">
@@ -557,7 +474,7 @@ class="link-button">
 اكتب البريد الإلكتروني المستخدم في لوحة التحكم.
 </p>
 
-<label class="form-label" for="resetEmail">
+<label class="form-label">
 البريد الإلكتروني
 </label>
 
@@ -584,17 +501,21 @@ class="gray">
 <div id="resetMsg" class="msg"></div>
 
 <p class="small-note">
-سيتم إرسال رابط إلى بريدك الإلكتروني. افتح الرابط لإدخال كلمة مرور جديدة.
+سيتم إرسال رابط إلى بريدك الإلكتروني.
+افتح الرابط لإدخال كلمة مرور جديدة.
 </p>
 
 </div>
 
 
 <!-- =====================================================
-     تغيير كلمة المرور
+تغيير كلمة المرور
 ===================================================== -->
 
-<div id="updatePasswordBox" class="box password-box hidden">
+<div
+id="updatePasswordBox"
+class="box password-box hidden"
+>
 
 <h2 class="section-title">
 تعيين كلمة مرور جديدة
@@ -604,7 +525,7 @@ class="gray">
 أدخل كلمة المرور الجديدة للوحة التحكم.
 </p>
 
-<label class="form-label" for="newPassword">
+<label class="form-label">
 كلمة المرور الجديدة
 </label>
 
@@ -615,7 +536,7 @@ placeholder="أدخل كلمة المرور الجديدة"
 autocomplete="new-password"
 >
 
-<label class="form-label" for="confirmPassword">
+<label class="form-label">
 تأكيد كلمة المرور
 </label>
 
@@ -638,7 +559,7 @@ type="button">
 
 
 <!-- =====================================================
-     لوحة التحكم
+التطبيق
 ===================================================== -->
 
 <div id="app" class="hidden">
@@ -669,7 +590,7 @@ class="danger">
 
 
 <!-- =====================================================
-     المنتجات
+المنتجات
 ===================================================== -->
 
 <div class="box">
@@ -682,7 +603,7 @@ class="danger">
 إضافة منتج
 </h3>
 
-<label class="form-label" for="code">
+<label class="form-label">
 كود المنتج
 </label>
 
@@ -692,7 +613,7 @@ type="text"
 placeholder="مثال: 0011"
 >
 
-<label class="form-label" for="name">
+<label class="form-label">
 اسم المنتج
 </label>
 
@@ -702,7 +623,7 @@ type="text"
 placeholder="اسم المنتج"
 >
 
-<label class="form-label" for="category">
+<label class="form-label">
 التصنيف
 </label>
 
@@ -712,7 +633,7 @@ type="text"
 placeholder="مثال: مراتب، أسرة، مفروشات"
 >
 
-<label class="form-label" for="price">
+<label class="form-label">
 السعر
 </label>
 
@@ -723,7 +644,7 @@ step="0.01"
 placeholder="السعر بالريال"
 >
 
-<label class="form-label" for="sort">
+<label class="form-label">
 ترتيب المنتج
 </label>
 
@@ -734,7 +655,7 @@ step="1"
 placeholder="0"
 >
 
-<label class="form-label" for="description">
+<label class="form-label">
 الوصف
 </label>
 
@@ -757,6 +678,7 @@ checked
 
 </label>
 
+
 <div class="divider"></div>
 
 
@@ -772,7 +694,7 @@ checked
 هذه الصورة ستكون الصورة الأساسية التي تظهر في قائمة المنتجات.
 </div>
 
-<label class="form-label" for="image">
+<label class="form-label">
 اختيار الصورة الرئيسية
 </label>
 
@@ -797,7 +719,7 @@ accept="image/jpeg,image/png,image/webp,image/gif"
 يمكنك اختيار عدة صور مرة واحدة.
 </div>
 
-<label class="form-label" for="additionalImages">
+<label class="form-label">
 اختيار الصور الإضافية
 </label>
 
@@ -819,7 +741,10 @@ class="upload-status">
 
 <!-- الصور الحالية -->
 
-<div id="currentImagesSection" class="hidden">
+<div
+id="currentImagesSection"
+class="hidden"
+>
 
 <div class="divider"></div>
 
@@ -861,7 +786,7 @@ class="gray hidden">
 
 
 <!-- =====================================================
-     قائمة المنتجات
+قائمة المنتجات
 ===================================================== -->
 
 <div class="box">
@@ -878,7 +803,7 @@ class="gray hidden">
 
 
 <!-- =====================================================
-     الإعلانات
+الإعلانات
 ===================================================== -->
 
 <div class="box">
@@ -893,51 +818,6 @@ class="gray hidden">
 
 
 <label class="form-label">
-نوع الإعلان
-</label>
-
-<div class="ad-type-box">
-
-<div class="ad-type-option">
-
-<input
-id="adTypeImage"
-type="radio"
-name="adMediaType"
-value="image"
-checked
->
-
-<label
-for="adTypeImage"
-class="ad-type-label">
-🖼️ صورة
-</label>
-
-</div>
-
-
-<div class="ad-type-option">
-
-<input
-id="adTypeVideo"
-type="radio"
-name="adMediaType"
-value="video"
->
-
-<label
-for="adTypeVideo"
-class="ad-type-label">
-🎬 فيديو
-</label>
-
-</div>
-
-</div>
-
-
-<label class="form-label" for="adName">
 عنوان الإعلان
 </label>
 
@@ -948,7 +828,7 @@ placeholder="عنوان الإعلان"
 >
 
 
-<label class="form-label" for="adDescription">
+<label class="form-label">
 وصف الإعلان
 </label>
 
@@ -958,7 +838,7 @@ placeholder="وصف الإعلان">
 </textarea>
 
 
-<label class="form-label" for="adButtonText">
+<label class="form-label">
 نص الزر
 </label>
 
@@ -969,7 +849,7 @@ placeholder="مثال: اعرف المزيد"
 >
 
 
-<label class="form-label" for="adButtonUrl">
+<label class="form-label">
 رابط الزر
 </label>
 
@@ -980,7 +860,7 @@ placeholder="https://..."
 >
 
 
-<label class="form-label" for="adSort">
+<label class="form-label">
 ترتيب الإعلان
 </label>
 
@@ -1007,47 +887,60 @@ checked
 </label>
 
 
-<!-- ملف الإعلان -->
+<!-- =====================================================
+صورة أو فيديو الإعلان
+===================================================== -->
 
 <div class="file-section">
 
 <div class="images-title">
-ملف الإعلان
+صورة أو فيديو الإعلان
 </div>
 
 <div class="image-help">
-اختر صورة أو فيديو حسب نوع الإعلان المحدد بالأعلى.
+
+يمكنك رفع صورة أو فيديو.
+النظام سيحدد نوع الملف تلقائياً.
+
+<br>
+
+<strong>
+الصورة:
+</strong>
+حتى 10 ميجابايت
+
+<br>
+
+<strong>
+الفيديو:
+</strong>
+حتى 100 ميجابايت
+
+<br>
+
+يفضل استخدام MP4 للفيديو.
+
 </div>
 
-<label class="form-label" for="adImage">
-اختيار الملف
+<label
+class="form-label"
+for="adImage"
+>
+اختيار الصورة أو الفيديو
 </label>
 
 <input
 id="adImage"
 type="file"
-accept="image/jpeg,image/png,image/webp,image/gif"
+accept="image/jpeg,image/png,image/webp,image/gif,video/mp4,video/webm,video/ogg,video/quicktime"
 >
 
-<div
-id="adFileNote"
-class="ad-file-note">
-الصور المسموحة: JPG / PNG / WEBP / GIF — الحد الأقصى 10 ميجابايت.
-</div>
-
-<div
-id="adMediaPreview"
-class="media-preview">
-</div>
-
 </div>
 
 
-<!-- الإعلان الحالي أثناء التعديل -->
-
 <div
-id="adCurrentMedia"
-class="ad-current-media hidden">
+id="adUploadStatus"
+class="upload-status">
 </div>
 
 
@@ -1070,7 +963,7 @@ class="gray hidden">
 
 
 <!-- =====================================================
-     قائمة الإعلانات
+قائمة الإعلانات
 ===================================================== -->
 
 <div class="box">
@@ -1087,16 +980,19 @@ class="gray hidden">
 
 
 </div>
+
 </div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script src="config.js"></script>
+
 
 <script>
 
 /* =====================================================
-   التحقق من إعدادات Supabase
+التحقق من Supabase
 ===================================================== */
 
 if(
@@ -1138,7 +1034,7 @@ throw new Error(
 
 
 /* =====================================================
-   الاتصال بـ Supabase
+الاتصال
 ===================================================== */
 
 const db =
@@ -1149,28 +1045,31 @@ SUPABASE_PUBLISHABLE_KEY
 
 
 /* =====================================================
-   المتغيرات
+المتغيرات
 ===================================================== */
 
 let editingProduct = null;
+
 let editingAd = null;
 
 let products = [];
+
 let ads = [];
 
 let currentProductImages = [];
 
 
 /* =====================================================
-   اختصار العناصر
+اختصار العناصر
 ===================================================== */
 
 const $ =
-id => document.getElementById(id);
+id =>
+document.getElementById(id);
 
 
 /* =====================================================
-   رسائل رفع الصور
+رسالة رفع المنتج
 ===================================================== */
 
 function uploadMessage(message){
@@ -1187,14 +1086,17 @@ box.classList.add('show');
 
 
 /* =====================================================
-   إظهار / إخفاء الأقسام
+عرض الأقسام
 ===================================================== */
 
 function showLogin(){
 
 $('login').classList.remove('hidden');
+
 $('forgotBox').classList.add('hidden');
+
 $('updatePasswordBox').classList.add('hidden');
+
 $('app').classList.add('hidden');
 
 }
@@ -1203,14 +1105,18 @@ $('app').classList.add('hidden');
 function showForgot(){
 
 $('login').classList.add('hidden');
+
 $('forgotBox').classList.remove('hidden');
+
 $('updatePasswordBox').classList.add('hidden');
+
 $('app').classList.add('hidden');
 
 $('resetEmail').value =
 $('email').value.trim();
 
-$('resetMsg').textContent = '';
+$('resetMsg').textContent =
+'';
 
 }
 
@@ -1218,8 +1124,11 @@ $('resetMsg').textContent = '';
 function showUpdatePassword(){
 
 $('login').classList.add('hidden');
+
 $('forgotBox').classList.add('hidden');
+
 $('updatePasswordBox').classList.remove('hidden');
+
 $('app').classList.add('hidden');
 
 }
@@ -1228,15 +1137,18 @@ $('app').classList.add('hidden');
 function showApp(){
 
 $('login').classList.add('hidden');
+
 $('forgotBox').classList.add('hidden');
+
 $('updatePasswordBox').classList.add('hidden');
+
 $('app').classList.remove('hidden');
 
 }
 
 
 /* =====================================================
-   تشغيل الصفحة
+تشغيل الصفحة
 ===================================================== */
 
 async function init(){
@@ -1267,6 +1179,7 @@ if(session){
 showApp();
 
 await loadProducts();
+
 await loadAds();
 
 return;
@@ -1307,7 +1220,7 @@ showLogin();
 
 
 /* =====================================================
-   تسجيل الدخول
+تسجيل الدخول
 ===================================================== */
 
 $('loginBtn').onclick =
@@ -1347,7 +1260,8 @@ return;
 
 }
 
-$('loginBtn').disabled = true;
+$('loginBtn').disabled =
+true;
 
 $('loginMsg').textContent =
 'جاري تسجيل الدخول...';
@@ -1359,8 +1273,11 @@ try{
 
 const result =
 await db.auth.signInWithPassword({
+
 email:email,
+
 password:password
+
 });
 
 if(result.error){
@@ -1372,11 +1289,10 @@ result.error.message;
 $('loginMsg').className =
 'msg error';
 
-console.error(
-result.error
-);
+console.error(result.error);
 
-$('loginBtn').disabled = false;
+$('loginBtn').disabled =
+false;
 
 return;
 
@@ -1391,6 +1307,7 @@ $('loginMsg').className =
 showApp();
 
 await loadProducts();
+
 await loadAds();
 
 }catch(e){
@@ -1406,13 +1323,14 @@ $('loginMsg').className =
 
 }
 
-$('loginBtn').disabled = false;
+$('loginBtn').disabled =
+false;
 
 };
 
 
 /* =====================================================
-   Enter
+Enter
 ===================================================== */
 
 $('email').addEventListener(
@@ -1420,7 +1338,9 @@ $('email').addEventListener(
 function(e){
 
 if(e.key === 'Enter'){
+
 $('password').focus();
+
 }
 
 });
@@ -1431,14 +1351,16 @@ $('password').addEventListener(
 function(e){
 
 if(e.key === 'Enter'){
+
 $('loginBtn').click();
+
 }
 
 });
 
 
 /* =====================================================
-   نسيت كلمة المرور
+نسيت كلمة المرور
 ===================================================== */
 
 $('forgotPasswordBtn').onclick =
@@ -1448,7 +1370,7 @@ showForgot();
 
 
 /* =====================================================
-   العودة
+العودة
 ===================================================== */
 
 $('backToLoginBtn').onclick =
@@ -1458,7 +1380,7 @@ showLogin();
 
 
 /* =====================================================
-   إعادة تعيين كلمة المرور
+إعادة تعيين كلمة المرور
 ===================================================== */
 
 $('sendResetBtn').onclick =
@@ -1479,7 +1401,8 @@ return;
 
 }
 
-$('sendResetBtn').disabled = true;
+$('sendResetBtn').disabled =
+true;
 
 $('resetMsg').textContent =
 'جاري إرسال رابط إعادة التعيين...';
@@ -1510,11 +1433,10 @@ result.error.message;
 $('resetMsg').className =
 'msg error';
 
-console.error(
-result.error
-);
+console.error(result.error);
 
-$('sendResetBtn').disabled = false;
+$('sendResetBtn').disabled =
+false;
 
 return;
 
@@ -1539,13 +1461,14 @@ $('resetMsg').className =
 
 }
 
-$('sendResetBtn').disabled = false;
+$('sendResetBtn').disabled =
+false;
 
 };
 
 
 /* =====================================================
-   تغيير كلمة المرور
+تغيير كلمة المرور
 ===================================================== */
 
 $('updatePasswordBtn').onclick =
@@ -1593,7 +1516,8 @@ return;
 
 }
 
-$('updatePasswordBtn').disabled = true;
+$('updatePasswordBtn').disabled =
+true;
 
 $('updatePasswordMsg').textContent =
 'جاري تغيير كلمة المرور...';
@@ -1605,7 +1529,9 @@ try{
 
 const result =
 await db.auth.updateUser({
+
 password:newPassword
+
 });
 
 if(result.error){
@@ -1617,11 +1543,10 @@ result.error.message;
 $('updatePasswordMsg').className =
 'msg error';
 
-console.error(
-result.error
-);
+console.error(result.error);
 
-$('updatePasswordBtn').disabled = false;
+$('updatePasswordBtn').disabled =
+false;
 
 return;
 
@@ -1633,15 +1558,19 @@ $('updatePasswordMsg').textContent =
 $('updatePasswordMsg').className =
 'msg success';
 
-$('newPassword').value = '';
-$('confirmPassword').value = '';
+$('newPassword').value =
+'';
+
+$('confirmPassword').value =
+'';
 
 setTimeout(
 async()=>{
 
 await db.auth.signOut();
 
-window.location.hash = '';
+window.location.hash =
+'';
 
 showLogin();
 
@@ -1662,13 +1591,14 @@ $('updatePasswordMsg').className =
 
 }
 
-$('updatePasswordBtn').disabled = false;
+$('updatePasswordBtn').disabled =
+false;
 
 };
 
 
 /* =====================================================
-   تسجيل الخروج
+تسجيل الخروج
 ===================================================== */
 
 $('logout').onclick =
@@ -1686,15 +1616,20 @@ console.error(error);
 
 showLogin();
 
-$('email').value = '';
-$('password').value = '';
-$('loginMsg').textContent = '';
+$('email').value =
+'';
+
+$('password').value =
+'';
+
+$('loginMsg').textContent =
+'';
 
 };
 
 
 /* =====================================================
-   رفع صورة للمنتجات
+رفع صورة المنتج
 ===================================================== */
 
 async function uploadImage(file){
@@ -1754,7 +1689,8 @@ uploadMessage(
 file.name
 );
 
-let ext = 'jpg';
+let ext =
+'jpg';
 
 if(
 file.name &&
@@ -1774,7 +1710,8 @@ file.name
 }
 
 if(!ext){
-ext = 'jpg';
+ext =
+'jpg';
 }
 
 const uniqueName =
@@ -1806,15 +1743,13 @@ contentType:file.type
 
 if(uploadResult.error){
 
-const error =
-uploadResult.error;
-
 throw new Error(
 'فشل رفع الصورة إلى Storage\n\n' +
 'الرسالة: ' +
-(error.message || 'غير معروفة') +
-'\n\nالكود: ' +
-(error.statusCode || error.status || 'غير معروف')
+(
+uploadResult.error.message ||
+'غير معروفة'
+)
 );
 
 }
@@ -1849,21 +1784,21 @@ return publicResult.data.publicUrl;
 
 
 /* =====================================================
-   رفع ملف الإعلان
+رفع إعلان - صورة أو فيديو
 ===================================================== */
 
-async function uploadAdMedia(file,mediaType){
+async function uploadAdMedia(file){
 
 if(!file){
 
 throw new Error(
-'لم يتم اختيار ملف الإعلان'
+'لم يتم اختيار صورة أو فيديو'
 );
 
 }
 
 
-/* التأكد من تسجيل الدخول */
+/* التحقق من تسجيل الدخول */
 
 const sessionResult =
 await db.auth.getSession();
@@ -1880,7 +1815,7 @@ sessionResult.error.message
 if(!sessionResult.data.session){
 
 throw new Error(
-'يجب تسجيل الدخول إلى لوحة التحكم قبل رفع الإعلان'
+'يجب تسجيل الدخول إلى لوحة التحكم قبل رفع الملف'
 );
 
 }
@@ -1888,49 +1823,19 @@ throw new Error(
 
 /* تحديد النوع */
 
-const isImage =
-mediaType === 'image';
-
 const isVideo =
-mediaType === 'video';
+file.type &&
+file.type.startsWith('video/');
 
+const isImage =
+file.type &&
+file.type.startsWith('image/');
 
-if(!isImage && !isVideo){
-
-throw new Error(
-'نوع الإعلان غير صحيح'
-);
-
-}
-
-
-/* التأكد من نوع الملف */
-
-if(isImage){
-
-if(
-!file.type ||
-!file.type.startsWith('image/')
-){
+if(!isVideo && !isImage){
 
 throw new Error(
-'الملف المختار ليس صورة'
+'الملف يجب أن يكون صورة أو فيديو'
 );
-
-}
-
-}else{
-
-if(
-!file.type ||
-!file.type.startsWith('video/')
-){
-
-throw new Error(
-'الملف المختار ليس فيديو'
-);
-
-}
 
 }
 
@@ -1938,34 +1843,48 @@ throw new Error(
 /* الحجم */
 
 const maxSize =
-isImage
+isVideo
 ?
-10 * 1024 * 1024
+100 * 1024 * 1024
 :
-100 * 1024 * 1024;
-
+10 * 1024 * 1024;
 
 if(file.size > maxSize){
 
 throw new Error(
-isImage
+
+isVideo
+
 ?
-'حجم صورة الإعلان أكبر من 10 ميجابايت'
+
+'حجم الفيديو أكبر من 100 ميجابايت'
+
 :
-'حجم فيديو الإعلان أكبر من 100 ميجابايت'
+
+'حجم الصورة أكبر من 10 ميجابايت'
+
 );
 
 }
 
 
+/* رسالة */
+
+$('adMsg').textContent =
+isVideo
+?
+'جاري رفع الفيديو... لا تغلق الصفحة حتى يكتمل الرفع.'
+:
+'جاري رفع صورة الإعلان...';
+
+$('adMsg').className =
+'msg';
+
+
 /* الامتداد */
 
 let ext =
-isVideo
-?
-'mp4'
-:
-'jpg';
+'bin';
 
 if(
 file.name &&
@@ -1996,7 +1915,7 @@ isVideo
 }
 
 
-/* اسم فريد */
+/* اسم الملف */
 
 const prefix =
 isVideo
@@ -2005,7 +1924,8 @@ isVideo
 :
 'ad_image_';
 
-const uniqueName =
+const filePath =
+'ads/' +
 prefix +
 Date.now() +
 '_' +
@@ -2016,35 +1936,25 @@ Math.random()
 ext;
 
 
-/* المجلد */
+console.log(
+'AD UPLOAD START',
+{
 
-const folder =
-isVideo
-?
-'videos/'
-:
-'images/';
+bucket:'Ads',
 
+path:filePath,
 
-const filePath =
-folder +
-uniqueName;
+name:file.name,
 
+type:file.type,
 
-/* رسالة */
+size:file.size
 
-$('adMsg').textContent =
-isVideo
-?
-'جاري رفع فيديو الإعلان...'
-:
-'جاري رفع صورة الإعلان...';
-
-$('adMsg').className =
-'msg';
+}
+);
 
 
-/* الرفع */
+/* رفع الملف */
 
 const uploadResult =
 await db.storage
@@ -2053,29 +1963,44 @@ await db.storage
 filePath,
 file,
 {
+
 cacheControl:'3600',
+
 upsert:false,
+
 contentType:file.type
+
 }
+);
+
+
+console.log(
+'AD UPLOAD RESULT',
+uploadResult
 );
 
 
 if(uploadResult.error){
 
-const error =
-uploadResult.error;
-
-console.error(
-'AD STORAGE ERROR:',
-error
-);
-
 throw new Error(
-'فشل رفع ملف الإعلان إلى Storage\n\n' +
+
+'فشل رفع ملف الإعلان\n\n' +
+
 'الرسالة: ' +
-(error.message || 'غير معروفة') +
+
+(
+uploadResult.error.message ||
+'غير معروفة'
+) +
+
 '\n\nالكود: ' +
-(error.statusCode || error.status || 'غير معروف')
+
+(
+uploadResult.error.statusCode ||
+uploadResult.error.status ||
+'غير معروف'
+)
+
 );
 
 }
@@ -2091,6 +2016,12 @@ filePath
 );
 
 
+console.log(
+'AD PUBLIC URL',
+publicResult
+);
+
+
 if(
 !publicResult ||
 !publicResult.data ||
@@ -2098,19 +2029,46 @@ if(
 ){
 
 throw new Error(
-'تم رفع الملف ولكن تعذر الحصول على الرابط'
+'تم رفع الملف ولكن تعذر الحصول على رابط الملف'
 );
 
 }
 
 
-return publicResult.data.publicUrl;
+$('adMsg').textContent =
+'تم رفع ' +
+(
+isVideo
+?
+'الفيديو'
+:
+'الصورة'
+) +
+' بنجاح. جاري حفظ الإعلان...';
+
+$('adMsg').className =
+'msg success';
+
+
+return {
+
+url:
+publicResult.data.publicUrl,
+
+mediaType:
+isVideo
+?
+'video'
+:
+'image'
+
+};
 
 }
 
 
 /* =====================================================
-   معرفة رابط صورة المنتج
+رابط صورة المنتج
 ===================================================== */
 
 function getProductImageUrl(product){
@@ -2129,7 +2087,7 @@ product['image-url'] ||
 
 
 /* =====================================================
-   تحديث الصورة الرئيسية
+تحديث الصورة الرئيسية
 ===================================================== */
 
 async function updateProductMainImage(
@@ -2149,7 +2107,9 @@ productId
 );
 
 if(!result.error){
+
 return result;
+
 }
 
 const errorText =
@@ -2175,7 +2135,9 @@ productId
 );
 
 if(!secondResult.error){
+
 return secondResult;
+
 }
 
 throw secondResult.error;
@@ -2188,7 +2150,7 @@ throw result.error;
 
 
 /* =====================================================
-   إنشاء المنتج
+إنشاء المنتج
 ===================================================== */
 
 async function insertProduct(payload){
@@ -2200,7 +2162,9 @@ await db
 .select();
 
 if(!result.error){
+
 return result;
+
 }
 
 const errorText =
@@ -2217,7 +2181,8 @@ errorText.includes('column')
 )
 ){
 
-const secondPayload = {
+const secondPayload =
+{
 ...payload
 };
 
@@ -2233,7 +2198,9 @@ await db
 .select();
 
 if(!secondResult.error){
+
 return secondResult;
+
 }
 
 throw secondResult.error;
@@ -2246,12 +2213,13 @@ throw result.error;
 
 
 /* =====================================================
-   تحميل صور المنتج
+تحميل صور المنتج
 ===================================================== */
 
 async function loadProductImages(productId){
 
-currentProductImages = [];
+currentProductImages =
+[];
 
 if(!productId){
 return;
@@ -2311,7 +2279,7 @@ renderCurrentProductImages();
 
 
 /* =====================================================
-   عرض الصور الحالية
+عرض صور المنتج
 ===================================================== */
 
 function renderCurrentProductImages(){
@@ -2371,7 +2339,8 @@ loading="lazy"
 <button
 type="button"
 class="delete-image-btn"
-onclick="deleteProductImage(${img.id})">
+onclick="deleteProductImage(${img.id})"
+>
 حذف الصورة
 </button>
 
@@ -2385,7 +2354,7 @@ onclick="deleteProductImage(${img.id})">
 
 
 /* =====================================================
-   حذف صورة
+حذف صورة منتج
 ===================================================== */
 
 window.deleteProductImage =
@@ -2442,13 +2411,14 @@ error.message
 
 
 /* =====================================================
-   حفظ المنتج
+حفظ المنتج
 ===================================================== */
 
 $('saveProduct').onclick =
 async()=>{
 
-$('saveProduct').disabled = true;
+$('saveProduct').disabled =
+true;
 
 $('productMsg').textContent =
 'جاري حفظ المنتج...';
@@ -2491,7 +2461,6 @@ $('sort').value || 0
 
 };
 
-
 if(!payload.name){
 
 $('productMsg').textContent =
@@ -2500,12 +2469,12 @@ $('productMsg').textContent =
 $('productMsg').className =
 'msg error';
 
-$('saveProduct').disabled = false;
+$('saveProduct').disabled =
+false;
 
 return;
 
 }
-
 
 const mainFile =
 $('image').files[0];
@@ -2516,9 +2485,7 @@ $('additionalImages').files || []
 );
 
 
-/* =====================================================
-   تعديل منتج
-===================================================== */
+/* تعديل */
 
 if(editingProduct){
 
@@ -2562,7 +2529,9 @@ ascending:true
 .limit(1);
 
 if(existingMain.error){
+
 throw existingMain.error;
+
 }
 
 if(
@@ -2574,8 +2543,13 @@ const updateImage =
 await db
 .from('product_images')
 .update({
-image_url:mainUrl,
-sort_order:1
+
+image_url:
+mainUrl,
+
+sort_order:
+1
+
 })
 .eq(
 'id',
@@ -2583,7 +2557,9 @@ existingMain.data[0].id
 );
 
 if(updateImage.error){
+
 throw updateImage.error;
+
 }
 
 }else{
@@ -2592,13 +2568,22 @@ const insertMain =
 await db
 .from('product_images')
 .insert([{
-product_id:editingProduct,
-image_url:mainUrl,
-sort_order:1
+
+product_id:
+editingProduct,
+
+image_url:
+mainUrl,
+
+sort_order:
+1
+
 }]);
 
 if(insertMain.error){
+
 throw insertMain.error;
+
 }
 
 }
@@ -2617,13 +2602,13 @@ editingProduct
 .select();
 
 if(result.error){
+
 throw result.error;
+
 }
 
 
-if(
-additionalFiles.length
-){
+if(additionalFiles.length){
 
 $('productMsg').textContent =
 'جاري رفع الصور الإضافية...';
@@ -2645,10 +2630,13 @@ ascending:false
 .limit(1);
 
 if(currentImagesResult.error){
+
 throw currentImagesResult.error;
+
 }
 
-let nextSort = 1;
+let nextSort =
+1;
 
 if(
 currentImagesResult.data &&
@@ -2658,9 +2646,7 @@ currentImagesResult.data.length
 nextSort =
 Number(
 currentImagesResult.data[0].sort_order || 0
-)
-+
-1;
+) + 1;
 
 }
 
@@ -2675,13 +2661,22 @@ const imageInsert =
 await db
 .from('product_images')
 .insert([{
-product_id:editingProduct,
-image_url:imageUrl,
-sort_order:nextSort
+
+product_id:
+editingProduct,
+
+image_url:
+imageUrl,
+
+sort_order:
+nextSort
+
 }]);
 
 if(imageInsert.error){
+
 throw imageInsert.error;
+
 }
 
 nextSort++;
@@ -2689,7 +2684,6 @@ nextSort++;
 }
 
 }
-
 
 $('productMsg').textContent =
 'تم تعديل المنتج وحفظ الصور بنجاح';
@@ -2706,15 +2700,10 @@ return;
 }
 
 
-/* =====================================================
-   إضافة منتج جديد
-===================================================== */
+/* إضافة منتج */
 
-$('productMsg').textContent =
-'جاري إنشاء المنتج...';
-
-let mainImageUrl = null;
-
+let mainImageUrl =
+null;
 
 if(mainFile){
 
@@ -2728,18 +2717,13 @@ mainFile
 
 }
 
-
 let remainingAdditionalFiles =
 additionalFiles.slice();
-
 
 if(
 !mainImageUrl &&
 remainingAdditionalFiles.length
 ){
-
-$('productMsg').textContent =
-'جاري تجهيز الصورة الرئيسية...';
 
 mainImageUrl =
 await uploadImage(
@@ -2751,14 +2735,12 @@ remainingAdditionalFiles.slice(1);
 
 }
 
-
 if(mainImageUrl){
 
 payload.image_url =
 mainImageUrl;
 
 }
-
 
 $('productMsg').textContent =
 'جاري حفظ بيانات المنتج...';
@@ -2767,7 +2749,9 @@ const result =
 await insertProduct(payload);
 
 if(result.error){
+
 throw result.error;
+
 }
 
 if(
@@ -2781,13 +2765,11 @@ throw new Error(
 
 }
 
-
 const productId =
 result.data[0].id;
 
-
-let sortOrder = 1;
-
+let sortOrder =
+1;
 
 if(mainImageUrl){
 
@@ -2795,23 +2777,30 @@ const mainImageInsert =
 await db
 .from('product_images')
 .insert([{
-product_id:productId,
-image_url:mainImageUrl,
-sort_order:1
+
+product_id:
+productId,
+
+image_url:
+mainImageUrl,
+
+sort_order:
+1
+
 }]);
 
 if(mainImageInsert.error){
+
 throw mainImageInsert.error;
-}
-
-sortOrder = 2;
 
 }
 
+sortOrder =
+2;
 
-if(
-remainingAdditionalFiles.length
-){
+}
+
+if(remainingAdditionalFiles.length){
 
 $('productMsg').textContent =
 'جاري رفع الصور الإضافية...';
@@ -2827,13 +2816,22 @@ const imageInsert =
 await db
 .from('product_images')
 .insert([{
-product_id:productId,
-image_url:imageUrl,
-sort_order:sortOrder
+
+product_id:
+productId,
+
+image_url:
+imageUrl,
+
+sort_order:
+sortOrder
+
 }]);
 
 if(imageInsert.error){
+
 throw imageInsert.error;
+
 }
 
 sortOrder++;
@@ -2841,7 +2839,6 @@ sortOrder++;
 }
 
 }
-
 
 $('productMsg').textContent =
 'تم حفظ المنتج وجميع الصور بنجاح';
@@ -2869,7 +2866,8 @@ $('productMsg').className =
 
 }finally{
 
-$('saveProduct').disabled = false;
+$('saveProduct').disabled =
+false;
 
 }
 
@@ -2877,7 +2875,7 @@ $('saveProduct').disabled = false;
 
 
 /* =====================================================
-   تحميل المنتجات
+تحميل المنتجات
 ===================================================== */
 
 async function loadProducts(){
@@ -2907,10 +2905,6 @@ $('productList').innerHTML =
 ${esc(result.error.message)}
 </div>
 `;
-
-console.error(
-result.error
-);
 
 return;
 
@@ -2981,28 +2975,27 @@ ${p.price ?? '-'} ريال
 <br>
 
 الحالة:
-${p.available
-?
-'متوفر'
-:
-'غير متوفر'}
+${p.available ? 'متوفر' : 'غير متوفر'}
 
 </small>
 
 </div>
 
+
 <div class="item-actions">
 
 <button
 type="button"
-onclick="editProduct(${p.id})">
+onclick="editProduct(${p.id})"
+>
 تعديل
 </button>
 
 <button
 type="button"
 class="danger"
-onclick="deleteProduct(${p.id})">
+onclick="deleteProduct(${p.id})"
+>
 حذف
 </button>
 
@@ -3020,7 +3013,7 @@ onclick="deleteProduct(${p.id})">
 
 
 /* =====================================================
-   تعديل المنتج
+تعديل المنتج
 ===================================================== */
 
 window.editProduct =
@@ -3062,9 +3055,11 @@ $('available').checked =
 $('sort').value =
 p.sort_order || 0;
 
-$('image').value = '';
+$('image').value =
+'';
 
-$('additionalImages').value = '';
+$('additionalImages').value =
+'';
 
 await loadProductImages(id);
 
@@ -3081,7 +3076,7 @@ behavior:'smooth'
 
 
 /* =====================================================
-   حذف المنتج
+حذف المنتج
 ===================================================== */
 
 window.deleteProduct =
@@ -3156,7 +3151,7 @@ error.message
 
 
 /* =====================================================
-   إعادة نموذج المنتج
+إعادة نموذج المنتج
 ===================================================== */
 
 function resetProduct(){
@@ -3170,30 +3165,38 @@ currentProductImages =
 $('productTitle').textContent =
 'إضافة منتج';
 
-$('code').value = '';
+$('code').value =
+'';
 
-$('name').value = '';
+$('name').value =
+'';
 
-$('category').value = '';
+$('category').value =
+'';
 
-$('price').value = '';
+$('price').value =
+'';
 
-$('description').value = '';
+$('description').value =
+'';
 
-$('sort').value = '';
+$('sort').value =
+'';
 
 $('available').checked =
 true;
 
-$('image').value = '';
+$('image').value =
+'';
 
-$('additionalImages').value = '';
+$('additionalImages').value =
+'';
 
-$('currentImages')
-.innerHTML = '';
+$('currentImages').innerHTML =
+'';
 
-$('currentImageCount')
-.textContent = '';
+$('currentImageCount').textContent =
+'';
 
 $('currentImagesSection')
 .classList
@@ -3203,173 +3206,40 @@ $('cancelProduct')
 .classList
 .add('hidden');
 
-$('productMsg').textContent = '';
+$('productMsg').textContent =
+'';
 
-$('uploadStatus').textContent = '';
+$('uploadStatus').textContent =
+'';
 
-$('uploadStatus').classList.remove('show');
+$('uploadStatus')
+.classList
+.remove('show');
 
 }
 
 
-/* زر إلغاء */
+/* إلغاء المنتج */
 
 $('cancelProduct').onclick =
 resetProduct;
 
 
 /* =====================================================
-   تغيير نوع الإعلان
-===================================================== */
-
-function updateAdFileInput(){
-
-const isVideo =
-$('adTypeVideo').checked;
-
-if(isVideo){
-
-$('adImage').accept =
-'video/mp4,video/webm,video/quicktime';
-
-$('adFileNote').textContent =
-'الفيديوهات المسموحة: MP4 / WebM / MOV — الحد الأقصى 100 ميجابايت.';
-
-}else{
-
-$('adImage').accept =
-'image/jpeg,image/png,image/webp,image/gif';
-
-$('adFileNote').textContent =
-'الصور المسموحة: JPG / PNG / WEBP / GIF — الحد الأقصى 10 ميجابايت.';
-
-}
-
-$('adImage').value = '';
-
-$('adMediaPreview').innerHTML = '';
-
-$('adMediaPreview').classList.remove('show');
-
-}
-
-
-/* ربط النوع */
-
-$('adTypeImage').addEventListener(
-'change',
-updateAdFileInput
-);
-
-$('adTypeVideo').addEventListener(
-'change',
-updateAdFileInput
-);
-
-
-/* =====================================================
-   معاينة ملف الإعلان قبل الرفع
-===================================================== */
-
-$('adImage').addEventListener(
-'change',
-function(){
-
-const file =
-this.files[0];
-
-const preview =
-$('adMediaPreview');
-
-preview.innerHTML = '';
-
-preview.classList.remove('show');
-
-if(!file){
-return;
-}
-
-const isVideo =
-$('adTypeVideo').checked;
-
-const expectedType =
-isVideo
-?
-'video/'
-:
-'image/';
-
-if(
-!file.type ||
-!file.type.startsWith(expectedType)
-){
-
-$('adMsg').textContent =
-isVideo
-?
-'اختر ملف فيديو لأن نوع الإعلان المحدد هو فيديو.'
-:
-'اختر ملف صورة لأن نوع الإعلان المحدد هو صورة.';
-
-$('adMsg').className =
-'msg error';
-
-this.value = '';
-
-return;
-
-}
-
-const url =
-URL.createObjectURL(file);
-
-if(isVideo){
-
-preview.innerHTML = `
-
-<video
-src="${esc(url)}"
-controls
-muted
-playsinline>
-</video>
-
-<div class="ad-media-badge">
-🎬 معاينة الفيديو
-</div>
-
-`;
-
-}else{
-
-preview.innerHTML = `
-
-<img
-src="${esc(url)}"
-alt="معاينة الإعلان">
-
-<div class="ad-media-badge">
-🖼️ معاينة الصورة
-</div>
-
-`;
-
-}
-
-preview.classList.add('show');
-
-}
-);
-
-
-/* =====================================================
-   حفظ الإعلان
+حفظ الإعلان
 ===================================================== */
 
 $('saveAd').onclick =
 async()=>{
 
-$('saveAd').disabled = true;
+if($('saveAd').disabled){
+
+return;
+
+}
+
+$('saveAd').disabled =
+true;
 
 $('adMsg').textContent =
 'جاري حفظ الإعلان...';
@@ -3379,43 +3249,44 @@ $('adMsg').className =
 
 try{
 
-const mediaType =
-$('adTypeVideo').checked
-?
-'video'
-:
-'image';
-
-
 const payload = {
 
 title:
-$('adName').value.trim(),
+$('adName')
+.value
+.trim(),
 
 description:
-$('adDescription').value.trim(),
+$('adDescription')
+.value
+.trim(),
 
 button_text:
-$('adButtonText').value.trim()
+$('adButtonText')
+.value
+.trim()
 ||
 'اعرف المزيد',
 
 button_url:
-$('adButtonUrl').value.trim(),
+$('adButtonUrl')
+.value
+.trim(),
 
 active:
-$('adActive').checked,
+$('adActive')
+.checked,
 
 sort_order:
 Number(
-$('adSort').value || 0
-),
-
-media_type:
-mediaType
+$('adSort')
+.value || 0
+)
 
 };
 
+
+/* العنوان */
 
 if(!payload.title){
 
@@ -3425,43 +3296,44 @@ $('adMsg').textContent =
 $('adMsg').className =
 'msg error';
 
-$('saveAd').disabled = false;
+$('adName').focus();
 
 return;
 
 }
 
 
+/* الملف */
+
 const file =
 $('adImage').files[0];
 
 
-/* رفع ملف جديد */
+/* رفع صورة أو فيديو */
 
 if(file){
 
 $('adMsg').textContent =
-mediaType === 'video'
-?
-'جاري رفع الفيديو...'
-:
-'جاري رفع صورة الإعلان...';
+'جاري تجهيز الملف...';
+
+$('adMsg').className =
+'msg';
+
+const media =
+await uploadAdMedia(file);
 
 payload.image_url =
-await uploadAdMedia(
-file,
-mediaType
-);
+media.url;
+
+payload.media_type =
+media.mediaType;
 
 }
 
 
-/* =====================================================
-   حفظ في قاعدة البيانات
-===================================================== */
+/* الحفظ */
 
 let result;
-
 
 if(editingAd){
 
@@ -3480,7 +3352,9 @@ editingAd
 result =
 await db
 .from('ads')
-.insert([payload])
+.insert([
+payload
+])
 .select();
 
 }
@@ -3494,7 +3368,9 @@ result
 
 if(result.error){
 
-throw result.error;
+throw new Error(
+result.error.message
+);
 
 }
 
@@ -3511,16 +3387,26 @@ throw new Error(
 }
 
 
+/* نجاح */
+
 $('adMsg').textContent =
-'تم حفظ الإعلان بنجاح';
+editingAd
+?
+'تم تعديل الإعلان بنجاح'
+:
+'تم إضافة الإعلان بنجاح';
 
 $('adMsg').className =
 'msg success';
 
-
-resetAd();
-
 await loadAds();
+
+setTimeout(
+()=>{
+resetAd();
+},
+700
+);
 
 
 }catch(e){
@@ -3539,7 +3425,8 @@ $('adMsg').className =
 
 }finally{
 
-$('saveAd').disabled = false;
+$('saveAd').disabled =
+false;
 
 }
 
@@ -3547,7 +3434,7 @@ $('saveAd').disabled = false;
 
 
 /* =====================================================
-   تحميل الإعلانات
+تحميل الإعلانات
 ===================================================== */
 
 async function loadAds(){
@@ -3613,43 +3500,47 @@ ads
 .map(
 ad=>{
 
-const mediaType =
-ad.media_type === 'video'
-?
-'video'
-:
-'image';
-
-
-let mediaHTML = '';
-
+let mediaPreview =
+'';
 
 if(ad.image_url){
 
-if(mediaType === 'video'){
+if(ad.media_type === 'video'){
 
-mediaHTML = `
+mediaPreview = `
 
 <video
+
 class="item-video"
+
 src="${esc(ad.image_url)}"
+
 muted
+
 playsinline
+
 preload="metadata"
-controls>
-</video>
+
+controls
+
+></video>
 
 `;
 
 }else{
 
-mediaHTML = `
+mediaPreview = `
 
 <img
+
 class="item-image"
+
 src="${esc(ad.image_url)}"
+
 alt="${esc(ad.title)}"
+
 loading="lazy"
+
 >
 
 `;
@@ -3665,7 +3556,7 @@ return `
 
 <div class="item-info">
 
-${mediaHTML}
+${mediaPreview}
 
 <b>
 ${esc(ad.title)}
@@ -3675,28 +3566,24 @@ ${esc(ad.title)}
 
 <small>
 
-النوع:
-${
-mediaType === 'video'
-?
-'🎬 فيديو'
-:
-'🖼️ صورة'
-}
-
-<br>
-
 الحالة:
-${ad.active
-?
-'فعال'
-:
-'متوقف'}
+${ad.active ? 'فعال' : 'متوقف'}
 
 <br>
 
 الترتيب:
 ${ad.sort_order || 0}
+
+<br>
+
+النوع:
+${
+ad.media_type === 'video'
+?
+'فيديو'
+:
+'صورة'
+}
 
 </small>
 
@@ -3707,14 +3594,16 @@ ${ad.sort_order || 0}
 
 <button
 type="button"
-onclick="editAd(${ad.id})">
+onclick="editAd(${ad.id})"
+>
 تعديل
 </button>
 
 <button
 type="button"
 class="danger"
-onclick="deleteAd(${ad.id})">
+onclick="deleteAd(${ad.id})"
+>
 حذف
 </button>
 
@@ -3732,7 +3621,7 @@ onclick="deleteAd(${ad.id})">
 
 
 /* =====================================================
-   تعديل الإعلان
+تعديل الإعلان
 ===================================================== */
 
 window.editAd =
@@ -3747,128 +3636,50 @@ if(!ad){
 return;
 }
 
-
 editingAd =
 id;
-
 
 $('adTitle').textContent =
 'تعديل الإعلان';
 
-
 $('adName').value =
 ad.title || '';
-
 
 $('adDescription').value =
 ad.description || '';
 
-
 $('adButtonText').value =
 ad.button_text || '';
-
 
 $('adButtonUrl').value =
 ad.button_url || '';
 
-
 $('adSort').value =
 ad.sort_order || 0;
-
 
 $('adActive').checked =
 !!ad.active;
 
-
-$('adImage').value = '';
-
-
-const mediaType =
-ad.media_type === 'video'
-?
-'video'
-:
-'image';
-
-
-if(mediaType === 'video'){
-
-$('adTypeVideo').checked = true;
-
-}else{
-
-$('adTypeImage').checked = true;
-
-}
-
-
-updateAdFileInput();
-
-
-/* عرض الملف الحالي */
-
-if(ad.image_url){
-
-$('adCurrentMedia').classList.remove('hidden');
-
-if(mediaType === 'video'){
-
-$('adCurrentMedia').innerHTML = `
-
-<div class="small-note">
-الفيديو الحالي للإعلان:
-</div>
-
-<video
-src="${esc(ad.image_url)}"
-controls
-muted
-playsinline>
-</video>
-
-`;
-
-}else{
-
-$('adCurrentMedia').innerHTML = `
-
-<div class="small-note">
-الصورة الحالية للإعلان:
-</div>
-
-<img
-src="${esc(ad.image_url)}"
-alt="${esc(ad.title)}"
->
-
-`;
-
-}
-
-}else{
-
-$('adCurrentMedia').classList.add('hidden');
-
-$('adCurrentMedia').innerHTML = '';
-
-}
-
+$('adImage').value =
+'';
 
 $('cancelAd')
 .classList
 .remove('hidden');
 
-
 window.scrollTo({
+
 top:0,
+
 behavior:'smooth'
+
 });
 
 };
 
 
 /* =====================================================
-   حذف الإعلان
+حذف الإعلان
 ===================================================== */
 
 window.deleteAd =
@@ -3884,7 +3695,6 @@ return;
 
 }
 
-
 const result =
 await db
 .from('ads')
@@ -3893,7 +3703,6 @@ await db
 'id',
 id
 );
-
 
 if(result.error){
 
@@ -3905,14 +3714,13 @@ return;
 
 }
 
-
 await loadAds();
 
 };
 
 
 /* =====================================================
-   إعادة نموذج الإعلان
+إعادة نموذج الإعلان
 ===================================================== */
 
 function resetAd(){
@@ -3920,64 +3728,55 @@ function resetAd(){
 editingAd =
 null;
 
-
 $('adTitle').textContent =
 'إضافة إعلان';
 
+$('adName').value =
+'';
 
-$('adName').value = '';
+$('adDescription').value =
+'';
 
-$('adDescription').value = '';
+$('adButtonText').value =
+'';
 
-$('adButtonText').value = '';
+$('adButtonUrl').value =
+'';
 
-$('adButtonUrl').value = '';
-
-$('adSort').value = '';
+$('adSort').value =
+'';
 
 $('adActive').checked =
 true;
 
-
-$('adTypeImage').checked =
-true;
-
-$('adTypeVideo').checked =
-false;
-
-
-$('adImage').value = '';
-
-
-$('adMediaPreview').innerHTML = '';
-
-$('adMediaPreview')
-.classList
-.remove('show');
-
-
-$('adCurrentMedia').innerHTML = '';
-
-$('adCurrentMedia')
-.classList
-.add('hidden');
-
+$('adImage').value =
+'';
 
 $('cancelAd')
 .classList
 .add('hidden');
 
+$('adUploadStatus').textContent =
+'';
+
+$('adUploadStatus')
+.classList
+.remove('show');
+
+$('adMsg').textContent =
+'';
+
 }
 
 
-/* زر إلغاء الإعلان */
+/* إلغاء الإعلان */
 
 $('cancelAd').onclick =
 resetAd;
 
 
 /* =====================================================
-   حماية النصوص
+حماية النصوص
 ===================================================== */
 
 function esc(v){
@@ -3988,11 +3787,13 @@ v ?? ''
 .replace(
 /[&<>"']/g,
 m=>({
+
 '&':'&amp;',
 '<':'&lt;',
 '>':'&gt;',
 '"':'&quot;',
 "'":'&#039;'
+
 }[m])
 );
 
@@ -4000,7 +3801,7 @@ m=>({
 
 
 /* =====================================================
-   متابعة تسجيل الدخول
+متابعة تسجيل الدخول
 ===================================================== */
 
 db.auth.onAuthStateChange(
@@ -4015,7 +3816,6 @@ showUpdatePassword();
 return;
 
 }
-
 
 if(session){
 
@@ -4042,7 +3842,7 @@ showLogin();
 
 
 /* =====================================================
-   تشغيل الصفحة
+تشغيل
 ===================================================== */
 
 init();
@@ -4050,4 +3850,5 @@ init();
 </script>
 
 </body>
+
 </html>
