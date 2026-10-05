@@ -26,10 +26,10 @@
 --shadow-hover:0 18px 45px rgba(7,145,180,.16);
 }
 *{
-box-sizing:border-box
+box-sizing:border-box;
 }
 html{
-scroll-behavior:smooth
+scroll-behavior:smooth;
 }
 body{
 margin:0;
@@ -41,15 +41,17 @@ var(--bg);
 color:var(--text);
 font-size:16px;
 }
-button,input,select{
-font-family:inherit
+button,
+input,
+select{
+font-family:inherit;
 }
 a{
 text-decoration:none;
 color:inherit;
 }
 img{
-max-width:100%
+max-width:100%;
 }
 /* =====================================================
 TOP BAR
@@ -160,7 +162,7 @@ overflow-y:hidden;
 scrollbar-width:none;
 }
 .nav::-webkit-scrollbar{
-display:none
+display:none;
 }
 .nav a{
 height:42px;
@@ -249,7 +251,7 @@ box-shadow:0 7px 18px rgba(21,159,87,.15);
 transition:.2s;
 }
 .whatsapp:hover{
-transform:translateY(-2px)
+transform:translateY(-2px);
 }
 /* =====================================================
 HERO
@@ -274,7 +276,7 @@ object-fit:cover;
 display:none;
 }
 .hero.has-image .hero-image{
-display:block
+display:block;
 }
 .hero-overlay{
 position:absolute;
@@ -341,7 +343,7 @@ border-radius:12px;
 transition:.2s;
 }
 .hero-btn:hover{
-transform:translateY(-2px)
+transform:translateY(-2px);
 }
 .hero-primary{
 background:#fff;
@@ -429,7 +431,7 @@ display:block;
 transition:.45s;
 }
 .category:hover img{
-transform:scale(1.06)
+transform:scale(1.06);
 }
 .category:after{
 content:"";
@@ -461,7 +463,7 @@ color:#e5faff;
 ADS
 ===================================================== */
 .ad-section{
-display:none
+display:none;
 }
 .ad{
 width:min(1380px,calc(100% - 40px));
@@ -542,7 +544,7 @@ direction:ltr;
 }
 .sidebar,
 .product-area{
-direction:rtl
+direction:rtl;
 }
 .sidebar{
 background:rgba(255,255,255,.92);
@@ -560,7 +562,7 @@ color:#fff;
 background:linear-gradient(135deg,#0798bd,#22c7eb);
 }
 .category-list{
-padding:9px
+padding:9px;
 }
 .category-btn{
 width:100%;
@@ -603,7 +605,7 @@ font-size:11px;
 color:#71848d;
 }
 .controls{
-display:contents
+display:contents;
 }
 .search{
 height:46px;
@@ -678,7 +680,7 @@ display:block;
 transition:.35s;
 }
 .card:hover .card-image img{
-transform:scale(1.035)
+transform:scale(1.035);
 }
 .status{
 position:absolute;
@@ -693,13 +695,13 @@ border-radius:8px;
 box-shadow:0 3px 8px rgba(0,0,0,.10);
 }
 .available{
-background:var(--green)
+background:var(--green);
 }
 .unavailable{
-background:var(--red)
+background:var(--red);
 }
 .card-body{
-padding:14px 15px 16px
+padding:14px 15px 16px;
 }
 .code{
 font-size:9px;
@@ -805,7 +807,7 @@ background:var(--cyan);
 color:#fff;
 }
 .info-button.green{
-background:var(--green)
+background:var(--green);
 }
 .info-button.light{
 background:var(--cyan-light);
@@ -828,7 +830,7 @@ text-align:center;
 padding:25px;
 }
 .map-placeholder{
-max-width:420px
+max-width:420px;
 }
 .map-placeholder strong{
 display:block;
@@ -1019,7 +1021,7 @@ border-left:1px solid var(--cyan-border);
 padding:15px;
 }
 .feature:last-child{
-border-left:0
+border-left:0;
 }
 .feature-icon{
 width:44px;
@@ -1064,10 +1066,10 @@ gap:40px;
 margin:0 0 16px;
 }
 .footer h2{
-font-size:19px
+font-size:19px;
 }
 .footer h3{
-font-size:13px
+font-size:13px;
 }
 .footer p,
 .footer a{
@@ -1080,7 +1082,7 @@ display:block;
 margin-bottom:5px;
 }
 .footer a:hover{
-color:#fff
+color:#fff;
 }
 .footer-bottom{
 margin-top:40px;
@@ -1094,7 +1096,7 @@ color:#a5d0db;
 MOBILE CATEGORY
 ===================================================== */
 .mobile-category{
-display:none
+display:none;
 }
 /* =====================================================
 MODAL
@@ -1112,7 +1114,7 @@ backdrop-filter:blur(6px);
 -webkit-backdrop-filter:blur(6px);
 }
 .product-modal.show{
-display:flex
+display:flex;
 }
 .modal-box{
 width:min(900px,100%);
@@ -1199,7 +1201,7 @@ LARGE DESKTOP
 width:min(1380px,calc(100% - 80px));
 }
 .hero{
-height:500px
+height:500px;
 }
 }
 /* =====================================================
@@ -1211,20 +1213,20 @@ grid-template-columns:300px minmax(0,1fr) 290px;
 gap:12px;
 }
 .logo-title{
-font-size:15px
+font-size:15px;
 }
 .nav{
-height:48px
+height:48px;
 }
 .nav a{
 padding:0 8px;
 font-size:10px;
 }
 .header-search{
-width:165px
+width:165px;
 }
 .hero h1{
-font-size:43px
+font-size:43px;
 }
 .grid{
 grid-template-columns:repeat(3,minmax(0,1fr));
@@ -1245,10 +1247,10 @@ grid-template-columns:280px minmax(0,1fr);
 gap:12px;
 }
 .actions{
-display:none
+display:none;
 }
 .nav{
-justify-self:center
+justify-self:center;
 }
 .features{
 width:min(850px,calc(100% - 40px));
@@ -1263,7 +1265,7 @@ grid-template-columns:200px minmax(0,1fr);
 grid-template-columns:100px minmax(0,1fr) 125px;
 }
 .card-image{
-height:230px
+height:230px;
 }
 .info-grid{
 grid-template-columns:1fr;
@@ -1274,7 +1276,7 @@ MOBILE
 ===================================================== */
 @media(max-width:850px){
 body{
-font-size:14px
+font-size:14px;
 }
 .topbar{
 min-height:34px;
@@ -1316,7 +1318,7 @@ scrollbar-width:none;
 -webkit-overflow-scrolling:touch;
 }
 .nav::-webkit-scrollbar{
-display:none
+display:none;
 }
 .nav a{
 height:36px;
@@ -1336,10 +1338,10 @@ right:7%;
 width:82%;
 }
 .hero h1{
-font-size:32px
+font-size:32px;
 }
 .hero p{
-font-size:12px
+font-size:12px;
 }
 .hero-btn{
 height:46px;
@@ -1351,16 +1353,16 @@ width:calc(100% - 24px);
 margin-bottom:55px;
 }
 .section-head{
-align-items:center
+align-items:center;
 }
 .section-title{
-font-size:23px
+font-size:23px;
 }
 .section-title small{
-font-size:10px
+font-size:10px;
 }
 .section-link{
-font-size:9px
+font-size:9px;
 }
 /* CATEGORIES */
 .categories{
@@ -1368,11 +1370,11 @@ grid-template-columns:1fr 1fr;
 gap:8px;
 }
 .category{
-height:185px
+height:185px;
 }
 /* PRODUCTS */
 .product-layout{
-display:block
+display:block;
 }
 .sidebar{
 display:none;
@@ -1400,7 +1402,7 @@ gap:9px;
 margin-bottom:14px;
 }
 .product-toolbar > .count{
-order:3
+order:3;
 }
 .controls{
 display:flex;
@@ -1412,20 +1414,20 @@ grid-template-columns:1fr 1fr;
 gap:10px;
 }
 .card-image{
-height:190px
+height:190px;
 }
 .card-body{
-padding:10px
+padding:10px;
 }
 .card h3{
-font-size:12px
+font-size:12px;
 }
 .description{
 font-size:9px;
 height:31px;
 }
 .price{
-font-size:16px
+font-size:16px;
 }
 /* INFO */
 .info-section{
@@ -1436,7 +1438,7 @@ margin-bottom:55px;
 grid-template-columns:1fr;
 }
 .map-box{
-min-height:240px
+min-height:240px;
 }
 /* BRANCHES */
 .branches{
@@ -1453,13 +1455,13 @@ grid-template-columns:1fr;
 gap:25px;
 }
 .about-image{
-height:280px
+height:280px;
 }
 .about-text h2{
-font-size:25px
+font-size:25px;
 }
 .about-text p{
-font-size:12px
+font-size:12px;
 }
 /* CTA */
 .cta{
@@ -1469,10 +1471,10 @@ padding:28px 22px;
 margin-bottom:45px;
 }
 .cta h2{
-font-size:21px
+font-size:21px;
 }
 .cta p{
-font-size:11px
+font-size:11px;
 }
 .cta-button{
 margin-top:18px;
@@ -1490,10 +1492,10 @@ padding:10px;
 gap:9px;
 }
 .feature strong{
-font-size:10px
+font-size:10px;
 }
 .feature span{
-font-size:8px
+font-size:8px;
 }
 .feature-icon{
 width:36px;
@@ -1511,7 +1513,7 @@ grid-template-columns:1fr 1fr;
 gap:25px;
 }
 .footer-brand{
-grid-column:1/-1
+grid-column:1/-1;
 }
 }
 /* =====================================================
@@ -1528,51 +1530,51 @@ padding:0 8px;
 font-size:9px;
 }
 .logo-title{
-font-size:12px
+font-size:12px;
 }
 .hero h1{
-font-size:28px
+font-size:28px;
 }
 .hero p{
-font-size:11px
+font-size:11px;
 }
 .categories{
 grid-template-columns:1fr 1fr;
 gap:7px;
 }
 .category{
-height:155px
+height:155px;
 }
 .category-content{
 right:13px;
 bottom:13px;
 }
 .category-content h3{
-font-size:13px
+font-size:13px;
 }
 .category-content span{
-font-size:9px
+font-size:9px;
 }
 .grid{
 grid-template-columns:1fr 1fr;
 }
 .card-image{
-height:150px
+height:150px;
 }
 .card h3{
-font-size:11px
+font-size:11px;
 }
 .price{
-font-size:14px
+font-size:14px;
 }
 .view{
-font-size:8px
+font-size:8px;
 }
 .modal-image{
-height:300px
+height:300px;
 }
 .modal-title{
-font-size:23px
+font-size:23px;
 }
 }
 /* =====================================================
@@ -1588,19 +1590,19 @@ padding:0 7px;
 font-size:8.5px;
 }
 .logo-title{
-font-size:11px
+font-size:11px;
 }
 .grid{
 grid-template-columns:1fr;
 }
 .card-image{
-height:210px
+height:210px;
 }
 .categories{
 grid-template-columns:1fr;
 }
 .category{
-height:190px
+height:190px;
 }
 }
 /* =====================================================
@@ -1608,7 +1610,7 @@ MOBILE SIDEBAR
 ===================================================== */
 @media(max-width:850px){
 .sidebar.mobile-open{
-display:block
+display:block;
 }
 }
 </style>
@@ -1930,6 +1932,7 @@ rel="noopener">
 </section>
 <!-- =====================================================
 BRANCHES - FROM SUPABASE
+لا يعتمد على maps_url نهائياً
 ===================================================== -->
 <section
 class="info-section"
@@ -2349,8 +2352,18 @@ ${esc(item)}
 }
 /* =====================================================
 LOAD BRANCHES FROM SUPABASE
-FINAL VERSION
-لا يستخدم maps_url نهائياً
+الإصدار النهائي
+مهم:
+هذا الجزء يستخدم فقط:
+name
+address
+phone
+ولا يستخدم نهائياً:
+maps_url
+maps_ur1
+id
+created_at
+ويتم إنشاء رابط Google Maps تلقائياً.
 ===================================================== */
 async function loadBranches(){
 const box =
@@ -2364,14 +2377,19 @@ box.innerHTML = `
 try{
 /*
 =====================================================
-نقرأ فقط الأعمدة الأساسية الموجودة في جدول branches
-ولا نعتمد على maps_url أو أي عمود خرائط.
+نطلب فقط الأعمدة الأساسية.
+إذا كان جدول branches يحتوي هذه الأعمدة
+سيعمل الكود بدون الحاجة لأي أعمدة إضافية.
 =====================================================
 */
 const result =
 await db
 .from("branches")
 .select("name,address,phone");
+console.log(
+"Branches result:",
+result
+);
 if(result.error){
 console.error(
 "Branches error:",
@@ -2396,24 +2414,29 @@ box.innerHTML = `
 `;
 return;
 }
+/*
+=====================================================
+عرض الفروع
+=====================================================
+*/
 box.innerHTML =
 branches
 .map(
 function(branch,index){
 /*
 =====================================================
-إنشاء رابط Google Maps تلقائياً
-من اسم الفرع + العنوان + المدينة
-بدون الحاجة لأي عمود maps_url
+Google Maps
+يتم تكوين الرابط تلقائياً
 =====================================================
 */
-const mapQuery =
-[
+const mapQuery = [
 branch.name,
 branch.address,
 COMPANY.city
 ]
-.filter(Boolean)
+.filter(
+Boolean
+)
 .join(" ");
 const mapUrl =
 mapQuery
@@ -2422,6 +2445,11 @@ mapQuery
 encodeURIComponent(mapQuery)
 :
 "";
+/*
+=====================================================
+HTML الفرع
+=====================================================
+*/
 return `
 <div class="branch">
 <div class="branch-number">
@@ -2463,7 +2491,7 @@ mapUrl
 <a
 href="${esc(mapUrl)}"
 target="_blank"
-rel="noopener">
+rel="noopener noreferrer">
 فتح الموقع في Google Maps ←
 </a>
 </div>
@@ -2485,7 +2513,10 @@ box.innerHTML = `
 <div class="empty">
 حدث خطأ أثناء تحميل الفروع.
 <br><br>
-${esc(error.message || "")}
+${esc(
+error.message ||
+""
+)}
 </div>
 `;
 }
@@ -2551,7 +2582,9 @@ const categories =
 [
 ...new Set(
 products
-.map(p=>p.category)
+.map(
+p=>p.category
+)
 .filter(Boolean)
 )
 ];
@@ -2593,7 +2626,9 @@ const categories =
 [
 ...new Set(
 products
-.map(p=>p.category)
+.map(
+p=>p.category
+)
 .filter(Boolean)
 )
 ];
@@ -3224,17 +3259,6 @@ error
 START
 ===================================================== */
 applyCompanySettings();
-/*
-=====================================================
-الفروع تأتي من Supabase
-جدول branches
-النسخة الحالية لا تستخدم:
-maps_url
-maps_ur1
-يتم إنشاء رابط Google Maps تلقائياً
-من اسم الفرع + العنوان.
-=====================================================
-*/
 loadBranches();
 loadProducts();
 loadAds();
