@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
@@ -22,6 +21,13 @@ padding:20px;
 }
 h1{
 color:#0756a8;
+margin-bottom:20px;
+}
+h2{
+margin-top:0;
+}
+h3{
+margin-top:10px;
 }
 .box{
 background:#fff;
@@ -30,16 +36,26 @@ border-radius:14px;
 margin-bottom:18px;
 box-shadow:0 2px 12px #0001;
 }
-input,textarea,button{
+input,
+textarea,
+button{
 font:inherit;
 padding:11px;
 border:1px solid #ddd;
 border-radius:8px;
 box-sizing:border-box;
 }
-input,textarea{
+input,
+textarea{
 width:100%;
 margin:5px 0 10px;
+}
+input[type="checkbox"]{
+width:auto;
+}
+input[type="file"]{
+background:#fff;
+padding:10px;
 }
 textarea{
 min-height:90px;
@@ -54,6 +70,10 @@ cursor:pointer;
 }
 button:hover{
 opacity:.9;
+}
+button:disabled{
+opacity:.6;
+cursor:not-allowed;
 }
 .danger{
 background:#b00020;
@@ -133,6 +153,22 @@ font-size:13px;
 color:#666;
 line-height:1.7;
 }
+.form-label{
+display:block;
+font-weight:bold;
+margin-top:10px;
+color:#333;
+}
+.login-note{
+background:#f5f9ff;
+border:1px solid #dcecff;
+border-radius:8px;
+padding:10px;
+font-size:13px;
+color:#555;
+line-height:1.7;
+margin-top:10px;
+}
 /* ==============================
    صور المنتجات
 ============================== */
@@ -201,6 +237,31 @@ color:#0756a8;
 font-weight:bold;
 margin:5px 0;
 }
+.file-section{
+background:#f8fbff;
+border:1px solid #e3edf8;
+padding:12px;
+border-radius:10px;
+margin-top:10px;
+}
+.divider{
+height:1px;
+background:#e7edf3;
+margin:20px 0;
+}
+.top-actions{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+flex-wrap:wrap;
+}
+.empty{
+padding:15px;
+background:#f8f9fa;
+border-radius:8px;
+color:#666;
+}
 @media(max-width:700px){
 .wrap{
 padding:12px;
@@ -221,6 +282,13 @@ width:calc(50% - 10px);
 .current-image-box{
 width:calc(50% - 6px);
 }
+.top-actions{
+align-items:stretch;
+}
+.top-actions button{
+width:100%;
+margin:3px 0;
+}
 }
 </style>
 </head>
@@ -233,16 +301,48 @@ width:calc(50% - 6px);
      تسجيل الدخول
 ===================================================== -->
 <div id="login" class="box">
-<h2>تسجيل الدخول</h2>
-<button id="loginBtn">
+<h2 class="section-title">
+تسجيل الدخول
+</h2>
+<label
+class="form-label"
+for="email">
+البريد الإلكتروني
+</label>
+<input
+id="email"
+type="email"
+placeholder="أدخل البريد الإلكتروني"
+autocomplete="username"
+>
+<label
+class="form-label"
+for="password">
+كلمة المرور
+</label>
+<input
+id="password"
+type="password"
+placeholder="أدخل كلمة المرور"
+autocomplete="current-password"
+>
+<button
+id="loginBtn"
+type="button">
 دخول
 </button>
-<br>
-
+<button
+id="forgotPasswordBtn"
+type="button"
+class="link-button">
 نسيت كلمة المرور؟
+</button>
 <div
 id="loginMsg"
 class="msg">
+</div>
+<div class="login-note">
+استخدم البريد الإلكتروني وكلمة المرور الخاصين بحساب لوحة التحكم في Supabase.
 </div>
 </div>
 <!-- =====================================================
@@ -257,9 +357,28 @@ class="box hidden">
 <p>
 اكتب البريد الإلكتروني المستخدم في لوحة التحكم.
 </p>
-
+<label
+class="form-label"
+for="resetEmail">
+البريد الإلكتروني
+</label>
+<input
+id="resetEmail"
+type="email"
+placeholder="أدخل البريد الإلكتروني"
+autocomplete="email"
+>
+<button
+id="sendResetBtn"
+type="button">
 إرسال رابط إعادة التعيين
+</button>
+<button
+id="backToLoginBtn"
+type="button"
+class="gray">
 العودة لتسجيل الدخول
+</button>
 <div
 id="resetMsg"
 class="msg">
@@ -280,8 +399,33 @@ class="box password-box hidden">
 <p>
 أدخل كلمة المرور الجديدة للوحة التحكم.
 </p>
-
+<label
+class="form-label"
+for="newPassword">
+كلمة المرور الجديدة
+</label>
+<input
+id="newPassword"
+type="password"
+placeholder="أدخل كلمة المرور الجديدة"
+autocomplete="new-password"
+>
+<label
+class="form-label"
+for="confirmPassword">
+تأكيد كلمة المرور
+</label>
+<input
+id="confirmPassword"
+type="password"
+placeholder="أعد كتابة كلمة المرور"
+autocomplete="new-password"
+>
+<button
+id="updatePasswordBtn"
+type="button">
 حفظ كلمة المرور الجديدة
+</button>
 <div
 id="updatePasswordMsg"
 class="msg">
@@ -290,10 +434,27 @@ class="msg">
 <!-- =====================================================
      لوحة التحكم
 ===================================================== -->
-<div id="app" class="hidden">
-<button id="logout">
+<div
+id="app"
+class="hidden">
+<!-- =====================================================
+     تسجيل الخروج
+===================================================== -->
+<div class="box">
+<div class="top-actions">
+<div>
+<strong>
+مرحباً بك في لوحة التحكم
+</strong>
+</div>
+<button
+id="logout"
+type="button"
+class="danger">
 تسجيل الخروج
 </button>
+</div>
+</div>
 <!-- =====================================================
      المنتجات
 ===================================================== -->
@@ -304,31 +465,121 @@ class="msg">
 <h3 id="productTitle">
 إضافة منتج
 </h3>
+<!-- بيانات المنتج -->
+<label
+class="form-label"
+for="code">
+كود المنتج
+</label>
+<input
+id="code"
+type="text"
+placeholder="مثال: 0011"
+>
+<label
+class="form-label"
+for="name">
+اسم المنتج
+</label>
+<input
+id="name"
+type="text"
+placeholder="اسم المنتج"
+>
+<label
+class="form-label"
+for="category">
+التصنيف
+</label>
+<input
+id="category"
+type="text"
+placeholder="مثال: مراتب، أسرة، مفروشات"
+>
+<label
+class="form-label"
+for="price">
+السعر
+</label>
+<input
+id="price"
+type="number"
+step="0.01"
+placeholder="السعر بالريال"
+>
+<label
+class="form-label"
+for="sort">
+ترتيب المنتج
+</label>
+<input
+id="sort"
+type="number"
+step="1"
+placeholder="0"
+>
+<label
+class="form-label"
+for="description">
+الوصف
+</label>
 <textarea
 id="description"
-placeholder="الوصف"></textarea>
+placeholder="وصف المنتج">
+</textarea>
 <label class="checkbox">
-
+<input
+id="available"
+type="checkbox"
+checked
+>
+<span>
 متوفر
-
+</span>
 </label>
+<div class="divider"></div>
 <!-- =====================================================
      الصورة الرئيسية
 ===================================================== -->
+<div class="file-section">
 <div class="images-title">
 الصورة الرئيسية للمنتج
 </div>
 <div class="image-help">
 هذه الصورة ستكون الصورة الأساسية التي تظهر في قائمة المنتجات.
 </div>
+<label
+class="form-label"
+for="image">
+اختيار الصورة الرئيسية
+</label>
+<input
+id="image"
+type="file"
+accept="image/*"
+>
+</div>
 <!-- =====================================================
      الصور الإضافية
 ===================================================== -->
+<div class="file-section">
 <div class="images-title">
 صور إضافية للمنتج
 </div>
 <div class="image-help">
-يمكنك اختيار عدة صور مرة واحدة، وسيتم رفعها تلقائيًا إلى Storage.
+يمكنك اختيار عدة صور مرة واحدة، وسيتم رفعها تلقائياً إلى Storage.
+</div>
+<label
+class="form-label"
+for="additionalImages">
+اختيار الصور الإضافية
+</label>
+<input
+id="additionalImages"
+type="file"
+accept="image/*"
+multiple
+>
 </div>
 <!-- =====================================================
      الصور الحالية
@@ -336,6 +587,7 @@ placeholder="الوصف"></textarea>
 <div
 id="currentImagesSection"
 class="hidden">
+<div class="divider"></div>
 <div class="images-title">
 الصور الحالية للمنتج
 </div>
@@ -348,11 +600,18 @@ id="currentImages"
 class="current-images">
 </div>
 </div>
-<button id="saveProduct">
+<div class="divider"></div>
+<button
+id="saveProduct"
+type="button">
 حفظ المنتج
 </button>
-
+<button
+id="cancelProduct"
+type="button"
+class="gray hidden">
 إلغاء
+</button>
 <div
 id="productMsg"
 class="msg">
@@ -379,17 +638,87 @@ class="msg">
 <h3 id="adTitle">
 إضافة إعلان
 </h3>
+<label
+class="form-label"
+for="adName">
+عنوان الإعلان
+</label>
+<input
+id="adName"
+type="text"
+placeholder="عنوان الإعلان"
+>
+<label
+class="form-label"
+for="adDescription">
+وصف الإعلان
+</label>
 <textarea
 id="adDescription"
-placeholder="وصف الإعلان"></textarea>
-<label class="checkbox">
-
-الإعلان فعال
-
+placeholder="وصف الإعلان">
+</textarea>
+<label
+class="form-label"
+for="adButtonText">
+نص الزر
 </label>
-
+<input
+id="adButtonText"
+type="text"
+placeholder="مثال: اعرف المزيد"
+>
+<label
+class="form-label"
+for="adButtonUrl">
+رابط الزر
+</label>
+<input
+id="adButtonUrl"
+type="text"
+placeholder="https://..."
+>
+<label
+class="form-label"
+for="adSort">
+ترتيب الإعلان
+</label>
+<input
+id="adSort"
+type="number"
+step="1"
+placeholder="0"
+>
+<label class="checkbox">
+<input
+id="adActive"
+type="checkbox"
+checked
+>
+<span>
+الإعلان فعال
+</span>
+</label>
+<label
+class="form-label"
+for="adImage">
+صورة الإعلان
+</label>
+<input
+id="adImage"
+type="file"
+accept="image/*"
+>
+<button
+id="saveAd"
+type="button">
 حفظ الإعلان
+</button>
+<button
+id="cancelAd"
+type="button"
+class="gray hidden">
 إلغاء
+</button>
 <div
 id="adMsg"
 class="msg">
@@ -415,6 +744,38 @@ class="msg">
 <script src="config.js"></script>
 <script>
 /* =====================================================
+   التحقق من إعدادات Supabase
+===================================================== */
+if(
+typeof SUPABASE_URL === 'undefined' ||
+typeof SUPABASE_PUBLISHABLE_KEY === 'undefined'
+){
+document.body.innerHTML = `
+<div style="
+max-width:700px;
+margin:50px auto;
+padding:25px;
+font-family:Arial;
+direction:rtl;
+text-align:center;
+">
+<h2 style="color:#b00020">
+خطأ في إعدادات Supabase
+</h2>
+<p>
+لم يتم العثور على
+<strong>SUPABASE_URL</strong>
+أو
+<strong>SUPABASE_PUBLISHABLE_KEY</strong>
+في ملف config.js.
+</p>
+</div>
+`;
+throw new Error(
+'ملف config.js غير موجود أو يحتوي على إعدادات غير صحيحة'
+);
+}
+/* =====================================================
    الاتصال بـ Supabase
 ===================================================== */
 const db =
@@ -422,42 +783,80 @@ supabase.createClient(
 SUPABASE_URL,
 SUPABASE_PUBLISHABLE_KEY
 );
+/* =====================================================
+   المتغيرات
+===================================================== */
 let editingProduct = null;
 let editingAd = null;
 let products = [];
 let ads = [];
 let currentProductImages = [];
+/* =====================================================
+   اختصار العناصر
+===================================================== */
 const $ =
 id => document.getElementById(id);
 /* =====================================================
    إظهار / إخفاء الأقسام
 ===================================================== */
 function showLogin(){
-$('login').classList.remove('hidden');
-$('forgotBox').classList.add('hidden');
-$('updatePasswordBox').classList.add('hidden');
-$('app').classList.add('hidden');
+$('login')
+.classList
+.remove('hidden');
+$('forgotBox')
+.classList
+.add('hidden');
+$('updatePasswordBox')
+.classList
+.add('hidden');
+$('app')
+.classList
+.add('hidden');
 }
 function showForgot(){
-$('login').classList.add('hidden');
-$('forgotBox').classList.remove('hidden');
-$('updatePasswordBox').classList.add('hidden');
-$('app').classList.add('hidden');
+$('login')
+.classList
+.add('hidden');
+$('forgotBox')
+.classList
+.remove('hidden');
+$('updatePasswordBox')
+.classList
+.add('hidden');
+$('app')
+.classList
+.add('hidden');
 $('resetEmail').value =
 $('email').value.trim();
 $('resetMsg').textContent = '';
 }
 function showUpdatePassword(){
-$('login').classList.add('hidden');
-$('forgotBox').classList.add('hidden');
-$('updatePasswordBox').classList.remove('hidden');
-$('app').classList.add('hidden');
+$('login')
+.classList
+.add('hidden');
+$('forgotBox')
+.classList
+.add('hidden');
+$('updatePasswordBox')
+.classList
+.remove('hidden');
+$('app')
+.classList
+.add('hidden');
 }
 function showApp(){
-$('login').classList.add('hidden');
-$('forgotBox').classList.add('hidden');
-$('updatePasswordBox').classList.add('hidden');
-$('app').classList.remove('hidden');
+$('login')
+.classList
+.add('hidden');
+$('forgotBox')
+.classList
+.add('hidden');
+$('updatePasswordBox')
+.classList
+.add('hidden');
+$('app')
+.classList
+.remove('hidden');
 }
 /* =====================================================
    تشغيل الصفحة
@@ -466,6 +865,14 @@ async function init(){
 try{
 const result =
 await db.auth.getSession();
+if(result.error){
+console.error(
+'GET SESSION ERROR:',
+result.error
+);
+showLogin();
+return;
+}
 const session =
 result.data.session;
 if(session){
@@ -488,7 +895,10 @@ return;
 }
 showLogin();
 }catch(error){
-console.error(error);
+console.error(
+'INIT ERROR:',
+error
+);
 showLogin();
 }
 }
@@ -506,6 +916,7 @@ $('loginMsg').textContent =
 'اكتب البريد الإلكتروني أولاً';
 $('loginMsg').className =
 'msg error';
+$('email').focus();
 return;
 }
 if(!password){
@@ -513,8 +924,10 @@ $('loginMsg').textContent =
 'اكتب كلمة المرور أولاً';
 $('loginMsg').className =
 'msg error';
+$('password').focus();
 return;
 }
+$('loginBtn').disabled = true;
 $('loginMsg').textContent =
 'جاري تسجيل الدخول...';
 $('loginMsg').className =
@@ -531,7 +944,10 @@ $('loginMsg').textContent =
 result.error.message;
 $('loginMsg').className =
 'msg error';
-console.error(result.error);
+console.error(
+result.error
+);
+$('loginBtn').disabled = false;
 return;
 }
 $('loginMsg').textContent =
@@ -549,7 +965,25 @@ e.message;
 $('loginMsg').className =
 'msg error';
 }
+$('loginBtn').disabled = false;
 };
+/* =====================================================
+   تسجيل الدخول بالضغط على Enter
+===================================================== */
+$('email').addEventListener(
+'keydown',
+function(e){
+if(e.key === 'Enter'){
+$('password').focus();
+}
+});
+$('password').addEventListener(
+'keydown',
+function(e){
+if(e.key === 'Enter'){
+$('loginBtn').click();
+}
+});
 /* =====================================================
    نسيت كلمة المرور
 ===================================================== */
@@ -578,6 +1012,7 @@ $('resetMsg').className =
 'msg error';
 return;
 }
+$('sendResetBtn').disabled = true;
 $('resetMsg').textContent =
 'جاري إرسال رابط إعادة التعيين...';
 $('resetMsg').className =
@@ -599,7 +1034,10 @@ $('resetMsg').textContent =
 result.error.message;
 $('resetMsg').className =
 'msg error';
-console.error(result.error);
+console.error(
+result.error
+);
+$('sendResetBtn').disabled = false;
 return;
 }
 $('resetMsg').textContent =
@@ -614,6 +1052,7 @@ e.message;
 $('resetMsg').className =
 'msg error';
 }
+$('sendResetBtn').disabled = false;
 };
 /* =====================================================
    تغيير كلمة المرور
@@ -645,6 +1084,7 @@ $('updatePasswordMsg').className =
 'msg error';
 return;
 }
+$('updatePasswordBtn').disabled = true;
 $('updatePasswordMsg').textContent =
 'جاري تغيير كلمة المرور...';
 $('updatePasswordMsg').className =
@@ -660,7 +1100,10 @@ $('updatePasswordMsg').textContent =
 result.error.message;
 $('updatePasswordMsg').className =
 'msg error';
-console.error(result.error);
+console.error(
+result.error
+);
+$('updatePasswordBtn').disabled = false;
 return;
 }
 $('updatePasswordMsg').textContent =
@@ -685,13 +1128,18 @@ e.message;
 $('updatePasswordMsg').className =
 'msg error';
 }
+$('updatePasswordBtn').disabled = false;
 };
 /* =====================================================
    تسجيل الخروج
 ===================================================== */
 $('logout').onclick =
 async()=>{
+try{
 await db.auth.signOut();
+}catch(error){
+console.error(error);
+}
 showLogin();
 $('email').value = '';
 $('password').value = '';
@@ -760,8 +1208,8 @@ throw new Error(
 return url.data.publicUrl;
 }
 /* =====================================================
-   معرفة اسم عمود الصورة في products
-   يدعم image_url أو image-url
+   معرفة رابط صورة المنتج
+   يدعم image_url و image-url
 ===================================================== */
 function getProductImageUrl(product){
 if(!product){
@@ -774,14 +1222,12 @@ product['image-url'] ||
 );
 }
 /* =====================================================
-   تحديث الصورة الرئيسية في products
-   يدعم image_url و image-url
+   تحديث الصورة الرئيسية
 ===================================================== */
 async function updateProductMainImage(
 productId,
 imageUrl
 ){
-/* المحاولة الأولى: image_url */
 let result =
 await db
 .from('products')
@@ -795,10 +1241,6 @@ productId
 if(!result.error){
 return result;
 }
-/*
-   إذا كان اسم العمود الحقيقي image-url
-   نجربه
-*/
 const errorText =
 String(
 result.error.message ||
@@ -827,12 +1269,9 @@ throw secondResult.error;
 throw result.error;
 }
 /* =====================================================
-   إنشاء المنتج مع الصورة
+   إنشاء المنتج
 ===================================================== */
 async function insertProduct(payload){
-/*
-   المحاولة الأولى باستخدام image_url
-*/
 let result =
 await db
 .from('products')
@@ -846,10 +1285,6 @@ String(
 result.error.message ||
 ''
 );
-/*
-   إذا كانت المشكلة في اسم عمود الصورة
-   نجرب image-url
-*/
 if(
 payload.image_url &&
 (
@@ -877,7 +1312,7 @@ throw secondResult.error;
 throw result.error;
 }
 /* =====================================================
-   تحميل صور المنتج من product_images
+   تحميل صور المنتج
 ===================================================== */
 async function loadProductImages(productId){
 currentProductImages = [];
@@ -916,7 +1351,8 @@ console.error(
 result.error
 );
 $('currentImagesSection')
-.classList.remove('hidden');
+.classList
+.remove('hidden');
 $('currentImageCount').textContent =
 'تعذر تحميل الصور: ' +
 result.error.message;
@@ -934,11 +1370,13 @@ renderCurrentProductImages();
 function renderCurrentProductImages(){
 if(!editingProduct){
 $('currentImagesSection')
-.classList.add('hidden');
+.classList
+.add('hidden');
 return;
 }
 $('currentImagesSection')
-.classList.remove('hidden');
+.classList
+.remove('hidden');
 $('currentImageCount').textContent =
 'عدد الصور الحالية: ' +
 currentProductImages.length;
@@ -949,7 +1387,8 @@ return;
 }
 $('currentImages').innerHTML =
 currentProductImages
-.map((img,index)=>`
+.map(
+(img,index)=>`
 <div class="current-image-box">
 ${
 index === 0
@@ -961,21 +1400,24 @@ index === 0
 <img
 src="${esc(img.image_url)}"
 alt="صورة المنتج"
-loading="lazy">
+loading="lazy"
+>
 <small>
 صورة رقم ${index + 1}
 </small>
 <button
+type="button"
 class="delete-image-btn"
 onclick="deleteProductImage(${img.id})">
 حذف الصورة
 </button>
 </div>
-`)
+`
+)
 .join('');
 }
 /* =====================================================
-   حذف صورة من جدول product_images
+   حذف صورة من product_images
 ===================================================== */
 window.deleteProductImage =
 async id=>{
@@ -1000,7 +1442,9 @@ alert(
 'تعذر حذف الصورة: ' +
 result.error.message
 );
-console.error(result.error);
+console.error(
+result.error
+);
 return;
 }
 await loadProductImages(
@@ -1078,17 +1522,12 @@ const mainUrl =
 await uploadImage(
 mainFile
 );
-/*
-   تحديث الصورة الرئيسية
-   في products
-*/
+/* تحديث products */
 await updateProductMainImage(
 editingProduct,
 mainUrl
 );
-/*
-   البحث عن أول صورة
-*/
+/* البحث عن أول صورة */
 const existingMain =
 await db
 .from('product_images')
@@ -1115,9 +1554,7 @@ ascending:true
 if(existingMain.error){
 throw existingMain.error;
 }
-/*
-   إذا توجد صورة سابقة
-*/
+/* إذا توجد صورة سابقة */
 if(
 existingMain.data &&
 existingMain.data.length
@@ -1137,9 +1574,7 @@ if(updateImage.error){
 throw updateImage.error;
 }
 }else{
-/*
-   لا توجد صورة سابقة
-*/
+/* لا توجد صورة سابقة */
 const insertMain =
 await db
 .from('product_images')
@@ -1242,9 +1677,7 @@ return;
 ===================================================== */
 $('productMsg').textContent =
 'جاري إنشاء المنتج...';
-/*
-   رفع الصورة الرئيسية
-*/
+/* رفع الصورة الرئيسية */
 let mainImageUrl = null;
 if(mainFile){
 $('productMsg').textContent =
@@ -1254,11 +1687,8 @@ await uploadImage(
 mainFile
 );
 }
-/*
-   إذا لم يتم اختيار صورة رئيسية
-   ولكن توجد صور إضافية
-   نجعل أول صورة إضافية هي الرئيسية
-*/
+/* إذا لم توجد صورة رئيسية
+   نجعل أول صورة إضافية رئيسية */
 let remainingAdditionalFiles =
 additionalFiles.slice();
 if(
@@ -1274,16 +1704,12 @@ remainingAdditionalFiles[0]
 remainingAdditionalFiles =
 remainingAdditionalFiles.slice(1);
 }
-/*
-   إضافة image_url فقط إذا توجد صورة
-*/
+/* إضافة الصورة الرئيسية */
 if(mainImageUrl){
 payload.image_url =
 mainImageUrl;
 }
-/*
-   إنشاء المنتج
-*/
+/* إنشاء المنتج */
 const result =
 await insertProduct(payload);
 console.log(
@@ -1304,7 +1730,7 @@ throw new Error(
 const productId =
 result.data[0].id;
 /* =====================================================
-   حفظ الصورة الرئيسية في product_images
+   حفظ الصورة الرئيسية
 ===================================================== */
 let sortOrder = 1;
 if(mainImageUrl){
@@ -1397,19 +1823,22 @@ $('productList').innerHTML =
 ${esc(result.error.message)}
 </div>
 `;
-console.error(result.error);
+console.error(
+result.error
+);
 return;
 }
 products =
 result.data || [];
 if(!products.length){
 $('productList').innerHTML =
-'لا توجد منتجات';
+'<div class="empty">لا توجد منتجات حالياً.</div>';
 return;
 }
 $('productList').innerHTML =
 products
-.map(p=>{
+.map(
+p=>{
 const imageUrl =
 getProductImageUrl(p);
 return `
@@ -1423,7 +1852,8 @@ imageUrl
 class="item-image"
 src="${esc(imageUrl)}"
 alt="${esc(p.name)}"
-loading="lazy">
+loading="lazy"
+>
 `
 :
 ''
@@ -1452,10 +1882,12 @@ ${p.available
 </div>
 <div class="item-actions">
 <button
+type="button"
 onclick="editProduct(${p.id})">
 تعديل
 </button>
 <button
+type="button"
 class="danger"
 onclick="deleteProduct(${p.id})">
 حذف
@@ -1463,7 +1895,8 @@ onclick="deleteProduct(${p.id})">
 </div>
 </div>
 `;
-})
+}
+)
 .join('');
 }
 /* =====================================================
@@ -1496,19 +1929,14 @@ $('available').checked =
 !!p.available;
 $('sort').value =
 p.sort_order || 0;
-/*
-   تنظيف حقول اختيار الملفات
-*/
+/* تنظيف الملفات */
 $('image').value = '';
 $('additionalImages').value = '';
-/*
-   تحميل الصور الحالية
-*/
+/* تحميل الصور الحالية */
 await loadProductImages(id);
 $('cancelProduct')
-.classList.remove(
-'hidden'
-);
+.classList
+.remove('hidden');
 window.scrollTo({
 top:0,
 behavior:'smooth'
@@ -1527,9 +1955,7 @@ if(
 return;
 }
 try{
-/*
-   حذف صور المنتج من الجدول
-*/
+/* حذف الصور */
 const imageRows =
 await db
 .from('product_images')
@@ -1545,9 +1971,7 @@ imageRows.error.message
 );
 return;
 }
-/*
-   حذف المنتج
-*/
+/* حذف المنتج */
 const result =
 await db
 .from('products')
@@ -1597,13 +2021,14 @@ $('currentImages')
 $('currentImageCount')
 .textContent = '';
 $('currentImagesSection')
-.classList.add('hidden');
+.classList
+.add('hidden');
 $('cancelProduct')
-.classList.add(
-'hidden'
-);
+.classList
+.add('hidden');
 $('productMsg').textContent = '';
 }
+/* زر إلغاء المنتج */
 $('cancelProduct').onclick =
 resetProduct;
 /* =====================================================
@@ -1679,7 +2104,9 @@ $('adMsg').textContent =
 result.error.message;
 $('adMsg').className =
 'msg error';
-console.error(result.error);
+console.error(
+result.error
+);
 return;
 }
 if(
@@ -1738,19 +2165,22 @@ $('adList').innerHTML =
 ${esc(result.error.message)}
 </div>
 `;
-console.error(result.error);
+console.error(
+result.error
+);
 return;
 }
 ads =
 result.data || [];
 if(!ads.length){
 $('adList').innerHTML =
-'لا توجد إعلانات';
+'<div class="empty">لا توجد إعلانات حالياً.</div>';
 return;
 }
 $('adList').innerHTML =
 ads
-.map(ad=>`
+.map(
+ad=>`
 <div class="item">
 <div class="item-info">
 ${
@@ -1761,7 +2191,8 @@ ad.image_url
 class="item-image"
 src="${esc(ad.image_url)}"
 alt="${esc(ad.title)}"
-loading="lazy">
+loading="lazy"
+>
 `
 :
 ''
@@ -1784,17 +2215,20 @@ ${ad.sort_order || 0}
 </div>
 <div class="item-actions">
 <button
+type="button"
 onclick="editAd(${ad.id})">
 تعديل
 </button>
 <button
+type="button"
 class="danger"
 onclick="deleteAd(${ad.id})">
 حذف
 </button>
 </div>
 </div>
-`)
+`
+)
 .join('');
 }
 /* =====================================================
@@ -1827,9 +2261,12 @@ $('adActive').checked =
 !!ad.active;
 $('adImage').value = '';
 $('cancelAd')
-.classList.remove(
-'hidden'
-);
+.classList
+.remove('hidden');
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
 };
 /* =====================================================
    حذف الإعلان
@@ -1876,10 +2313,10 @@ $('adActive').checked =
 true;
 $('adImage').value = '';
 $('cancelAd')
-.classList.add(
-'hidden'
-);
+.classList
+.add('hidden');
 }
+/* زر إلغاء الإعلان */
 $('cancelAd').onclick =
 resetAd;
 /* =====================================================
@@ -1916,7 +2353,8 @@ showApp();
 }else{
 if(
 !$('updatePasswordBox')
-.classList.contains('hidden')
+.classList
+.contains('hidden')
 ){
 return;
 }
