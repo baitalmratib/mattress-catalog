@@ -1,3157 +1,2572 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-
 <head>
-
 <meta charset="utf-8">
-
-<meta
-name="viewport"
-content="width=device-width,initial-scale=1">
-
-<title>
-شركة بيت المراتب للمفروشات جملة وقطاعي
-</title>
-
-<meta
-name="description"
-content="شركة بيت المراتب للمفروشات - كتالوج إلكتروني للمراتب والمفروشات">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>شركة بيت المراتب للمفروشات جملة وقطاعي</title>
 <style>
-
-/* =========================================================
-   GENERAL
-========================================================= */
-
+:root{
+--cyan:#22c7eb;
+--cyan-dark:#0798bd;
+--cyan-deep:#05779b;
+--cyan-light:#e9faff;
+--cyan-soft:#f5fdff;
+--cyan-border:#cceff7;
+--blue-glass:rgba(34,199,235,.10);
+--green:#159447;
+--red:#b52b2b;
+--gold:#d49a18;
+--text:#183746;
+--text-light:#607985;
+--muted:#8a9ca5;
+--white:#ffffff;
+--bg:#f6fcfe;
+--container:1380px;
+--shadow:0 10px 30px rgba(7,145,180,.09);
+--shadow-hover:0 18px 45px rgba(7,145,180,.16);
+}
 *{
 box-sizing:border-box;
 }
-
 html{
 scroll-behavior:smooth;
 }
-
 body{
 margin:0;
-font-family:
-Arial,
-Tahoma,
-sans-serif;
-
+font-family:Arial,Tahoma,sans-serif;
 background:
-linear-gradient(
-180deg,
-#f7fdff 0%,
-#eefafd 100%
-);
-
-color:#17323d;
+radial-gradient(circle at 10% 10%,rgba(34,199,235,.055),transparent 28%),
+radial-gradient(circle at 90% 20%,rgba(34,199,235,.045),transparent 28%),
+var(--bg);
+color:var(--text);
+font-size:16px;
 }
-
 button,
 input,
 select{
 font-family:inherit;
 }
-
 a{
 text-decoration:none;
+color:inherit;
 }
-
 img{
 max-width:100%;
 }
-
-
-/* =========================================================
-   TOP BAR
-========================================================= */
-
+/* =====================================================
+TOP BAR
+===================================================== */
 .topbar{
-background:#063f54;
+min-height:38px;
+background:linear-gradient(90deg,#0798bd,#22c7eb,#0798bd);
 color:#fff;
-padding:8px 20px;
+display:flex;
+align-items:center;
+justify-content:center;
 font-size:12px;
+padding:8px 15px;
+text-align:center;
 }
-
-.topbar-inner{
-max-width:1250px;
-margin:auto;
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-gap:15px;
+.topbar b{
+color:#fff;
+font-weight:800;
+margin:0 4px;
 }
-
-.topbar-right,
-.topbar-left{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
+/* =====================================================
+HEADER
+===================================================== */
 header{
 position:sticky;
 top:0;
-z-index:1000;
-
-background:
-rgba(255,255,255,.96);
-
-backdrop-filter:
-blur(14px);
-
-border-bottom:
-1px solid #dceff4;
-
-box-shadow:
-0 4px 20px rgba(0,70,90,.07);
+z-index:5000;
+background:rgba(255,255,255,.84);
+border-bottom:1px solid rgba(34,199,235,.14);
+box-shadow:0 6px 25px rgba(5,125,160,.08);
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
 }
-
-.header-inner{
-max-width:1250px;
+.header{
+width:min(1380px,calc(100% - 40px));
+height:88px;
 margin:auto;
-
-padding:
-15px 20px;
-
-display:flex;
+display:grid;
+grid-template-columns:330px minmax(0,1fr) 330px;
 align-items:center;
-justify-content:space-between;
-
-gap:20px;
+gap:14px;
 }
-
+/* =====================================================
+LOGO
+===================================================== */
 .logo{
 display:flex;
 align-items:center;
 gap:12px;
+min-width:0;
 }
-
-.logo-mark{
-width:46px;
-height:46px;
-
-border-radius:14px;
-
+.logo-icon{
+width:52px;
+height:52px;
+flex-shrink:0;
+border-radius:16px;
+background:linear-gradient(145deg,#28cdef,#0799c2);
+color:#fff;
 display:flex;
 align-items:center;
 justify-content:center;
-
+font-size:25px;
+box-shadow:
+0 8px 22px rgba(34,199,235,.24),
+inset 0 1px 0 rgba(255,255,255,.45);
+}
+.logo-title{
+font-size:16px;
+font-weight:900;
+color:#0785aa;
+white-space:nowrap;
+}
+.logo-title small{
+display:block;
+font-size:10px;
+font-weight:400;
+color:#718891;
+margin-top:5px;
+}
+/* =====================================================
+NAV
+===================================================== */
+.nav{
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:2px;
+padding:3px;
+border-radius:16px;
 background:
 linear-gradient(
 135deg,
-#08b8df,
-#047b9e
+rgba(255,255,255,.75),
+rgba(225,249,255,.48)
 );
-
-color:white;
-
-font-size:22px;
-font-weight:bold;
-
+border:1px solid rgba(255,255,255,.90);
 box-shadow:
-0 8px 20px rgba(0,160,195,.22);
+0 10px 30px rgba(7,145,180,.10),
+inset 0 1px 0 rgba(255,255,255,.95);
+backdrop-filter:blur(17px);
+-webkit-backdrop-filter:blur(17px);
+width:max-content;
+max-width:100%;
+justify-self:center;
+overflow-x:auto;
+overflow-y:hidden;
+scrollbar-width:none;
 }
-
-.logo-text h1{
-margin:0;
-
-font-size:20px;
-
-color:#075c76;
+.nav::-webkit-scrollbar{
+display:none;
 }
-
-.logo-text p{
-margin:4px 0 0;
-
-font-size:11px;
-
-color:#79939d;
-}
-
-.nav{
-display:flex;
-align-items:center;
-gap:22px;
-}
-
 .nav a{
-color:#45636e;
-
-font-size:14px;
-font-weight:bold;
-
-transition:.2s;
-}
-
-.nav a:hover{
-color:#039ac0;
-}
-
-.header-actions{
+height:42px;
 display:flex;
 align-items:center;
+justify-content:center;
+padding:0 11px;
+font-size:12px;
+font-weight:700;
+color:#536c76;
+position:relative;
+transition:.25s;
+white-space:nowrap;
+flex:0 0 auto;
+border-radius:13px;
+}
+.nav a:hover{
+color:var(--cyan-dark);
+background:rgba(34,199,235,.10);
+transform:translateY(-1px);
+}
+.nav a.active{
+color:#078db5;
+background:
+linear-gradient(
+135deg,
+rgba(34,199,235,.18),
+rgba(34,199,235,.07)
+);
+box-shadow:
+inset 0 0 0 1px rgba(34,199,235,.12),
+0 5px 15px rgba(34,199,235,.08);
+}
+/* =====================================================
+HEADER ACTIONS
+===================================================== */
+.actions{
+display:flex;
+align-items:center;
+justify-content:flex-end;
 gap:9px;
 }
-
 .header-search{
-width:210px;
-
-border:
-1px solid #d6e9ee;
-
-background:#f8fdff;
-
-border-radius:12px;
-
-padding:
-11px 13px;
-
-outline:none;
-
-color:#264b57;
+height:44px;
+width:205px;
+display:flex;
+align-items:center;
+background:rgba(255,255,255,.75);
+border:1px solid var(--cyan-border);
+border-radius:13px;
+overflow:hidden;
+box-shadow:0 5px 18px rgba(7,145,180,.05);
 }
-
-.header-search:focus{
-border-color:#35c4df;
-
-box-shadow:
-0 0 0 3px rgba(53,196,223,.12);
+.header-search input{
+width:100%;
+height:100%;
+border:0;
+outline:0;
+background:transparent;
+padding:0 13px;
+font-size:11px;
+color:var(--text);
 }
-
-.whatsapp-btn{
+.header-search button{
+width:45px;
+height:100%;
+border:0;
+background:transparent;
+color:var(--cyan-dark);
+font-size:20px;
+cursor:pointer;
+}
+.whatsapp{
+height:44px;
+padding:0 16px;
+border-radius:13px;
 display:flex;
 align-items:center;
 justify-content:center;
-
-gap:7px;
-
-background:#12b76a;
-
-color:white;
-
-padding:
-11px 15px;
-
-border-radius:12px;
-
-font-size:13px;
+background:#159f57;
+color:#fff;
+font-size:11px;
 font-weight:bold;
-
 white-space:nowrap;
-
-box-shadow:
-0 6px 16px rgba(18,183,106,.2);
+box-shadow:0 7px 18px rgba(21,159,87,.15);
+transition:.2s;
 }
-
-.whatsapp-btn:hover{
-background:#0fa361;
+.whatsapp:hover{
+transform:translateY(-2px);
 }
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
+/* =====================================================
+HERO
+===================================================== */
 .hero{
-max-width:1250px;
-
-margin:
-25px auto 0;
-
-padding:
-0 20px;
-}
-
-.hero-box{
-min-height:330px;
-
-border-radius:28px;
-
-overflow:hidden;
-
+width:min(1380px,calc(100% - 40px));
+height:470px;
+margin:25px auto 70px;
 position:relative;
-
-background:
-linear-gradient(
-135deg,
-#047b9e,
-#0ac1e2
-);
-
-box-shadow:
-0 18px 45px rgba(0,111,140,.17);
+overflow:hidden;
+border-radius:25px;
+background:linear-gradient(135deg,#0798bd,#22c7eb);
+box-shadow:0 20px 55px rgba(7,145,180,.15);
+border:1px solid rgba(34,199,235,.16);
 }
-
 .hero-image{
 position:absolute;
-
 inset:0;
-
 width:100%;
 height:100%;
-
 object-fit:cover;
-
-opacity:.33;
+display:none;
 }
-
+.hero.has-image .hero-image{
+display:block;
+}
 .hero-overlay{
 position:absolute;
-
 inset:0;
-
 background:
 linear-gradient(
 90deg,
-rgba(1,55,73,.92),
-rgba(2,121,151,.62),
-rgba(3,181,211,.18)
+rgba(2,87,115,.90) 0%,
+rgba(4,112,143,.66) 32%,
+rgba(5,145,176,.30) 65%,
+rgba(5,145,176,.03) 100%
 );
 }
-
 .hero-content{
-position:relative;
+position:absolute;
 z-index:2;
-
-max-width:650px;
-
-padding:
-65px 55px;
-
-color:white;
+right:7%;
+top:0;
+height:100%;
+width:48%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:flex-start;
+color:#fff;
 }
-
-.hero-content .small{
+.hero-small{
 font-size:13px;
-
-opacity:.9;
-
-margin-bottom:12px;
+font-weight:bold;
+color:#e3faff;
+margin-bottom:15px;
 }
-
-.hero-content h2{
-margin:0 0 15px;
-
-font-size:
-clamp(30px,5vw,52px);
-
-line-height:1.15;
+.hero h1{
+font-size:48px;
+line-height:1.25;
+margin:0 0 18px;
+font-weight:900;
 }
-
-.hero-content p{
-margin:0 0 25px;
-
+.hero h1 span{
+display:block;
+color:#fff;
+}
+.hero p{
 font-size:16px;
-
-line-height:1.9;
-
-color:#e8fbff;
+line-height:2;
+max-width:600px;
+color:#edfaff;
+margin:0 0 26px;
 }
-
-.hero-actions{
+.hero-buttons{
 display:flex;
 gap:10px;
 flex-wrap:wrap;
 }
-
-.hero-main-btn,
-.hero-secondary-btn{
-display:inline-flex;
-
+.hero-btn{
+height:49px;
+padding:0 27px;
+display:flex;
 align-items:center;
 justify-content:center;
-
-padding:
-13px 21px;
-
-border-radius:12px;
-
-font-size:14px;
+font-size:12px;
 font-weight:bold;
+border-radius:12px;
+transition:.2s;
 }
-
-.hero-main-btn{
-background:white;
-color:#057694;
+.hero-btn:hover{
+transform:translateY(-2px);
 }
-
-.hero-secondary-btn{
-background:
-rgba(255,255,255,.14);
-
-border:
-1px solid rgba(255,255,255,.35);
-
-color:white;
+.hero-primary{
+background:#fff;
+color:#0783a7;
+box-shadow:0 8px 22px rgba(0,0,0,.15);
 }
-
-
-/* =========================================================
-   SECTION
-========================================================= */
-
+.hero-secondary{
+background:rgba(255,255,255,.12);
+border:1px solid rgba(255,255,255,.60);
+color:#fff;
+backdrop-filter:blur(10px);
+}
+/* =====================================================
+GENERAL
+===================================================== */
 .section{
-max-width:1250px;
-
-margin:
-55px auto 0;
-
-padding:
-0 20px;
+width:min(1380px,calc(100% - 40px));
+margin:0 auto 75px;
 }
-
 .section-head{
 display:flex;
-align-items:end;
+align-items:flex-end;
 justify-content:space-between;
-
-gap:15px;
-
-margin-bottom:22px;
+margin-bottom:24px;
+gap:20px;
 }
-
 .section-title{
-margin:0;
-
 font-size:28px;
-
-color:#084f65;
+margin:0;
+font-weight:900;
+color:#0782a7;
 }
-
-.section-subtitle{
-margin:6px 0 0;
-
-font-size:13px;
-
-color:#7a939c;
+.section-title:before{
+content:"";
+display:inline-block;
+width:5px;
+height:25px;
+background:var(--cyan);
+border-radius:4px;
+margin-left:9px;
+vertical-align:-4px;
 }
-
-.section-line{
-width:65px;
-height:4px;
-
-margin-top:12px;
-
-border-radius:10px;
-
+.section-title small{
+display:block;
+font-size:12px;
+font-weight:400;
+color:#7c8f98;
+margin-top:8px;
+margin-right:14px;
+}
+.section-link{
+font-size:11px;
+font-weight:bold;
+color:var(--cyan-dark);
+white-space:nowrap;
+}
+/* =====================================================
+CATEGORIES
+===================================================== */
+.categories{
+display:grid;
+grid-template-columns:repeat(5,minmax(0,1fr));
+gap:16px;
+}
+.category{
+height:270px;
+position:relative;
+overflow:hidden;
+background:#e8f9fd;
+border-radius:18px;
+cursor:pointer;
+box-shadow:0 5px 18px rgba(7,145,180,.07);
+transition:.25s;
+border:1px solid rgba(34,199,235,.10);
+}
+.category:hover{
+transform:translateY(-5px);
+box-shadow:0 17px 35px rgba(7,145,180,.14);
+}
+.category img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:.45s;
+}
+.category:hover img{
+transform:scale(1.06);
+}
+.category:after{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+to top,
+rgba(2,79,105,.82),
+rgba(3,108,137,.03) 68%
+);
+}
+.category-content{
+position:absolute;
+z-index:2;
+right:20px;
+bottom:19px;
+color:#fff;
+}
+.category-content h3{
+font-size:18px;
+margin:0 0 6px;
+}
+.category-content span{
+font-size:10px;
+color:#e5faff;
+}
+/* =====================================================
+ADS
+===================================================== */
+.ad-section{
+display:none;
+}
+.ad{
+width:min(1380px,calc(100% - 40px));
+height:320px;
+margin:0 auto 75px;
+position:relative;
+overflow:hidden;
+border-radius:22px;
+background:linear-gradient(135deg,#0784a8,#22c7eb);
+box-shadow:0 17px 42px rgba(7,145,180,.12);
+}
+.ad img{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+.ad-overlay{
+position:absolute;
+inset:0;
 background:
 linear-gradient(
 90deg,
-#04a8cf,
-#77dfef
+rgba(2,75,98,.92),
+rgba(3,105,134,.58) 45%,
+rgba(3,105,134,.04)
 );
 }
-
-
-/* =========================================================
-   CATEGORIES
-========================================================= */
-
-.categories{
-display:grid;
-
-grid-template-columns:
-repeat(
-auto-fit,
-minmax(150px,1fr)
-);
-
-gap:14px;
-}
-
-.category-card{
-background:white;
-
-border:
-1px solid #dceff3;
-
-border-radius:17px;
-
-padding:
-20px 14px;
-
-text-align:center;
-
-cursor:pointer;
-
-transition:.25s;
-
-box-shadow:
-0 7px 22px rgba(0,80,100,.05);
-}
-
-.category-card:hover{
-transform:translateY(-4px);
-
-border-color:#8eddea;
-
-box-shadow:
-0 13px 28px rgba(0,130,160,.1);
-}
-
-.category-icon{
-width:52px;
-height:52px;
-
-margin:
-0 auto 10px;
-
-border-radius:15px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-background:#e8faff;
-
-color:#048bab;
-
-font-size:22px;
-}
-
-.category-card h3{
-margin:0;
-
-font-size:15px;
-
-color:#28515e;
-}
-
-
-/* =========================================================
-   ADS
-========================================================= */
-
-.ads-container{
-display:grid;
-
-gap:18px;
-}
-
-.ad-card{
-background:white;
-
-border:
-1px solid #dceff3;
-
-border-radius:22px;
-
-overflow:hidden;
-
-display:grid;
-
-grid-template-columns:
-minmax(260px,42%)
-1fr;
-
-box-shadow:
-0 10px 30px rgba(0,80,100,.07);
-}
-
-.ad-image{
-width:100%;
-height:100%;
-
-min-height:230px;
-
-object-fit:cover;
-}
-
 .ad-content{
-padding:30px;
-
+position:absolute;
+z-index:2;
+right:7%;
+top:0;
+height:100%;
+width:47%;
 display:flex;
 flex-direction:column;
-
 justify-content:center;
+align-items:flex-start;
+color:#fff;
 }
-
-.ad-content h2{
+.ad-label{
+background:#fff;
+color:var(--cyan-dark);
+padding:6px 13px;
+font-size:9px;
+font-weight:bold;
+margin-bottom:12px;
+border-radius:8px;
+}
+.ad h2{
+font-size:33px;
 margin:0 0 10px;
-
-font-size:28px;
-
-color:#075e77;
 }
-
-.ad-content p{
-margin:0 0 18px;
-
-font-size:14px;
-
+.ad p{
+font-size:13px;
 line-height:1.9;
-
-color:#647f89;
+color:#eafcff;
+margin:0 0 20px;
 }
-
 .ad-button{
-display:inline-flex;
-
-width:max-content;
-
-padding:
-11px 18px;
-
-border-radius:11px;
-
-background:#0699bd;
-
-color:white;
-
-font-size:13px;
+background:#fff;
+color:#0781a5;
+padding:12px 23px;
+font-size:11px;
 font-weight:bold;
-}
-
-
-/* =========================================================
-   PRODUCT CONTROLS
-========================================================= */
-
-.products-layout{
-display:grid;
-
-grid-template-columns:
-230px
-1fr;
-
-gap:20px;
-
-align-items:start;
-}
-
-.category-sidebar{
-background:white;
-
-border:
-1px solid #dceff3;
-
-border-radius:18px;
-
-padding:14px;
-
-box-shadow:
-0 7px 22px rgba(0,80,100,.05);
-
-position:sticky;
-top:100px;
-}
-
-.category-sidebar-title{
-font-size:14px;
-font-weight:bold;
-
-color:#41616d;
-
-padding:
-7px 8px 12px;
-
-border-bottom:
-1px solid #edf5f7;
-
-margin-bottom:8px;
-}
-
-.sidebar-category{
-width:100%;
-
-border:0;
-
-background:transparent;
-
-text-align:right;
-
-padding:
-10px 11px;
-
 border-radius:10px;
-
-cursor:pointer;
-
-color:#647f89;
-
-font-size:13px;
-
-transition:.2s;
 }
-
-.sidebar-category:hover,
-.sidebar-category.active{
-background:#e7f9fc;
-
-color:#048bab;
-
-font-weight:bold;
-}
-
-.products-main{
-min-width:0;
-}
-
-.products-controls{
-background:white;
-
-border:
-1px solid #dceff3;
-
-border-radius:18px;
-
-padding:14px;
-
-display:flex;
-
-gap:10px;
-
-margin-bottom:18px;
-
-box-shadow:
-0 7px 22px rgba(0,80,100,.05);
-}
-
-.search-box,
-.sort-box{
-width:100%;
-
-border:
-1px solid #d6e9ee;
-
-background:#fbfeff;
-
-border-radius:11px;
-
-padding:
-12px 13px;
-
-outline:none;
-
-font-size:13px;
-
-color:#35545f;
-}
-
-.search-box:focus,
-.sort-box:focus{
-border-color:#3cc4dd;
-
-box-shadow:
-0 0 0 3px rgba(60,196,221,.1);
-}
-
-.products-status{
-font-size:12px;
-
-color:#78919a;
-
-margin-bottom:13px;
-}
-
-
-/* =========================================================
-   PRODUCT GRID
-========================================================= */
-
-.products-grid{
+/* =====================================================
+PRODUCTS
+===================================================== */
+.product-layout{
 display:grid;
-
-grid-template-columns:
-repeat(
-auto-fill,
-minmax(220px,1fr)
-);
-
-gap:17px;
+grid-template-columns:225px minmax(0,1fr);
+gap:25px;
+direction:ltr;
 }
-
-.product-card{
-background:white;
-
-border:
-1px solid #e0f0f3;
-
-border-radius:18px;
-
+.sidebar,
+.product-area{
+direction:rtl;
+}
+.sidebar{
+background:rgba(255,255,255,.92);
+border:1px solid var(--cyan-border);
+height:max-content;
+border-radius:16px;
 overflow:hidden;
-
+box-shadow:0 5px 18px rgba(7,145,180,.06);
+}
+.sidebar-title{
+font-size:16px;
+font-weight:900;
+padding:17px;
+color:#fff;
+background:linear-gradient(135deg,#0798bd,#22c7eb);
+}
+.category-list{
+padding:9px;
+}
+.category-btn{
+width:100%;
+height:44px;
+border:0;
+background:#fff;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 12px;
+font-size:11px;
+color:#657883;
 cursor:pointer;
-
-box-shadow:
-0 7px 23px rgba(0,70,90,.055);
-
-transition:
-transform .25s,
-box-shadow .25s,
-border-color .25s;
+text-align:right;
+margin-bottom:3px;
+border-radius:10px;
+transition:.18s;
 }
-
-.product-card:hover{
-transform:translateY(-5px);
-
-border-color:#a5e2ec;
-
-box-shadow:
-0 16px 32px rgba(0,110,140,.11);
+.category-btn:hover{
+background:var(--cyan-light);
+color:var(--cyan-dark);
 }
-
-.product-image-wrap{
-height:235px;
-
+.category-btn.active{
+background:linear-gradient(135deg,#22c7eb,#0798bd);
+color:#fff;
+box-shadow:0 5px 14px rgba(34,199,235,.20);
+}
+/* =====================================================
+TOOLBAR
+===================================================== */
+.product-toolbar{
+display:grid;
+grid-template-columns:120px minmax(300px,1fr) 145px;
+align-items:center;
+gap:12px;
+margin-bottom:18px;
+}
+.count{
+font-size:11px;
+color:#71848d;
+}
+.controls{
+display:contents;
+}
+.search{
+height:46px;
+width:100%;
+background:#fff;
+border:1px solid var(--cyan-border);
+display:flex;
+border-radius:13px;
+overflow:hidden;
+box-shadow:0 4px 15px rgba(7,145,180,.035);
+}
+.search input{
+border:0;
+outline:0;
+width:100%;
+padding:0 14px;
+font-size:11px;
+color:var(--text);
+}
+.search button{
+width:48px;
+border:0;
+background:#fff;
+font-size:20px;
+color:var(--cyan-dark);
+cursor:pointer;
+}
+.sort{
+height:46px;
+width:100%;
+border:1px solid var(--cyan-border);
+background:#fff;
+padding:0 12px;
+font-size:11px;
+color:#536d77;
+border-radius:13px;
+outline:0;
+}
+/* =====================================================
+PRODUCT GRID
+===================================================== */
+.grid{
+display:grid;
+grid-template-columns:repeat(4,minmax(0,1fr));
+gap:20px;
+}
+.card{
+background:#fff;
+border:1px solid var(--cyan-border);
+border-radius:17px;
+cursor:pointer;
+transition:.25s;
 position:relative;
-
-background:#f1fafc;
-
 overflow:hidden;
 }
-
-.product-image{
+.card:hover{
+transform:translateY(-5px);
+box-shadow:var(--shadow-hover);
+border-color:#9fe4f2;
+}
+.card-image{
+height:270px;
+background:#f0fbfd;
+position:relative;
+overflow:hidden;
+}
+.card-image img{
 width:100%;
 height:100%;
-
 object-fit:cover;
-
 display:block;
-
-transition:
-transform .35s;
+transition:.35s;
 }
-
-.product-card:hover .product-image{
+.card:hover .card-image img{
 transform:scale(1.035);
 }
-
-.product-no-image{
-height:100%;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-color:#91a7af;
-
-font-size:13px;
-}
-
-.product-available{
+.status{
 position:absolute;
-
-top:10px;
-right:10px;
-
-padding:
-5px 9px;
-
-border-radius:20px;
-
-font-size:10px;
-
-background:
-rgba(224,250,235,.94);
-
-color:#148548;
-
+top:11px;
+right:11px;
+padding:6px 9px;
+font-size:9px;
 font-weight:bold;
+color:#fff;
+z-index:2;
+border-radius:8px;
+box-shadow:0 3px 8px rgba(0,0,0,.10);
 }
-
-.product-unavailable{
-background:
-rgba(244,244,244,.95);
-
-color:#777;
+.available{
+background:var(--green);
 }
-
-.product-info{
-padding:
-15px;
+.unavailable{
+background:var(--red);
 }
-
-.product-code{
+.card-body{
+padding:14px 15px 16px;
+}
+.code{
+font-size:9px;
+color:#8d9ea6;
+margin-bottom:6px;
+}
+.card h3{
+font-size:15px;
+line-height:1.45;
+margin:0 0 7px;
+color:#203f4d;
+min-height:22px;
+}
+.description{
+height:38px;
+overflow:hidden;
 font-size:10px;
-
-color:#91a5ac;
-
-margin-bottom:5px;
-}
-
-.product-name{
-margin:0 0 6px;
-
-font-size:17px;
-
-color:#234b58;
-}
-
-.product-category{
-font-size:11px;
-
-color:#7c969e;
-
-margin-bottom:7px;
-}
-
-.product-description{
-font-size:12px;
-
-line-height:1.7;
-
-color:#6d858e;
-
-min-height:41px;
-}
-
-.product-bottom{
-display:flex;
-
-align-items:center;
-justify-content:space-between;
-
-gap:8px;
-
-margin-top:12px;
-}
-
-.product-price{
-font-size:18px;
-
-font-weight:bold;
-
-color:#0784a5;
-}
-
-.product-details{
-padding:
-7px 11px;
-
-border-radius:9px;
-
-background:#e9faff;
-
-color:#047d9d;
-
-font-size:10px;
-font-weight:bold;
-}
-
-
-/* =========================================================
-   EMPTY
-========================================================= */
-
-.empty-box{
-background:white;
-
-border:
-1px solid #dceff3;
-
-border-radius:18px;
-
-padding:45px 20px;
-
-text-align:center;
-
-color:#7a929a;
-
-font-size:14px;
-}
-
-
-/* =========================================================
-   LOCATION / CONTACT
-========================================================= */
-
-.contact-grid{
-display:grid;
-
-grid-template-columns:
-repeat(3,1fr);
-
-gap:16px;
-}
-
-.contact-card{
-background:white;
-
-border:
-1px solid #dceff3;
-
-border-radius:18px;
-
-padding:22px;
-
-box-shadow:
-0 7px 22px rgba(0,80,100,.05);
-}
-
-.contact-icon{
-width:45px;
-height:45px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-border-radius:13px;
-
-background:#e8faff;
-
-color:#0589aa;
-
-font-size:19px;
-
+line-height:1.8;
+color:#74868e;
 margin-bottom:12px;
 }
-
-.contact-card h3{
-margin:0 0 7px;
-
-font-size:15px;
-
-color:#315562;
-}
-
-.contact-card p{
-margin:0;
-
-font-size:12px;
-
-line-height:1.8;
-
-color:#728b94;
-}
-
-
-/* =========================================================
-   BRANCHES
-========================================================= */
-
-.branches-grid{
-display:grid;
-
-grid-template-columns:
-repeat(
-auto-fit,
-minmax(260px,1fr)
-);
-
-gap:16px;
-}
-
-.branch-card{
-background:white;
-
-border:
-1px solid #dceff3;
-
-border-radius:18px;
-
-padding:21px;
-
-box-shadow:
-0 7px 22px rgba(0,80,100,.05);
-}
-
-.branch-card h3{
-margin:0 0 10px;
-
-font-size:17px;
-
-color:#075c75;
-}
-
-.branch-item{
-font-size:12px;
-
-color:#718990;
-
-line-height:1.8;
-
-margin:
-5px 0;
-}
-
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.about-box{
-background:
-linear-gradient(
-135deg,
-#e7faff,
-#f8feff
-);
-
-border:
-1px solid #cdebf1;
-
-border-radius:24px;
-
-padding:
-35px;
-
-display:grid;
-
-grid-template-columns:
-1.2fr .8fr;
-
-gap:30px;
-
-align-items:center;
-}
-
-.about-text h2{
-margin:0 0 13px;
-
-font-size:29px;
-
-color:#07566e;
-}
-
-.about-text p{
-margin:0;
-
-font-size:14px;
-
-line-height:2;
-
-color:#607b85;
-}
-
-.about-highlight{
-display:grid;
-
-grid-template-columns:
-repeat(2,1fr);
-
-gap:12px;
-}
-
-.highlight-box{
-background:white;
-
-border:
-1px solid #d8edf2;
-
-border-radius:15px;
-
-padding:18px;
-
-text-align:center;
-}
-
-.highlight-number{
-font-size:24px;
-
-font-weight:bold;
-
-color:#058bab;
-}
-
-.highlight-text{
-font-size:11px;
-
-color:#7c949c;
-
-margin-top:5px;
-}
-
-
-/* =========================================================
-   CTA
-========================================================= */
-
-.cta{
-max-width:1250px;
-
-margin:
-55px auto 0;
-
-padding:
-0 20px;
-}
-
-.cta-box{
-background:
-linear-gradient(
-135deg,
-#045b74,
-#08a9c9
-);
-
-border-radius:25px;
-
-padding:
-35px 40px;
-
+.card-bottom{
 display:flex;
-
 align-items:center;
 justify-content:space-between;
-
-gap:25px;
-
-color:white;
-
-box-shadow:
-0 15px 35px rgba(0,100,130,.17);
+gap:10px;
 }
-
-.cta-box h2{
-margin:0 0 7px;
-
-font-size:27px;
-}
-
-.cta-box p{
-margin:0;
-
-font-size:13px;
-
-color:#dff8fd;
-}
-
-.cta-button{
-background:white;
-
-color:#06758f;
-
-padding:
-13px 20px;
-
-border-radius:11px;
-
-font-size:13px;
-font-weight:bold;
-
+.price{
+font-size:19px;
+font-weight:900;
+color:#0783a7;
 white-space:nowrap;
 }
-
-
-/* =========================================================
-   FEATURES
-========================================================= */
-
-.features{
-display:grid;
-
-grid-template-columns:
-repeat(4,1fr);
-
-gap:14px;
+.price span{
+font-size:9px;
+font-weight:400;
+color:#6e8089;
 }
-
-.feature{
-background:white;
-
-border:
-1px solid #dceff3;
-
-border-radius:18px;
-
-padding:20px;
-
-text-align:center;
-
-box-shadow:
-0 7px 22px rgba(0,80,100,.05);
-}
-
-.feature-icon{
-font-size:26px;
-
-margin-bottom:10px;
-}
-
-.feature h3{
-margin:0 0 6px;
-
-font-size:14px;
-
-color:#315562;
-}
-
-.feature p{
-margin:0;
-
-font-size:11px;
-
-line-height:1.7;
-
-color:#7c939b;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer{
-margin-top:60px;
-
-background:
-#043d50;
-
-color:white;
-}
-
-.footer-inner{
-max-width:1250px;
-
-margin:auto;
-
-padding:
-40px 20px 25px;
-
-display:grid;
-
-grid-template-columns:
-1.3fr 1fr 1fr;
-
-gap:35px;
-}
-
-.footer-title{
-font-size:18px;
+.view{
+font-size:9px;
 font-weight:bold;
-
-margin-bottom:10px;
+color:var(--cyan-dark);
+white-space:nowrap;
 }
-
-.footer-text{
-font-size:12px;
-
-line-height:1.9;
-
-color:#b8d5dc;
+/* =====================================================
+LOCATION
+===================================================== */
+.info-section{
+width:min(1200px,calc(100% - 40px));
+margin:0 auto 75px;
 }
-
-.footer-links{
+.info-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+.info-card{
+background:#fff;
+border:1px solid var(--cyan-border);
+border-radius:18px;
+padding:25px;
+box-shadow:0 7px 22px rgba(7,145,180,.06);
+}
+.info-icon{
+width:50px;
+height:50px;
+border-radius:15px;
 display:flex;
-
-flex-direction:column;
-
-gap:9px;
-}
-
-.footer-links a{
-color:#b8d5dc;
-
-font-size:12px;
-}
-
-.footer-links a:hover{
-color:white;
-}
-
-.footer-bottom{
-border-top:
-1px solid rgba(255,255,255,.1);
-
-text-align:center;
-
-padding:
-15px 20px;
-
-font-size:11px;
-
-color:#9fc2cb;
-}
-
-
-/* =========================================================
-   PRODUCT MODAL
-========================================================= */
-
-.product-modal{
-position:fixed;
-
-inset:0;
-
-z-index:3000;
-
-background:
-rgba(0,31,42,.68);
-
-backdrop-filter:
-blur(7px);
-
-display:none;
-
 align-items:center;
 justify-content:center;
-
-padding:18px;
+font-size:23px;
+background:var(--cyan-light);
+color:var(--cyan-dark);
+margin-bottom:14px;
 }
-
+.info-card h3{
+font-size:18px;
+margin:0 0 10px;
+color:#0783a7;
+}
+.info-card p{
+font-size:12px;
+line-height:2;
+color:#6d818a;
+margin:5px 0;
+}
+.info-buttons{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+margin-top:16px;
+}
+.info-button{
+height:42px;
+padding:0 17px;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+border-radius:10px;
+font-size:10px;
+font-weight:bold;
+background:var(--cyan);
+color:#fff;
+}
+.info-button.green{
+background:var(--green);
+}
+.info-button.light{
+background:var(--cyan-light);
+color:var(--cyan-dark);
+}
+.map-box{
+min-height:310px;
+border-radius:16px;
+overflow:hidden;
+background:
+linear-gradient(
+135deg,
+#e8faff,
+#d6f5fb
+);
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:25px;
+}
+.map-placeholder{
+max-width:420px;
+}
+.map-placeholder strong{
+display:block;
+font-size:20px;
+color:#0783a7;
+margin-bottom:10px;
+}
+.map-placeholder p{
+font-size:12px;
+line-height:1.9;
+color:#71858e;
+}
+/* =====================================================
+BRANCHES
+===================================================== */
+.branches{
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:16px;
+}
+.branch{
+background:#fff;
+border:1px solid var(--cyan-border);
+border-radius:16px;
+padding:20px;
+transition:.25s;
+}
+.branch:hover{
+transform:translateY(-4px);
+box-shadow:var(--shadow-hover);
+}
+.branch-number{
+width:36px;
+height:36px;
+border-radius:10px;
+background:var(--cyan-light);
+color:var(--cyan-dark);
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:900;
+margin-bottom:12px;
+}
+.branch h3{
+font-size:16px;
+margin:0 0 8px;
+color:#0783a7;
+}
+.branch p{
+font-size:11px;
+line-height:1.9;
+color:#71848d;
+margin:4px 0;
+}
+.branch a{
+display:inline-flex;
+margin-top:10px;
+font-size:10px;
+font-weight:bold;
+color:var(--cyan-dark);
+}
+/* =====================================================
+ABOUT
+===================================================== */
+.about{
+background:linear-gradient(135deg,#eafbff,#f8fdff);
+padding:65px 0;
+margin-bottom:75px;
+border-top:1px solid var(--cyan-border);
+border-bottom:1px solid var(--cyan-border);
+}
+.about-inner{
+width:min(1200px,calc(100% - 40px));
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:55px;
+align-items:center;
+}
+.about-image{
+height:360px;
+background:#dff8fd;
+overflow:hidden;
+border-radius:20px;
+box-shadow:0 15px 35px rgba(7,145,180,.10);
+}
+.about-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+.about-text h2{
+font-size:31px;
+margin:0 0 15px;
+color:#0783a7;
+}
+.about-text p{
+font-size:14px;
+line-height:2.1;
+color:#647b84;
+margin:0 0 22px;
+}
+.points{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+.point{
+background:#fff;
+padding:13px;
+font-size:11px;
+border:1px solid var(--cyan-border);
+border-radius:10px;
+color:#405b67;
+}
+/* =====================================================
+CTA
+===================================================== */
+.cta{
+width:min(1200px,calc(100% - 40px));
+min-height:170px;
+margin:0 auto 55px;
+background:linear-gradient(135deg,#0785a8,#22c7eb);
+padding:40px 48px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+position:relative;
+overflow:hidden;
+border-radius:22px;
+box-shadow:0 17px 40px rgba(7,145,180,.14);
+}
+.cta h2{
+margin:0 0 8px;
+font-size:25px;
+color:#fff;
+}
+.cta p{
+margin:0;
+font-size:12px;
+color:#d9f7fd;
+}
+.cta-button{
+height:47px;
+padding:0 25px;
+display:flex;
+align-items:center;
+background:#fff;
+color:#0783a7;
+font-size:11px;
+font-weight:bold;
+border-radius:11px;
+position:relative;
+z-index:2;
+}
+/* =====================================================
+FEATURES
+===================================================== */
+.features{
+width:min(1100px,calc(100% - 60px));
+margin:0 auto 70px;
+position:relative;
+z-index:5;
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,.82),
+rgba(231,250,255,.72)
+);
+display:grid;
+grid-template-columns:repeat(3,1fr);
+border:1px solid rgba(34,199,235,.22);
+box-shadow:
+0 15px 40px rgba(7,145,180,.10),
+inset 0 1px 0 rgba(255,255,255,.90);
+border-radius:22px;
+overflow:hidden;
+backdrop-filter:blur(16px);
+-webkit-backdrop-filter:blur(16px);
+}
+.feature{
+min-height:105px;
+display:flex;
+align-items:center;
+justify-content:center;
+gap:13px;
+border-left:1px solid var(--cyan-border);
+padding:15px;
+}
+.feature:last-child{
+border-left:0;
+}
+.feature-icon{
+width:44px;
+height:44px;
+flex-shrink:0;
+border-radius:14px;
+background:linear-gradient(135deg,#e6faff,#c9f3fb);
+color:#078db5;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:19px;
+font-weight:bold;
+}
+.feature strong{
+display:block;
+font-size:13px;
+margin-bottom:5px;
+color:#087d9f;
+}
+.feature span{
+font-size:10px;
+color:var(--muted);
+}
+/* =====================================================
+FOOTER
+===================================================== */
+footer{
+background:#06496a;
+color:#fff;
+padding-top:55px;
+}
+.footer{
+width:min(1200px,calc(100% - 40px));
+margin:auto;
+display:grid;
+grid-template-columns:1.5fr 1fr 1fr 1fr;
+gap:40px;
+}
+.footer h2,
+.footer h3{
+margin:0 0 16px;
+}
+.footer h2{
+font-size:19px;
+}
+.footer h3{
+font-size:13px;
+}
+.footer p,
+.footer a{
+font-size:10px;
+line-height:2;
+color:#c9edf5;
+}
+.footer a{
+display:block;
+margin-bottom:5px;
+}
+.footer a:hover{
+color:#fff;
+}
+.footer-bottom{
+margin-top:40px;
+border-top:1px solid rgba(255,255,255,.12);
+padding:19px;
+text-align:center;
+font-size:9px;
+color:#a5d0db;
+}
+/* =====================================================
+MOBILE CATEGORY
+===================================================== */
+.mobile-category{
+display:none;
+}
+/* =====================================================
+MODAL
+===================================================== */
+.product-modal{
+position:fixed;
+inset:0;
+background:rgba(2,42,57,.72);
+z-index:9999;
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+backdrop-filter:blur(6px);
+-webkit-backdrop-filter:blur(6px);
+}
 .product-modal.show{
 display:flex;
 }
-
 .modal-box{
-width:
-min(
-1050px,
-100%
-);
-
-max-height:
-92vh;
-
+width:min(900px,100%);
+max-height:92vh;
 overflow:auto;
-
-background:white;
-
-border-radius:24px;
-
+background:#fff;
 position:relative;
-
-padding:25px;
-
-box-shadow:
-0 25px 70px rgba(0,30,45,.25);
-
-animation:
-modalIn .22s ease;
+padding:22px;
+border-radius:18px;
+box-shadow:0 25px 70px rgba(0,80,110,.30);
 }
-
-@keyframes modalIn{
-
-from{
-opacity:0;
-transform:translateY(12px) scale(.98);
-}
-
-to{
-opacity:1;
-transform:translateY(0) scale(1);
-}
-
-}
-
 .modal-close{
 position:absolute;
-
-top:12px;
-left:12px;
-
-z-index:20;
-
+left:14px;
+top:14px;
 width:40px;
 height:40px;
-
 border:0;
-
-border-radius:50%;
-
-background:
-rgba(255,255,255,.95);
-
-box-shadow:
-0 4px 15px rgba(0,0,0,.1);
-
-font-size:25px;
-
-line-height:1;
-
-color:#52717b;
-
+background:linear-gradient(135deg,#22c7eb,#0783a7);
+color:#fff;
+font-size:22px;
 cursor:pointer;
+z-index:3;
+border-radius:11px;
 }
-
-.modal-close:hover{
-background:#effcff;
-
-color:#0785a6;
+.modal-image{
+width:100%;
+height:450px;
+object-fit:contain;
+background:#f2fbfd;
+border-radius:12px;
 }
-
-.modal-content-grid{
-display:grid;
-
-grid-template-columns:
-1fr
-1fr;
-
-gap:28px;
-
-padding-top:8px;
-}
-
-
-/* =========================================================
-   PRODUCT GALLERY
-========================================================= */
-
+/* =====================================================
+PRODUCT IMAGE GALLERY
+===================================================== */
 .product-gallery{
 width:100%;
 }
-
 .gallery-main{
 width:100%;
-
-height:470px;
-
+height:450px;
 background:#f2fbfd;
-
-border-radius:17px;
-
+border-radius:12px;
 overflow:hidden;
-
 display:flex;
-
 align-items:center;
 justify-content:center;
-
-position:relative;
-
-touch-action:pan-y;
-
-user-select:none;
-
 margin-bottom:12px;
 }
-
 .gallery-main img{
 width:100%;
 height:100%;
-
 object-fit:contain;
-
 display:block;
-
-pointer-events:none;
 }
-
-.gallery-arrow{
-position:absolute;
-
-top:50%;
-
-transform:translateY(-50%);
-
-width:48px;
-height:48px;
-
-border:0;
-
-border-radius:50%;
-
-background:
-rgba(255,255,255,.94);
-
-color:#0783a7;
-
-box-shadow:
-0 7px 20px rgba(0,40,50,.17);
-
-cursor:pointer;
-
-z-index:5;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-font-size:31px;
-
-font-weight:bold;
-
-transition:
-.2s;
-}
-
-.gallery-arrow:hover{
-background:#fff;
-
-color:#045f78;
-
-transform:
-translateY(-50%)
-scale(1.06);
-}
-
-.gallery-prev{
-left:14px;
-}
-
-.gallery-next{
-right:14px;
-}
-
-.gallery-position{
-position:absolute;
-
-left:50%;
-
-bottom:13px;
-
-transform:translateX(-50%);
-
-background:
-rgba(2,42,57,.72);
-
-color:white;
-
-padding:
-6px 12px;
-
-border-radius:20px;
-
-font-size:11px;
-
-z-index:5;
-
-direction:ltr;
-
-white-space:nowrap;
-}
-
 .gallery-thumbs{
 display:flex;
-
 gap:9px;
-
 overflow-x:auto;
-
-padding:
-2px 2px 8px;
-
+padding:2px 2px 8px;
 scrollbar-width:thin;
 }
-
 .gallery-thumb{
-width:80px;
-height:70px;
-
-flex:
-0 0 80px;
-
-border:
-2px solid transparent;
-
+width:78px;
+height:68px;
+flex:0 0 78px;
+border:2px solid transparent;
 border-radius:10px;
-
 overflow:hidden;
-
 background:#f2fbfd;
-
 padding:0;
-
 cursor:pointer;
-
 transition:.2s;
 }
-
 .gallery-thumb:hover{
 border-color:#22c7eb;
-
 transform:translateY(-2px);
 }
-
 .gallery-thumb.active{
 border-color:#078db5;
-
-box-shadow:
-0 4px 12px rgba(7,145,180,.16);
+box-shadow:0 4px 12px rgba(7,145,180,.16);
 }
-
 .gallery-thumb img{
 width:100%;
 height:100%;
-
 object-fit:cover;
-
 display:block;
 }
-
 .gallery-count{
 font-size:10px;
-
 color:#71848d;
-
 margin-top:5px;
-
-text-align:center;
 }
-
-
-/* =========================================================
-   MODAL DETAILS
-========================================================= */
-
-.modal-details{
-padding:
-10px 5px;
-}
-
-.modal-code{
-font-size:11px;
-
-color:#91a4aa;
-
-margin-bottom:7px;
-}
-
 .modal-title{
-margin:0 0 10px;
-
-font-size:29px;
-
-color:#164a5b;
+font-size:28px;
+color:#0783a7;
+margin:18px 0 9px;
 }
-
-.modal-category{
-display:inline-block;
-
-padding:
-6px 10px;
-
-border-radius:20px;
-
-background:#e9faff;
-
-color:#087d9b;
-
-font-size:11px;
-
-margin-bottom:17px;
+.modal-line{
+font-size:12px;
+color:#71848d;
+margin:7px 0;
 }
-
 .modal-description{
 font-size:14px;
-
 line-height:2;
-
-color:#667f88;
-
-white-space:pre-line;
-
-margin-bottom:20px;
+color:#62767f;
+margin:18px 0;
 }
-
 .modal-price{
-font-size:27px;
-
-font-weight:bold;
-
-color:#0583a5;
-
-margin-bottom:15px;
+font-size:29px;
+font-weight:900;
+color:#078db5;
+margin:18px 0;
 }
-
-.modal-status{
-display:inline-block;
-
-padding:
-7px 11px;
-
-border-radius:20px;
-
-font-size:11px;
-
-font-weight:bold;
-
-background:#e8f8ed;
-
-color:#13864a;
-
-margin-bottom:20px;
-}
-
-.modal-status.off{
-background:#eee;
-
-color:#777;
-}
-
 .modal-whatsapp{
+height:46px;
+padding:0 25px;
+background:var(--green);
+color:#fff;
 display:inline-flex;
-
 align-items:center;
-justify-content:center;
-
-gap:8px;
-
-width:100%;
-
-padding:
-14px;
-
-background:#12b76a;
-
-color:white;
-
-border-radius:12px;
-
-font-size:14px;
+font-size:12px;
 font-weight:bold;
+border-radius:10px;
 }
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media(max-width:1050px){
-
+/* =====================================================
+EMPTY
+===================================================== */
+.empty{
+grid-column:1/-1;
+background:#fff;
+border:1px solid var(--cyan-border);
+padding:55px;
+text-align:center;
+color:#778b94;
+font-size:13px;
+border-radius:14px;
+}
+/* =====================================================
+LARGE DESKTOP
+===================================================== */
+@media(min-width:1500px){
+.header{
+width:min(1380px,calc(100% - 80px));
+}
+.hero{
+height:500px;
+}
+}
+/* =====================================================
+TABLET / SMALL DESKTOP
+===================================================== */
+@media(max-width:1250px){
+.header{
+grid-template-columns:300px minmax(0,1fr) 290px;
+gap:12px;
+}
+.logo-title{
+font-size:15px;
+}
 .nav{
+height:48px;
+}
+.nav a{
+padding:0 8px;
+font-size:10px;
+}
+.header-search{
+width:165px;
+}
+.hero h1{
+font-size:43px;
+}
+.grid{
+grid-template-columns:repeat(3,minmax(0,1fr));
+}
+.product-layout{
+grid-template-columns:215px minmax(0,1fr);
+}
+.branches{
+grid-template-columns:repeat(2,1fr);
+}
+}
+/* =====================================================
+TABLET
+===================================================== */
+@media(max-width:1000px){
+.header{
+grid-template-columns:280px minmax(0,1fr);
+gap:12px;
+}
+.actions{
 display:none;
 }
-
-.products-layout{
-grid-template-columns:190px 1fr;
+.nav{
+justify-self:center;
 }
-
-}
-
-@media(max-width:850px){
-
-.header-inner{
-flex-wrap:wrap;
-}
-
-.header-actions{
-width:100%;
-}
-
-.header-search{
-flex:1;
-}
-
-.hero-content{
-padding:
-50px 35px;
-}
-
-.contact-grid{
-grid-template-columns:1fr 1fr;
-}
-
 .features{
-grid-template-columns:1fr 1fr;
+width:min(850px,calc(100% - 40px));
 }
-
-.footer-inner{
-grid-template-columns:1fr 1fr;
+.categories{
+grid-template-columns:repeat(3,minmax(0,1fr));
 }
-
-.modal-content-grid{
+.product-layout{
+grid-template-columns:200px minmax(0,1fr);
+}
+.product-toolbar{
+grid-template-columns:100px minmax(0,1fr) 125px;
+}
+.card-image{
+height:230px;
+}
+.info-grid{
 grid-template-columns:1fr;
 }
-
-.gallery-main{
-height:430px;
 }
-
+/* =====================================================
+MOBILE
+===================================================== */
+@media(max-width:850px){
+body{
+font-size:14px;
 }
-
-@media(max-width:700px){
-
-.topbar-inner{
+.topbar{
+min-height:34px;
+font-size:9px;
+}
+.header{
+width:calc(100% - 24px);
+height:auto;
+padding:10px 0 8px;
+display:flex;
+flex-wrap:wrap;
 justify-content:center;
 }
-
-.topbar-left{
+.logo{
+width:100%;
+justify-content:center;
+gap:9px;
+}
+.logo-icon{
+width:41px;
+height:41px;
+font-size:19px;
+}
+.logo-title{
+font-size:13px;
+white-space:nowrap;
+}
+.nav{
+order:3;
+width:max-content;
+max-width:100%;
+height:44px;
+gap:2px;
+padding:3px;
+margin:8px auto 0;
+overflow-x:auto;
+overflow-y:hidden;
+scrollbar-width:none;
+-webkit-overflow-scrolling:touch;
+}
+.nav::-webkit-scrollbar{
 display:none;
 }
-
-.header-inner{
-padding:
-12px 15px;
+.nav a{
+height:36px;
+font-size:9px;
+padding:0 9px;
+border-radius:10px;
 }
-
-.logo-text h1{
-font-size:17px;
-}
-
-.logo-mark{
-width:42px;
-height:42px;
-}
-
+/* HERO */
 .hero{
-padding:0 12px;
-margin-top:15px;
+width:100%;
+height:390px;
+margin:0 auto 45px;
+border-radius:0;
 }
-
-.hero-box{
-min-height:390px;
-
-border-radius:21px;
-}
-
 .hero-content{
-padding:
-48px 25px;
+right:7%;
+width:82%;
 }
-
-.hero-content h2{
-font-size:34px;
+.hero h1{
+font-size:32px;
 }
-
-.section,
-.cta{
-padding:
-0 12px;
+.hero p{
+font-size:12px;
 }
-
+.hero-btn{
+height:46px;
+padding:0 22px;
+}
+/* SECTIONS */
 .section{
-margin-top:42px;
+width:calc(100% - 24px);
+margin-bottom:55px;
 }
-
+.section-head{
+align-items:center;
+}
 .section-title{
 font-size:23px;
 }
-
-.categories{
-grid-template-columns:
-repeat(2,1fr);
-}
-
-.ad-card{
-grid-template-columns:1fr;
-}
-
-.ad-image{
-height:210px;
-min-height:210px;
-}
-
-.ad-content{
-padding:22px;
-}
-
-.products-layout{
-grid-template-columns:1fr;
-}
-
-.category-sidebar{
-position:static;
-
-display:flex;
-
-gap:6px;
-
-overflow-x:auto;
-
-padding:9px;
-}
-
-.category-sidebar-title{
-display:none;
-}
-
-.sidebar-category{
-width:auto;
-
-white-space:nowrap;
-
-text-align:center;
-}
-
-.products-controls{
-flex-direction:column;
-}
-
-.products-grid{
-grid-template-columns:
-repeat(2,1fr);
-
-gap:10px;
-}
-
-.product-image-wrap{
-height:185px;
-}
-
-.product-info{
-padding:11px;
-}
-
-.product-name{
-font-size:14px;
-}
-
-.product-description{
+.section-title small{
 font-size:10px;
 }
-
-.product-price{
-font-size:16px;
+.section-link{
+font-size:9px;
 }
-
-.product-details{
+/* CATEGORIES */
+.categories{
+grid-template-columns:1fr 1fr;
+gap:8px;
+}
+.category{
+height:185px;
+}
+/* PRODUCTS */
+.product-layout{
+display:block;
+}
+.sidebar{
 display:none;
+margin-bottom:12px;
 }
-
-.contact-grid{
-grid-template-columns:1fr;
+.mobile-category{
+display:flex;
+width:100%;
+height:45px;
+background:linear-gradient(135deg,#22c7eb,#078fb5);
+color:#fff;
+border:0;
+align-items:center;
+justify-content:space-between;
+padding:0 15px;
+margin-bottom:12px;
+font-size:11px;
+border-radius:11px;
 }
-
-.about-box{
-grid-template-columns:1fr;
-
-padding:25px;
-}
-
-.about-text h2{
-font-size:24px;
-}
-
-.cta-box{
+.product-toolbar{
+display:flex;
 flex-direction:column;
-
-align-items:flex-start;
-
-padding:28px;
+align-items:stretch;
+gap:9px;
+margin-bottom:14px;
 }
-
-.footer-inner{
-grid-template-columns:1fr;
-
-gap:22px;
+.product-toolbar > .count{
+order:3;
 }
-
-.modal-box{
-padding:
-18px;
-
-border-radius:20px;
+.controls{
+display:flex;
+flex-direction:column;
+gap:8px;
 }
-
-.gallery-main{
-height:350px;
+.grid{
+grid-template-columns:1fr 1fr;
+gap:10px;
 }
-
-.gallery-arrow{
-width:42px;
-height:42px;
-
-font-size:27px;
+.card-image{
+height:190px;
 }
-
-.gallery-prev{
-left:9px;
+.card-body{
+padding:10px;
 }
-
-.gallery-next{
-right:9px;
-}
-
-.gallery-thumb{
-width:68px;
-height:60px;
-
-flex-basis:68px;
-}
-
-}
-
-@media(max-width:450px){
-
-.header-search{
+.card h3{
 font-size:12px;
 }
-
-.whatsapp-btn{
-padding:
-10px 12px;
-
+.description{
+font-size:9px;
+height:31px;
+}
+.price{
+font-size:16px;
+}
+/* INFO */
+.info-section{
+width:calc(100% - 24px);
+margin-bottom:55px;
+}
+.info-grid{
+grid-template-columns:1fr;
+}
+.map-box{
+min-height:240px;
+}
+/* BRANCHES */
+.branches{
+grid-template-columns:1fr;
+}
+/* ABOUT */
+.about{
+padding:50px 0;
+margin-bottom:55px;
+}
+.about-inner{
+width:calc(100% - 24px);
+grid-template-columns:1fr;
+gap:25px;
+}
+.about-image{
+height:280px;
+}
+.about-text h2{
+font-size:25px;
+}
+.about-text p{
+font-size:12px;
+}
+/* CTA */
+.cta{
+width:calc(100% - 24px);
+display:block;
+padding:28px 22px;
+margin-bottom:45px;
+}
+.cta h2{
+font-size:21px;
+}
+.cta p{
 font-size:11px;
 }
-
-.products-grid{
+.cta-button{
+margin-top:18px;
+justify-content:center;
+}
+/* FEATURES */
+.features{
+width:calc(100% - 24px);
 grid-template-columns:1fr 1fr;
+margin:0 auto 55px;
 }
-
-.product-image-wrap{
-height:160px;
+.feature{
+min-height:78px;
+padding:10px;
+gap:9px;
 }
-
-.hero-content h2{
-font-size:30px;
+.feature strong{
+font-size:10px;
 }
-
-.hero-content p{
+.feature span{
+font-size:8px;
+}
+.feature-icon{
+width:36px;
+height:36px;
+font-size:16px;
+}
+.feature:last-child{
+grid-column:1/-1;
+border-left:0;
+}
+/* FOOTER */
+.footer{
+width:calc(100% - 24px);
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+.footer-brand{
+grid-column:1/-1;
+}
+}
+/* =====================================================
+SMALL MOBILE
+===================================================== */
+@media(max-width:450px){
+.nav{
+width:max-content;
+max-width:100%;
+justify-content:center;
+}
+.nav a{
+padding:0 8px;
+font-size:9px;
+}
+.logo-title{
+font-size:12px;
+}
+.hero h1{
+font-size:28px;
+}
+.hero p{
+font-size:11px;
+}
+.categories{
+grid-template-columns:1fr 1fr;
+gap:7px;
+}
+.category{
+height:155px;
+}
+.category-content{
+right:13px;
+bottom:13px;
+}
+.category-content h3{
 font-size:13px;
 }
-
+.category-content span{
+font-size:9px;
+}
+.grid{
+grid-template-columns:1fr 1fr;
+}
+.card-image{
+height:150px;
+}
+.card h3{
+font-size:11px;
+}
+.price{
+font-size:14px;
+}
+.view{
+font-size:8px;
+}
 .gallery-main{
 height:300px;
 }
-
 .gallery-thumb{
-width:64px;
-height:57px;
-
-flex-basis:64px;
+width:65px;
+height:58px;
+flex-basis:65px;
 }
-
 .modal-title{
 font-size:23px;
 }
-
-.modal-box{
-padding:14px;
 }
-
+/* =====================================================
+VERY SMALL
+===================================================== */
+@media(max-width:350px){
+.nav{
+width:100%;
+justify-content:center;
 }
-
-
-/* =========================================================
-   HIDE SCROLLBAR
-========================================================= */
-
-.gallery-thumbs::-webkit-scrollbar{
-height:5px;
+.nav a{
+padding:0 7px;
+font-size:8.5px;
 }
-
-.gallery-thumbs::-webkit-scrollbar-thumb{
-background:#b7dfe7;
-
-border-radius:20px;
+.logo-title{
+font-size:11px;
 }
-
+.grid{
+grid-template-columns:1fr;
+}
+.card-image{
+height:210px;
+}
+.categories{
+grid-template-columns:1fr;
+}
+.category{
+height:190px;
+}
+}
+/* =====================================================
+MOBILE SIDEBAR
+===================================================== */
+@media(max-width:850px){
+.sidebar.mobile-open{
+display:block;
+}
+}
 </style>
-
 </head>
-
-
 <body>
-
-
-<!-- =====================================================
-     TOP BAR
-===================================================== -->
-
 <div class="topbar">
-
-<div class="topbar-inner">
-
-<div class="topbar-right">
-<span>
-شركة بيت المراتب للمفروشات
-</span>
-
-<span>
-جملة وقطاعي
-</span>
+مرحباً بكم في
+<b>شركة بيت المراتب للمفروشات جملة وقطاعي</b>
+— راحتك تبدأ من هنا
 </div>
-
-<div class="topbar-left">
-<span>
-خدمة العملاء
-</span>
-
-<span>
-0546510165
-</span>
-</div>
-
-</div>
-
-</div>
-
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
-
 <header>
-
-<div class="header-inner">
-
-
+<div class="header">
 <div class="logo">
-
-<div class="logo-mark">
-ب
+<div class="logo-icon">
+⌂
 </div>
-
-<div class="logo-text">
-
-<h1>
-بيت المراتب
-</h1>
-
-<p>
-للمفروشات جملة وقطاعي
-</p>
-
+<div class="logo-title">
+شركة بيت المراتب للمفروشات جملة وقطاعي
+<small>
+راحة تدوم • جودة تستحقها
+</small>
 </div>
-
 </div>
-
-
 <nav class="nav">
-
-<a href="#home">
+<a href="#" class="active">
 الرئيسية
 </a>
-
 <a href="#categories">
-التصنيفات
+الأقسام
 </a>
-
 <a href="#products">
 المنتجات
 </a>
-
-<a href="#branches">
-الفروع
+<a href="#offers">
+العروض
 </a>
-
+<a href="#location">
+الموقع
+</a>
 <a href="#about">
 من نحن
 </a>
-
+<a href="#contact">
+تواصل معنا
+</a>
 </nav>
-
-
-<div class="header-actions">
-
+<div class="actions">
+<div class="header-search">
 <input
-class="header-search"
 id="headerSearch"
 type="search"
 placeholder="ابحث عن منتج...">
-
+<button onclick="focusSearch()">
+⌕
+</button>
+</div>
 <a
-class="whatsapp-btn"
-href="https://wa.me/966546510165"
+class="whatsapp"
+id="headerWhatsapp"
+href="#"
 target="_blank"
 rel="noopener">
-
-<span>
 واتساب
-</span>
-
 </a>
-
 </div>
-
-
 </div>
-
 </header>
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section
-class="hero"
-id="home">
-
-<div class="hero-box"
-id="heroBox">
-
+<section class="hero" id="hero">
 <img
 id="heroImage"
 class="hero-image"
-src=""
-alt="بيت المراتب">
-
+alt="شركة بيت المراتب للمفروشات جملة وقطاعي">
 <div class="hero-overlay"></div>
-
 <div class="hero-content">
-
-<div class="small">
-مرحبًا بكم في
+<div class="hero-small">
+شركة بيت المراتب للمفروشات جملة وقطاعي
 </div>
-
-<h2>
-شركة بيت المراتب للمفروشات
-</h2>
-
+<h1>
+راحة أفضل
+<span>
+لمنزلك وعائلتك
+</span>
+</h1>
 <p>
-اكتشف تشكيلتنا من المراتب والمفروشات
-والمنتجات المتنوعة بجودة وأسعار مناسبة.
+اكتشف مجموعتنا من المراتب والمفروشات
+والمنتجات المنزلية بجودة عالية وأسعار منافسة.
 </p>
-
-<div class="hero-actions">
-
+<div class="hero-buttons">
 <a
-class="hero-main-btn"
-href="#products">
-
+href="#products"
+class="hero-btn hero-primary">
 تصفح المنتجات
-
 </a>
-
 <a
-class="hero-secondary-btn"
-href="https://wa.me/966546510165"
+id="heroWhatsapp"
+href="#"
 target="_blank"
-rel="noopener">
-
+class="hero-btn hero-secondary">
 تواصل معنا
-
 </a>
-
 </div>
-
 </div>
-
-</div>
-
 </section>
-
-
-<!-- =====================================================
-     CATEGORIES
-===================================================== -->
-
-<section
-class="section"
-id="categories">
-
+<section class="section" id="categories">
 <div class="section-head">
-
 <div>
-
 <h2 class="section-title">
-التصنيفات
+تسوق حسب القسم
+<small>
+اختر القسم واستكشف منتجاتنا
+</small>
 </h2>
-
-<p class="section-subtitle">
-تصفح المنتجات حسب التصنيف
-</p>
-
-<div class="section-line"></div>
-
 </div>
-
+<a
+href="#products"
+class="section-link">
+عرض جميع المنتجات ←
+</a>
 </div>
-
-
 <div
 class="categories"
-id="categoriesContainer">
-
+id="categoriesGrid">
 </div>
-
 </section>
-
-
-<!-- =====================================================
-     ADS
-===================================================== -->
-
-<section class="section">
-
-<div class="section-head">
-
-<div>
-
-<h2 class="section-title">
-العروض والإعلانات
-</h2>
-
-<p class="section-subtitle">
-أحدث العروض المتاحة
-</p>
-
-<div class="section-line"></div>
-
-</div>
-
-</div>
-
-
-<div
-class="ads-container"
-id="adsContainer">
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     PRODUCTS
-===================================================== -->
-
 <section
-class="section"
-id="products">
-
+class="ad-section"
+id="offers">
+<div class="ad">
+<div id="adImageBox"></div>
+<div class="ad-overlay"></div>
+<div class="ad-content">
+<div class="ad-label">
+عرض مميز
+</div>
+<h2 id="adTitle"></h2>
+<p id="adDescription"></p>
+<div id="adButtonBox"></div>
+</div>
+</div>
+</section>
+<section class="section" id="products">
 <div class="section-head">
-
 <div>
-
 <h2 class="section-title">
 منتجاتنا
+<small>
+تصفح مجموعتنا واختر ما يناسبك
+</small>
 </h2>
-
-<p class="section-subtitle">
-اكتشف منتجات بيت المراتب
-</p>
-
-<div class="section-line"></div>
-
 </div>
-
+<div class="count" id="count">
+جاري تحميل المنتجات...
 </div>
-
-
-<div class="products-layout">
-
-
-<!-- SIDEBAR -->
-
-<aside class="category-sidebar">
-
-<div class="category-sidebar-title">
+</div>
+<button
+class="mobile-category"
+id="mobileCategory">
+<span>
+التصنيفات
+</span>
+<span>
+☰
+</span>
+</button>
+<div class="product-layout">
+<aside
+class="sidebar"
+id="sidebar">
+<div class="sidebar-title">
 التصنيفات
 </div>
-
-<div id="sidebarCategories">
-
-<button
-class="sidebar-category active"
-data-category="">
-
-كل المنتجات
-
-</button>
-
+<div
+class="category-list"
+id="categoryList">
 </div>
-
 </aside>
-
-
-<!-- MAIN -->
-
-<div class="products-main">
-
-
-<div class="products-controls">
-
+<div class="product-area">
+<div class="product-toolbar">
+<div
+class="count"
+id="desktopCount">
+</div>
+<div class="controls">
+<div class="search">
 <input
-class="search-box"
 id="search"
 type="search"
-placeholder="ابحث عن منتج أو كود أو وصف...">
-
+placeholder="ابحث باسم المنتج أو الكود...">
+<button id="searchBtn">
+⌕
+</button>
+</div>
 <select
-class="sort-box"
-id="sort">
-
-<option value="default">
-الترتيب الافتراضي
+id="sort"
+class="sort">
+<option value="newest">
+الأحدث
 </option>
-
 <option value="name">
 الاسم
 </option>
-
 <option value="price-low">
-السعر من الأقل للأعلى
+السعر الأقل
 </option>
-
 <option value="price-high">
-السعر من الأعلى للأقل
+السعر الأعلى
 </option>
-
 </select>
-
 </div>
-
-
-<div
-class="products-status"
-id="status">
-
-جاري تحميل المنتجات...
-
 </div>
-
-
 <div
-class="products-grid"
+class="grid"
 id="grid">
-
 </div>
-
-
 </div>
-
 </div>
-
 </section>
-
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section class="section">
-
+<section class="info-section" id="location">
 <div class="section-head">
-
 <div>
-
 <h2 class="section-title">
-تواصل معنا
+موقعنا وتواصل معنا
+<small>
+نحن سعداء بخدمتكم والإجابة عن استفساراتكم
+</small>
 </h2>
-
-<p class="section-subtitle">
-نحن سعداء بخدمتكم
-</p>
-
-<div class="section-line"></div>
-
 </div>
-
 </div>
-
-
-<div class="contact-grid">
-
-
-<div class="contact-card">
-
-<div class="contact-icon">
-☎
+<div class="info-grid">
+<div class="info-card">
+<div class="info-icon">
+📍
 </div>
-
 <h3>
-الهاتف
+موقع الشركة
 </h3>
-
-<p>
-0546510165
+<p id="companyAddress">
+العنوان يتم تعديله من إعدادات الموقع.
 </p>
-
-</div>
-
-
-<div class="contact-card">
-
-<div class="contact-icon">
-◉
-</div>
-
-<h3>
-واتساب
-</h3>
-
-<p>
-يمكنكم التواصل معنا مباشرة عبر واتساب.
+<p id="companyCity">
+المدينة: الرياض
 </p>
-
-</div>
-
-
-<div class="contact-card">
-
-<div class="contact-icon">
-⌚
-</div>
-
-<h3>
-ساعات العمل
-</h3>
-
-<p>
-نستقبل استفساراتكم خلال أوقات العمل الرسمية.
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     BRANCHES
-===================================================== -->
-
-<section
-class="section"
-id="branches">
-
-<div class="section-head">
-
-<div>
-
-<h2 class="section-title">
-فروعنا
-</h2>
-
-<p class="section-subtitle">
-تعرف على مواقع فروع بيت المراتب
-</p>
-
-<div class="section-line"></div>
-
-</div>
-
-</div>
-
-
-<div
-class="branches-grid"
-id="branchesContainer">
-
-<div class="empty-box">
-جاري تحميل الفروع...
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section
-class="section"
-id="about">
-
-<div class="about-box">
-
-
-<div class="about-text">
-
-<h2>
-عن شركة بيت المراتب
-</h2>
-
-<p>
-شركة بيت المراتب للمفروشات جملة وقطاعي،
-نسعى إلى توفير مجموعة متنوعة من منتجات
-المراتب والمفروشات بما يناسب احتياجات عملائنا،
-مع الاهتمام بالجودة وتقديم خدمة مميزة.
-</p>
-
-</div>
-
-
-<div class="about-highlight">
-
-<div class="highlight-box">
-
-<div class="highlight-number">
-✓
-</div>
-
-<div class="highlight-text">
-منتجات متنوعة
-</div>
-
-</div>
-
-
-<div class="highlight-box">
-
-<div class="highlight-number">
-★
-</div>
-
-<div class="highlight-text">
-جودة وخدمة
-</div>
-
-</div>
-
-
-<div class="highlight-box">
-
-<div class="highlight-number">
-24
-</div>
-
-<div class="highlight-text">
-سهولة الوصول
-</div>
-
-</div>
-
-
-<div class="highlight-box">
-
-<div class="highlight-number">
-✓
-</div>
-
-<div class="highlight-text">
-جملة وقطاعي
-</div>
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- =====================================================
-     CTA
-===================================================== -->
-
-<section class="cta">
-
-<div class="cta-box">
-
-<div>
-
-<h2>
-هل لديك استفسار؟
-</h2>
-
-<p>
-تواصل معنا مباشرة عبر واتساب وسنساعدك.
-</p>
-
-</div>
-
+<div class="info-buttons">
 <a
-class="cta-button"
-href="https://wa.me/966546510165"
+id="mapsButton"
+class="info-button"
+href="#"
 target="_blank"
 rel="noopener">
-
-تواصل عبر واتساب
-
+فتح الموقع في Google Maps
 </a>
-
+<a
+id="locationWhatsapp"
+class="info-button green"
+href="#"
+target="_blank"
+rel="noopener">
+تواصل عبر واتساب
+</a>
 </div>
-
+</div>
+<div class="map-box">
+<div class="map-placeholder">
+<strong>
+📍 موقع شركة بيت المراتب
+</strong>
+<p id="mapText">
+ضع رابط Google Maps والعنوان في قسم
+COMPANY SETTINGS داخل الكود.
+</p>
+</div>
+</div>
+</div>
 </section>
-
-
-<!-- =====================================================
-     FEATURES
-===================================================== -->
-
-<section class="section">
-
+<section class="info-section">
+<div class="info-grid">
+<div class="info-card">
+<div class="info-icon">
+🕐
+</div>
+<h3>
+أوقات العمل
+</h3>
+<div id="workingHours"></div>
+</div>
+<div class="info-card">
+<div class="info-icon">
+📞
+</div>
+<h3>
+بيانات التواصل
+</h3>
+<p>
+رقم الهاتف:
+<strong id="phoneText"></strong>
+</p>
+<p>
+واتساب:
+<strong id="whatsappText"></strong>
+</p>
+<div class="info-buttons">
+<a
+id="phoneButton"
+class="info-button light"
+href="#">
+اتصال مباشر
+</a>
+<a
+id="whatsappButton"
+class="info-button green"
+href="#"
+target="_blank"
+rel="noopener">
+واتساب
+</a>
+</div>
+</div>
+</div>
+</section>
+<section
+class="info-section"
+id="branchesSection">
 <div class="section-head">
-
 <div>
-
 <h2 class="section-title">
-لماذا بيت المراتب؟
+فروعنا
+<small>
+يمكنك تعديل الفروع وإضافة فروع جديدة من Supabase
+</small>
 </h2>
-
-<p class="section-subtitle">
-مميزاتنا
-</p>
-
-<div class="section-line"></div>
-
 </div>
-
 </div>
-
-
-<div class="features">
-
-
-<div class="feature">
-
-<div class="feature-icon">
-🛏️
+<div
+class="branches"
+id="branches">
+<div class="empty">
+جاري تحميل الفروع...
 </div>
-
-<h3>
-تشكيلة متنوعة
-</h3>
-
-<p>
-منتجات متنوعة تناسب احتياجاتكم.
-</p>
-
 </div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-⭐
-</div>
-
-<h3>
-جودة
-</h3>
-
-<p>
-نهتم بتقديم منتجات ذات جودة مناسبة.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-💬
-</div>
-
-<h3>
-تواصل سريع
-</h3>
-
-<p>
-تواصل مباشر وسهل عبر واتساب.
-</p>
-
-</div>
-
-
-<div class="feature">
-
-<div class="feature-icon">
-🏪
-</div>
-
-<h3>
-جملة وقطاعي
-</h3>
-
-<p>
-نخدم الأفراد والعملاء بالجملة.
-</p>
-
-</div>
-
-
-</div>
-
 </section>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-<div class="footer-inner">
-
-
+<section class="about" id="about">
+<div class="about-inner">
+<div
+class="about-image"
+id="aboutImage">
+</div>
+<div class="about-text">
+<h2>
+شركة بيت المراتب للمفروشات جملة وقطاعي
+</h2>
+<p id="aboutDescription">
+نسعى في شركة بيت المراتب للمفروشات جملة وقطاعي
+إلى توفير تشكيلة متنوعة من المنتجات التي تجمع بين
+الجودة والراحة والسعر المناسب، مع تقديم تجربة شراء
+سهلة وواضحة لعملائنا.
+</p>
+<div
+class="points"
+id="aboutPoints">
+</div>
+</div>
+</div>
+</section>
+<section class="cta">
 <div>
-
-<div class="footer-title">
-بيت المراتب للمفروشات
+<h2>
+هل تحتاج إلى مساعدة؟
+</h2>
+<p>
+تواصل معنا مباشرة عبر واتساب للاستفسار
+عن المنتجات والأسعار.
+</p>
 </div>
-
-<div class="footer-text">
-
-شركة بيت المراتب للمفروشات جملة وقطاعي.
-<br>
-مرحبًا بكم في كتالوجنا الإلكتروني.
-
+<a
+id="ctaWhatsapp"
+class="cta-button"
+href="#"
+target="_blank"
+rel="noopener">
+تواصل معنا عبر واتساب
+</a>
+</section>
+<section class="features">
+<div class="feature">
+<div class="feature-icon">
+✓
 </div>
-
-</div>
-
-
 <div>
-
-<div class="footer-title">
-روابط سريعة
+<strong>
+جودة عالية
+</strong>
+<span>
+منتجات مختارة بعناية
+</span>
 </div>
-
-<div class="footer-links">
-
-<a href="#home">
+</div>
+<div class="feature">
+<div class="feature-icon">
+◆
+</div>
+<div>
+<strong>
+أسعار منافسة
+</strong>
+<span>
+أفضل قيمة مقابل السعر
+</span>
+</div>
+</div>
+<div class="feature">
+<div class="feature-icon">
+☎
+</div>
+<div>
+<strong>
+خدمة العملاء
+</strong>
+<span>
+دائماً لخدمتك
+</span>
+</div>
+</div>
+</section>
+<footer id="contact">
+<div class="footer">
+<div class="footer-brand">
+<h2>
+شركة بيت المراتب للمفروشات جملة وقطاعي
+</h2>
+<p>
+راحة تدوم وجودة تستحقها.
+اكتشف منتجاتنا وتواصل معنا لمعرفة المزيد.
+</p>
+<p id="footerAddress"></p>
+</div>
+<div>
+<h3>
+الموقع
+</h3>
+<a href="#">
 الرئيسية
 </a>
-
 <a href="#categories">
-التصنيفات
+الأقسام
 </a>
-
 <a href="#products">
 المنتجات
 </a>
-
-<a href="#branches">
-الفروع
+<a href="#offers">
+العروض
 </a>
-
+<a href="#location">
+الموقع
+</a>
 <a href="#about">
 من نحن
 </a>
-
 </div>
-
-</div>
-
-
 <div>
-
-<div class="footer-title">
-تواصل معنا
-</div>
-
-<div class="footer-links">
-
+<h3>
+خدمة العملاء
+</h3>
 <a
-href="https://wa.me/966546510165"
-target="_blank"
-rel="noopener">
-
+id="footerWhatsapp"
+href="#"
+target="_blank">
 واتساب
 </a>
-
-<a href="tel:+966546510165">
-0546510165
+<a
+id="footerPhone"
+href="#">
+الهاتف
 </a>
-
 </div>
-
+<div>
+<h3>
+روابط سريعة
+</h3>
+<a href="#branchesSection">
+الفروع
+</a>
+<a href="#contact">
+تواصل معنا
+</a>
 </div>
-
-
 </div>
-
-
 <div class="footer-bottom">
-
-© 2026 شركة بيت المراتب للمفروشات -
-جميع الحقوق محفوظة
-
+جميع الحقوق محفوظة ©️ 2026
+شركة بيت المراتب للمفروشات جملة وقطاعي
 </div>
-
 </footer>
-
-
-<!-- =====================================================
-     PRODUCT MODAL
-===================================================== -->
-
 <div
 class="product-modal"
 id="productModal">
-
 <div class="modal-box">
-
-
 <button
 class="modal-close"
-id="modalClose"
-aria-label="إغلاق">
-
+id="modalClose">
 ×
-
 </button>
-
-
 <div
 id="modalContent">
-
 </div>
-
-
 </div>
-
 </div>
-
-
-<!-- =====================================================
-     SUPABASE
-===================================================== -->
-
-<script
-src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
-</script>
-
-
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-
+/* =====================================================
+SUPABASE
+===================================================== */
 const SUPABASE_URL =
 "https://wmiszhoahvfsbmedjrbm.supabase.co";
-
 const SUPABASE_PUBLISHABLE_KEY =
-"sb_publishable_fFclLm6Z2fdYUTYxD_AAC5w_icPdd_n5";
-
+"sb_publishable_fFclLm6Z2fdUTYxD_AAC5w_icPdd_n5";
 const db =
 supabase.createClient(
 SUPABASE_URL,
 SUPABASE_PUBLISHABLE_KEY
 );
-
-
-/* =========================================================
-   VARIABLES
-========================================================= */
-
-let products = [];
-
-let productImages = [];
-
-let ads = [];
-
-let branches = [];
-
-let selectedCategory = "";
-
-let currentSearch = "";
-
-let currentGalleryIndex = 0;
-
-let currentGalleryStartX = 0;
-
-let currentGalleryEndX = 0;
-
-window.currentProductGallery = [];
-
-
-/* =========================================================
-   ELEMENTS
-========================================================= */
-
+/* =====================================================
+COMPANY SETTINGS
+===================================================== */
+const COMPANY = {
+name:
+"شركة بيت المراتب للمفروشات جملة وقطاعي",
+city:
+"الرياض",
+address:
+"اكتب عنوان الشركة هنا",
+phone:
+"920012345",
+whatsapp:
+"966546510165",
+googleMaps:
+"ضع رابط Google Maps هنا",
+workingHours:[
+{
+day:"السبت - الخميس",
+time:"9:00 صباحاً - 10:00 مساءً"
+},
+{
+day:"الجمعة",
+time:"حسب مواعيد الفرع"
+}
+],
+about:
+"نسعى في شركة بيت المراتب للمفروشات جملة وقطاعي إلى توفير تشكيلة متنوعة من المنتجات التي تجمع بين الجودة والراحة والسعر المناسب، مع تقديم تجربة شراء سهلة وواضحة لعملائنا.",
+aboutPoints:[
+"✓ تشكيلة متنوعة",
+"✓ جودة مختارة",
+"✓ أسعار منافسة",
+"✓ خدمة عملاء مميزة",
+"✓ دعم وخدمة عملاء"
+]
+};
+/* =====================================================
+VARIABLES
+===================================================== */
+let products=[];
+let productImages=[];
+let selectedCategory="";
+let currentSearch="";
+window.currentProductGallery=[];
+/* =====================================================
+ELEMENTS
+===================================================== */
 const grid =
 document.getElementById("grid");
-
-const status =
-document.getElementById("status");
-
 const search =
 document.getElementById("search");
-
+const searchBtn =
+document.getElementById("searchBtn");
 const sort =
 document.getElementById("sort");
-
-const headerSearch =
-document.getElementById("headerSearch");
-
-const adsContainer =
-document.getElementById("adsContainer");
-
-const categoriesContainer =
-document.getElementById(
-"categoriesContainer"
-);
-
-const sidebarCategories =
-document.getElementById(
-"sidebarCategories"
-);
-
-const branchesContainer =
-document.getElementById(
-"branchesContainer"
-);
-
+const categoryList =
+document.getElementById("categoryList");
+const count =
+document.getElementById("count");
+const desktopCount =
+document.getElementById("desktopCount");
+const sidebar =
+document.getElementById("sidebar");
 const productModal =
-document.getElementById(
-"productModal"
-);
-
+document.getElementById("productModal");
 const modalContent =
-document.getElementById(
-"modalContent"
-);
-
-const modalClose =
-document.getElementById(
-"modalClose"
-);
-
-
-/* =========================================================
-   ESCAPE HTML
-========================================================= */
-
+document.getElementById("modalContent");
+/* =====================================================
+ESCAPE
+===================================================== */
 function esc(value){
-
-return String(
-value ?? ""
-)
-
+return String(value??"")
 .replace(
 /[&<>"']/g,
-
-function(match){
-
+function(m){
 return {
-
 "&":"&amp;",
 "<":"&lt;",
 ">":"&gt;",
 '"':"&quot;",
 "'":"&#039;"
-
-}[match];
-
+}[m];
 }
-
 );
-
 }
-
-
-/* =========================================================
-   LOAD PRODUCTS
-========================================================= */
-
+/* =====================================================
+WHATSAPP URL
+===================================================== */
+function whatsappUrl(message=""){
+if(message){
+return "https://wa.me/"+
+COMPANY.whatsapp+
+"?text="+
+encodeURIComponent(message);
+}
+return "https://wa.me/"+
+COMPANY.whatsapp;
+}
+/* =====================================================
+APPLY COMPANY SETTINGS
+===================================================== */
+function applyCompanySettings(){
+const whatsappLinks=[
+"headerWhatsapp",
+"heroWhatsapp",
+"locationWhatsapp",
+"whatsappButton",
+"ctaWhatsapp",
+"footerWhatsapp"
+];
+whatsappLinks.forEach(
+function(id){
+const element =
+document.getElementById(id);
+if(element){
+element.href =
+whatsappUrl();
+}
+});
+const phoneText =
+document.getElementById("phoneText");
+if(phoneText){
+phoneText.textContent =
+COMPANY.phone;
+}
+const phoneButton =
+document.getElementById("phoneButton");
+if(phoneButton){
+phoneButton.href =
+"tel:"+COMPANY.phone;
+}
+const footerPhone =
+document.getElementById("footerPhone");
+if(footerPhone){
+footerPhone.href =
+"tel:"+COMPANY.phone;
+footerPhone.textContent =
+COMPANY.phone;
+}
+const whatsappText =
+document.getElementById("whatsappText");
+if(whatsappText){
+whatsappText.textContent =
+"+"+COMPANY.whatsapp;
+}
+document.getElementById(
+"companyAddress"
+).textContent =
+COMPANY.address;
+document.getElementById(
+"companyCity"
+).textContent =
+"المدينة: "+
+COMPANY.city;
+document.getElementById(
+"footerAddress"
+).textContent =
+COMPANY.address;
+const mapsButton =
+document.getElementById("mapsButton");
+if(
+COMPANY.googleMaps &&
+COMPANY.googleMaps!=="#" &&
+!COMPANY.googleMaps.includes("ضع رابط")
+){
+mapsButton.href =
+COMPANY.googleMaps;
+}else{
+mapsButton.href="#";
+mapsButton.onclick =
+function(e){
+e.preventDefault();
+alert(
+"أضف رابط Google Maps في COMPANY SETTINGS داخل الكود."
+);
+};
+}
+const hoursBox =
+document.getElementById("workingHours");
+hoursBox.innerHTML =
+COMPANY.workingHours
+.map(
+function(item){
+return `
+<p>
+<strong>
+${esc(item.day)}
+</strong>
+:
+${esc(item.time)}
+</p>
+`;
+}
+)
+.join("");
+document.getElementById(
+"aboutDescription"
+).textContent =
+COMPANY.about;
+document.getElementById(
+"aboutPoints"
+).innerHTML =
+COMPANY.aboutPoints
+.map(
+function(item){
+return `
+<div class="point">
+${esc(item)}
+</div>
+`;
+}
+)
+.join("");
+}
+/* =====================================================
+LOAD BRANCHES
+===================================================== */
+async function loadBranches(){
+const box =
+document.getElementById("branches");
+if(!box)return;
+box.innerHTML = `
+<div class="empty">
+جاري تحميل الفروع...
+</div>
+`;
+try{
+const result =
+await db
+.from("branches")
+.select("name,address,phone");
+console.log(
+"Branches result:",
+result
+);
+if(result.error){
+console.error(
+"Branches error:",
+result.error
+);
+box.innerHTML = `
+<div class="empty">
+تعذر تحميل الفروع
+<br><br>
+${esc(result.error.message)}
+</div>
+`;
+return;
+}
+const branches =
+result.data || [];
+if(!branches.length){
+box.innerHTML = `
+<div class="empty">
+لا توجد فروع مضافة حالياً.
+</div>
+`;
+return;
+}
+box.innerHTML =
+branches
+.map(
+function(branch,index){
+const mapQuery = [
+branch.name,
+branch.address,
+COMPANY.city
+]
+.filter(Boolean)
+.join(" ");
+const mapUrl =
+mapQuery
+?
+"https://www.google.com/maps/search/?api=1&query="+
+encodeURIComponent(mapQuery)
+:
+"";
+return `
+<div class="branch">
+<div class="branch-number">
+${index+1}
+</div>
+<h3>
+${esc(branch.name || "فرع")}
+</h3>
+${
+branch.address
+?
+`
+<p>
+📍 ${esc(branch.address)}
+</p>
+`
+:
+""
+}
+${
+branch.phone
+?
+`
+<p>
+☎ ${esc(branch.phone)}
+</p>
+`
+:
+""
+}
+${
+mapUrl
+?
+`
+<div>
+<a
+href="${esc(mapUrl)}"
+target="_blank"
+rel="noopener noreferrer">
+فتح الموقع في Google Maps ←
+</a>
+</div>
+`
+:
+""
+}
+</div>
+`;
+}
+)
+.join("");
+}catch(error){
+console.error(
+"Branches error:",
+error
+);
+box.innerHTML = `
+<div class="empty">
+حدث خطأ أثناء تحميل الفروع.
+<br><br>
+${esc(error.message || "")}
+</div>
+`;
+}
+}
+/* =====================================================
+LOAD PRODUCTS + PRODUCT IMAGES
+===================================================== */
 async function loadProducts(){
-
-status.textContent =
+try{
+count.textContent =
 "جاري تحميل المنتجات...";
-
-
+/* =====================================================
+PRODUCTS
+===================================================== */
 const productsResult =
 await db
 .from("products")
-.select("*")
-.order(
-"sort_order",
-{
-ascending:true,
-nullsFirst:false
-}
-)
-.order(
-"name",
-{
-ascending:true
-}
-);
-
-
+.select("*");
 if(productsResult.error){
-
-status.textContent =
-"تعذر تحميل المنتجات: " +
-productsResult.error.message;
-
-console.error(
-productsResult.error
-);
-
+grid.innerHTML = `
+<div class="empty">
+تعذر تحميل المنتجات
+<br><br>
+${esc(productsResult.error.message)}
+</div>
+`;
 return;
-
 }
-
-
 products =
 productsResult.data || [];
-
-
 /* =====================================================
-   LOAD ADDITIONAL PRODUCT IMAGES
+PRODUCT IMAGES
 ===================================================== */
-
 const imagesResult =
 await db
 .from("product_images")
@@ -3164,1239 +2579,766 @@ await db
 ascending:true
 }
 );
-
-
 if(imagesResult.error){
-
-console.warn(
-"تعذر تحميل صور المنتجات الإضافية:",
-imagesResult.error.message
+console.error(
+"Product images error:",
+imagesResult.error
 );
-
-productImages = [];
-
+productImages=[];
 }else{
-
 productImages =
 imagesResult.data || [];
-
 }
-
-
 /* =====================================================
-   BUILD CATEGORIES
+CONTINUE
 ===================================================== */
-
 buildCategories();
-
-render();
-
+buildCategoryCards();
+renderProducts();
+setDefaultHero();
+setAboutImage();
+}catch(error){
+console.error(
+"Products error:",
+error
+);
+grid.innerHTML = `
+<div class="empty">
+حدث خطأ أثناء تحميل المنتجات
+<br><br>
+${esc(error.message || "")}
+</div>
+`;
 }
-
-
-/* =========================================================
-   BUILD CATEGORIES
-========================================================= */
-
+}
+/* =====================================================
+CATEGORIES SIDEBAR
+===================================================== */
 function buildCategories(){
-
-const categories = [
+categoryList.innerHTML="";
+const all =
+document.createElement("button");
+all.className =
+"category-btn "+
+(selectedCategory===""?"active":"");
+all.dataset.category="";
+all.innerHTML = `
+<span>
+كل المنتجات
+</span>
+<span>
+›
+</span>
+`;
+categoryList.appendChild(all);
+const categories =
+[
 ...new Set(
 products
 .map(
-function(product){
-return product.category;
-}
+p=>p.category
 )
 .filter(Boolean)
 )
 ];
-
-
-categoriesContainer.innerHTML =
-categories
-.map(
+categories.forEach(
 function(category){
-
-return `
-
-<div
-class="category-card"
-onclick='selectCategory(${JSON.stringify(category)})'>
-
-<div class="category-icon">
-🛏️
-</div>
-
+const btn =
+document.createElement("button");
+btn.className =
+"category-btn "+
+(selectedCategory===category?"active":"");
+btn.dataset.category =
+category;
+const total =
+products.filter(
+p=>p.category===category
+).length;
+btn.innerHTML = `
+<span>
+${esc(category)}
+</span>
+<span>
+${total}
+</span>
+`;
+categoryList.appendChild(btn);
+}
+);
+}
+/* =====================================================
+CATEGORY CARDS
+===================================================== */
+function buildCategoryCards(){
+const box =
+document.getElementById(
+"categoriesGrid"
+);
+box.innerHTML="";
+const categories =
+[
+...new Set(
+products
+.map(
+p=>p.category
+)
+.filter(Boolean)
+)
+];
+categories
+.slice(0,10)
+.forEach(
+function(category){
+const product =
+products.find(
+p=>
+p.category===category &&
+p.image_url
+);
+const card =
+document.createElement("div");
+card.className =
+"category";
+if(product){
+card.innerHTML = `
+<img
+src="${esc(product.image_url)}"
+alt="${esc(category)}"
+loading="lazy">
+<div class="category-content">
 <h3>
 ${esc(category)}
 </h3>
-
+<span>
+${products.filter(
+p=>p.category===category
+).length}
+منتج
+</span>
 </div>
-
 `;
-
-}
-)
-.join("");
-
-
-sidebarCategories.innerHTML = `
-
-<button
-class="sidebar-category active"
-data-category=""
-onclick="selectCategory('')">
-
-كل المنتجات
-
-</button>
-
-`;
-
-
-categories.forEach(
-function(category){
-
-sidebarCategories.insertAdjacentHTML(
-"beforeend",
-
-`
-
-<button
-class="sidebar-category"
-data-category="${esc(category)}"
-onclick='selectCategory(${JSON.stringify(category)})'>
-
+}else{
+card.innerHTML = `
+<div
+style="
+height:100%;
+background:
+linear-gradient(
+135deg,
+#0798bd,
+#22c7eb
+);
+display:flex;
+align-items:center;
+justify-content:center;
+color:#fff;
+font-size:65px;">
+⌂
+</div>
+<div class="category-content">
+<h3>
 ${esc(category)}
-
-</button>
-
-`
-
-);
-
+</h3>
+<span>
+${products.filter(
+p=>p.category===category
+).length}
+منتج
+</span>
+</div>
+`;
 }
-);
-
-}
-
-
-/* =========================================================
-   SELECT CATEGORY
-========================================================= */
-
-function selectCategory(category){
-
+card.onclick =
+function(){
 selectedCategory =
-category || "";
-
-document
-.querySelectorAll(
-".sidebar-category"
-)
-.forEach(
-function(button){
-
-button.classList.toggle(
-"active",
-button.dataset.category ===
-selectedCategory
-);
-
-}
-);
-
-
-render();
-
+category;
+buildCategories();
+renderProducts();
 document
 .getElementById("products")
 .scrollIntoView({
-behavior:"smooth",
-block:"start"
+behavior:"smooth"
 });
-
+};
+box.appendChild(card);
 }
-
-
-/* =========================================================
-   RENDER PRODUCTS
-========================================================= */
-
-function render(){
-
-const q =
-(
-search.value ||
-currentSearch ||
-""
-)
-.toLowerCase()
-.trim();
-
-
+);
+}
+/* =====================================================
+RENDER PRODUCTS
+===================================================== */
+function renderProducts(){
 let result =
-products.filter(
-function(product){
-
-const text = [
-
-product.name,
-product.code,
-product.description,
-product.category
-
+[...products];
+if(selectedCategory){
+result =
+result.filter(
+p=>p.category===selectedCategory
+);
+}
+if(currentSearch){
+const q =
+currentSearch.toLowerCase();
+result =
+result.filter(
+function(p){
+return [
+p.name,
+p.code,
+p.description,
+p.category
 ]
 .join(" ")
-.toLowerCase();
-
-
-return (
-
-(!q || text.includes(q))
-
-&&
-
-(
-!selectedCategory ||
-product.category ===
-selectedCategory
-)
-
-);
-
+.toLowerCase()
+.includes(q);
 }
 );
-
-
-/* =====================================================
-   SORT
-===================================================== */
-
-if(sort.value === "name"){
-
+}
+if(sort.value==="name"){
 result.sort(
-function(a,b){
-
-return String(
-a.name || ""
-)
+(a,b)=>
+String(a.name||"")
 .localeCompare(
-String(
-b.name || ""
-),
+String(b.name||""),
 "ar"
-);
-
-}
-);
-
-}
-
-
-if(sort.value === "price-low"){
-
-result.sort(
-function(a,b){
-
-return Number(
-a.price || 0
 )
--
-Number(
-b.price || 0
 );
-
 }
-);
-
-}
-
-
-if(sort.value === "price-high"){
-
+if(sort.value==="price-low"){
 result.sort(
-function(a,b){
-
-return Number(
-b.price || 0
-)
--
-Number(
-a.price || 0
+(a,b)=>
+Number(a.price||0)-
+Number(b.price||0)
 );
-
 }
+if(sort.value==="price-high"){
+result.sort(
+(a,b)=>
+Number(b.price||0)-
+Number(a.price||0)
 );
-
 }
-
-
-status.textContent =
-"عدد المنتجات: " +
+if(sort.value==="newest"){
+result.sort(
+(a,b)=>
+Number(b.id||0)-
+Number(a.id||0)
+);
+}
+count.textContent =
+"عدد المنتجات: "+
 result.length;
-
-
+desktopCount.textContent =
+result.length+
+" منتج";
 if(!result.length){
-
 grid.innerHTML = `
-
-<div class="empty-box">
-
-لا توجد منتجات مطابقة للبحث.
-
+<div class="empty">
+لا توجد منتجات مطابقة للبحث
 </div>
-
 `;
-
 return;
-
 }
-
-
-/* =====================================================
-   PRODUCT CARDS
-===================================================== */
-
 grid.innerHTML =
-result
-.map(
-function(product){
-
-const image =
-product.image_url;
-
-
+result.map(
+function(p){
 return `
-
 <article
-class="product-card"
-onclick='openProduct(${JSON.stringify(product)})'>
-
-
-<div class="product-image-wrap">
-
+class="card"
+data-id="${esc(p.id)}">
+<div class="card-image">
 ${
-image
-
+p.image_url
 ?
-
 `
-
 <img
-class="product-image"
-src="${esc(image)}"
-alt="${esc(product.name || "")}"
+src="${esc(p.image_url)}"
+alt="${esc(p.name||"")}"
 loading="lazy">
-
 `
-
 :
-
 `
-
-<div class="product-no-image">
-
+<div
+style="
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#8b98a5;
+font-size:12px;">
 لا توجد صورة
-
 </div>
-
 `
-
 }
-
-
 <span
 class="
-product-available
-${product.available ? "" : "product-unavailable"}
-">
-
-${
-product.available
-?
-"متوفر"
-:
-"غير متوفر"
-}
-
+status
+${p.available
+?"available"
+:"unavailable"}">
+${p.available
+?"متوفر"
+:"غير متوفر"}
 </span>
-
-
 </div>
-
-
-<div class="product-info">
-
-
-<div class="product-code">
-
-كود:
-${esc(product.code || "-")}
-
+<div class="card-body">
+<div class="code">
+${esc(p.code||"")}
 </div>
-
-
-<h3 class="product-name">
-
-${esc(product.name || "")}
-
+<h3>
+${esc(p.name||"")}
 </h3>
-
-
-<div class="product-category">
-
-${esc(product.category || "")}
-
+<div class="description">
+${esc(p.description||"")}
 </div>
-
-
-<div class="product-description">
-
-${esc(
-product.description || ""
-)}
-
-</div>
-
-
-<div class="product-bottom">
-
-
-<div class="product-price">
-
+<div class="card-bottom">
+<div class="price">
 ${
-product.price !== null &&
-product.price !== undefined &&
-product.price !== ""
-
+p.price!==null &&
+p.price!==undefined &&
+p.price!==""
 ?
-
-Number(
-product.price
-)
-.toLocaleString(
-"ar-SA"
-)
+Number(p.price)
+.toLocaleString("ar-SA")
 +
-" ريال"
-
+' <span>ريال</span>'
 :
-
 ""
-
 }
-
 </div>
-
-
-<div class="product-details">
-
-عرض التفاصيل
-
+<div class="view">
+عرض التفاصيل ←
 </div>
-
-
 </div>
-
-
 </div>
-
-
 </article>
-
 `;
-
 }
-)
-.join("");
-
+).join("");
 }
-
-
-/* =========================================================
-   OPEN PRODUCT
-========================================================= */
-
-function openProduct(product){
-
-currentGalleryIndex = 0;
-
-
 /* =====================================================
-   BUILD IMAGE LIST
+SEARCH
 ===================================================== */
-
-let allImages = [];
-
-
-/* MAIN IMAGE */
-
-if(product.image_url){
-
-allImages.push({
-
-url:
-product.image_url,
-
-source:
-"main"
-
+function doSearch(){
+currentSearch =
+search.value.trim();
+renderProducts();
+}
+search.addEventListener(
+"input",
+doSearch
+);
+searchBtn.onclick =
+doSearch;
+sort.onchange =
+renderProducts;
+/* =====================================================
+HEADER SEARCH
+===================================================== */
+document
+.getElementById("headerSearch")
+.addEventListener(
+"keydown",
+function(e){
+if(e.key==="Enter"){
+search.value =
+e.target.value;
+doSearch();
+document
+.getElementById("products")
+.scrollIntoView({
+behavior:"smooth"
 });
-
 }
-
-
-/* ADDITIONAL IMAGES */
-
-const additionalImages =
-productImages.filter(
-function(image){
-
-return Number(
-image.product_id
-)
-===
-Number(
-product.id
-);
-
 }
 );
-
-
+function focusSearch(){
+document
+.getElementById("products")
+.scrollIntoView({
+behavior:"smooth"
+});
+setTimeout(
+function(){
+search.focus();
+},
+500
+);
+}
 /* =====================================================
-   ADDITIONAL IMAGES
-   REMOVE DUPLICATES
+CATEGORY CLICK
 ===================================================== */
-
+categoryList.addEventListener(
+"click",
+function(e){
+const btn =
+e.target.closest(
+".category-btn"
+);
+if(!btn)return;
+selectedCategory =
+btn.dataset.category||"";
+buildCategories();
+renderProducts();
+}
+);
+/* =====================================================
+MOBILE CATEGORY
+===================================================== */
+document
+.getElementById("mobileCategory")
+.onclick =
+function(){
+if(
+sidebar.classList.contains(
+"mobile-open"
+)
+){
+sidebar.classList.remove(
+"mobile-open"
+);
+}else{
+sidebar.classList.add(
+"mobile-open"
+);
+}
+};
+/* =====================================================
+PRODUCT MODAL
+===================================================== */
+grid.addEventListener(
+"click",
+function(e){
+const card =
+e.target.closest(
+".card"
+);
+if(!card)return;
+const product =
+products.find(
+p=>
+String(p.id)===
+String(card.dataset.id)
+);
+if(!product)return;
+openProduct(product);
+}
+);
+/* =====================================================
+OPEN PRODUCT WITH GALLERY
+===================================================== */
+function openProduct(p){
+const message =
+"السلام عليكم، أريد الاستفسار عن المنتج: "+
+(p.name||"")+
+" - كود "+
+(p.code||"");
+/* =====================================================
+GET ADDITIONAL IMAGES
+===================================================== */
+const additionalImages =
+productImages
+.filter(
+function(image){
+return String(image.product_id) ===
+String(p.id) &&
+image.image_url;
+}
+)
+.sort(
+function(a,b){
+return Number(a.sort_order||0) -
+Number(b.sort_order||0);
+}
+);
+/* =====================================================
+CREATE IMAGE LIST
+MAIN IMAGE FIRST
+===================================================== */
+const allImages=[];
+if(p.image_url){
+allImages.push({
+url:p.image_url,
+type:"main"
+});
+}
 additionalImages.forEach(
 function(image){
-
-if(!image.image_url){
-return;
-}
-
-const alreadyExists =
-allImages.some(
-function(existing){
-
-return existing.url ===
-image.image_url;
-
-}
-);
-
-if(!alreadyExists){
-
+if(
+image.image_url &&
+image.image_url !== p.image_url
+){
 allImages.push({
-
-url:
-image.image_url,
-
-source:
-"additional",
-
-id:
-image.id
-
+url:image.image_url,
+type:"additional"
 });
-
 }
-
 }
 );
-
-
-window.currentProductGallery =
-allImages;
-
-
 /* =====================================================
-   GALLERY HTML
+GALLERY HTML
 ===================================================== */
-
-let galleryHTML = "";
-
-
+let galleryHTML="";
 if(allImages.length){
-
 galleryHTML = `
-
 <div class="product-gallery">
-
-
-<div
-class="gallery-main"
-id="galleryMain">
-
-
+<div class="gallery-main">
 <img
 id="galleryMainImage"
 src="${esc(allImages[0].url)}"
-alt="${esc(product.name || "")}">
-
-
+alt="${esc(p.name||"")}">
+</div>
 ${
 allImages.length > 1
-
 ?
-
 `
-
-<button
-type="button"
-class="gallery-arrow gallery-prev"
-onclick="prevGalleryImage(event)"
-aria-label="الصورة السابقة">
-
-‹
-
-</button>
-
-
-<button
-type="button"
-class="gallery-arrow gallery-next"
-onclick="nextGalleryImage(event)"
-aria-label="الصورة التالية">
-
-›
-
-</button>
-
-
-<div
-class="gallery-position"
-id="galleryPosition">
-
-1 / ${allImages.length}
-
-</div>
-
-`
-
-:
-
-""
-
-}
-
-
-</div>
-
-
-${
-allImages.length > 1
-
-?
-
-`
-
-<div
-class="gallery-thumbs"
-id="galleryThumbs">
-
+<div class="gallery-thumbs">
 ${
 allImages
 .map(
 function(image,index){
-
 return `
-
 <button
 type="button"
 class="
 gallery-thumb
-${index === 0 ? "active" : ""}
+${index===0?"active":""}
 "
 data-gallery-index="${index}"
-onclick="changeGalleryImage(${index},event)"
-aria-label="عرض الصورة ${index + 1}">
-
+onclick="changeGalleryImage(${index})">
 <img
 src="${esc(image.url)}"
-alt="${esc(product.name || "")}">
-
+alt="${esc(p.name||"")}">
 </button>
-
 `;
-
 }
 )
 .join("")
 }
-
 </div>
-
-
 <div class="gallery-count">
-
 ${allImages.length}
 صور للمنتج
-
 </div>
-
 `
-
 :
-
 ""
-
 }
-
-
 </div>
-
 `;
-
 }else{
-
 galleryHTML = `
-
-<div class="product-gallery">
-
-<div class="gallery-main">
-
-<div class="product-no-image">
-
-لا توجد صورة للمنتج
-
-</div>
-
-</div>
-
-</div>
-
-`;
-
-}
-
-
-/* =====================================================
-   MODAL CONTENT
-===================================================== */
-
-modalContent.innerHTML = `
-
-<div class="modal-content-grid">
-
-
-${galleryHTML}
-
-
-<div class="modal-details">
-
-
-<div class="modal-code">
-
-كود المنتج:
-${esc(product.code || "-")}
-
-</div>
-
-
-<h2 class="modal-title">
-
-${esc(product.name || "")}
-
-</h2>
-
-
-${
-product.category
-
-?
-
-`
-
-<div class="modal-category">
-
-${esc(product.category)}
-
-</div>
-
-`
-
-:
-
-""
-
-}
-
-
-<div class="modal-description">
-
-${esc(
-product.description ||
-"لا يوجد وصف إضافي لهذا المنتج."
-)}
-
-</div>
-
-
-${
-product.price !== null &&
-product.price !== undefined &&
-product.price !== ""
-
-?
-
-`
-
-<div class="modal-price">
-
-${Number(
-product.price
-)
-.toLocaleString(
-"ar-SA"
-)}
-
- ريال
-
-</div>
-
-`
-
-:
-
-""
-
-}
-
-
 <div
-class="
-modal-status
-${product.available ? "" : "off"}
+class="gallery-main"
+style="
+display:flex;
+align-items:center;
+justify-content:center;
+color:#8a98a6;
 ">
-
-${
-product.available
-?
-"متوفر حاليًا"
-:
-"غير متوفر حاليًا"
-}
-
+لا توجد صورة
 </div>
-
-
+`;
+}
+/* =====================================================
+MODAL
+===================================================== */
+modalContent.innerHTML = `
+${galleryHTML}
+<h2 class="modal-title">
+${esc(p.name||"")}
+</h2>
+${
+p.code
+?
+`
+<div class="modal-line">
+كود المنتج:
+${esc(p.code)}
+</div>
+`
+:
+""
+}
+${
+p.category
+?
+`
+<div class="modal-line">
+التصنيف:
+${esc(p.category)}
+</div>
+`
+:
+""
+}
+${
+p.description
+?
+`
+<div class="modal-description">
+${esc(p.description)}
+</div>
+`
+:
+""
+}
+${
+p.price!==null &&
+p.price!==undefined &&
+p.price!==""
+?
+`
+<div class="modal-price">
+${Number(p.price)
+.toLocaleString("ar-SA")}
+<span
+style="
+font-size:12px;
+font-weight:400;">
+ريال
+</span>
+</div>
+`
+:
+""
+}
 <a
 class="modal-whatsapp"
-href="https://wa.me/966546510165?text=${encodeURIComponent(
-"السلام عليكم، أريد الاستفسار عن المنتج: " +
-(product.name || "") +
-" - كود: " +
-(product.code || "")
-)}"
+href="${whatsappUrl(message)}"
 target="_blank"
 rel="noopener">
-
-التواصل عبر واتساب
-
+الاستفسار عن المنتج عبر واتساب
 </a>
-
-
-</div>
-
-
-</div>
-
 `;
-
-
+/* =====================================================
+STORE GALLERY
+===================================================== */
+window.currentProductGallery =
+allImages;
+/* =====================================================
+SHOW MODAL
+===================================================== */
 productModal.classList.add(
 "show"
 );
-
-
 document.body.style.overflow =
 "hidden";
-
-
-setupGallerySwipe();
-
 }
-
-
-/* =========================================================
-   CHANGE GALLERY IMAGE
-========================================================= */
-
-function changeGalleryImage(
-index,
-event
-){
-
-if(event){
-
-event.stopPropagation();
-
-}
-
-
+/* =====================================================
+CHANGE GALLERY IMAGE
+===================================================== */
+function changeGalleryImage(index){
 const gallery =
-window.currentProductGallery ||
-[];
-
-
-if(!gallery.length){
+window.currentProductGallery || [];
+if(!gallery[index]){
 return;
 }
-
-
-/* =====================================================
-   WRAP AROUND
-===================================================== */
-
-if(index < 0){
-
-index =
-gallery.length - 1;
-
-}
-
-
-if(index >= gallery.length){
-
-index = 0;
-
-}
-
-
-currentGalleryIndex =
-index;
-
-
 const mainImage =
 document.getElementById(
 "galleryMainImage"
 );
-
-
 if(!mainImage){
 return;
 }
-
-
 mainImage.src =
 gallery[index].url;
-
-
-/* =====================================================
-   ACTIVE THUMB
-===================================================== */
-
 document
-.querySelectorAll(
-".gallery-thumb"
-)
+.querySelectorAll(".gallery-thumb")
 .forEach(
 function(button,i){
-
 button.classList.toggle(
 "active",
-i === index
+i===index
 );
-
 }
 );
-
-
+}
 /* =====================================================
-   COUNTER
+CLOSE MODAL
 ===================================================== */
-
-const position =
-document.getElementById(
-"galleryPosition"
-);
-
-
-if(position){
-
-position.textContent =
-(index + 1) +
-" / " +
-gallery.length;
-
-}
-
-
-/* =====================================================
-   SCROLL ACTIVE THUMB INTO VIEW
-===================================================== */
-
-const activeThumb =
-document.querySelector(
-'.gallery-thumb[data-gallery-index="' +
-index +
-'"]'
-);
-
-
-if(activeThumb){
-
-activeThumb.scrollIntoView({
-behavior:"smooth",
-block:"nearest",
-inline:"center"
-});
-
-}
-
-}
-
-
-/* =========================================================
-   NEXT IMAGE
-========================================================= */
-
-function nextGalleryImage(event){
-
-if(event){
-
-event.stopPropagation();
-
-}
-
-changeGalleryImage(
-currentGalleryIndex + 1
-);
-
-}
-
-
-/* =========================================================
-   PREVIOUS IMAGE
-========================================================= */
-
-function prevGalleryImage(event){
-
-if(event){
-
-event.stopPropagation();
-
-}
-
-changeGalleryImage(
-currentGalleryIndex - 1
-);
-
-}
-
-
-/* =========================================================
-   SWIPE SUPPORT
-========================================================= */
-
-function setupGallerySwipe(){
-
-const galleryMain =
-document.getElementById(
-"galleryMain"
-);
-
-
-if(!galleryMain){
-return;
-}
-
-
-galleryMain.ontouchstart =
-function(event){
-
-if(
-!event.touches ||
-!event.touches.length
-){
-
-return;
-
-}
-
-currentGalleryStartX =
-event.touches[0].clientX;
-
-};
-
-
-galleryMain.ontouchmove =
-function(event){
-
-if(
-!event.touches ||
-!event.touches.length
-){
-
-return;
-
-}
-
-currentGalleryEndX =
-event.touches[0].clientX;
-
-};
-
-
-galleryMain.ontouchend =
-function(){
-
-const distance =
-currentGalleryEndX -
-currentGalleryStartX;
-
-
-if(
-Math.abs(distance) < 50
-){
-
-currentGalleryStartX = 0;
-currentGalleryEndX = 0;
-
-return;
-
-}
-
-
-/*
-   سحب لليسار = الصورة التالية
-   سحب لليمين = الصورة السابقة
-*/
-
-if(distance < 0){
-
-nextGalleryImage();
-
-}else{
-
-prevGalleryImage();
-
-}
-
-
-currentGalleryStartX = 0;
-currentGalleryEndX = 0;
-
-};
-
-}
-
-
-/* =========================================================
-   CLOSE MODAL
-========================================================= */
-
-function closeProductModal(){
-
+function closeModal(){
 productModal.classList.remove(
 "show"
 );
-
 document.body.style.overflow =
 "";
-
-window.currentProductGallery =
-[];
-
-currentGalleryIndex = 0;
-
 }
-
-
-modalClose.addEventListener(
-"click",
-closeProductModal
-);
-
-
-/* =========================================================
-   CLICK OUTSIDE MODAL
-========================================================= */
-
+document
+.getElementById("modalClose")
+.onclick =
+closeModal;
 productModal.addEventListener(
 "click",
-function(event){
-
-if(
-event.target ===
-productModal
-){
-
-closeProductModal();
-
+function(e){
+if(e.target===productModal){
+closeModal();
 }
-
 }
 );
-
-
-/* =========================================================
-   KEYBOARD NAVIGATION
-========================================================= */
-
 document.addEventListener(
 "keydown",
-function(event){
-
-if(
-!productModal.classList.contains(
-"show"
-)
-){
-
-return;
-
+function(e){
+if(e.key==="Escape"){
+closeModal();
 }
-
-
-if(event.key === "Escape"){
-
-closeProductModal();
-
-return;
-
-}
-
-
-if(event.key === "ArrowLeft"){
-
-prevGalleryImage();
-
-return;
-
-}
-
-
-if(event.key === "ArrowRight"){
-
-nextGalleryImage();
-
-return;
-
-}
-
 }
 );
-
-
-/* =========================================================
-   LOAD ADS
-========================================================= */
-
+/* =====================================================
+DEFAULT HERO
+===================================================== */
+function setDefaultHero(){
+const hero =
+document.getElementById("hero");
+if(
+hero.classList.contains(
+"has-image"
+)
+)return;
+const product =
+products.find(
+p=>p.image_url
+);
+if(product){
+hero.classList.add(
+"has-image"
+);
+document
+.getElementById("heroImage")
+.src =
+product.image_url;
+}
+}
+/* =====================================================
+ABOUT IMAGE
+===================================================== */
+function setAboutImage(){
+const box =
+document.getElementById(
+"aboutImage"
+);
+const product =
+products.find(
+p=>p.image_url
+);
+if(product){
+box.innerHTML = `
+<img
+src="${esc(product.image_url)}"
+alt="شركة بيت المراتب للمفروشات جملة وقطاعي">
+`;
+}
+}
+/* =====================================================
+ADS
+===================================================== */
 async function loadAds(){
-
+try{
 const result =
 await db
 .from("ads")
 .select("*")
-.eq(
-"active",
-true
-)
+.eq("active",true)
 .order(
 "sort_order",
 {
@@ -4409,382 +3351,88 @@ ascending:true
 ascending:false
 }
 );
-
-
 if(result.error){
-
 console.error(
-"Ads error:",
 result.error
 );
-
-ads = [];
-
-renderAds();
-
 return;
-
 }
-
-
-ads =
-result.data || [];
-
-
-renderAds();
-
-}
-
-
-/* =========================================================
-   RENDER ADS
-========================================================= */
-
-function renderAds(){
-
-if(!ads.length){
-
-adsContainer.innerHTML = `
-
-<div class="empty-box">
-
-لا توجد عروض أو إعلانات حاليًا.
-
-</div>
-
-`;
-
+const ads =
+result.data||[];
+if(!ads.length)
 return;
-
+const ad =
+ads[0];
+/* HERO */
+if(ad.image_url){
+const hero =
+document.getElementById("hero");
+const heroImage =
+document.getElementById("heroImage");
+hero.classList.add(
+"has-image"
+);
+heroImage.src =
+ad.image_url;
+heroImage.alt =
+ad.title||
+"شركة بيت المراتب للمفروشات جملة وقطاعي";
 }
-
-
-adsContainer.innerHTML =
-ads
-.map(
-function(ad){
-
-return `
-
-<div class="ad-card">
-
-
-${
-ad.image_url
-
-?
-
-`
-
+/* AD */
+const section =
+document.getElementById("offers");
+const imageBox =
+document.getElementById("adImageBox");
+if(ad.image_url){
+imageBox.innerHTML = `
 <img
-class="ad-image"
 src="${esc(ad.image_url)}"
-alt="${esc(ad.title || "")}"
-loading="lazy">
-
-`
-
-:
-
-""
-
+alt="${esc(ad.title||"إعلان")}">
+`;
 }
-
-
-<div class="ad-content">
-
-
-<h2>
-
-${esc(
-ad.title || ""
-)}
-
-</h2>
-
-
-<p>
-
-${esc(
-ad.description || ""
-)}
-
-</p>
-
-
-${
-ad.button_url
-
-?
-
-`
-
+document
+.getElementById("adTitle")
+.textContent =
+ad.title||"";
+document
+.getElementById("adDescription")
+.textContent =
+ad.description||"";
+if(
+ad.button_url &&
+ad.button_url.trim()
+){
+document
+.getElementById("adButtonBox")
+.innerHTML = `
 <a
 class="ad-button"
 href="${esc(ad.button_url)}"
 target="_blank"
 rel="noopener">
-
 ${esc(
-ad.button_text ||
+ad.button_text||
 "اعرف المزيد"
 )}
-
 </a>
-
-`
-
-:
-
-""
-
-}
-
-
-</div>
-
-
-</div>
-
 `;
-
 }
-)
-.join("");
-
-}
-
-
-/* =========================================================
-   LOAD BRANCHES
-========================================================= */
-
-async function loadBranches(){
-
-const result =
-await db
-.from("branches")
-.select(
-"name,address,phone"
-);
-
-
-if(result.error){
-
+section.style.display =
+"block";
+}catch(error){
 console.error(
-"Branches error:",
-result.error
+"Ads error:",
+error
 );
-
-branchesContainer.innerHTML = `
-
-<div class="empty-box">
-
-تعذر تحميل بيانات الفروع.
-
-</div>
-
-`;
-
-return;
-
 }
-
-
-branches =
-result.data || [];
-
-
-renderBranches();
-
 }
-
-
-/* =========================================================
-   RENDER BRANCHES
-========================================================= */
-
-function renderBranches(){
-
-if(!branches.length){
-
-branchesContainer.innerHTML = `
-
-<div class="empty-box">
-
-سيتم إضافة بيانات الفروع قريبًا.
-
-</div>
-
-`;
-
-return;
-
-}
-
-
-branchesContainer.innerHTML =
-branches
-.map(
-function(branch){
-
-return `
-
-<div class="branch-card">
-
-
-<h3>
-
-${esc(
-branch.name ||
-"فرع بيت المراتب"
-)}
-
-</h3>
-
-
-${
-branch.address
-
-?
-
-`
-
-<div class="branch-item">
-
-📍
-${esc(branch.address)}
-
-</div>
-
-`
-
-:
-
-""
-
-}
-
-
-${
-branch.phone
-
-?
-
-`
-
-<div class="branch-item">
-
-☎
-${esc(branch.phone)}
-
-</div>
-
-`
-
-:
-
-""
-
-}
-
-
-</div>
-
-`;
-
-}
-)
-.join("");
-
-}
-
-
-/* =========================================================
-   SEARCH
-========================================================= */
-
-search.addEventListener(
-"input",
-function(){
-
-currentSearch =
-search.value;
-
-if(
-headerSearch.value !==
-search.value
-){
-
-headerSearch.value =
-search.value;
-
-}
-
-render();
-
-}
-);
-
-
-headerSearch.addEventListener(
-"input",
-function(){
-
-currentSearch =
-headerSearch.value;
-
-search.value =
-headerSearch.value;
-
-render();
-
-
-document
-.getElementById("products")
-.scrollIntoView({
-behavior:"smooth",
-block:"start"
-});
-
-}
-);
-
-
-/* =========================================================
-   SORT
-========================================================= */
-
-sort.addEventListener(
-"change",
-render
-);
-
-
-/* =========================================================
-   START
-========================================================= */
-
-async function start(){
-
-await Promise.all([
-loadProducts(),
-loadAds(),
-loadBranches()
-]);
-
-}
-
-
-/* =========================================================
-   START APPLICATION
-========================================================= */
-
-start();
-
+/* =====================================================
+START
+===================================================== */
+applyCompanySettings();
+loadBranches();
+loadProducts();
+loadAds();
 </script>
-
-
 </body>
-
 </html>
